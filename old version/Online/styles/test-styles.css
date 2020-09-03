@@ -1,0 +1,77 @@
+html,body{
+	margin:0;
+	padding:0;
+	background-image: url(../images/documents/plain-bk.jpg);
+}
+div#ox-adverts {
+	width: 234px;
+	float: left;
+}
+body{font: 76% arial,sans-serif;text-align:center}
+p{margin:0 10px 10px}
+a{padding:5px; text-decoration:none; color:#000000;}
+div#ox-header{
+	background-image: url(../images/header/header-bg.jpg);
+	height: 132px;
+}
+div#ox-container{text-align:left}
+div#ox-content p{line-height:1.4}
+div#ox-navigation{background:#F6F0E0;}
+div#ox-navigation ul{margin:15px 0; padding:0; list-style-type:none;}
+div#ox-navigation li{margin-bottom:5px;}
+div#ox-footer{
+	background:#173a59;
+}
+div#ox-footer p{margin:0;padding:5px 10px}
+div#ox-container{
+	width:900px;
+	margin:0 auto;
+	background-image: url(../images/documents/container-bk.jpg);
+}
+div#ox-wrapper{
+	float:left;
+	width:900px;
+	padding-top: 20px;
+}
+div#ox-content{
+	margin-left: 184px
+}
+div#ox-navigation{
+	float:left;
+	width:200px;
+	margin-left:-200px
+}
+div#relatedentries{
+	float:left;
+	width:200px;
+	margin-left: 34px;
+	margin-bottom: 0px;
+	padding: 0 0 0 0;
+}
+div#ox-footer{clear:left;width:100%}
+.definition-title {
+	font-family: "Times New Roman", Times, serif;
+	color: #173A59;
+	font-weight: lighter;
+	font-size: 100%;
+}
+.pos, .z_p_in_p-g{
+	font-family: "Times New Roman", Times, serif;
+	text-transform: uppercase;
+	color: #276e98;
+	font-size: 90%;
+}
+.adverts {
+	width: 234px;
+	float: left;
+}
+div#rightcolumn {
+	width: 234px;
+	float: left;
+	margin-left: -900px;
+	margin-right: 666px;
+	background-image: url(../images/adverts/bk_lcol_mid.png);
+}
+.button {
+	vertical-align: top;
+}

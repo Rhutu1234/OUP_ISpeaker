@@ -1,0 +1,49 @@
+#main-container h2 {
+  margin: 0;
+}
+
+#main-container h4 {
+  font-weight: bold;
+}
+
+#main-container p {
+  margin: 10px 0 0 0;
+}
+
+#main-container td,
+#main-container th {
+  border: 1px solid #000;
+}
+
+#main-container th {
+  font-weight: bold;
+  font-style: italic;
+}
+
+#main-container code {
+  display: block;
+  width: 75%;
+  font-style: italic;
+  margin: 10px 0;
+  background-color: #f2f2f2;
+}
+
+#main-container ul {
+  list-style: inherit;
+}
+
+#main-container pre {
+  display: inline-block;
+  font-style: italic;
+  width:100%;
+  margin: 10px 0;
+  background-color: #f2f2f2;
+}
+
+#main-container .fct-header{
+	font-weight:bold;
+}
+
+#get-bucket-container, #get-json-container, #upload-form, #del-bucket-container{
+	display:none;
+}

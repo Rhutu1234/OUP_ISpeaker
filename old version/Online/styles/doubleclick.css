@@ -1,0 +1,19 @@
+/*
+ * Free Online Platform - Double Click sample 
+ */
+
+body {
+  font-family: Verdana,Geneva,Arial,Helvetica,sans-serif;
+  font-size: .9em;
+  color: #000;
+}
+
+pre {
+  margin-left: 80px;
+  margin-right: 250px;
+  border: 1px solid #D4D0C8 !important;
+}
+
+.intro {
+  font-style: italic;
+}

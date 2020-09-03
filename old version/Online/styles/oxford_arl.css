@@ -1,0 +1,183 @@
+/* The theme colour is: #00a2e2; */
+
+/* Result list */
+
+h1.arl-title {
+  font-family: "Trebuchet MS",Arial,Georgia,Times,Roman;
+  font-weight: normal;
+  font-size: 21px;
+  color: #000000;
+  margin: 8px 0 5px;
+}
+
+.results-subtitle {
+}
+
+h1 a {
+	color: #c0c0c0;
+}
+
+ul.result-list
+{
+	list-style-type: none;
+	padding: .25em .25em .25em .25em;
+	margin: 0.25em;
+}
+ 
+ul.result-list a {
+	font-family: Verdana, "Bitstream Vera Sans", "Lucida Grande", "Lucida Sans Unicode",  "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", Tahoma, Geneva, "Luxi Sans", sans-serif;
+	text-decoration: none;
+}
+
+ul.result-list li
+{
+	padding: .125em .125em .125em .125em;
+}
+ul.result-list li:hover
+{
+  text-decoration: underline;
+}
+
+
+/* Results List content */
+#results-container-all {
+	font-family: Verdana, "Bitstream Vera Sans", "Lucida Grande", "Lucida Sans Unicode",  "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", Tahoma, Geneva, "Luxi Sans", sans-serif;
+	font-size: .9em;
+	color: #000;
+	cursor: default;
+	background-color: #FFF;
+	margin: 1.5em .5em .5em .5em;
+	white-space: normal;
+}
+
+.arl1,
+.arl2,
+.arl3,
+.arl4,
+.arl5,
+.arl7 
+	{color: #000000;}
+
+/*
+.arl1,
+.arl2,
+.arl3,
+.arl4 {
+	color: #003088 !important;
+}
+
+.arl5 {
+	color: #006000;
+}
+
+.arl6 {
+	color: #0000FF;
+}
+
+.arl7 {
+	color: #C00000;
+}
+*/
+
+
+.w,
+.hw, .phrase {
+	font-weight: bold;
+	color: #00a2e2;
+}
+
+.pos,
+.posabb,
+.phrase {
+  font-style: italic;
+}
+
+.v,
+.vexp {
+	font-weight: bold;
+	color: #00a2e2;
+}
+
+.gw {
+	font-size: 80%;
+	text-transform: uppercase;
+	font-style: normal;
+	font-weight: bold;
+	color: #00a2e2;
+	display: inline-block;
+}
+
+/* .phrase:first-child */
+.phrase_firstchild {
+	font-weight: bold;
+	font-style: normal;
+}
+
+/* .phrase + .gw */
+.phrase_gw {
+	color: #00a2e2;
+}
+
+/*
+ * Pagination
+ */
+
+#paging {
+	font-family: Verdana, "Bitstream Vera Sans", "Lucida Grande", "Lucida Sans Unicode",  "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", Tahoma, Geneva, "Luxi Sans", sans-serif;
+	font-weight: bold;
+	color: #000;
+	padding: 0.125em 0.125em 0.125em 1em;
+	background-color: #efefef;
+}
+
+#paging .activepage {
+	color: #000;
+	padding: 0.125em;
+}
+
+#paging a {
+    text-decoration: none;
+	border-bottom: thin solid #00a2e2;
+	color: #00a2e2;
+}
+
+#paging a.Next, #paging a.Previous {
+	text-decoration: none;
+	border-bottom:none;
+	color: #00a2e2;
+}
+
+
+#paging a:hover {
+    text-decoration: none;
+	border-bottom: thin solid #00a2e2;
+}
+
+#paging .page_info {
+  margin: 0 0 0 .8em;
+}
+
+/*
+ * Spellchecker
+ */
+
+#didyoumean {
+  padding-left:0.5em; padding-right:0.5em;
+}
+
+a.dym-link
+{
+	font-weight: bold;
+	color: #00a2e2;
+}
+
+.BASE {
+  font-weight: bold;
+}
+
+.at .BASE {
+  font-weight: normal;
+  font-style: italic;
+}
+
+

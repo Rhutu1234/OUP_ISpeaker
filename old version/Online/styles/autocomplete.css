@@ -1,0 +1,56 @@
+.inputSuggestions {
+    border-left: solid 1px #fff;
+    border-right: solid 1px #fff;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    text-align: left;
+    z-index: 10;
+}
+
+.inputSuggestions a {
+    display: block;
+    padding: 6px 6px;
+    font-weight: normal;
+}
+
+.suggestionList a:hover,.suggestionList a:focus,.suggestionList a.current {
+    background: none !important;
+    text-decoration: underline;
+}
+
+.inputSuggestions .suggestionRow {
+    color: #fff;
+    background: #0082c0;
+    border-bottom: solid 1px #fff;
+    float: left;
+    width: 100%;
+}
+
+.inputSuggestions .suggestionCategory {
+    float: left;
+    padding: 8px 10px;
+    text-transform: uppercase;
+    width: 150px;
+    font-size: 13px;
+}
+
+.inputSuggestions .suggestionList {
+    background: #fff;
+    border-bottom: solid 1px #ddd;
+    overflow: hidden;
+}
+
+.inputSuggestions .suggestionList ul {
+    padding: 0 12px;
+}
+
+@media screen and (max-width: 761px) {
+    .inputSuggestions {
+        width: auto;
+    }
+    .inputSuggestions .suggestionList {
+        float: none;
+        display: block;
+        width: auto;
+    }
+}

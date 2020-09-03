@@ -1,0 +1,50 @@
+/*
+ * Free Online Platform - Search box
+ */
+
+body {
+  font-family: font-family: Verdana, "Bitstream Vera Sans", "Lucida Grande", "DejaVu Sans", Tahoma, Geneva, "Luxi Sans", sans-serif;
+  color: #000;
+}
+
+pre {
+  margin-left: 80px;
+  margin-right: 250px;
+  border: 1px solid #D4D0C8 !important;
+}
+
+.fop-searchbox {
+  font-family: font-family: Verdana, "Bitstream Vera Sans", "Lucida Grande", "DejaVu Sans", Tahoma, Geneva, "Luxi Sans", sans-serif;
+  width: 17em;
+  padding: 0.25em;
+  margin-left: 120px;
+  border: 1px solid #BFBFBF;
+}
+
+.fop-textbox {
+  width: 14.2em;
+  font-size: .8em;
+  color: #6E6E6E;
+  padding: .1em .5em;
+  border: 1px solid #6E6E6E;
+}
+
+.fop-submit-btn {
+  width: 5em;
+  font-weight: bold;
+  color: #6E6E6E;
+  border: 1px solid #6E6E6E;
+  background-color: #FFF;
+  cursor: pointer;
+}
+
+.fop-searchbox a {
+  display: block;
+  font-size: .7em;
+  color: #4C4C4C;
+  margin: .2em 0 0 2.2em;
+}
+
+
+
+
