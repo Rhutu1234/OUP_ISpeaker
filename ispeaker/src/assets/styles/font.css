@@ -1,0 +1,37 @@
+@font-face {
+  font-family: "MinionProRegular";
+  src: url("font/MinionPro-Regular.otf") format("opentype"),
+    url("font/MinionPro-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "SourceSansProRegular";
+  src: url("font/SourceSansPro-Regular.otf") format("opentype"),
+    url("font/SourceSansPro-Regular.otf.woff2") format("woff2"),
+    url("font/SourceSansPro-Regular.otf.woff") format("woff"),
+    url("font/SourceSansPro-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "SourceSansProSemiBold";
+  src: url("font/SourceSansPro-Semibold.otf") format("opentype"),
+    url("font/SourceSansPro-Semibold.otf.woff2") format("woff2"),
+    url("font/SourceSansPro-Semibold.otf.woff") format("woff"),
+    url("font/SourceSansPro-Semibold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "SourceSansProBold";
+  src: url("font/SourceSansPro-Bold.otf") format("opentype"),
+    url("font/SourceSansPro-Bold.otf.woff2") format("woff2"),
+    url("font/SourceSansPro-Bold.otf.woff") format("woff"),
+    url("font/SourceSansPro-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "SourceSansProBlack";
+  src: url("font/SourceSansPro-Black.otf") format("opentype"),
+    url("font/SourceSansPro-Black.otf.woff2") format("woff2"),
+    url("font/SourceSansPro-Black.otf.woff") format("woff"),
+    url("font/SourceSansPro-Black.ttf") format("truetype");
+}

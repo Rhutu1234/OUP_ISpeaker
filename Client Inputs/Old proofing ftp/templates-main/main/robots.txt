@@ -1,0 +1,48 @@
+#set( $layout = "/layouts/null.xml" )
+#skSetContentType("text/plain")
+User-agent: *
+#if($request.getServerName().equals("www.oxfordlearnersdictionaries.com"))
+Sitemap: #skLicensedUrl('/sitemap.xml')
+
+#set($disallows = [
+    "/info/",
+    "/pronunciation/",
+    "/search/",
+    "/spellcheck/",
+    "/autocomplete/",
+    "/search",
+    "/spellcheck",
+    "/autocomplete",
+    "/grammar/practical-english-usage/",
+    "/spellcheck/practical-english-usage/",
+    "/browse/practical-english-usage/",
+    "/resources/practical-english-usage/",
+    "/exercises/practical-english-usage/",
+    "/translate/schulwoerterbuch_English-German/",
+    "/spellcheck/schulwoerterbuch_English-German/",
+    "/browse/schulwoerterbuch_English-German/",
+    "/translate/schulwoerterbuch_German-English/",
+    "/spellcheck/schulwoerterbuch_German-English/",
+    "/browse/schulwoerterbuch_German-English/",
+    "/resources/schulwoerterbuch/",
+    "/exercises/schulwoerterbuch/",
+    "/definition/academic/",
+    "/spellcheck/academic/",
+    "/browse/academic/",
+    "/resources/academic/",
+    "/exercises/academic/",
+    "/definition/collocations/",
+    "/spellcheck/collocations/",
+    "/browse/collocations/",
+    "/resources/collocations/"
+])
+
+#foreach($version in $configuration.getActiveLicenseVersions().values())
+#foreach($disallow in $disallows)
+Disallow: $skTool.getLocalizedUrl(${version.lang}, "${version.prefix}${disallow}")
+#end
+#end
+
+#else
+Disallow: *
+#end

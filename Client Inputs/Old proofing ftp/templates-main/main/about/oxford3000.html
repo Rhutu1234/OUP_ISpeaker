@@ -1,0 +1,91 @@
+#parse( "/common/macro.vm")
+#SEO("about_oxford3000", [])
+#set( $current_page = "resources") ## to set the class for the top_banner 
+#set( $scripts = ["/external/scripts/oxford.js"]) 
+#set( $search_word = "")
+
+#set($dfpAdList =['topslot', 'btmslot_a', 'btmslot_b', 'leftslot_a'])
+#set($dfpCriteria['old_pc'] = 'default')
+#set($dfpCriteria['old_pt'] = 'other')
+
+<div class="responsive_row wordlist-page">
+
+    <script type="text/javascript" language="javascript">
+        if (document.readyState != 'loading'){
+            initWordlistPanel();
+        } else if (document.addEventListener) {
+          document.addEventListener('DOMContentLoaded', function(){initWordlistPanel()});
+        } else {
+          document.attachEvent('onreadystatechange', function() {
+            if (document.readyState != 'loading')
+                initWordlistPanel();
+          });
+        }
+    </script>
+
+    <h1 class="h">
+      <a class="oxford3000-blue" href="#skLicensedUrl('/wordlist/english/oxford3000/')"></a>
+      The Oxford 3000
+    </h1>
+
+    <div class="wordlist-info-page">
+      
+        <p>The <strong>Oxford 3000 </strong>is a list of the 3000 most important words to learn in English. The keywords of the <strong>Oxford 3000</strong> have been carefully selected by a group of language experts and experienced teachers as the words which should receive priority in vocabulary study because of their importance and usefulness.</p>
+
+        <dl class="open-close ui-plain">
+
+            <dt class="hide">How can I recognize the keywords in the dictionary?</dt>
+            <dd>
+                <p>The words of the <strong>Oxford 3000</strong> are shown in the dictionary with a key symbol, and sometimes the most useful parts of the entries (particular meanings, phrasal verbs and idioms) are also marked with a smaller key symbol. The entries for keywords often have extra information in the form of more examples of use, special notes explaining synonyms or related words, or helpful illustrations.</p>
+            </dd>
+
+            <dt class="hide">How are the keywords selected?</dt>
+            <dd>
+                <p>The selection is based on three criteria: </p>
+                <ul>
+                   <li>The words which occur most <strong>frequently</strong> in English are included, based on the information in the British National Corpus and the Oxford Corpus Collection. A corpus is an electronically-held collection of written or spoken texts, often consisting of hundreds of millions of words. </li>
+               </ul>
+               <ul>
+                   <li>Being frequent in the corpus alone is not enough for a word to qualify as a keyword. It may be that the word is used very frequently, but only in a narrowly defined area, such as newspapers or scientific articles. In order to avoid including these restricted words, we include as keywords only those words which are frequent across a <strong>range</strong> of different types of text. In other words, keywords are both frequent and used in a variety of contexts. </li>
+               </ul>
+               <ul>
+                   <li>In addition, the list includes some very important words which happen not to be used frequently, even though they are very <strong>familiar</strong> to most users of English. These include, for example, words for parts of the body, words used in travel, and words which are useful for explaining what you mean when you do not know the exact word for something. These words were identified by consulting a panel of over seventy experts in the fields of teaching and language study.</li>
+               </ul>
+           </dd>
+
+            <dt class="hide">How are the keywords used in dictionary definitions?</dt>
+            <dd>
+                <p>In order to make the definitions in this dictionary easy to understand, we have written them using the keywords of the <strong>Oxford 3000</strong>. All words used in normal definition text are keywords, or are on the list of <a href="#skLicensedUrl('/about/langstudyterms.html')">language study terms</a>. Numbers and proper names are also used in definitions. When it has been necessary to use a specialist term which is not in the <strong>Oxford 3000</strong>, the word is shown in a different colour. If you do not know the meaning of this word, look it up in the dictionary. It will help you to understand the definition that you are interested in and will probably be a useful word to learn because it will be related to the original word you looked up.</p>
+            </dd>
+
+            <dt class="hide">How can I use the Oxford 3000 to expand my vocabulary?</dt>
+            <dd>
+                <p>The keywords make an excellent starting point for expanding your vocabulary. With most keywords, there is far more to learn about them than the first meaning in the entry. Often these words have many meanings, have a large family of words derived from them, or are used in a variety of patterns. You will also find a wide variety of usage notes at the keyword entries.</p>
+            </dd>
+                
+            <dt class="hide">How can I browse the Oxford 3000 wordlist?</dt>
+            <dd>
+                <p>The <strong>Oxford 3000</strong> list covers British and American English. The keywords are listed alphabetically.</p>
+            </dd>
+
+            <dt class="hide">What is the Oxford 3000 Text Checker?</dt>
+            <dd>
+                <p>Use our <a href="#skLicensedUrl('/text-checker/')">Text Checker</a> to check which words in any text are part of the <strong>Oxford 3000</strong>. You can use this information to judge the difficulty of that text.</p>
+            </dd>
+        </dl>
+        
+        <br />
+        
+        <p>In January 2019 we released an updated Oxford 3000 list. Find out more and browse the new list <a href="#skLicensedUrl('/wordlists/oxford3000-5000')">here</a>.</p>
+               
+        
+    </div>
+  
+</div> <!-- end responsive_row -->
+
+<div class="responsive_row">
+
+    <p><a href="#skLicensedUrl('/wordlist/american_english/oxford3000/')" class="link-right">The Oxford 3000: American English Dictionary</a></p>
+    <p><a href="#skLicensedUrl('/wordlist/schulwoerterbuch_English-German/oxford3000/')" class="link-right">The Oxford 3000: Das Oxford Schulw&ouml;rterbuch</a></p>
+
+</div> <!-- end responsive_row -->

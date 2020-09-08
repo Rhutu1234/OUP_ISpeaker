@@ -1,0 +1,61 @@
+#parse( "/common/macro.vm")
+#SEO("about_pictures", [])
+#set( $current_page = "resources") ## to set the class for the top_banner 
+#set( $scripts = ["/external/scripts/oxford.js"]) 
+#set( $search_word = "")
+
+#set($dfpAdList =['topslot', 'btmslot_a', 'btmslot_b', 'leftslot_a'])
+#set($dfpCriteria['old_pc'] = 'default')
+#set($dfpCriteria['old_pt'] = 'other')
+
+<div class="responsive_row wordlist-page">
+
+    <script type="text/javascript" language="javascript">
+    if (document.readyState != 'loading'){
+        initWordlistPanel();
+    } else if (document.addEventListener) {
+      document.addEventListener('DOMContentLoaded', function(){initWordlistPanel()});
+    } else {
+      document.attachEvent('onreadystatechange', function() {
+        if (document.readyState != 'loading')
+            initWordlistPanel();
+      });
+    }
+    </script>
+
+    <h1 class="h">
+      Pictures
+    </h1>
+
+    <div class="wordlist-info-page">
+        <p>There are many pictures in the <em>Oxford Advanced Learner's Dictionary</em>, in the <em>Oxford Advanced American Dictionary</em>, and on the English-German side of <em>Das Oxford Schulw&ouml;rterbuch</em>.</p>
+        
+        <dl class="open-close ui-plain">
+
+            <dt class="hide">How are pictures used in the dictionary entries?</dt>
+            <dd>
+                <p>If there is a picture at a dictionary entry, you will see a small version of the picture at the correct part of the entry. For example if you look up <a href="#skLicensedUrl('/definition/american_english/butterfly')">butterfly</a>, you can see two of these small pictures, one at the first meaning and one at the second meaning. When you click on or tap any small image, a larger picture will open up, showing a group of related vocabulary items.</p>
+            </dd>
+
+            <dt class="hide">How can I use the pictures to expand my vocabulary?</dt>
+            <dd>
+                <p>The pictures in our learner's dictionaries are a good source of vocabulary because they show lots of related items. The big pictures contain lots of different labels so that you can study other words along with the word you are looking up. For example, the word &quot;butterfly&quot; in English is both the name of an insect and the name of a swimming stroke, and at the entry for <a href="#skLicensedUrl('/definition/american_english/butterfly')">butterfly</a> you can see pictures showing a selection of different insects, as well as a picture showing a number of different swimming strokes.</p>
+            </dd>
+
+            <dt class="hide">How can I browse the Pictures word list?</dt>
+            <dd>
+                <p>Dictionary entries that include pictures are listed in the Pictures word list. There is a list for the <em>Oxford Advanced American Dictionary</em> and one for <em>Das Oxford Schulw&ouml;rterbuch</em>. Simply click on an entry in the list to go to that entry.</p>
+            </dd>
+
+        </dl>
+
+    </div>
+  
+</div> <!-- end responsive_row -->
+
+<div class="responsive_row">
+
+    <p><a href="#skLicensedUrl('/wordlist/american_english/pictures/')" class="link-right">Pictures: American English Dictionary</a></p>
+    <p><a href="#skLicensedUrl('/wordlist/schulwoerterbuch_English-German/pictures/')" class="link-right">Pictures: Das Oxford Schulw&ouml;rterbuch</a></p>    
+
+</div> <!-- end responsive_row -->

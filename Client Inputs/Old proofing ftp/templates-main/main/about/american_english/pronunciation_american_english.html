@@ -1,0 +1,269 @@
+﻿#parse( "/common/macro.vm")
+#SEO("pronguide_american_english", [])
+#set( $current_page = "resources") ## to set the class for the top_banner
+#set( $search_word = "")
+
+#set($dfpAdList =['topslot', 'btmslot_a', 'btmslot_b', 'leftslot_a'])
+#set($dfpCriteria['old_pc'] = 'default')
+#set($dfpCriteria['old_pt'] = 'other')
+#set( $dictCode = "american_english" )
+
+<div id="informational-content">
+    <div class="h-g">
+        <div class="top-g">
+            <div class="core_block">
+                <span class="pagetitle">
+                    <h1 class="h">$translationService.getMessage($lang, 'pron.american.title', ["class='pagetitle_dict_name'"])</h1>
+                </span>
+            </div>
+        </div><!-- End of DIV top-g-->
+    </div><!-- End of DIV h-g-->
+    <div id="firsttext"></div>
+    <div id="generaltext">
+        <p>$translationService.getMessage($lang, 'pron.american.description.1').</p>
+        <p>$translationService.getMessage($lang, 'pron.american.description.2'):</p>
+        <table style="margin-bottom: 15px">
+            <tr>
+                <td colspan="3"><h2>$translationService.getMessage($lang, 'pron.american.header.1')</h2></td>
+                <td width="80">&nbsp;</td>
+                <td colspan="3"><h2>$translationService.getMessage($lang, 'pron.american.header.2')</h2></td>
+            </tr>
+            <tr>
+                <td class="ipachar" width="30">i</td>
+                <td width="80">see</td>
+                <td width="80" class="phon-us">/si/</td>
+                <td width="80">&nbsp;</td>
+                <td width="30" class="ipachar">p</td>
+                <td width="80">pen</td>
+                <td width="80" class="phon-us">/pɛn/</td>
+            </tr>
+            <tr>
+                <td class="ipachar">ɪ</td>
+                <td>sit</td>
+                <td class="phon-us">/sɪt/</td>
+                <td>&nbsp;</td>
+                <td class="ipachar">b</td>
+                <td>bad</td>
+                <td class="phon-us">/bæd/</td>
+            </tr>
+            <tr>
+                <td class="ipachar">ɛ</td>
+                <td>ten</td>
+                <td class="phon-us">/tɛn/</td>
+                <td>&nbsp;</td>
+                <td class="ipachar">t</td>
+                <td>tea</td>
+                <td class="phon-us">/ti/</td>
+            </tr>
+            <tr>
+                <td class="ipachar">æ</td>
+                <td>cat</td>
+                <td class="phon-us">/kæt/</td>
+                <td>&nbsp;</td>
+                <td class="ipachar"><span class="flapped_t">t̮</span></td>
+                <td>butter</td>
+                <td class="phon-us">/ˈbʌ<span class="flapped_t">t̮</span>ər/
+                </td>
+            </tr>
+            <tr>
+                <td class="ipachar">ɑ</td>
+                <td>hot</td>
+                <td class="phon-us">/hɑt/</td>
+                <td>&nbsp;</td>
+                <td class="ipachar">d</td>
+                <td>did</td>
+                <td class="phon-us">/dɪd/</td>
+            </tr>
+            <tr>
+                <td class="ipachar">ɔ</td>
+                <td>saw</td>
+                <td class="phon-us">/sɔ/</td>
+                <td>&nbsp;</td>
+                <td class="ipachar">k</td>
+                <td>cat</td>
+                <td class="phon-us">/kæt/</td>
+            </tr>
+            <tr>
+                <td class="ipachar">ʊ</td>
+                <td>put</td>
+                <td class="phon-us">/pʊt/</td>
+                <td>&nbsp;</td>
+                <td class="ipachar">g</td>
+                <td>got</td>
+                <td class="phon-us">/ɡɑt/</td>
+            </tr>
+            <tr>
+                <td class="ipachar">u</td>
+                <td>too</td>
+                <td class="phon-us">/tu/</td>
+                <td>&nbsp;</td>
+                <td class="ipachar">tʃ</td>
+                <td>chin</td>
+                <td class="phon-us">/tʃɪn/</td>
+            </tr>
+            <tr>
+                <td class="ipachar">ʌ</td>
+                <td>cup</td>
+                <td class="phon-us">/kʌp/</td>
+                <td>&nbsp;</td>
+                <td class="ipachar">dʒ</td>
+                <td>June</td>
+                <td class="phon-us">/dʒun/</td>
+            </tr>
+            <tr>
+                <td class="ipachar">ə</td>
+                <td>about</td>
+                <td class="phon-us">/əˈbaʊt/</td>
+                <td>&nbsp;</td>
+                <td class="ipachar">f</td>
+                <td>fall</td>
+                <td class="phon-us">/fɔl/</td>
+            </tr>
+            <tr>
+                <td class="ipachar">eɪ</td>
+                <td>say</td>
+                <td class="phon-us">/seɪ/</td>
+                <td>&nbsp;</td>
+                <td class="ipachar">v</td>
+                <td>voice</td>
+                <td class="phon-us">/vɔɪs/</td>
+            </tr>
+            <tr>
+                <td class="ipachar">aɪ</td>
+                <td>five</td>
+                <td class="phon-us">/faɪv/</td>
+                <td>&nbsp;</td>
+                <td class="ipachar">ɵ</td>
+                <td>thin</td>
+                <td class="phon-us">/θɪn/</td>
+            </tr>
+            <tr>
+                <td class="ipachar">ɔɪ</td>
+                <td>boy</td>
+                <td class="phon-us">/bɔɪ/</td>
+                <td>&nbsp;</td>
+                <td class="ipachar">ð</td>
+                <td>then</td>
+                <td class="phon-us">/ðɛn/</td>
+            </tr>
+            <tr>
+                <td class="ipachar">aʊ</td>
+                <td>now</td>
+                <td class="phon-us">/naʊ/</td>
+                <td>&nbsp;</td>
+                <td class="ipachar">s</td>
+                <td>so</td>
+                <td class="phon-us">/soʊ/</td>
+            </tr>
+            <tr>
+                <td class="ipachar">oʊ</td>
+                <td>go</td>
+                <td class="phon-us">/ɡoʊ/</td>
+                <td>&nbsp;</td>
+                <td class="ipachar">z</td>
+                <td>zoo</td>
+                <td class="phon-us">/zu/</td>
+            </tr>
+            <tr>
+                <td class="ipachar">ər</td>
+                <td>bird</td>
+                <td class="phon-us">/bərd/</td>
+                <td>&nbsp;</td>
+                <td class="ipachar">ʃ</td>
+                <td>she</td>
+                <td class="phon-us">/ʃi/</td>
+            </tr>
+            <tr>
+                <td class="ipachar">ɪr</td>
+                <td>near</td>
+                <td class="phon-us">/nɪr/</td>
+                <td>&nbsp;</td>
+                <td class="ipachar">ʒ</td>
+                <td>vision</td>
+                <td class="phon-us">/ˈvɪʒn/</td>
+            </tr>
+            <tr>
+                <td class="ipachar">ɛr</td>
+                <td>hair</td>
+                <td class="phon-us">/hɛr/</td>
+                <td>&nbsp;</td>
+                <td class="ipachar">h</td>
+                <td>how</td>
+                <td class="phon-us">/haʊ/</td>
+            </tr>
+            <tr>
+                <td class="ipachar">ɑr</td>
+                <td>car</td>
+                <td class="phon-us">/kɑr/</td>
+                <td>&nbsp;</td>
+                <td class="ipachar">m</td>
+                <td>man</td>
+                <td class="phon-us">/mæn/</td>
+            </tr>
+            <tr>
+                <td class="ipachar">ɔr</td>
+                <td>north</td>
+                <td class="phon-us">/nɔrθ/</td>
+                <td>&nbsp;</td>
+                <td class="ipachar">n</td>
+                <td>no</td>
+                <td class="phon-us">/noʊ/</td>
+            </tr>
+            <tr>
+                <td class="ipachar">ʊr</td>
+                <td>tour</td>
+                <td class="phon-us">/tʊr/</td>
+                <td>&nbsp;</td>
+                <td class="ipachar">ŋ</td>
+                <td>sing</td>
+                <td class="phon-us">/sɪŋ/</td>
+            </tr>
+            <tr>
+                <td class="ipachar">&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="ipachar">l</td>
+                <td>leg</td>
+                <td class="phon-us">/lɛɡ/</td>
+            </tr>
+            <tr>
+                <td class="ipachar">&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="ipachar">r</td>
+                <td>red</td>
+                <td class="phon-us">/rɛd/</td>
+            </tr>
+            <tr>
+                <td class="ipachar">&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="ipachar">y</td>
+                <td>yes</td>
+                <td class="phon-us">/yɛs/</td>
+            </tr>
+            <tr>
+                <td class="ipachar">&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="ipachar">w</td>
+                <td>wet</td>
+                <td class="phon-us">/wɛt/</td>
+            </tr>
+            <tr>
+                <td class="ipachar">&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="ipachar">x</td>
+                <td>Chanukah</td>
+                <td class="phon-us">/ˈxɑnəkə/</td>
+            </tr>
+        </table>
+        #include("/common/translate/_pronunciation_american_english.html")
+    </div>
+</div>

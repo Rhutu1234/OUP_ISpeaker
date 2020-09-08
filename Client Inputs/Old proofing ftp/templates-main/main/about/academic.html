@@ -1,0 +1,73 @@
+#parse( "/common/macro.vm")
+#SEO("about_academic", [])
+#set( $current_page = "resources") ## to set the class for the top_banner 
+#set( $scripts = ["/external/scripts/oxford.js"]) 
+#set( $search_word = "")
+
+#set($dfpAdList =['topslot', 'btmslot_a', 'btmslot_b', 'leftslot_a'])
+#set($dfpCriteria['old_pc'] = 'default')
+#set($dfpCriteria['old_pt'] = 'other')
+
+<div class="responsive_row wordlist-page">
+
+    <script type="text/javascript" language="javascript">
+    if (document.readyState != 'loading'){
+        initWordlistPanel();
+    } else if (document.addEventListener) {
+      document.addEventListener('DOMContentLoaded', function(){initWordlistPanel()});
+    } else {
+      document.attachEvent('onreadystatechange', function() {
+        if (document.readyState != 'loading')
+            initWordlistPanel();
+      });
+    }
+    </script>
+
+    <h1 class="h">
+      <a class="academic-blue" href="#skLicensedUrl('/wordlist/english/academic/')"></a>
+      The Academic Word List
+    </h1>
+
+    <div class="wordlist-info-page">
+      
+        <p>The<strong> Academic Word List</strong> is a  list of words that you are likely to meet if you study at an English-speaking  university. Entries that appear on the list  are shown in the dictionary with a symbol: <span class="academic-blue"></span>.</p>
+        <p>The <strong>Academic Word List</strong> was developed by Averil Coxhead. For further information, visit the <a target="_blank" href="https://www.victoria.ac.nz/lals/resources/academicwordlist">University of Victoria</a> website.</p>
+
+        <dl class="open-close ui-plain wordlist-info-page">
+
+            <dt class="hide">How was the Academic Word List created?</dt>
+            <dd>
+                <p>The <strong>Academic Word List</strong> was developed by Averil Coxhead at the Victoria University of  Wellington, New Zealand. The list was developed by analysing a corpus of  academic written texts to find out which words occurred across a range of 28  subject areas (such as Biology, History, Marketing, and International Law) in  four academic disciplines: Arts, Commerce, Law, and Science. A corpus is an  electronically-held collection of written or spoken texts, often consisting of  hundreds of millions of words. </p>
+                <p>The words in the <strong>Academic Word List</strong> were selected because of their <strong>range</strong> and <strong>frequency</strong> of occurrence. The list<strong> </strong>covers roughly 10% of written academic text.</p>
+                <p>For further information about the <strong>Academic Word List</strong>, visit the <a target="_blank" href="https://www.victoria.ac.nz/lals/resources/academicwordlist" title='link opens in a new window'>University of Victoria</a> website.</p>
+            </dd>
+
+            <dt class="hide">How is the Academic Word List organized?</dt>
+            <dd>
+                <p>The <strong>Academic Word List</strong> is organized into ten sublists. <strong>Sublist 1</strong> contains the most common  words in the <strong>Academic Word List</strong>. <strong>Sublist 2</strong> contains the next most common  words, and so on. There are 60 word families in each sublist, except for <strong>Sublist 10 </strong>which has 30.</p>
+            </dd>
+                
+            <dt class="hide">How can I browse the Academic Word List?</dt>
+             <dd>
+                <p>The <strong>Academic Word List</strong> covers British and American English. You can browse the entries for words on the Academic Word list in the <em>Oxford Advanced American Dictionary</em> and the <em>Oxford Learner's Dictionary of Academic English</em> by following the links at the bottom of this page and selecting words from the list to open the dictionary entries.</p>
+                <p>You can browse the <strong>Academic Word List</strong> by selecting a sublist. The words in each subject are listed alphabetically.</p>
+            </dd>
+
+            <dt class="hide">How can I use the Academic Word List to expand my vocabulary?</dt>
+            <dd>
+                <p>If you use English for academic purposes, the entries  that are part of the <strong>Academic Word List</strong> make an excellent starting point for improving your knowledge of English.</p>
+                <p>One way of learning the words is by directly studying  them from the sublists. As the sublists are organized according to the frequency of  the words, you may choose to work through the lists in order, starting with <strong>Sublist 1</strong>, moving on to <strong>Sublist 2</strong>, and finishing with <strong>Sublist 10</strong>.</p>
+                <p>The study of short academic texts can also help you to learn the words on the <strong>Academic Word List</strong>. As you read a text,  you can highlight the words you do not know and learn those that appear on the <strong>Academic Word List</strong>.  </p>
+                <p>In addition to this, you can learn the words on  the <strong>Academic Word List</strong> by referring  to the list when you are required to speak in academic discussion or write  academic texts.</p>
+            </dd>
+        </dl>
+    </div>
+  
+</div> <!-- end responsive_row -->
+
+<div class="responsive_row">
+
+    <p><a href="#skLicensedUrl('/wordlist/american_english/academic/')" class="link-right">The Academic Word List: American English Dictionary</a></p>
+    <p><a href="#skLicensedUrl('/wordlist/academic/academic/')" class="link-right">The Academic Word List: Academic English Dictionary</a></p>
+
+</div> <!-- end responsive_row -->

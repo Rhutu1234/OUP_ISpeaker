@@ -1,0 +1,47 @@
+#parse( "/common/macro.vm")
+#set($hwd = $entry)
+#SEO("pagenotfound.entry", [${esc.html($!hwd)}, "#DictionaryLongLabel($dictCode)"]) 
+#set( $search_word = "")
+#set( $page_robots = $translationService.getMessage($lang, "pagenotfound.entry.robots"))
+#set( $browseUrl = "/${url_browse}")
+#set( $browseUrl = "#skLicensedUrl($browseUrl)")
+#set( $searchUrl = "/${url_search}")
+#set( $searchUrl = "#skLicensedUrl($searchUrl)")
+#set( $layout = "layouts/one_column.html" )
+#set($dfpAdList =['topslot', 'btmslot_a', 'btmslot_b', 'leftslot_a'])
+#set($dfpCriteria['old_pc'] = 'error')
+#set($added=$dfpCategoryExclusion.add("error"))
+#set( $dfpCollapseSlotByDefault = 'true')
+
+<div class="results">
+    <h1 style="font-size:24px; font-weight:bold; margin-bottom: 12px;">${esc.html($!hwd)}</h1>
+    <p>$translationService.getMessage($lang, 'pagenotfound.entry.wordnotfound')</p>
+</div>
+
+#if( $spellResults && $spellResults.size() > 0)
+    <div id="didyoumean">$translationService.getMessage($lang, 'didyoumean.page.description'):</div>
+    <ul class="result-list">
+    #foreach($alternative in $spellResults) 
+        <li><a href="${searchUrl}/$dictCode/?q=$alternative" class="dym-link">$alternative</a></li>
+    #end    
+    </ul><br/>
+#end
+
+#if($groupList)
+    <div class="browse-words">
+        <p>$translationService.getMessage($lang, 'didyoumean.page.browselist') <span style="font-weight:bold; ">$!startLetter</span></p>
+        <ul>
+        #foreach( $group in $groupList )
+            #set( $tooltip = "$group.get('text').value1...$group.get('text').value2" )
+            #set( $value = "$group.get('formatted').value1...$group.get('formatted').value2")
+            <li>
+                <a href="${browseUrl}/$dictCode/${startLetter}/$group.get('url').value1/" title="$tooltip">$value</a>
+            </li>
+        #end
+        </ul><br/>
+    </div>
+#end
+
+<div class="link-to-homepage">
+    <p>$translationService.getMessage($lang, 'notfound.more_info') <a href="#skLicensedUrl('/')" title="$translationService.getMessage($lang, 'notfound.home_title')">www.oxfordlearnersdictionaries.com</a>.</p>
+</div>

@@ -1,0 +1,30 @@
+#parse( "/common/macro.vm")
+#SEO("bnc", [])
+#set( $search_word = "")
+
+#set($dfpAdList =['topslot', '', 'btmslot_a', 'btmslot_b', 'leftslot_a'])
+#set($dfpCriteria['old_pc'] = 'default')
+#set($dfpCriteria['old_pt'] = 'other')
+
+<div id="informational-content">
+    <div class="h-g">
+        <div class="top-g">
+            <div class="core_block">
+                <span class="pagetitle"><h1 class="h">$translationService.getMessage($lang, 'bnc.page.title')</h1></span>
+            </div>
+        </div>
+        <!-- End of DIV top-g-->
+    </div>
+    <!-- End of DIV h-g-->
+    <div id="firsttext"></div>
+    <div id="generaltext">
+        <ul>
+            <li><a href="#what_is_a_corpus">$translationService.getMessage($lang, 'bnc.corpus.title')</a></li>
+            <li><a href="#the_bnc_is_very_big">$translationService.getMessage($lang, 'bnc.big.title')</a></li>
+            <li><a href="#the_written_corpus">$translationService.getMessage($lang, 'bnc.write.title')</a></li>
+            <li><a href="#the_spoken_corpus">$translationService.getMessage($lang, 'bnc.speak.title')</a></li>
+            <li><a href="#using_the_corpus">$translationService.getMessage($lang, 'bnc.use.title')</a></li>
+        </ul>
+        #parse("/common/translate/_bnc.html")
+    </div>
+</div>

@@ -1,0 +1,18 @@
+#parse( "/common/macro.vm")
+
+#if($warnings)
+    #foreach($warning in $warnings) 
+    <p class="dynamicPanelWarning">$warning</p>
+    #end
+#end
+
+#foreach($line in $dynamicPanel.keySet()) 
+    <div class="row">
+        #foreach($box in $dynamicPanel.get($line)) 
+            #evaluate($box)
+        #end
+        #if($line==1)
+            #skParse( "/wotd/_wotd?dict=$wotdDictCode" )
+        #end
+    </div>
+#end

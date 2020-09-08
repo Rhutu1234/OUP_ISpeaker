@@ -1,0 +1,17 @@
+#parse( "/common/macro.vm")
+#set( $current_page = "home" )
+
+#set( $search_word = "")
+#set( $layout = "layouts/home.html" )
+#set( $wotdDictCode = $translationService.getMessage($lang, 'wotd.default.dictcode'))
+
+#set($dfpAdList =['topslot', 'btmslot_a', 'btmslot_b'])
+#set($dfpCriteria['old_pc'] = 'default')
+#set($dfpCriteria['old_pt'] = 'home')
+
+
+<div id="homeleft" class="responsive_container">
+    <div class="responsive_row">
+        #skParse( "/_dynamicPanel?page=$current_page" )
+    </div>
+</div>

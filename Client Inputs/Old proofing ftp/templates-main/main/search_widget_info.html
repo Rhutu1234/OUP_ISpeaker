@@ -1,0 +1,37 @@
+#parse( "/common/macro.vm")
+#SEO("searchboxinfo_english", [])
+#set( $search_word = "")
+
+#set($dfpAdList =['topslot', 'btmslot_a', 'btmslot_b', 'leftslot_a'])
+#set($dfpCriteria['old_pc'] = 'default')
+#set($dfpCriteria['old_pt'] = 'other')
+
+#set( $current_page_header = "dictionaries" )
+
+#set( $boxDesc="$translationService.getMessage($lang, 'widget.info.english.box')")
+
+<div id="informational-content">
+    <div class="h-g">
+        <div class="top-g">
+            <div class="core_block">
+                <span class="pagetitle">
+                    <h1 class="h">$translationService.getMessage($lang, 'widget.info.title')</h1>
+                </span>
+            </div>
+        </div>
+        <!-- End of DIV top-g-->
+    </div>
+    <!-- End of DIV h-g-->
+    <div id="firsttext"></div>
+    <div id="generaltext">
+        <h2>$translationService.getMessage($lang, 'widget.info.subtitle')</h2>
+        <p>$translationService.getMessage($lang, 'widget.info.description')</p>
+        <form action="#skLicensedUrl('/search_widget_code.html')" id="licenceform" method="post">
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+            <textarea name="textarea" rows="20" readonly="readonly" class="licencetext">
+#parse("/common/translate/_widget_info.html")
+            </textarea>
+            <input type="submit" value="I agree" />
+        </form>
+    </div>
+</div>

@@ -1,0 +1,124 @@
+#parse( "/common/macro.vm")
+#SEO("about.academic.iwriter", [])
+#set( $current_page = "resources") ## to set the class for the top_banner 
+#set( $scripts = ["/external/scripts/oxford.js", "/external/scripts/entry.js", "/external/scripts/jquery.lightbox-0.5.min.js"]) 
+#set( $search_word = "")
+#set( $onLoad = "setupDoubleClick('#skLicensedUrl('/')', '$dictCode', false, 'main-container', null, null, null);" )
+
+#set($dfpAdList =['topslot', 'btmslot_a', 'btmslot_b', 'leftslot_a'])
+#set($dfpCriteria['old_pc'] = 'default')
+#set($dfpCriteria['old_pt'] = 'other')
+
+<div class="responsive_row">
+
+    <script type="text/javascript" language="javascript">
+        var contextId=null;
+            // global variable that contains the path to external files
+        // and used by the lightbox script 
+        var lightboxImageLoading = "#skAssetUrl('/external/images/lightbox-ico-loading.gif')";
+        var lightboxImageBtnPrev = "#skAssetUrl('/external/images/lightbox-btn-prev.gif')";
+        var lightboxImageBtnNext = "#skAssetUrl('/external/images/lightbox-btn-next.gif')";
+        var lightboxImageBtnClose = "#skAssetUrl('/external/images/lightbox-btn-close.gif')";
+        var lightboxImageBlank = "#skAssetUrl('/external/images/lightbox-blank.gif')";
+        if (document.readyState != 'loading'){
+            initEntry('See more', 'See less');
+        } else if (document.addEventListener) {
+          document.addEventListener('DOMContentLoaded', function(){initEntry('See more', 'See less');});
+        } else {
+          document.attachEvent('onreadystatechange', function() {
+            if (document.readyState != 'loading')
+                initEntry('See more', 'See less');
+          });
+        }
+    </script>
+
+    <h1 class="h">Oxford Academic iWriter</h1>
+
+    <p>The online edition of the <i>Oxford Learner&rsquo;s Dictionary of Academic English</i> also gives you access to the <i>Oxford Academic iWriter</i>.</p>
+
+    <div class="info-enlarge">
+        <div class="info-enlarge-desc">
+            <p>The Academic iWriter is an interactive tool that helps you to plan, write and review your academic written work.</p>
+        </div><!-- end of info-enlarge-desc -->
+
+        <div id="ox-enlarge">
+            <a href="#skAssetUrl('/external/images/getpremium/academic/home.png')" title="The Academic iWriter is an interactive tool that helps you to plan, write and review your academic written work." class="topic">
+                <img border="1" src="#skAssetUrl('/external/images/getpremium/academic/home_thumb.png')" title="" alt="" class="thumb">
+                <span class="ox-enlarge-label">enlarge image</span>
+            </a>
+        </div><!-- end of ox-enlarge -->
+    </div><!-- end of info-enlarge -->
+
+    <div class="info-enlarge">
+        <div class="info-enlarge-desc">
+            <p>You can choose a type of assignment from the list of models which includes essays, case studies and dissertations.</p>
+        </div><!-- end of info-enlarge-desc -->
+
+        <div id="ox-enlarge">
+            <a href="#skAssetUrl('/external/images/getpremium/academic/menu.png')" title="You can choose a type of assignment from the list of models which includes essays, case studies and dissertations." class="topic">
+                <img border="1" src="#skAssetUrl('/external/images/getpremium/academic/menu_thumb.png')" title="" alt="" class="thumb">
+                <span class="ox-enlarge-label">enlarge image</span>
+            </a>
+        </div><!-- end of ox-enlarge -->
+    </div><!-- end of info-enlarge -->
+
+    <div class="info-enlarge">
+        <div class="info-enlarge-desc">
+            <p>Study the model, looking at the structure (in red) and the content (in blue).</p>
+        </div><!-- end of info-enlarge-desc -->
+
+        <div id="ox-enlarge">
+            <a href="#skAssetUrl('/external/images/getpremium/academic/models.png')" title="Study the model, looking at the structure (in red) and the content (in blue)." class="topic">
+                <img border="1" src="#skAssetUrl('/external/images/getpremium/academic/models_thumb.png')" title="" alt="" class="thumb">
+                <span class="ox-enlarge-label">enlarge image</span>
+            </a>
+        </div><!-- end of ox-enlarge -->
+    </div><!-- end of info-enlarge -->
+
+    <div class="info-enlarge">
+        <div class="info-enlarge-desc">
+            <p>Switch to 'My Writing' to create your own academic writing using the structure to guide you, with some extra tips.</p>
+        </div><!-- end of info-enlarge-desc -->
+
+        <div id="ox-enlarge">
+            <a href="#skAssetUrl('/external/images/getpremium/academic/mywriting.png')" title="Switch to 'My Writing' to create your own academic writing using the structure to guide you, with some extra tips." class="topic">
+                <img border="1" src="#skAssetUrl('/external/images/getpremium/academic/mywriting_thumb.png')" title="" alt="" class="thumb">
+                <span class="ox-enlarge-label">enlarge image</span>
+            </a>
+        </div><!-- end of ox-enlarge -->
+    </div><!-- end of info-enlarge -->
+
+    <div class="info-enlarge">
+        <div class="info-enlarge-desc">
+            <p>You can get help with planning, choosing the right language, and things to remember when writing.</p>
+        </div><!-- end of info-enlarge-desc -->
+
+        <div id="ox-enlarge">
+            <a href="#skAssetUrl('/external/images/getpremium/academic/help.png')" title="You can get help with planning, choosing the right language, and things to remember when writing." class="topic">
+                <img border="1" src="#skAssetUrl('/external/images/getpremium/academic/help_thumb.png')" title="" alt="" class="thumb">
+                <span class="ox-enlarge-label">enlarge image</span>
+            </a>
+        </div><!-- end of ox-enlarge -->
+    </div><!-- end of info-enlarge -->
+
+    <div class="info-enlarge">
+        <div class="info-enlarge-desc">
+            <p>Use the checklist to make sure you have covered everything, before exporting your work.</p>
+        </div><!-- end of info-enlarge-desc -->
+
+        <div id="ox-enlarge">
+            <a href="#skAssetUrl('/external/images/getpremium/academic/checklist.png')" title="Use the checklist to make sure you have covered everything, before exporting your work." class="topic">
+                <img border="1" src="#skAssetUrl('/external/images/getpremium/academic/checklist_thumb.png')" title="" alt="" class="thumb">
+                <span class="ox-enlarge-label">enlarge image</span>
+            </a>
+        </div><!-- end of ox-enlarge -->
+    </div><!-- end of info-enlarge -->
+
+    <p>Already have a code for the online edition of OLDAE?</p>
+    <p><a href="#skLicensedUrl('/account/login')" class="link-right">Redeem code</a></p>
+
+    <div class="btn btn-premium">
+        <a href="https://elt.oup.com/catalogue/items/global/dictionaries/9780194724883" target="_blank" title="link opens in a new window">BUY OLDAE</a>
+    </div> <!-- Link to catalogue page -->
+  
+</div> <!-- end responsive_row -->

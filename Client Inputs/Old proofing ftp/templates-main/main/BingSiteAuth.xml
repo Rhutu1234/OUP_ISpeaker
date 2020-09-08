@@ -1,0 +1,6 @@
+#set( $layout = "/layouts/null.xml" )
+#skSetContentType("text/plain")
+<?xml version="1.0"?>
+<users>
+	<user>B2BC8C6E627C39CBD9D2D0FFA1F3CBA7</user>
+</users>

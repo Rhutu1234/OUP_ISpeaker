@@ -1,0 +1,229 @@
+#parse( "/common/macro.vm")
+#SEO("searchboxcode_english", [])
+#set( $stylesheets = ["oxford.css"] )
+#set( $search_word = "")
+
+#set($dfpAdList =['topslot', 'btmslot_a', 'btmslot_b', 'leftslot_a'])
+#set($dfpCriteria['old_pc'] = 'default')
+#set($dfpCriteria['old_pt'] = 'other')
+
+<script type="text/javascript">
+    var licenseAgreed = (document.cookie.indexOf("widget-license-agreed") != -1);
+    if (!licenseAgreed && document.referrer && document.referrer.indexOf("/search_widget_info") != -1) {
+        var expiryDate = new Date();
+        var days = 1;
+        expiryDate.setTime(expiryDate.getTime() + (days * 24 * 60 * 60 * 1000));
+        document.cookie = 'widget-license-agreed=1; expires=' + expiryDate.toGMTString() + '; path=/';
+        licenseAgreed = true;
+    }
+    if (!licenseAgreed)
+        document.location.href = "#skLicensedUrl('/search_widget_info.html')";
+</script>
+<div id="informational-content">
+	<div class="h-g">
+		<div class="top-g">
+			<div class="core_block">
+                <span class="pagetitle"><h1 class="h">$translationService.getMessage($lang, 'widget.code.title')</h1></span>
+           </div>
+  		</div>
+        <!-- End of DIV top-g-->
+  	</div>
+    <!-- End of DIV h-g-->
+	<div id="firsttext">
+ 		<h3>$translationService.getMessage($lang, 'widget.howto')</h3>
+        <ol>
+            <li>$translationService.getMessage($lang, 'widget.howto.1')</li>
+            <li>$translationService.getMessage($lang, 'widget.howto.2')</li>
+            <li>$translationService.getMessage($lang, 'widget.howto.3')</li>
+        </ol>
+
+        <script type="text/javascript">
+        	document.write("<h3>$translationService.getMessage($lang, 'widget.quicktip')</h3><p>$translationService.getMessage($lang, 'widget.quicktip.description')</p>");
+    	</script>
+		<p>$translationService.getMessage($lang, 'widget.conditions', ["href='#skLicensedUrl('/search_widget_info.html')'"]).</p>
+	</div>
+
+	<div id="generaltext">
+		<table border="1" cellpadding="3" bordercolor="#000000"  style="background-color:#FFFFFF; border:1px">
+			<tr>
+				<td>
+					<h5>160x80 pixels:</h5>
+                    <style>
+                        #dictionarySelector160:hover{background:url(#skAssetUrl('/external/images/widget_old/lang-hover.png')) no-repeat;}
+                        #search-btn160:hover{background:url(#skAssetUrl('/external/images/widget_old/search-hover.png'))!important;}
+                        #search-btn160:active{background:url(#skAssetUrl('/external/images/widget_old/search-active.png'))!important;}
+                    </style>
+					<div style="width:160px; height: 80px; border-color: #000; border-width:1; background:url('#skAssetUrl('/external/images/widget_old/widget160.png')') no-repeat">
+                        <form action="#skLicensedUrl('/search/english/direct/')" method="get" name="oldform" id="oldform" style="display:inline-block;margin:46px 0 0 10px;">
+                            <div id="dictionarySelector160" style="width:23px;height:24px;float:left;padding:0; overflow-x:hidden;margin-top:1px;">
+                                <select id="dictionary-selector" style="text-indent:-9999px; border:0;background:transparent;-webkit-appearance:none;-moz-appearance:none;padding-left:35px\0/" onchange="this.form.action = this.value">
+                                    <option value="#skLicensedUrl('/search/english/direct/')" style="text-indent:0px">English</option>
+                                    <option value="#skLicensedUrl('/search/american_english/direct/')" style="text-indent:0px">American English</option>
+                                </select> 
+                            </div>
+                            <div style="width:90px;height:25px;float:left; margin-left:0;">
+                                <input type="text" name="q" id="searchfield" size="21" maxlength="100" style="width:85px; height:18px;border:0;padding-left:5px;margin-top:3px;border-radius:20px;">
+                            </div>
+                            <div style="width:25px;height:25px;float:left;margin-left:1px" >
+                                <input type="submit" id="search-btn160" style="background:none; border:none;width:25px;height:24px; margin-top:1px; margin-left:1px;" value>
+                            </div>
+                        </form>
+                    </div>
+                    <div id="code1" onclick="selectCode('code1')" onDblClick="deSelect()">
+                        &lt;!-- By using this code you agree to our terms and conditions at  #skLicensedUrl('/about/search_widget_info_english.html')  --&gt;
+                        &lt;style&gt;
+                            #dictionarySelector160:hover{background:url(#skAssetUrl('/external/images/widget_old/lang-hover.png')) no-repeat;}
+                            #search-btn160:hover{background:url(#skAssetUrl('/external/images/widget_old/search-hover.png'))!important;}
+                            #search-btn160:active{background:url(#skAssetUrl('/external/images/widget_old/search-active.png'))!important;}
+                        &lt;/style&gt;
+                        &lt;div style=&quot;width:160px; height: 80px; border-color: #000; border-width:1; background:url('#skAssetUrl('/external/images/widget_old/widget160.png')') no-repeat&quot;&gt;
+                            &lt;form action=&quot;#skLicensedUrl('/search/english/direct/')&quot; method=&quot;get&quot; name=&quot;oldform&quot; id=&quot;oldform&quot; style=&quot;display:inline-block;margin:46px 0 0 10px;&quot;&gt;
+                                &lt;div id=&quot;dictionarySelector160&quot; style=&quot;width:23px;height:24px;float:left;padding:0; overflow-x:hidden;margin-top:1px;&quot;&gt;
+                                    &lt;select id=&quot;dictionary-selector&quot; style=&quot;text-indent:-9999px; border:0;background:transparent;-webkit-appearance:none;-moz-appearance:none;padding-left:35px\0/&quot; onchange=&quot;this.form.action = this.value&quot;&gt;
+                                        &lt;option value=&quot;#skLicensedUrl('/search/english/direct/')&quot; style=&quot;text-indent:0px&quot;&gt;English&lt;/option&gt;
+                                        &lt;option value=&quot;#skLicensedUrl('/search/american_english/direct/')&quot; style=&quot;text-indent:0px&quot;&gt;American English&lt;/option&gt;
+                                    &lt;/select&gt; 
+                                &lt;/div&gt;
+                                &lt;div style=&quot;width:90px;height:25px;float:left; margin-left:0;&quot;&gt;
+                                    &lt;input type=&quot;text&quot; name=&quot;q&quot; id=&quot;searchfield&quot; size=&quot;21&quot; maxlength=&quot;100&quot; style=&quot;width:85px; height:18px;border:0;padding-left:5px;margin-top:3px;border-radius:20px;&quot;&gt;
+                                &lt;/div&gt;
+                                &lt;div style=&quot;width:25px;height:25px;float:left;margin-left:1px&quot; &gt;
+                                    &lt;input type=&quot;submit&quot; id=&quot;search-btn160&quot; style=&quot;background:none; border:none;width:25px;height:24px; margin-top:1px; margin-left:1px;&quot; value&gt;
+                                &lt;/div&gt;
+                            &lt;/form&gt;
+                        &lt;/div&gt;
+                    </div>
+				</td>
+  			</tr>
+  			<tr>
+				<td>
+					<h5>240x80 pixels</h5>
+                    <style>
+                        #dictionarySelector240:hover{background:url(#skAssetUrl('/external/images/widget_old/lang-hover.png')) no-repeat;}
+                        #search-btn240:hover{background:url(#skAssetUrl('/external/images/widget_old/search-hover.png'))!important;}
+                        #search-btn240:active{background:url(#skAssetUrl('/external/images/widget_old/search-active.png'))!important;}
+                    </style>
+					<div style="width:240px; height: 80px; border-color: #000; border-width:1; background:url('#skAssetUrl('/external/images/widget_old/widget240.png')') no-repeat">
+                        <form action="#skLicensedUrl('/search/english/direct/')" method="get" name="oldform" id="oldform" style="display:inline-block;margin:40px 0 0 10px;">
+                            <div id="dictionarySelector240" style="width:23px;height:24px;float:left;padding:0; overflow-x:hidden;margin-top:2px;">
+                                <select id="dictionary-selector" style="text-indent:-9999px; border:0;background:transparent;-webkit-appearance:none;-moz-appearance:none;padding-left:35px\0/" onchange="this.form.action = this.value">
+                                    <option value="#skLicensedUrl('/search/english/direct/')" style="text-indent:0px">English</option>
+                                    <option value="#skLicensedUrl('/search/american_english/direct/')" style="text-indent:0px">American English</option>
+                                </select> 
+                            </div>
+                            <div style="width:173px;height:25px;float:left; margin-left:0;">
+                                <input type="text" name="q" id="searchfield" size="21" maxlength="100" style="width:167px; height:18px;border:0;padding-left:5px;margin-top:3px;border-radius:20px;">
+                            </div>
+                            <div style="width:25px;height:25px;float:left;margin-left:1px" >
+                                <input type="submit" id="search-btn240" style="background:none; border:none;width:25px;height:24px;margin:2px 0 0 -2px;" value>
+                            </div>
+                        </form>
+                    </div>
+                    <div id="code2" onclick="selectCode('code2')" onDblClick="deSelect()">
+                        &lt;!-- By using this code you agree to our terms and conditions at  #skLicensedUrl('/about/search_widget_info_english.html')  --&gt;
+                        &lt;style&gt;
+                            #dictionarySelector240:hover{background:url(#skAssetUrl('/external/images/widget_old/lang-hover.png')) no-repeat;}
+                            #search-btn240:hover{background:url(#skAssetUrl('/external/images/widget_old/search-hover.png'))!important;}
+                            #search-btn240:active{background:url(#skAssetUrl('/external/images/widget_old/search-active.png'))!important;}
+                        &lt;/style&gt;
+                        &lt;div style=&quot;width:240px; height: 80px; border-color: #000; border-width:1; background:url('#skAssetUrl('/external/images/widget_old/widget240.png')') no-repeat&quot;&gt;
+                            &lt;form action=&quot;#skLicensedUrl('/search/english/direct/')&quot; method=&quot;get&quot; name=&quot;oldform&quot; id=&quot;oldform&quot; style=&quot;display:inline-block;margin:40px 0 0 10px;&quot;&gt;
+                                &lt;div id=&quot;dictionarySelector240&quot; style=&quot;width:23px;height:24px;float:left;padding:0; overflow-x:hidden;margin-top:2px;&quot;&gt;
+                                    &lt;select id=&quot;dictionary-selector&quot; style=&quot;text-indent:-9999px; border:0;background:transparent;-webkit-appearance:none;-moz-appearance:none;padding-left:35px\0/&quot; onchange=&quot;this.form.action = this.value&quot;&gt;
+                                        &lt;option value=&quot;#skLicensedUrl('/search/english/direct/')&quot; style=&quot;text-indent:0px&quot;&gt;English&lt;/option&gt;
+                                        &lt;option value=&quot;#skLicensedUrl('/search/american_english/direct/')&quot; style=&quot;text-indent:0px&quot;&gt;American English&lt;/option&gt;
+                                    &lt;/select&gt; 
+                                &lt;/div&gt;
+                                &lt;div style=&quot;width:173px;height:25px;float:left; margin-left:0;&quot;&gt;
+                                    &lt;input type=&quot;text&quot; name=&quot;q&quot; id=&quot;searchfield&quot; size=&quot;21&quot; maxlength=&quot;100&quot; style=&quot;width:167px; height:18px;border:0;padding-left:5px;margin-top:3px;border-radius:20px;&quot;&gt;
+                                &lt;/div&gt;
+                                &lt;div style=&quot;width:25px;height:25px;float:left;margin-left:1px&quot; &gt;
+                                    &lt;input type=&quot;submit&quot; id=&quot;search-btn240&quot; style=&quot;background:none; border:none;width:25px;height:24px;margin:2px 0 0 -2px;&quot; value&gt;
+                                &lt;/div&gt;
+                            &lt;/form&gt;
+                        &lt;/div&gt;
+                    </div>
+				</td>
+  			</tr>
+  			<tr>
+	  			<td>
+					<h5>320x80 pixels</h5>
+                    <style>
+                        #dictionarySelector320:hover{background:url(#skAssetUrl('/external/images/widget_old/lang-hover.png')) no-repeat;}
+                        #search-btn320:hover{background:url(#skAssetUrl('/external/images/widget_old/search-hover.png'))!important;}
+                        #search-btn320:active{background:url(#skAssetUrl('/external/images/widget_old/search-active.png'))!important;}
+                    </style>
+					<div style="width:320px; height: 80px; border-color: #000; border-width:1; background:url('#skAssetUrl('/external/images/widget_old/widget320.png')') no-repeat">
+                        <form action="#skLicensedUrl('/search/english/direct/')" method="get" name="oldform" id="oldform" style="display:inline-block;margin:40px 0 0 10px;">
+                            <div id="dictionarySelector320" style="width:23px;height:24px;float:left;padding:0; overflow-x:hidden;margin-top:2px;">
+                                <select id="dictionary-selector" style="text-indent:-9999px; border:0;background:transparent;-webkit-appearance:none;-moz-appearance:none;padding-left:35px\0/" onchange="this.form.action = this.value">
+                                    <option value="#skLicensedUrl('/search/english/direct/')" style="text-indent:0px">English</option>
+                                    <option value="#skLicensedUrl('/search/american_english/direct/')" style="text-indent:0px">American English</option>
+                                </select> 
+                            </div>
+                            <div style="width:253px;height:25px;float:left; margin-left:0;">
+                                <input type="text" name="q" id="searchfield" size="21" maxlength="100" style="width:246px; height:18px;border:0;padding-left:5px;margin-top:3px;border-radius:20px;">
+                            </div>
+                            <div style="width:25px;height:25px;float:left;margin-left:1px" >
+                                <input type="submit" id="search-btn320" style="background:none; border:none;width:25px;height:24px; margin-top:2px;margin-left:-2px;" value >
+                            </div>
+                        </form>
+                    </div>
+                    <div id="code3" onclick="selectCode('code3')" onDblClick="deSelect()">&lt;!-- By using this code you agree to our terms and conditions at  #skLicensedUrl('/about/search_widget_info_english.html')  --&gt;
+                        &lt;style&gt;
+                            #dictionarySelector320:hover{background:url(#skAssetUrl('/external/images/widget_old/lang-hover.png')) no-repeat;}
+                            #search-btn320:hover{background:url(#skAssetUrl('/external/images/widget_old/search-hover.png'))!important;}
+                            #search-btn320:active{background:url(#skAssetUrl('/external/images/widget_old/search-active.png'))!important;}
+                        &lt;/style&gt;
+                        &lt;div style=&quot;width:320px; height: 80px; border-color: #000; border-width:1; background:url('#skAssetUrl('/external/images/widget_old/widget320.png')') no-repeat&quot;&gt;
+                            &lt;form action=&quot;#skLicensedUrl('/search/english/direct/')&quot; method=&quot;get&quot; name=&quot;oldform&quot; id=&quot;oldform&quot; style=&quot;display:inline-block;margin:40px 0 0 10px;&quot;&gt;
+                                &lt;div id=&quot;dictionarySelector320&quot; style=&quot;width:23px;height:24px;float:left;padding:0; overflow-x:hidden;margin-top:2px;&quot;&gt;
+                                    &lt;select id=&quot;dictionary-selector&quot; style=&quot;text-indent:-9999px; border:0;background:transparent;-webkit-appearance:none;-moz-appearance:none;padding-left:35px\0/&quot; onchange=&quot;this.form.action = this.value&quot;&gt;
+                                        &lt;option value=&quot;#skLicensedUrl('/search/english/direct/')&quot; style=&quot;text-indent:0px&quot;&gt;English&lt;/option&gt;
+                                        &lt;option value=&quot;#skLicensedUrl('/search/american_english/direct/')&quot; style=&quot;text-indent:0px&quot;&gt;American English&lt;/option&gt;
+                                    &lt;/select&gt; 
+                                &lt;/div&gt;
+                                &lt;div style=&quot;width:253px;height:25px;float:left; margin-left:0;&quot;&gt;
+                                    &lt;input type=&quot;text&quot; name=&quot;q&quot; id=&quot;searchfield&quot; size=&quot;21&quot; maxlength=&quot;100&quot; style=&quot;width:246px; height:18px;border:0;padding-left:5px;margin-top:3px;border-radius:20px;&quot;&gt;
+                                &lt;/div&gt;
+                                &lt;div style=&quot;width:25px;height:25px;float:left;margin-left:1px&quot; &gt;
+                                    &lt;input type=&quot;submit&quot; id=&quot;search-btn320&quot; style=&quot;background:none; border:none;width:25px;height:24px; margin-top:2px;margin-left:-2px;&quot; value &gt;
+                                &lt;/div&gt;
+                            &lt;/form&gt;
+                        &lt;/div&gt;
+                    </div>
+				</td>
+  			</tr>
+		</table>
+	</div>
+</div>
+<script type="text/javascript">
+function deSelect() 
+{
+   if (document.selection)
+   {
+       document.selection.empty();
+	}
+   else if (window.getSelection)
+   {
+        window.getSelection().removeAllRanges();
+	}
+} 
+
+function selectCode(codeClicked) {
+   deSelect();
+   if (document.selection) 
+   {
+	var range = document.body.createTextRange();
+	range.moveToElementText(document.getElementById(codeClicked));
+	range.select();
+   }
+   else if (window.getSelection) 
+   {
+      var range = document.createRange();
+      range.selectNode(document.getElementById(codeClicked));
+      window.getSelection().addRange(range);
+   }
+}
+</script>
+

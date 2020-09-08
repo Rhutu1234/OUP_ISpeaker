@@ -1,0 +1,107 @@
+#parse( "/common/macro.vm")
+#SEO("about", [])
+#set( $current_page = "resources") ## to set the class for the top_banner 
+#set( $search_word = "")
+
+#set($dfpAdList =['topslot', 'btmslot_a', 'btmslot_b', 'leftslot_a'])
+#set($dfpCriteria['old_pc'] = 'default')
+#set($dfpCriteria['old_pt'] = 'other')
+
+<div id="informational-content">
+	<div class="h-g">
+		<div class="top-g">
+			<div class="core_block"><span class="pagetitle"><h1 class="h">$translationService.getMessage($lang, 'about.page.title')</h1></span></div>
+		</div><!-- End of DIV top-g-->
+	</div><!-- End of DIV h-g-->
+	<div id="firsttext"></div>
+	<div id="generaltext">
+		<!-- <div class="section">
+			<h5>$translationService.getMessage($lang, 'about.howto.title')</h5>
+			<p>$translationService.getMessage($lang, 'about.howto.description')<br/>
+            #set( $tooltip = "$translationService.getMessage($lang, 'about.howto.tooltip')")
+            <a class="link-right" href="#skLicensedUrl('/about/help.html')" title="$tooltip" alt="$tooltip">$translationService.getMessage($lang, 'about.howto.label')</a></p>
+		</div> -->
+		<div class="section">
+			<h2>$translationService.getMessage($lang, 'about.pron.title')</h2>
+			<p>$translationService.getMessage($lang, 'about.pron.description')<br/>
+            #set( $tooltip1 = "$translationService.getMessage($lang, 'about.pron.english.tooltip')" )
+            #set( $tooltip2 = "$translationService.getMessage($lang, 'about.pron.american.tooltip')" )</p>
+			<ul>
+                <li><a class="link-right" href="#skLicensedUrl('/about/english/pronunciation_english')" title="$tooltip1" alt="$tooltip1">$translationService.getMessage($lang, 'about.pron.english.label')</a></li>
+    			<li><a class="link-right" href="#skLicensedUrl('/about/american_english/pronunciation_american_english')" title="$tooltip2" alt="$tooltip2">$translationService.getMessage($lang, 'about.pron.american.label')</a></li>
+            </ul>
+		</div>
+		<div class="section">
+			<h2>$translationService.getMessage($lang, 'about.guide.title')</h2>
+			<p>$translationService.getMessage($lang, 'about.guide.description'):<br/>
+            #set( $tooltip = "$translationService.getMessage($lang, 'about.guide.tooltip')" )</p>
+            <p><a class="link-right" href="#skLicensedUrl('/about/english/labels')" title="$tooltip" alt="$tooltip">$translationService.getMessage($lang, 'about.guide.label')</a></p>
+		</div>
+        <div class="section">
+            <h2>$translationService.getMessage($lang, 'about.wordlists.title')</h2>
+            <p>$translationService.getMessage($lang, 'about.wordlists.description'):<br/>
+            #set( $tooltip1 = "$translationService.getMessage($lang, 'about.wordlists.oxford3000.tooltip')" )
+            #set( $tooltip2 = "$translationService.getMessage($lang, 'about.wordlists.academic.tooltip')" )
+            #set( $tooltip3 = "$translationService.getMessage($lang, 'about.wordlists.pictures.tooltip')" )  #set( $tooltip4 = "$translationService.getMessage($lang, 'about.wordlists.usagenotes.tooltip')" )
+            #set( $tooltip5 = "$translationService.getMessage($lang, 'about.wordlists.new_words.tooltip')" )
+            #set( $tooltip6 = "$translationService.getMessage($lang, 'about.wordlists.academic_subjects.tooltip')" )
+            #set( $tooltip7 = "$translationService.getMessage($lang, 'about.wordlists.oxford3000-5000.tooltip')" )
+            #set( $tooltip8 = "$translationService.getMessage($lang, 'about.wordlists.opal.tooltip')" )
+            #set( $tooltip9 = "$translationService.getMessage($lang, 'about.wordlists.oxford-phrase-list.tooltip')" )</p>
+            <ul>
+              <li><a class="link-right" href="#skLicensedUrl('/about/oxford3000')" title="$tooltip1" alt="$tooltip1">$translationService.getMessage($lang, 'about.wordlists.oxford3000.label')</a></li>
+                <li><a class="link-right" href="#skLicensedUrl('/about/academic')" title="$tooltip2" alt="$tooltip2">$translationService.getMessage($lang, 'about.wordlists.academic.label')</a></li>
+                <li><a class="link-right" href="#skLicensedUrl('/wordlist/academic/subjects/')" title="$tooltip6" alt="$tooltip6">$translationService.getMessage($lang, 'about.wordlists.academic_subjects.label')</a></li>
+                <li><a class="link-right" href="#skLicensedUrl('/about/pictures')" title="$tooltip3" alt="$tooltip3">$translationService.getMessage($lang, 'about.wordlists.pictures.label')</a></li>
+                <li><a class="link-right" href="#skLicensedUrl('/about/usage_notes')" title="$tooltip4" alt="$tooltip4">$translationService.getMessage($lang, 'about.wordlists.usagenotes.label')</a></li>
+                <li><a class="link-right" href="#skLicensedUrl('/wordlist/new_words')" title="$tooltip5" alt="$tooltip5">$translationService.getMessage($lang, 'about.wordlists.new_words.label')</a></li>
+                <li><a class="link-right" href="#skLicensedUrl('/wordlists/oxford3000-5000')" title="$tooltip7" alt="$tooltip7">$translationService.getMessage($lang, 'about.wordlists.oxford3000-5000.label')</a></li>
+                <li><a class="link-right" href="#skLicensedUrl('/wordlists/opal')" title="$tooltip8" alt="$tooltip8">$translationService.getMessage($lang, 'about.wordlists.opal.label')</a></li>
+                <li><a class="link-right" href="#skLicensedUrl('/wordlists/oxford-phrase-list')" title="$tooltip9" alt="$tooltip9">$translationService.getMessage($lang, 'about.wordlists.oxford-phrase-list.label')</a></li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>$translationService.getMessage($lang, 'about.textchecker.title')</h2>
+            <p>$translationService.getMessage($lang, 'about.textchecker.description')<br/>
+            #set( $tooltip = "$translationService.getMessage($lang, 'about.textchecker.tooltip')" )</p>
+            <p><a class="link-right" href="#skLicensedUrl('/text-checker/')" title="$tooltip" alt="$tooltip">$translationService.getMessage($lang, 'about.textchecker.label')</a></p>
+        </div>
+		<div class="section">
+			<h2>$translationService.getMessage($lang, 'about.search.title')</h2>
+			<p>$translationService.getMessage($lang, 'about.search.description')<br/>
+            #set( $tooltip = "$translationService.getMessage($lang, 'about.search.tooltip')" )</p>
+            <p><a class="link-right" href="#skLicensedUrl('/search_widget_info')" title="$tooltip" alt="$tooltip">$translationService.getMessage($lang, 'about.search.label')</a></p>
+		</div>
+	</div>
+    
+    <!-- <div class="h-g">
+        <div class="top-g">
+            <div class="core_block"><span class="pagetitle"><h1 class="h">$translationService.getMessage($lang, 'about.page.secondTitle')</h1></span></div>
+        </div>
+    </div>
+    <div id="generaltext">
+        <div class="section">
+            <h5>$translationService.getMessage($lang, 'about.blog.title')</h5>
+            <p>$translationService.getMessage($lang, 'about.blog.description').<br/>
+            #set( $tooltip = "$translationService.getMessage($lang, 'about.blog.more.tooltip')" )
+            <a class="link-right" href="https://oupeltglobalblog.com/" onclick="return ! window.open(this.href);" target="_blank" title="$tooltip" alt="$tooltip">[$translationService.getMessage($lang, 'about.blog.more.label')]</a></p>
+        </div>
+        <div class="section">
+            <h5>$translationService.getMessage($lang, 'about.lib.title')</h5>
+            <p>$translationService.getMessage($lang, 'about.lib.description').<br/>
+            #set( $tooltip1 = "$translationService.getMessage($lang, 'about.lib.english.tooltip')" )
+            #set( $tooltip2 = "$translationService.getMessage($lang, 'about.lib.american.tooltip')" )
+            <a class="link-right" href="https://elt.oup.com/catalogue/items/global/dictionaries/oxford_advanced_learners_dictionary_8th_edition/" onclick="return ! window.open(this.href);" target="_blank" title="$tooltip1">$translationService.getMessage($lang, 'about.lib.english.label')</a>
+            <a class="link-right" href="https://elt.oup.com/catalogue/items/global/dictionaries/oxford_american_dictionaries/9780194399661?cc=fr&selLanguage=en&mode=hub" onclick="return ! window.open(this.href);" target="_blank" title="$tooltip2">$translationService.getMessage($lang, 'about.lib.american.label')</a>
+            </p>
+        </div>
+    </div> -->
+    
+    
+    <div class="section partner">
+        <p>$translationService.getMessage($lang, 'partner.description') <a href="http://www.idm.fr" onclick="return ! window.open(this.href);" target="_blank" title="IDM - $translationService.getMessage($lang, 'partner.tooltip')"><img style="vertical-align: top;" src="#skAssetUrl('/external/images/idm_logo.png')" alt="IDM - $translationService.getMessage($lang, 'partner.tooltip')" class="idm-logo"></a></p>
+    </div>
+    
+    <br />
+    
+</div>

@@ -1,0 +1,29 @@
+#set( $layout = "/layouts/null.xml" )
+#skSetContentType("text/xml")
+#set( $rootUrl = "$skTool.rootUrl")
+#set($prefixForLang = {
+     "uk": "",
+     "us": "/us"
+     }
+)
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+#foreach($ll in ["uk", "us"])
+   #set($l = $prefixForLang[$ll])
+   <sitemap>
+      <loc>${rootUrl}${l}/sitemap/sitemapfree.xml</loc>
+   </sitemap>
+   #foreach($dictCode in $dictionaries)
+   #skParse( "/sitemap/$dictCode/_site_index.xml?prefix=$ll")
+   #if($dictCode=="american_english")
+   <sitemap>
+        <loc>${rootUrl}${l}/sitemap/$dictCode/sitemap_wordlist.xml</loc>
+   </sitemap>
+   #end
+   #end
+   <sitemap>
+        <loc>${rootUrl}${l}/sitemap/sitemap_topic.xml</loc>
+   </sitemap>
+#end
+</sitemapindex>

@@ -1,0 +1,30 @@
+#parse( "/common/macro.vm")
+#SEO("howto_english", [])
+#set( $current_page = "resources") ## to set the class for the top_banner
+#set( $search_word = "")
+#set( $layout = "layouts/one_column.html" )
+#set($dfpAdList =['topslot', 'btmslot_a', 'btmslot_b', 'leftslot_a'])
+#set($dfpCriteria['old_pc'] = 'default')
+#set($dfpCriteria['old_pt'] = 'other')
+
+<div id="informational-content">
+	<div class="h-g">
+		<div class="top-g">
+			<div class="core_block">
+                <span class="pagetitle">
+                    <h1 class="h">$translationService.getMessage($lang, 'about.howto.english.title', ["class='pagetitle_dict_name'"])</h1>
+                </span>
+            </div>
+		</div><!-- End of DIV top-g-->
+	</div><!-- End of DIV h-g-->
+	<div id="firsttext"></div>
+	<div id="generaltext">
+        #parse("/common/translate/_help.html")
+        <p>
+            $translationService.getMessage($lang, 'partner.description') 
+            <a href="http://www.idm.fr/" title="IDM $translationService.getMessage($lang, 'partner.tooltip')">
+                <img style="border: 0; vertical-align: top;" src="#skAssetUrl('/external/images/idm_logo.png')" alt="IDM $translationService.getMessage($lang, 'partner.tooltip')" title="IDM $translationService.getMessage($lang, 'partner.tooltip')" />
+            </a>.
+        </p>
+	</div>
+</div>

@@ -1,0 +1,15 @@
+#parse( "/common/macro.vm")
+#set( $layout = "layouts/one_column.html" )
+#SEO("error", [])
+#set( $search_word = "")
+#set( $page_robots = $translationService.getMessage($lang, "error.robots"))
+#set($dfpAdList =['topslot', 'btmslot_a', 'btmslot_b', 'leftslot_a'])
+#set($dfpCriteria['old_pc'] = 'error')
+#set($added=$dfpCategoryExclusion.add("error"))
+#set( $dfpCollapseSlotByDefault = 'true')
+
+
+<div id="informational-content">
+	<h2>$translationService.getMessage($lang, 'error.label').</h2>
+	<p>$translationService.getMessage($lang, 'error.description').</p>
+</div>

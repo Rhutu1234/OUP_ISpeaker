@@ -1,0 +1,22 @@
+#parse( "/common/macro.vm")
+#SEO("legalnotice", [])
+#set( $search_word = "")
+
+#set($dfpAdList =['topslot', 'btmslot_a', 'btmslot_b', 'leftslot_a'])
+#set($dfpCriteria['old_pc'] = 'default')
+#set($dfpCriteria['old_pt'] = 'other')
+
+<div id="informational-content">
+    <div class="h-g">
+        <div class="top-g">
+            <div class="core_block">
+                <span class="pagetitle">
+                    <h1 class="h">$translationService.getMessage($lang, 'legalnotice.page.title')</h1>
+                </span>
+            </div>
+        </div>
+        <!-- End of DIV top-g-->
+    </div>
+    <!-- End of DIV h-g-->
+    #parse("/common/translate/_legal-notice.html")
+</div>

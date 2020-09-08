@@ -1,0 +1,14 @@
+#parse( "/common/macro.vm")
+#SEO("pagenotfound", [])
+#set( $search_word = "")
+#set( $page_robots = $translationService.getMessage($lang, "pagenotfound.robots"))
+#set( $layout = "layouts/one_column.html" )
+#set($dfpAdList =['topslot', 'btmslot_a', 'btmslot_b', 'leftslot_a'])
+#set($dfpCriteria['old_pc'] = 'error')
+#set($added=$dfpCategoryExclusion.add("error"))
+#set( $dfpCollapseSlotByDefault = 'true')
+
+<div id="informational-content">
+	<p>$translationService.getMessage($lang, 'notfound.invalid_page')</p>
+	<p>$translationService.getMessage($lang, 'notfound.more_info') <a href="#skLicensedUrl('/')" title="$translationService.getMessage($lang, 'notfound.home_title')">www.oxfordlearnersdictionaries.com</a>.</p>
+</div>

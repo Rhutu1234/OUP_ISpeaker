@@ -1,0 +1,42 @@
+<div id="wordlistsHeaderPanel">
+
+    <div>
+
+        <h1 class="h">$translationService.getMessage($lang, "wordlists.${wordlist}.heading")</h1>
+
+        <div class="wordlistsHiddenContent">
+
+            <p>$translationService.getMessage($lang, "wordlists.${wordlist}.shortdesc")</p>
+
+            <a href='#skLicensedUrl("/about/wordlists/$wordlist")' class="link-right" >$translationService.getMessage($lang, "wordlists.showmore")</a>
+
+        </div>
+
+    </div>
+
+    <div class="wordlistControls">
+
+        <div class="wordlistsFind">
+            <div class="field-input-search">
+                <input type="text" id="wordlistsSearch" class="wordlistsField" placeholder="$translationService.getMessage($lang, 'wordlists.find')">
+                <span class="cross icon-cross"></span>
+            </div>
+            <label id="search-btn" class="oup_icons">
+                <input type="button" value="Go" />
+            </label>
+        </div>
+        <div class="wordlistsButtons">
+
+            <!--<span type="submit" id="wordlistsFilters" class="wordlistsField" ><i class="icon-filter" ></i> $translationService.getMessage($lang, 'wordlists.filters')</span>
+
+            <span type="submit" id="wordlistsDownload" class="wordlistsField" ><i class="icon-download" ></i> $translationService.getMessage($lang, 'wordlists.download')</span>-->
+			
+			 <button type="button" id="wordlistsFilters" class="wordlistsField wordlistsButton" ><i class="icon-filter" ></i> $translationService.getMessage($lang, 'wordlists.filters')</button>
+
+            <button type="button" id="wordlistsDownload" class="wordlistsField wordlistsButton" ><i class="icon-download" ></i> $translationService.getMessage($lang, 'wordlists.download')</button>
+
+        </div>
+
+    </div>
+
+</div>

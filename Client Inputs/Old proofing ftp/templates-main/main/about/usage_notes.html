@@ -1,0 +1,89 @@
+#parse( "/common/macro.vm")
+#SEO("about_usage_notes", [])
+#set( $current_page = "resources") ## to set the class for the top_banner 
+#set( $scripts = ["/external/scripts/oxford.js"]) 
+#set( $search_word = "")
+
+#set($dfpAdList =['topslot', 'btmslot_a', 'btmslot_b', 'leftslot_a'])
+#set($dfpCriteria['old_pc'] = 'default')
+#set($dfpCriteria['old_pt'] = 'other')
+
+<div class="responsive_row wordlist-page">
+
+    <script type="text/javascript" language="javascript">
+    if (document.readyState != 'loading'){
+        initWordlistPanel();
+    } else if (document.addEventListener) {
+      document.addEventListener('DOMContentLoaded', function(){initWordlistPanel()});
+    } else {
+      document.attachEvent('onreadystatechange', function() {
+        if (document.readyState != 'loading')
+            initWordlistPanel();
+      });
+    }
+    </script>
+
+    <h1 class="h">
+      Usage Notes
+    </h1>
+
+    <div class="wordlist-info-page">
+
+        <p>In all Oxford dictionaries written for learners of English you will find many notes on various aspects of usage in English. They will help you to learn  more about the word you have looked up, or to learn other related vocabulary. They are an excellent way to expand your vocabulary!</p>
+
+        <dl class="open-close ui-plain">
+
+        <dt class="hide">What are the different usage notes?</dt>
+        <dd>
+            <h5>AWL Collocations</h5>
+            <p>These notes only appear in the <em>Oxford Advanced American Dictionary</em>. They help you to use words from the Academic Word List in typical combinations and phrases. For example at the entry for <a href="#skLicensedUrl('/definition/american_english/accurate')">accurate</a>, you can see example sentences showing how this AWL word is typically used.</p>
+            <h5>British / American</h5>
+            <p>These notes only appear in the <em>Oxford Advanced Learner's Dictionary</em>. They explain differences between British and American usage. For example at the entry for <a href="#skLicensedUrl('/definition/english/holiday_1')">holiday</a>, you will find a note about the words &quot;holiday&quot; and &quot;vacation&quot; in British and American English.</p>
+            <h5>Collocations</h5>
+            <p>These notes show useful words and phrases connected with particular topics, and a selection of verbs to use with those words and phrases. For example at the entry for <a href="#skLicensedUrl('/definition/english/job_1')">job</a>, you can see a Collocations note that deals with the topic of jobs, including getting a job and leaving a job. (In the <em>Oxford Collocations Dictionary</em>, these notes are simply headed &quot;Note&quot;.)</p>
+            <h5>Culture</h5>
+            <p>These notes only appear in the <em>Oxford Advanced Learner's Dictionary</em>. They give extra information about a subject, taken from the <em>Oxford Guide to British and American Culture</em>. For example at the entry for <a href="#skLicensedUrl('/definition/english/lawyer')">lawyer</a>, there is an article about the legal system in Britain and the United States.</p>
+            <h5>Express Yourself</h5>
+            <p>These notes only appear in the <em>Oxford Advanced Learner's Dictionary</em>. They help you to find the right thing to say in everyday situations. For example at the entry for <a href="#skLicensedUrl('/definition/english/advice')">advice</a>, you will find a note containing useful language for giving somebody advice.</p>
+            <h5>Grammar Point</h5>
+            <p>These notes help explain points of grammar that often cause problems. For example at the entry for <a href="#skLicensedUrl('/definition/english/many')">many</a>, you will find a grammar note about the usage of &quot;much/many&quot;, &quot;a lot of&quot; and &quot;lots of&quot;.</p>
+            <h5>Homophones</h5>
+            <p>These notes only appear in the <em>Oxford Advanced Learner's Dictionary</em>. They give examples of words that sound the same but have different spelling and meanings. For example at the entry for <a href="#skLicensedUrl('/definition/english/where')">where</a>, there is a note containing other words that are pronounced the same way.</p>
+            <h5>Language Bank</h5>
+            <p>These notes show you how to express similar ideas in a variety of ways, particularly in writing. For example at the entry for <a href="#skLicensedUrl('/definition/english/contrast_1')">contrast</a>, there is a note containing useful language for highlighting differences.</p>
+            <h5>More About</h5>
+            <p>These notes give you more information about an aspect of life or language in Britain and America and show you the correct words to use. For example at the entry for <a href="#skLicensedUrl('/definition/english/exam')">exam</a>, you can see a note about the use of the words &quot;exam&quot;, &quot;examination&quot;, &quot;test&quot; and &quot;quiz&quot;.</p>
+            <h5>Synonyms <i>and</i> Thesaurus</h5>
+            <p>These notes show the differences between groups of words with similar meanings. The words in each group are given in order of frequency - from the most common to the least common. For example at the entry for <a href="#skLicensedUrl('/definition/english/beautiful')">beautiful</a>, there is a note including a group of synonyms or near-synonyms.</p>
+            <h5>Vocabulary Building</h5>
+            <p>These notes help you to choose more interesting and varied words to use and so increase your vocabulary. For example at the entry for <a href="#skLicensedUrl('/definition/english/break_1')">break</a>, you will find a Vocabulary Building note that gives a variety of verbs that mean &quot;break&quot;.</p>
+            <h5>Which Word?</h5>
+            <p>These notes show the differences between words that are often confused. For example at the entry for <a href="#skLicensedUrl('/definition/english/as_3')">as</a>, you will find a note that explains the difference between &quot;as&quot; and &quot;like&quot;.</p>
+            <h5>Word Families</h5>
+            <p>These notes show the different forms of words. For example at the entry for <a href="#skLicensedUrl('/definition/english/able_1')">able</a>, you can see a note containing different words belonging to this word family and their part of speech, such as &quot;ability&quot; and &quot;disabled&quot;.</p>
+            <h5>Wordfinder</h5>
+            <p>These notes only appear in the <em>Oxford Advanced Learner's Dictionary</em>. They help you to find words that are related in meaning to the word you are looking up. For example at the entry for <a href="#skLicensedUrl('/definition/english/adventure')">adventure</a>, there is a note containing a group of related words.</p>
+        </dd>
+        
+        <dt class="hide">Where are the usage notes in the dictionary entries?</dt>
+        <dd>
+            <p><span>The usage notes are collapsed by default in dictionary entries, and at first you will see the Usage Note heading only, with a &quot;+&quot; symbol next to it. For example at the entry for <a href="#skLicensedUrl('/definition/english/job_1')">job</a>,  there are several notes including a synonyms and a collocations note. Clicking or tapping on any of these will expand the full note, and clicking or tapping again will close it.</span></p>
+        </dd>
+        
+        <dt class="hide">How can I use the Usage Notes to expand my vocabulary?</dt>
+        <dd>
+            <p>Our usage notes are an excellent way to expand your vocabulary, because they contain lots of information about how different words and phrases are really used in everyday English. They usually contain extra example phrases or sentences, and they often compare groups of words to show you similarities and differences.</p>
+            <p>You will find that more frequent and useful words, such as the words on the Oxford 3000 list, often contain more than one usage note, so these entries are a good place to look for further information if you are writing an essay in English, or if you are preparing for an English exam.</p>
+        </dd>
+        
+    </div>
+  
+</div> <!-- end responsive_row -->
+
+<div class="responsive_row">
+
+    <p><a href="#skLicensedUrl('/wordlist/american_english/usage_notes/')" class="link-right">Usage Notes: American English Dictionary</a></p>
+    <p><a href="#skLicensedUrl('/wordlist/academic/usage_notes/')" class="link-right">Usage Notes: Academic English Dictionary</a></p>
+    <p><a href="#skLicensedUrl('/wordlist/collocations/usage_notes/')" class="link-right">Usage Notes: Collocations Dictionary</a></p>
+
+</div> <!-- end responsive_row -->

@@ -1,0 +1,14 @@
+#parse( "/common/macro.vm")
+#SEO("unauthorized", []) 
+#set( $page_robots = $translationService.getMessage($lang, "unauthorized.robots"))
+
+#set($dfpAdList =['topslot', 'btmslot_a', 'btmslot_b', 'leftslot_a'])
+#set($dfpCriteria['old_pc'] = 'error')
+#set($added=$dfpCategoryExclusion.add("error"))
+#set( $dfpCollapseSlotByDefault = 'true')
+
+<div id="informational-content">
+    <h2>$translationService.getMessage($lang, 'unauthorized.keywords').</h2>
+    <p>$translationService.getMessage($lang, 'unauthorized.description') <a href="#skLicensedUrl('/')" title="$translationService.getMessage($lang, 'notfound.home_title')">www.oxfordlearnersdictionaries.com</a>.</p>
+</div>
+

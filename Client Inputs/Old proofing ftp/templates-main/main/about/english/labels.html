@@ -1,0 +1,85 @@
+#parse( "/common/macro.vm")
+#SEO("labels_english", [])
+#set( $current_page = "resources") ## to set the class for the top_banner
+
+#set( $search_word = "")
+#set( $onLoad = "setupDoubleClick('#skLicensedUrl('/')', '$dictCode', false, 'main-container', null, null, null);" )
+
+#set($dfpAdList =['topslot', 'btmslot_a', 'btmslot_b', 'leftslot_a'])
+#set($dfpCriteria['old_pc'] = 'default')
+#set($dfpCriteria['old_pt'] = 'other')
+
+<div id="informational-content">
+    <div class="h-g">
+       <div class="top-g">
+           <div class="core_block">
+                <span class="pagetitle">
+                    <h1 class="h">$translationService.getMessage($lang, 'guide.english.title', ["class='pagetitle_dict_name'"])</h1>
+                </span>
+            </div>
+        </div><!-- End of DIV top-g-->
+    </div><!-- End of DIV h-g-->
+    <div id="generaltext">
+        <h2>$translationService.getMessage($lang, 'guide.english.subtitle')</h2>
+        
+        <table width="100%" border="0" class="generaltext-table">
+            <tr>
+                <td><img src="#skAssetUrl('/external/images/guides/Oxford 3000.png')" alt="Oxford 3000" style="width: 60px" /></td>
+                <td>in the <i>Oxford Advanced Learner's Dictionary</i>, shows a word from the <a href='#skLicensedUrl('/about/wordlists/oxford3000-5000')'>Oxford 3000</a> with its <a href='#skLicensedUrl('/about/wordlists/cefr')'>CEFR level</a>. Click on this icon to see a list of other words that are part of the Oxford 3000 at the same CEFR level.</td>
+            </tr>
+            <tr>
+                <td><img src="#skAssetUrl('/external/images/guides/Oxford 5000.png')" alt="Oxford 5000" style="width: 60px" /></td>
+                <td>in the <i>Oxford Advanced Learner's Dictionary</i>, shows a word from the <a href='#skLicensedUrl('/about/wordlists/oxford3000-5000')'>Oxford 5000</a> with its <a href='#skLicensedUrl('/about/wordlists/cefr')'>CEFR level</a>. Click on this icon to see a list of other words that are part of the Oxford 5000 at the same CEFR level.</td>
+            </tr>
+            <tr>
+                <td><span class="oxford3000-blue"></span></td>
+                <td>$translationService.getMessage($lang, 'guide.english.desc.oxford', ["href='#skLicensedUrl('/wordlist/english/oxford3000/')'"]).</td>
+            </tr>
+            <tr>
+                <td><img src="#skAssetUrl('/external/images/guides/CEFR.png')" alt="CEFR" style="width: 30px" /></td>
+                <td>shows the <a href='#skLicensedUrl('/about/wordlists/cefr')'>CEFR level</a> of a word or phrase</td>
+            </tr>
+            <tr>
+                <td><img src="#skAssetUrl('/external/images/guides/OPAL_W.png')" alt="OPAL written" style="width: 200px" /></td>
+                <td>in the <i>Oxford Advanced Learner's Dictionary</i>, shows a word from the <a href='#skLicensedUrl('/wordlists/opal/')'>OPAL</a> list of written words. Click on this icon to see the full OPAL sublist.</td>
+            </tr> 
+            <tr>
+                <td><img src="#skAssetUrl('/external/images/OPAL_written.png')" alt="OPAL written" style="width: 60px;" /></td>
+                <td>$translationService.getMessage($lang, 'guide.english.desc.opalwritten', ["href='#skLicensedUrl('/wordlists/opal/')'"])</td>
+            </tr> 
+            <tr>
+                <td><img src="#skAssetUrl('/external/images/guides/OPAL_S.png')" alt="OPAL spoken" style="width: 200px" /></td>
+                <td>in the <i>Oxford Advanced Learner's Dictionary</i>, shows a word from the <a href='#skLicensedUrl('/wordlists/opal/')'>OPAL</a> list of spoken words. Click on this icon to see the full OPAL sublist.</td>
+            </tr> 
+            <tr>
+                <td><img src="#skAssetUrl('/external/images/OPAL_spoken.png')" alt="OPAL spoken" style="width: 60px;" /></td>
+                <td>$translationService.getMessage($lang, 'guide.english.desc.opalspoken', ["href='#skLicensedUrl('/wordlists/opal/')'"])</td>
+            </tr> 
+            <tr>
+                <td><span class="academic-blue"></span></td>
+                <td>$translationService.getMessage($lang, 'guide.english.desc.academic', ["href='#skLicensedUrl('/wordlist/english/academic/')'"]).</td>
+            </tr>
+            <tr>
+                <td><img src="#skAssetUrl('/external/images/myWordlist/btn-wordlist.png')" alt="My Wordlists" style="width: 30px;" /></td>
+                <td>$translationService.getMessage($lang, 'guide.english.desc.mywordlists', ["href='#skLicensedUrl('/wordlists/opal/')'"])</td>
+            </tr>
+           <tr>
+               <td><img src="#skAssetUrl('/external/images/entry/entry-deriv.png')" alt="derivative symbol" style="width: 20px;" /></td>
+               <td align="left">$translationService.getMessage($lang, 'guide.english.desc.deriv').</td>
+            </tr>
+            <tr>
+                <td><img src="#skAssetUrl('/external/images/entry/pvarr.png')" alt="phrasal verb arrow" style="width: 20px;" /></td>
+               <td>$translationService.getMessage($lang, 'guide.english.desc.verb')</td>
+            </tr>
+            <tr>
+                <td><img src="#skAssetUrl('/external/images/entry/entry-arrow.png')" alt="cross reference arrow" style="width: 20px;" /></td>
+                <td>$translationService.getMessage($lang, 'guide.english.desc.reference')</td>
+            </tr> 
+            <tr>
+                <td><img src="#skAssetUrl('/external/images/entry/external-link-icon.png')" alt="external link icon" style="width: 20px;" /></td>
+                <td>$translationService.getMessage($lang, 'guide.english.desc.external')</td>
+            </tr> 
+      		</table>
+        #parse("/common/translate/_labels.html")
+    </div>
+</div>

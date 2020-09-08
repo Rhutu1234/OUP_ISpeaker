@@ -1,0 +1,53 @@
+/* Accordian */
+.p-accordion {
+    .p-accordion-header {
+        a.p-accordion-header-link {
+            font-weight: 400;
+            font-size: 17px;
+            border: none;
+            background: transparent !important;
+            outline: transparent;
+            padding: 0.57em 0px;
+            display: flex;
+            color: #333333 !important;
+            box-shadow: none !important;
+            .p-accordion-header-text {
+                padding-left: 5px;
+            }
+            .p-accordion-toggle-icon {
+                color: #0066cc;
+                font-size: 23px;
+                margin-right: 0;
+            }
+        }
+        &:hover {
+            a.p-accordion-header-link {
+                background: transparent !important;
+                font-weight: 400 !important;
+                font-size: 17px !important;
+                border: none !important;
+                .p-accordion-toggle-icon {
+                    color: #0066cc !important;
+                    font-size: 23px !important;
+                }
+            }
+        }
+        &.p-state-active {
+            a.p-accordion-header-link {
+                font-weight: 400;
+                font-size: 17px;
+                border: none !important;
+                background-color: transparent !important;
+                color: #003399 !important;
+                .p-accordion-toggle-icon {
+                    color: #003399 !important;
+                    font-size: 23px;
+                }
+            }
+        }
+    }
+    .p-accordion-content {
+        border: none !important;
+        padding: 0.571em 2em !important;
+    }
+}

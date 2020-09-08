@@ -1,0 +1,92 @@
+#parse( "/common/macro.vm")
+#SEO("about.academic.resources", [])
+#set( $current_page = "resources") ## to set the class for the top_banner 
+#set( $scripts = ["/external/scripts/oxford.js", "/external/scripts/entry.js", "/external/scripts/jquery.lightbox-0.5.min.js"]) 
+#set( $search_word = "")
+#set( $onLoad = "setupDoubleClick('#skLicensedUrl('/')', '$dictCode', false, 'main-container', null, null, null);" )
+
+#set($dfpAdList =['topslot', 'btmslot_a', 'btmslot_b', 'leftslot_a'])
+#set($dfpCriteria['old_pc'] = 'default')
+#set($dfpCriteria['old_pt'] = 'other')
+
+<div class="responsive_row">
+
+    <script type="text/javascript" language="javascript">
+        var contextId=null;
+            // global variable that contains the path to external files
+        // and used by the lightbox script 
+        var lightboxImageLoading = "#skAssetUrl('/external/images/lightbox-ico-loading.gif')";
+        var lightboxImageBtnPrev = "#skAssetUrl('/external/images/lightbox-btn-prev.gif')";
+        var lightboxImageBtnNext = "#skAssetUrl('/external/images/lightbox-btn-next.gif')";
+        var lightboxImageBtnClose = "#skAssetUrl('/external/images/lightbox-btn-close.gif')";
+        var lightboxImageBlank = "#skAssetUrl('/external/images/lightbox-blank.gif')";
+        if (document.readyState != 'loading'){
+            initEntry('See more', 'See less');
+        } else if (document.addEventListener) {
+          document.addEventListener('DOMContentLoaded', function(){initEntry('See more', 'See less');});
+        } else {
+          document.attachEvent('onreadystatechange', function() {
+            if (document.readyState != 'loading')
+                initEntry('See more', 'See less');
+          });
+        }
+    </script>
+
+    <h1 class="h">Oxford Learner&rsquo;s Dictionary of Academic English: Resources</h1>
+    <p>Create your own academic texts and browse reference pages from the dictionary.</p>
+    
+    <br />
+    
+    <h4>Oxford Academic iWriter</h4>
+    <div class="info-enlarge">
+        <div class="info-enlarge-desc">
+            <p>The Academic iWriter will show you how best to plan, write and  review your academic written work.</p>
+            <p>Take a guided tour of the model texts to see how to plan and  structure a range of academic texts. Then use the frameworks to create your own writing projects and export them for formatting, printing and handing in.<p>
+        </div><!-- end of info-enlarge-desc -->
+
+        <div id="ox-enlarge">
+            <a href="#skAssetUrl('/external/images/getpremium/academic/OLDAE_academic_iwriter.png')" title="Oxford Academic iWriter home page" class="topic">
+                <img border="1" src="#skAssetUrl('/external/images/getpremium/academic/OLDAE_academic_iwriter_thumb.png')" title="" alt="" class="thumb">
+                <span class="ox-enlarge-label">enlarge image</span>
+            </a>
+        </div><!-- end of ox-enlarge -->
+    </div><!-- end of info-enlarge -->
+    
+    <br />
+
+    <h4>Reference pages</h4>
+    <div class="info-enlarge">
+        <div class="info-enlarge-desc">
+            <p>Browse all the reference material from the dictionary, covering a wide range of grammar areas.</p>
+            <p>Topics include irregular verbs, prefixes and suffixes, phrasal verbs and modal verbs.</p>
+            <p>All reference pages are printable PDFs</p>
+        </div><!-- end of info-enlarge-desc -->
+
+        <div id="ox-enlarge">
+            <a href="#skAssetUrl('/external/images/getpremium/academic/OLDAE_reference_pages.png')" title="Excerpt from the reference page &lsquo;Prefixes and suffixes&rsquo;" class="topic">
+                <img border="1" src="#skAssetUrl('/external/images/getpremium/academic/OLDAE_reference_pages_thumb.png')" title="" alt="" class="thumb">
+                <span class="ox-enlarge-label">enlarge image</span>
+            </a>
+        </div><!-- end of ox-enlarge -->
+    </div><!-- end of info-enlarge -->
+
+    <h4>Academic subject areas</h4>
+    <div class="info-enlarge">
+        <div class="info-enlarge-desc">
+            <p>Four word lists contain words that are common in the academic fields of humanities, life science, physical science and social science.</p>
+            <p>Select any word from a list to open the OLDAE dictionary entry.</p>
+        </div><!-- end of info-enlarge-desc -->
+
+        <div id="ox-enlarge">
+            <a href="#skAssetUrl('/external/images/getpremium/academic/OLDAE_academic_subject_areas.png')" title="Excerpt from the &lsquo;Life science&rsquo; word list" class="topic">
+                <img border="1" src="#skAssetUrl('/external/images/getpremium/academic/OLDAE_academic_subject_areas_thumb.png')" title="" alt="" class="thumb">
+                <span class="ox-enlarge-label">enlarge image</span>
+            </a>
+        </div><!-- end of ox-enlarge -->
+    </div><!-- end of info-enlarge -->
+
+    <div class="btn btn-premium">
+        <a href="https://elt.oup.com/catalogue/items/global/dictionaries/9780194724883" target="_blank" title="link opens in a new window">BUY OLDAE</a>
+    </div> <!-- Link to catalogue page -->
+  
+</div> <!-- end responsive_row -->

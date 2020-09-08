@@ -1,0 +1,11 @@
+#parse( "/common/macro.vm")
+
+#if($warnings)
+    #foreach($warning in $warnings) 
+    <p class="dynamicPanelWarning">$warning</p>
+    #end
+#end
+
+#if($dynamicQuickLinks) 
+    #evaluate($dynamicQuickLinks)
+#end

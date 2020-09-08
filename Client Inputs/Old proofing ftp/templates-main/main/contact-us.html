@@ -1,0 +1,23 @@
+#parse( "/common/macro.vm")
+#SEO("contactus", [])
+#set( $search_word = "")
+#set( $current_page = "contact_us")
+
+#set($dfpAdList =['topslot', 'btmslot_a', 'btmslot_b', 'leftslot_a'])
+#set($dfpCriteria['old_pc'] = 'default')
+#set($dfpCriteria['old_pt'] = 'other')
+
+<div id="informational-content">
+    <div class="h-g">
+        <div class="top-g">
+            <div class="core_block">
+                <span class="pagetitle">
+                    <h1 class="h">$translationService.getMessage($lang, 'contactus.page.title')</h1>
+                </span>
+            </div>
+        </div>
+        <!-- End of DIV top-g-->
+    </div>
+    <!-- End of DIV h-g-->
+    #parse("/common/translate/_contact-us.html")
+</div>

@@ -1,0 +1,90 @@
+#parse( "/common/macro.vm")
+#SEO("about.collocations.resources", [])
+#set( $current_page = "resources") ## to set the class for the top_banner 
+#set( $scripts = ["/external/scripts/oxford.js", "/external/scripts/entry.js", "/external/scripts/jquery.lightbox-0.5.min.js"]) 
+#set( $search_word = "")
+#set( $onLoad = "setupDoubleClick('#skLicensedUrl('/')', '$dictCode', false, 'main-container', null, null, null);" )
+
+#set($dfpAdList =['topslot', 'btmslot_a', 'btmslot_b', 'leftslot_a'])
+#set($dfpCriteria['old_pc'] = 'default')
+#set($dfpCriteria['old_pt'] = 'other')
+
+<div class="responsive_row">
+
+    <script type="text/javascript" language="javascript">
+        var contextId=null;
+            // global variable that contains the path to external files
+        // and used by the lightbox script 
+        var lightboxImageLoading = "#skAssetUrl('/external/images/lightbox-ico-loading.gif')";
+        var lightboxImageBtnPrev = "#skAssetUrl('/external/images/lightbox-btn-prev.gif')";
+        var lightboxImageBtnNext = "#skAssetUrl('/external/images/lightbox-btn-next.gif')";
+        var lightboxImageBtnClose = "#skAssetUrl('/external/images/lightbox-btn-close.gif')";
+        var lightboxImageBlank = "#skAssetUrl('/external/images/lightbox-blank.gif')";
+        if (document.readyState != 'loading'){
+            initEntry('See more', 'See less');
+        } else if (document.addEventListener) {
+          document.addEventListener('DOMContentLoaded', function(){initEntry('See more', 'See less');});
+        } else {
+          document.attachEvent('onreadystatechange', function() {
+            if (document.readyState != 'loading')
+                initEntry('See more', 'See less');
+          });
+        }
+    </script>
+
+    <h1 class="h">Oxford Collocations Dictionary: Resources</h1>
+    <p>Print out exercises and browse reference pages from the dictionary.</p>
+    
+    <br />
+    
+    <h4>Study pages</h4>
+    <div class="info-enlarge">
+        <div class="info-enlarge-desc">
+            <p>Using the Study pages, you can complete exercises on how to understand and use different types of collocations entries (for example &lsquo;verb entries&rsquo;), as well as exercises on collocations for vocabulary topics (for example &lsquo;education&rsquo;).<p>
+            <p>You can mark your own work using the answer key.</p>
+        </div><!-- end of info-enlarge-desc -->
+
+        <div id="ox-enlarge">
+            <a href="#skAssetUrl('/external/images/getpremium/collocations/collocations_study_pages.png')" title="Excerpt from the Study page &lsquo;Using a verb entry&rsquo;" class="topic">
+                <img border="1" src="#skAssetUrl('/external/images/getpremium/collocations/collocations_study_pages_thumb.png')" title="" alt="" class="thumb">
+                <span class="ox-enlarge-label">enlarge image</span>
+            </a>
+        </div><!-- end of ox-enlarge -->
+    </div><!-- end of info-enlarge -->
+    
+    <br />
+
+    <h4>Special pages</h4>
+    <div class="info-enlarge">
+        <div class="info-enlarge-desc">
+            <p>Do you need to brainstorm vocabulary for an essay or are you studying a particular topic? The Special pages will be useful.</p>
+            <p>Each Special page pulls together collocations on a particular topic, such as business, meetings and sport.</p>
+        </div><!-- end of info-enlarge-desc -->
+
+        <div id="ox-enlarge">
+            <a href="#skAssetUrl('/external/images/getpremium/collocations/collocations_special_pages.png')" title="Excerpt from the Special page &lsquo;Fruit&rsquo;" class="topic">
+                <img border="1" src="#skAssetUrl('/external/images/getpremium/collocations/collocations_special_pages_thumb.png')" title="" alt="" class="thumb">
+                <span class="ox-enlarge-label">enlarge image</span>
+            </a>
+        </div><!-- end of ox-enlarge -->
+    </div><!-- end of info-enlarge -->
+
+    <h4>About Collocations</h4>
+    <div class="info-enlarge">
+        <div class="info-enlarge-desc">
+            <p>What is collocation? How are the dictionary entries structured? The introduction to the dictionary contains background information and useful tips.</p>
+        </div><!-- end of info-enlarge-desc -->
+
+        <div id="ox-enlarge">
+            <a href="#skAssetUrl('/external/images/getpremium/collocations/collocations_introduction.png')" title="Excerpt from the introduction to the dictionary" class="topic">
+                <img border="1" src="#skAssetUrl('/external/images/getpremium/collocations/collocations_introduction_thumb.png')" title="" alt="" class="thumb">
+                <span class="ox-enlarge-label">enlarge image</span>
+            </a>
+        </div><!-- end of ox-enlarge -->
+    </div><!-- end of info-enlarge -->
+
+    <div class="btn btn-premium">
+        <a href="https://elt.oup.com/catalogue/items/global/dictionaries/9780194724890" target="_blank" title="link opens in a new window">BUY COLLOCATIONS DICTIONARY</a>
+    </div> <!-- Link to catalogue page -->
+  
+</div> <!-- end responsive_row -->

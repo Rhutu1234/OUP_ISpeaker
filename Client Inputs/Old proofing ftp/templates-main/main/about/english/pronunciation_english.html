@@ -1,0 +1,328 @@
+#parse( "/common/macro.vm")
+#SEO("pronguide_english", [])
+#set( $current_page = "resources") ## to set the class for the top_banner
+#set( $search_word = "")
+
+#set($dfpAdList =['topslot', 'btmslot_a', 'btmslot_b', 'leftslot_a'])
+#set($dfpCriteria['old_pc'] = 'default')
+#set($dfpCriteria['old_pt'] = 'other')
+
+<div id="informational-content">
+    <div class="h-g">
+        <div class="top-g">
+            <div class="core_block">
+                <span class="pagetitle">
+                    <h1 class="h">$translationService.getMessage($lang, 'pron.english.title', ["class='pagetitle_dict_name'"])</h1>
+                </span>
+            </div>
+        </div><!-- End of DIV top-g-->
+    </div><!-- End of DIV h-g-->
+    <div id="firsttext"></div>
+    <div id="generaltext">
+        <p style="margin-left: 0">$translationService.getMessage($lang, 'pron.english.description.1').</p>
+
+        <h2>$translationService.getMessage($lang, 'pron.english.subtitle.1')</h2>
+
+        <div>
+            <table>
+                <!--<tr><th class="style3" width="120" align="left">Word</th><th class="style3" width="120" align="left">Phonetic</th><th></th> -->
+                <tr>
+                    <td width="60" class="i">p</td>
+                    <td width="100" class="style3">pen</td>
+                    <td width="100" class="i">/pen/</td>
+                </tr>
+                <tr>
+                    <td class="i">b</td>
+                    <td class="style3">bad</td>
+                    <td class="i">/b&#x00E6;d/</td>
+                </tr>
+                <tr>
+                    <td class="i">t</td>
+                    <td class="style3">tea</td>
+                    <td class="i">/ti&#x02D0;/</td>
+                </tr>
+                <tr>
+                    <td class="i">d</td>
+                    <td class="style3">did</td>
+                    <td class="i">/d&#x026A;d/</td>
+                </tr>
+                <tr>
+                    <td class="i">k</td>
+                    <td class="style3">cat</td>
+                    <td class="i">/k&#x00E6;t/</td>
+                </tr>
+                <tr>
+                    <td class="i">&#x0261;</td>
+                    <td class="style3">get</td>
+                    <td class="i">/&#x0261;et/</td>
+                </tr>
+                <tr>
+                    <td class="i">t&#x0283;</td>
+                    <td class="style3">chain</td>
+                    <td class="i">/t&#x0283;e&#x026A;n/</td>
+                </tr>
+                <tr>
+                    <td class="i">d&#x0292;</td>
+                    <td class="style3">jam</td>
+                    <td class="i">/d&#x0292;&#x00E6;m/</td>
+                </tr>
+                <tr>
+                    <td class="i">f</td>
+                    <td class="style3">fall</td>
+                    <td class="i">/f&#x0254;&#x02D0;l/</td>
+                </tr>
+                <tr>
+                    <td class="i">v</td>
+                    <td class="style3">van</td>
+                    <td class="i">/v&#x00E6;n/</td>
+                </tr>
+                <tr>
+                    <td class="i">&#x03B8;</td>
+                    <td class="style3">thin</td>
+                    <td class="i">/&#x03B8;&#x026A;n/</td>
+                </tr>
+                <tr>
+                    <td class="i">&#x00F0;</td>
+                    <td class="style3">this</td>
+                    <td class="i">/&#x00F0;&#x026A;s/</td>
+                </tr>
+                <tr>
+                    <td width="33" class="i">s</td>
+                    <td width="61" class="style3">see</td>
+                    <td width="60" class="i">/si&#x02D0;/</td>
+                </tr>
+                <tr>
+                    <td class="i">z</td>
+                    <td class="style3">zoo</td>
+                    <td class="i">/zu&#x02D0;/</td>
+                </tr>
+                <tr>
+                    <td class="i">&#x0283;</td>
+                    <td class="style3">shoe</td>
+                    <td class="i">/&#x0283;u&#x02D0;/</td>
+                </tr>
+                <tr>
+                    <td class="i">&#x0292;</td>
+                    <td class="style3">vision</td>
+                    <td class="i">/&#x02C8;v&#x026A;&#x0292;n/</td>
+                </tr>
+                <tr>
+                    <td class="i">h</td>
+                    <td class="style3">hat</td>
+                    <td class="i">/h&#x00E6;t/</td>
+                </tr>
+                <tr>
+                    <td class="i">m</td>
+                    <td class="style3">man</td>
+                    <td class="i">/m&#x00E6;n/</td>
+                </tr>
+                <tr>
+                    <td class="i">n</td>
+                    <td class="style3">now</td>
+                    <td class="i">/na&#x028A;/</td>
+                </tr>
+                <tr>
+                    <td class="i">&#x014B;</td>
+                    <td class="style3">sing</td>
+                    <td class="i">/s&#x026A;&#x014B;/</td>
+                </tr>
+                <tr>
+                    <td class="i">l</td>
+                    <td class="style3">leg</td>
+                    <td class="i">/le&#x0261;/</td>
+                </tr>
+                <tr>
+                    <td class="i">r</td>
+                    <td class="style3">red</td>
+                    <td class="i">/red/</td>
+                </tr>
+                <tr>
+                    <td class="i">j</td>
+                    <td class="style3">yes</td>
+                    <td class="i">/jes/</td>
+                </tr>
+                <tr>
+                    <td class="i">w</td>
+                    <td class="style3">wet</td>
+                    <td class="i">/wet/</td>
+                </tr>
+            </table>
+        </div>
+        <p style="margin-left: 0; margin-top: 20px;">$translationService.getMessage($lang, 'pron.english.description.3').</p>
+        <p style="margin-left: 0">$translationService.getMessage($lang, 'pron.english.description.4').</p>
+
+        <h2>$translationService.getMessage($lang, 'pron.english.subtitle.2')</h2>
+
+        <div>
+            <table>
+                <tr>
+                    <td width="60" class="i">i&#x02D0;</td>
+                    <td width="100" class="style3">see</td>
+                    <td class="i">/si&#x02D0;/</td>
+                </tr>
+                <tr>
+                    <td class="i">i</td>
+                    <td class="style3">happy</td>
+                    <td class="i">/&#x02C8;h&#x00E6;pi/</td>
+                </tr>
+                <tr>
+                    <td class="i">&#x026A;</td>
+                    <td class="style3">sit</td>
+                    <td class="i">/s&#x026A;t/</td>
+                </tr>
+                <tr>
+                    <td class="i">e</td>
+                    <td class="style3">bed</td>
+                    <td class="i">/bed/</td>
+                </tr>
+                <tr>
+                    <td class="i">&#x00E6;</td>
+                    <td class="style3">cat</td>
+                    <td class="i">/k&#x00E6;t/</td>
+                </tr>
+                <tr>
+                    <td class="i">&#x0251;&#x02D0;</td>
+                    <td class="style3">father</td>
+                    <td class="i">/&#x02C8;f&#x0251;&#x02D0;&#x00F0;&#x0259;(r)/</td>
+                </tr>
+                <tr>
+                    <td class="i">&#x0252;</td>
+                    <td class="style3">got</td>
+                    <td class="i">/&#x0261;&#x0252;t/ <i>(British English)</i></td>
+                </tr>
+                <tr>
+                    <td class="i">&#x0254;&#x02D0;</td>
+                    <td class="style3">saw</td>
+                    <td class="i">/s&#x0254;&#x02D0;/</td>
+                </tr>
+                <tr>
+                    <td class="i">&#x028A;</td>
+                    <td class="style3">put</td>
+                    <td class="i">/p&#x028A;t/</td>
+                </tr>
+                <tr>
+                    <td class="i">u</td>
+                    <td class="style3">actual</td>
+                    <td class="i">/&#x02C8;&#x00E6;kt&#x0283;u&#x0259;l/</td>
+                </tr>
+                <tr>
+                    <td class="i">u&#x02D0;</td>
+                    <td class="style3">too</td>
+                    <td class="i">/tu&#x02D0;/</td>
+                </tr>
+                <tr>
+                    <td class="i">&#x028C;</td>
+                    <td class="style3">cup</td>
+                    <td class="i">/k&#x028C;p/</td>
+                </tr>
+                <tr>
+                    <td width="60" class="i">&#x025C;&#x02D0;</td>
+                    <td width="100" class="style3">fur</td>
+                    <td class="i">/f&#x025C;&#x02D0;(r)/</td>
+                </tr>
+                <tr>
+                    <td class="i">&#x0259;</td>
+                    <td class="style3">about</td>
+                    <td class="i">/&#x0259;&#x02C8;ba&#x028A;t/</td>
+                </tr>
+                <tr>
+                    <td class="i">e&#x026A;</td>
+                    <td class="style3">say</td>
+                    <td class="i">/se&#x026A;/</td>
+                </tr>
+                <tr>
+                    <td class="i">&#x0259;&#x028A;</td>
+                    <td class="style3">go</td>
+                    <td class="i">/&#x0261;&#x0259;&#x028A;/</td>
+                </tr>
+                <tr>
+                    <td class="i">a&#x026A;</td>
+                    <td class="style3">my</td>
+                    <td class="i">/ma&#x026A;/</td>
+                </tr>
+                <tr>
+                    <td class="i">&#x0254;&#x026A;</td>
+                    <td class="style3">boy</td>
+                    <td class="i">/b&#x0254;&#x026A;/</td>
+                </tr>
+                <tr>
+                    <td class="i">a&#x028A;</td>
+                    <td class="style3">now</td>
+                    <td class="i">/na&#x028A;/</td>
+                </tr>
+                <tr>
+                    <td class="i">&#x026A;&#x0259;</td>
+                    <td class="style3">near</td>
+                    <td class="i">/n&#x026A;&#x0259;(r)/ <i>(British English)</i></td>
+                </tr>
+                <tr>
+                    <td class="i">e&#x0259;</td>
+                    <td class="style3">hair</td>
+                    <td class="i">/he&#x0259;(r)/ <i>(British English)</i></td>
+                </tr>
+                <tr>
+                    <td class="i">&#x028A;&#x0259;</td>
+                    <td class="style3">pure</td>
+                    <td class="i">/pj&#x028A;&#x0259;(r)/ <i>(British English)</i></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+            </table>
+
+        </div>
+
+        <div>
+            <p>Nasalized vowels, marked with /<span class="i">&tilde;</span>/, may be retained in certain words taken from French, as in <strong>penchant</strong> <span style="white-space: nowrap;">/<span class="i">&#712;pɒ&#x303;&#x0283;ɒ&#x303;</span>/</span>.</p>
+            <p>While represented by the same symbols in the dictionary, some vowels and diphthongs differ in quality between British and American English.</p>
+        </div>
+
+        <div>
+            <h2>Pronunciation in the dictionary</h2> 
+            <p>The pronunciations given are those of younger speakers of &#8216;mainstream&#8217; or &#8216;unmarked&#8217; Received Pronunciation (British English) and &#8216;General&#8217; or &#8216;Network&#8217; American (American English). These models represent accents that are widely taught and easily recognized as British or American. They enable clear communication, are not old-fashioned or strongly regional, and are acceptable in formal and informal situations.</p>
+            <p>Pronunciations given between slashes <span style="white-space: nowrap;">/&#716;laɪk &#712;ðɪs/</span> are transcribed broadly, using a phonemic system. This means that symbols from the International Phonetic Alphabet are used to represent the sounds and features that distinguish one word from another in English. If the symbols are treated simply as sounds the speaker will be clearly understood — words such as <strong>cap</strong> <span style="white-space: nowrap;">/kæp/</span> and <strong>cup</strong> <span style="white-space: nowrap;">/kʌp/</span> will not be confused. The more advanced learner will understand that these symbols (phonemes) represent groups of related English sounds (allophones), and that the choice of symbols is guided by a long tradition of teaching and representing English pronunciation in this way.</p>
+            <p>The broad approach to transcription is accompanied by a selective approach to variant pronunciations. For example, the transcriptions make clear that the vowel <span style="white-space: nowrap;">/ɒ/</span> occurs only in British English, with American pronunciations usually having <span style="white-space: nowrap;">/ɔː/</span> or <span style="white-space: nowrap;">/ɑː/</span> instead. For these words there is some variation between <span style="white-space: nowrap;">/ɔː/</span> and <span style="white-space: nowrap;">/ɑː/</span> among speakers of American English, but only one such pronunciation is given.</p>
+            <p>Some variant pronunciations are represented by the special use of <span style="white-space: nowrap;">/i/</span> and <span style="white-space: nowrap;">/u/</span>
+            (without a length mark <span style="white-space: nowrap;">/ː/</span>). <span style="white-space: nowrap;">/i/</span> represents a weak vowel that can be sounded either as <span style="white-space: nowrap;">/iː/</span> or <span style="white-space: nowrap;">/ɪ/</span> or a compromise between them. The sequence <span style="white-space: nowrap;">/iə/</span> can be pronounced <span style="white-space: nowrap;">/jə/</span>, so <strong>union</strong> can be <span style="white-space: nowrap;">/&#712;juːniən/</span> or <span style="white-space: nowrap;">/&#712;juːnjən/</span>. In the same way <span style="white-space: nowrap;">/u/</span> represents a weak vowel between <span style="white-space: nowrap;">/uː/</span> and <span style="white-space: nowrap;">/ʊ/</span>. If followed by a consonant sound it can be pronounced as <span style="white-space: nowrap;">/ə/</span>, and the sequence <span style="white-space: nowrap;">/uə/</span> can be pronounced <span style="white-space: nowrap;">/wə/</span>, as in <strong>actual</strong> <span style="white-space: nowrap;">/&#712;æktʃuəl, &#712;æktʃwəl/</span>.</p>
+            <p>Further information about a pronunciation may be given in square brackets <span style="white-space: nowrap;">[&#712;laɪk &#712;ðɪs]</span>, referring more specifically to sounds on the <a href="http://www.internationalphoneticassociation.org/content/full-ipa-chart/" target="_blank">IPA chart</a>. This narrow transcription is useful for representing pronunciations or sounds that are not British or American, for example the East African pronunciation <span style="white-space: nowrap;">[&#712;boma]</span> given at <a href="#skLicensedUrl('/definition/english/boma')"><strong>boma</strong></a>.</p>
+        </div>
+
+        <div>
+            <h2>Allophones</h2>
+            <p>Allophones can be demonstrated by looking at the <span style="white-space: nowrap;">/t/</span> phoneme. In addition to <span style="white-space: nowrap;">[t]</span>, the <span style="white-space: nowrap;">/t/</span> phoneme also contains tap <span style="white-space: nowrap;">[ɾ]</span> and glottal stop <span style="white-space: nowrap;">[ʔ]</span> sounds, which are used in certain contexts. The <span style="white-space: nowrap;">[ɾ]</span> <strong>tap</strong> sound is very much like the <span style="white-space: nowrap;">/d/</span> in <strong>rider</strong>. It is widely used by American speakers when the <span style="white-space: nowrap;">/t/</span> is between two vowels and the second vowel is not stressed, as in <strong>writer</strong>. Both British and American speakers sometimes use the glottal stop <span style="white-space: nowrap;">[ʔ]</span> (a momentary tight closure of the vocal cords) for the <span style="white-space: nowrap;">/t/</span> in words like <strong>football</strong> <span style="white-space: nowrap;">/&#712;fʊtbɔːl/</span> and <strong>button</strong> <span style="white-space: nowrap;">/&#712;bʌtn/</span>. Use of the glottal stop for <span style="white-space: nowrap;">/t/</span> in these positions is more common and more widely accepted than its use between vowels, as in <strong>water</strong>.</p>
+            <p>Such considerations are not limited to the <span style="white-space: nowrap;">/t/</span> phoneme. For example, the <span style="white-space: nowrap;">/l/</span> phoneme
+            encompasses a clear <span style="white-space: nowrap;">[l]</span> sound for words such as <strong>like</strong> <span style="white-space: nowrap;">/laɪk/</span> (where the <span style="white-space: nowrap;">/l/</span> is before or between vowels) and a dark <span style="white-space: nowrap;">[ɫ]</span> sound for other positions, as in <strong>full</strong> <span style="white-space: nowrap;">/fʊl/</span> or <strong>milk</strong> <span style="white-space: nowrap;">/mɪlk/</span>. The sound files that accompany our phonemic transcriptions are intended to supplement the phonemic transcriptions and demonstrate such detail.</p>
+        </div>
+        <div>
+            <h2>Syllabic consonants</h2>
+            <p>The sounds <span style="white-space: nowrap;">/l/</span> and <span style="white-space: nowrap;">/n/</span> can often be syllabic — that is, they can form a syllable by themselves. They can be thought of as representing a sequence of <span style="white-space: nowrap;">[<sup>ə</sup>l]</span> or <span style="white-space: nowrap;">[<sup>ə</sup>n]</span>. There is a syllabic <span style="white-space: nowrap;">/l/</span> at the end of <strong>final</strong> <span style="white-space: nowrap;">/&#712;faɪnl/</span>, but for clarity the schwa <span style="white-space: nowrap;">/ə/</span> is shown in the transcription of <strong>finally</strong> <span style="white-space: nowrap;">/&#712;faɪnəli/</span> so that it is not confused with <strong>finely</strong> <span style="white-space: nowrap;">/&#712;faɪnli/</span>.</p>
+        </div>
+
+        <div>
+            <h2>Weak and strong forms</h2>
+            <p>Some pronunciations are labelled as strong or weak forms. The first pronunciation given usually represents the one most commonly used, but where a strong form is indicated it should be used when the word is stressed. A strong form is also usually used when the word is at the end of a sentence. For example:</p>
+            <ul>
+                <li><i>Can</i> <span style="white-space: nowrap;">/kən/</span> <i>you help?</i></li>
+                <li><i>I’ll help if I can </i><span style="white-space: nowrap;">/kæn/</span><i>.</i></li>
+            </ul>
+        </div>
+
+        <div>
+            <h2>Stress</h2>
+            <p>Stress is very important in English — it can be used to distinguish the meaning of similar-sounding words, compounds, phrasal verbs and idioms. The stress patterns indicated in our dictionaries will enable the learner to sound natural and clearly communicate their intended meaning.</p>
+            <p>The mark <span style="white-space: nowrap;">/&#712;/</span> shows the main stress — compare <strong>able</strong> <span style="white-space: nowrap;">/&#712;e&#618;bl/</span>, stressed on the first syllable, and <strong>ability</strong> <span style="white-space: nowrap;">/&#601;&#712;b&#618;l&#601;ti/</span>, stressed on the second. A stressed syllable is relatively loud, long in duration, said clearly and distinctly, and made noticeable by the pitch of the voice. A stressed syllable does not usually contain the weak vowels <span style="white-space: nowrap;">/ə/</span>, <span style="white-space: nowrap;">/i/</span> or <span style="white-space: nowrap;">/u/</span>.</p>
+            <p>Longer transcriptions may have one or more secondary stresses before the main stress. These are marked with <span style="white-space: nowrap;">/&#716;/</span> as in <strong>abbreviation</strong> <span style="white-space: nowrap;">/&#601;&#716;bri&#720;vi&#712;e&#618;&#643;n/</span> and <strong>agricultural</strong> 
+            <span style="white-space: nowrap;">/&#716;&#230;&#609;r&#618;&#712;k&#652;lt&#643;&#601;r&#601;l/</span>. They feel like beats in a rhythm leading up to the main stress. Weak stresses after the main stress can sometimes be heard, but they are not marked in our dictionaries.</p>
+            <p>A word or compound that has two stresses in its dictionary form may show a shift of stress when used in a phrase. For example, the adjective <strong>&#716;well-&#712;known</strong> has the main stress on <strong>known</strong>, but in the phrase <strong>&#716;well-known &#712;author</strong> the main stress is shifted to the noun that follows.</p>
+            <br/>
+        </div>
+        
+         <div>
+            <h2>Further reading</h2>
+            <p>You can find a fuller discussion of the way pronunciation is indicated in the <i>Oxford Advanced Learner’s Dictionary</i> <a href="#skLicensedUrl('/external/pdf/english/OALD10_phons_GL.pdf')" target="_blank">here</a>.</p>
+            <br/>
+        </div>
+    </div>
+</div>
