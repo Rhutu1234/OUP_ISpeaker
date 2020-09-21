@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ISpeakerService } from '../ispeaker.service';
 
 @Component({
   selector: 'app-home',
@@ -8,15 +9,16 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
   dataLoading = false;
-  selectedLanguage = 'BE';
-  constructor(private router: Router) { }
+  selectedLanguage;
+  constructor(private router: Router, private ispeakerService: ISpeakerService) { }
 
   ngOnInit() {
+    this.selectedLanguage = this.ispeakerService.selectedLanguage;
     this.dataLoading = false;
   }
   onLanguageSelection(type) {
     this.selectedLanguage = type;
-
+    this.ispeakerService.selectedLanguage = type;
   }
   onTileClick(type) {
     switch (type) {

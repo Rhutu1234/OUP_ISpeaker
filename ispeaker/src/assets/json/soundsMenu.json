@@ -1,0 +1,390 @@
+{
+    "BrE": {
+        "consonants": [
+            {
+                "phoneme": "p",
+                "word": "pen"
+            },
+            {
+                "phoneme": "b",
+                "word": "bad"
+            },
+            {
+                "phoneme": "t",
+                "word": "tea"
+            },
+            {
+                "phoneme": "d",
+                "word": "did"
+            },
+            {
+                "phoneme": "k",
+                "word": "cat"
+            },
+            {
+                "phoneme": "ɡ",
+                "word": "get"
+            },
+            {
+                "phoneme": "m",
+                "word": "man"
+            },
+            {
+                "phoneme": "n",
+                "word": "now"
+            },
+            {
+                "phoneme": "ŋ",
+                "word": "sing"
+            },
+            {
+                "phoneme": "f",
+                "word": "fall"
+            },
+            {
+                "phoneme": "v",
+                "word": "van"
+            },
+            {
+                "phoneme": "θ",
+                "word": "thin"
+            },
+            {
+                "phoneme": "ð",
+                "word": "this"
+            },
+            {
+                "phoneme": "s",
+                "word": "see"
+            },
+            {
+                "phoneme": "z",
+                "word": "zoo"
+            },
+            {
+                "phoneme": "ʃ",
+                "word": "shoe"
+            },
+            {
+                "phoneme": "ʒ",
+                "word": "vision"
+            },
+            {
+                "phoneme": "tʃ",
+                "word": "chain"
+            },
+            {
+                "phoneme": "dʒ",
+                "word": "jam"
+            },
+            {
+                "phoneme": "l",
+                "word": "leg"
+            },
+            {
+                "phoneme": "r",
+                "word": "red"
+            },
+            {
+                "phoneme": "h",
+                "word": "hat"
+            },
+            {
+                "phoneme": "x",
+                "word": "loch"
+            },
+            {
+                "phoneme": "j",
+                "word": "yes"
+            },
+            {
+                "phoneme": "w",
+                "word": "wet"
+            }
+        ],
+        "vowels": [
+            {
+                "phoneme": "iː",
+                "word": "see"
+            },
+            {
+                "phoneme": "i",
+                "word": "happy"
+            },
+            {
+                "phoneme": "ɪ",
+                "word": "sit"
+            },
+            {
+                "phoneme": "e",
+                "word": "bed"
+            },
+            {
+                "phoneme": "æ",
+                "word": "cat"
+            },
+            {
+                "phoneme": "ə",
+                "word": "about"
+            },
+            {
+                "phoneme": "ɜː",
+                "word": "fur"
+            },
+            {
+                "phoneme": "ʌ",
+                "word": "cup"
+            },
+            {
+                "phoneme": "uː",
+                "word": "too"
+            },
+            {
+                "phoneme": "u",
+                "word": "actual"
+            },
+            {
+                "phoneme": "ʊ",
+                "word": "put"
+            },
+            {
+                "phoneme": "ɔː",
+                "word": "saw"
+            },
+            {
+                "phoneme": "ɒ",
+                "word": "got"
+            },
+            {
+                "phoneme": "ɑː",
+                "word": "father"
+            }
+        ],
+        "diphthongs": [
+            {
+                "phoneme": "eɪ",
+                "word": "say"
+            },
+            {
+                "phoneme": "əʊ",
+                "word": "go"
+            },
+            {
+                "phoneme": "aɪ",
+                "word": "my"
+            },
+            {
+                "phoneme": "aʊ",
+                "word": "now"
+            },
+            {
+                "phoneme": "ɔɪ",
+                "word": "boy"
+            },
+            {
+                "phoneme": "ɪə",
+                "word": "near"
+            },
+            {
+                "phoneme": "eə",
+                "word": "hair"
+            },
+            {
+                "phoneme": "ʊə",
+                "word": "pure"
+            }
+        ]
+    },
+    "AmE": {
+        "consonants": [
+            {
+                "phoneme": "p",
+                "word": "pen"
+            },
+            {
+                "phoneme": "b",
+                "word": "bad"
+            },
+            {
+                "phoneme": "t",
+                "word": "tea"
+            },
+            {
+                "phoneme": "d",
+                "word": "did"
+            },
+            {
+                "phoneme": "k",
+                "word": "cat"
+            },
+            {
+                "phoneme": "ɡ",
+                "word": "get"
+            },
+            {
+                "phoneme": "m",
+                "word": "man"
+            },
+            {
+                "phoneme": "n",
+                "word": "now"
+            },
+            {
+                "phoneme": "ŋ",
+                "word": "sing"
+            },
+            {
+                "phoneme": "f",
+                "word": "fall"
+            },
+            {
+                "phoneme": "v",
+                "word": "van"
+            },
+            {
+                "phoneme": "θ",
+                "word": "thin"
+            },
+            {
+                "phoneme": "ð",
+                "word": "this"
+            },
+            {
+                "phoneme": "s",
+                "word": "see"
+            },
+            {
+                "phoneme": "z",
+                "word": "zoo"
+            },
+            {
+                "phoneme": "ʃ",
+                "word": "shoe"
+            },
+            {
+                "phoneme": "ʒ",
+                "word": "vision"
+            },
+            {
+                "phoneme": "tʃ",
+                "word": "chain"
+            },
+            {
+                "phoneme": "dʒ",
+                "word": "jam"
+            },
+            {
+                "phoneme": "l",
+                "word": "leg"
+            },
+            {
+                "phoneme": "r",
+                "word": "red"
+            },
+            {
+                "phoneme": "h",
+                "word": "hat"
+            },
+            {
+                "phoneme": "x",
+                "word": "loch"
+            },
+            {
+                "phoneme": "j",
+                "word": "yes"
+            },
+            {
+                "phoneme": "w",
+                "word": "wet"
+            }
+        ],
+        "vowels": [
+            {
+                "phoneme": "iː",
+                "word": "see"
+            },
+            {
+                "phoneme": "i",
+                "word": "happy"
+            },
+            {
+                "phoneme": "ɪ",
+                "word": "sit"
+            },
+            {
+                "phoneme": "e",
+                "word": "bed"
+            },
+            {
+                "phoneme": "æ",
+                "word": "cat"
+            },
+            {
+                "phoneme": "ə",
+                "word": "about"
+            },
+            {
+                "phoneme": "ɜː",
+                "word": "fur"
+            },
+            {
+                "phoneme": "ʌ",
+                "word": "cup"
+            },
+            {
+                "phoneme": "uː",
+                "word": "too"
+            },
+            {
+                "phoneme": "u",
+                "word": "actual"
+            },
+            {
+                "phoneme": "ʊ",
+                "word": "put"
+            },
+            {
+                "phoneme": "ɔː",
+                "word": "saw"
+            },
+            {
+                "phoneme": "ɑː",
+                "word": "father"
+            }
+        ],
+        "diphthongs": [
+            {
+                "phoneme": "eɪ",
+                "word": "say"
+            },
+            {
+                "phoneme": "əʊ",
+                "word": "go"
+            },
+            {
+                "phoneme": "aɪ",
+                "word": "my"
+            },
+            {
+                "phoneme": "aʊ",
+                "word": "now"
+            },
+            {
+                "phoneme": "ɔɪ",
+                "word": "boy"
+            },
+            {
+                "phoneme": "ɪr",
+                "word": "near"
+            },
+            {
+                "phoneme": "er",
+                "word": "hair"
+            },
+            {
+                "phoneme": "ʊr",
+                "word": "pure"
+            }
+        ]
+    }
+}

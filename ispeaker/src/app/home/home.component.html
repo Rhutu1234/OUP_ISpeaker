@@ -6,19 +6,16 @@
             <p-accordion expandIcon='pi pi-plus' collapseIcon='pi pi-minus' styleClass='step-by-step-accordian'>
 
                 <p-accordionTab>
-                    <p-header><span class='oup-header'>What is the <span class='bold'> iWriter</span>?</span></p-header>
-                    The Oxford iWriter is an interactive tool designed to help you write more effectively in English. It
-                    provides
-                    models of 19 different types of writing and takes you through the key features of each one. It
-                    provides
-                    outline structures or frameworks for all the different types of writing, into which you can add your
-                    own
-                    content. For comparison and argument essays there are extra frameworks which allow you to structure
-                    your
-                    own
-                    essay in a slightly different way from the model essays. The iWriter helps you to plan, choose
-                    vocabulary,
-                    write, and check your own written work.
+                    <p-header>
+                        <span class='oup-header'>What is the <span class='bold'> iSpeaker</span>?</span>
+                    </p-header>
+                    The Oxford iSpeaker is designed for learners of English to help you speak more accurately and
+                    fluently in a variety of situations. The three sections each focus on a different aspect of spoken
+                    English - from individual sounds and words, to phrases, to longer speaking tasks. Watch videos,
+                    listen to audio, analyze the language used, and practise sounds and phrases yourself through guided
+                    activities.<br>
+                    You can choose British or American English on this page, and all video and audio content will follow
+                    this choice until you return to this page to change it.
                 </p-accordionTab>
 
             </p-accordion>
@@ -27,11 +24,11 @@
             <div class="p-grid p-justify-center p-align-center btn-lbl">
                 <span>Showing:</span>
             </div>
-            <div class="btn" [ngClass]="{'selected':selectedLanguage ==='BE'}" (click)="onLanguageSelection('BE')">
+            <div class="btn" [ngClass]="{'selected':selectedLanguage ==='BrE'}" (click)="onLanguageSelection('BrE')">
                 <span class="tick-img"></span>
                 <span class="btn-label">British English</span>
             </div>
-            <div class="btn" [ngClass]="{'selected':selectedLanguage ==='AE'}" (click)="onLanguageSelection('AE')">
+            <div class="btn" [ngClass]="{'selected':selectedLanguage ==='AmE'}" (click)="onLanguageSelection('AmE')">
                 <span class="tick-img"></span>
                 <span class="btn-label">American English</span>
             </div>
@@ -42,11 +39,9 @@
 
             <p-accordionTab>
                 <p-header><span class='oup-header'>Where are my projects?</span></p-header>
-                New projects will be in ‘My saved writing’. Projects that you saved in the old version of the iWriter
-                (i.e.
-                before May 2020) can be accessed <a href="/iwriter-oald9/" target="_blank">here</a>. The old version of
-                the
-                iWriter will be available until 31 December 2020.
+                Any content that you saved in the previous version of the iSpeaker (i.e. before October 2020) can be
+                temporarily accessed <a href="/ispeaker-oald9/" target="_blank">here</a>. The previous version of the
+                iSpeaker will be available until 31 December 2020.
             </p-accordionTab>
 
         </p-accordion>

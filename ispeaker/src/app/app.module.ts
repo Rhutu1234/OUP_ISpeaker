@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { SessionExpirationComponent } from './shared/session-expiration/session-expiration.component';
 import { SpinnerComponent } from './shared/spinner/spinner.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { SpinnerComponent } from './shared/spinner/spinner.component';
     BrowserAnimationsModule,
     AccordionModule,
     AppRoutingModule,
+    HttpClientModule
 
   ],
   providers: [],

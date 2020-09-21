@@ -1,0 +1,30 @@
+<div class='sound-details-wrapper'>
+    <a [routerLink]="['/home']" class='back-btn'>
+        <i class="pi pi-angle-left"></i>Back to text types</a>
+    <div class='tab-header'>Sounds {{soundsService.selectedSoundDetails.name}}</div>
+    <div class="sub-tab-header">
+        {{ispeakerService.selectedLanguage==='BrE'?'British Language':'American Language'}}
+    </div>
+    <div class='p-grid btn-wrapper'>
+        <div class='p-col details-btn selected' [ngClass]="{'selected':(activeTab === TabEnum.WATCH)}"
+            (click)='activeTab=TabEnum.WATCH;'>
+            <span>Watch</span>
+            <div class='hide-bottom-border'></div>
+        </div>
+        <div class='p-col details-btn' [ngClass]="{'selected':(activeTab === TabEnum.LISTEN_AND_RECORD)}"
+            (click)='activeTab=TabEnum.LISTEN_AND_RECORD;'>
+            <span>Listen & Record</span>
+            <div class='hide-bottom-border'></div>
+        </div>
+        <div class='p-col details-btn' [ngClass]="{'selected':(activeTab === TabEnum.PRACTISE)}"
+            (click)='activeTab=TabEnum.PRACTISE;'>
+            <span> Practise</span>
+            <div class='hide-bottom-border'></div>
+        </div>
+        <div class='p-col details-btn' [ngClass]="{'selected':(activeTab === TabEnum.REVIEW)}"
+            (click)='activeTab=TabEnum.REVIEW;'>
+            <span> Review</span>
+            <div class='hide-bottom-border'></div>
+        </div>
+    </div>
+</div>

@@ -10,5 +10,38 @@
         font-size: inherit;
         line-height: initial;
     }
+    .back-btn {
+        position: relative;
+        display: inline-block;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        color: #4776ae;
+        border: 1px solid #4776ae;
+        padding: 0px 10px;
+        border-radius: 50px;
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
+        width: fit-content;
+        font-size: 16px;
+        text-decoration: none;
+        background-color: #ffffff;
+        line-height: 28px;
+        -webkit-transition: background-color 0.1s;
+        -o-transition: background-color 0.1s;
+        transition: background-color 0.1s;
+        padding-left: 20px;
+        .pi {
+            position: absolute;
+            left: 1px;
+            top: 4px;
+            font-size: 22px;
+        }
+        &:hover {
+            color: #002048;
+            border-color: #949494;
+            background-color: #e6e5e5;
+            border: 1px solid #949494;
+        }
+    }
   
 }
