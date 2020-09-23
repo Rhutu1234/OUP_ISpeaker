@@ -1075,7 +1075,7 @@ function loadXml(xml) {
         var listRecordObj = {};
         listRecordObj.word = $(this).find('word').text();
         listRecordObj.audio = $(this).find('audio').text();
-
+        listRecordObj.audio = listRecordObj.audio.replace(/#/g, "");
         wordObj.BrE.listen_and_record.questions.push(listRecordObj);
       })
 
@@ -1087,7 +1087,7 @@ function loadXml(xml) {
         var listRecordObj = {};
         listRecordObj.word = $(this).find('word').text();
         listRecordObj.audio = $(this).find('audio').text();
-
+        listRecordObj.audio = listRecordObj.audio.replace(/#/g, "");
         wordObj.AmE.listen_and_record.questions.push(listRecordObj);
       })
 
@@ -1103,8 +1103,8 @@ function loadXml(xml) {
         quesObj.options = [];
         quesObj.ques = $(this).find('word').text();
         var transcript = $(this).find('transcription').html().trim();
-        transcript = transcript.replace(/<show/g, " <span class='highlightTranscript'");
-        transcript = transcript.replace(/<\/show/g, " </span");
+        transcript = transcript.replace(/<show/g, "<span class='highlightTranscript'");
+        transcript = transcript.replace(/<\/show/g, "</span");
         quesObj.transcription = transcript;
         $(this).find('audio').each(function () {
           var correct = $(this).attr('correct');
@@ -1115,6 +1115,7 @@ function loadXml(xml) {
             audioObj.correct = false;
           }
           audioObj.audio = $(this).html();
+          audioObj.audio = audioObj.audio.replace(/#/g, "");
           quesObj.options.push(audioObj);
         })
         practiceObj.questions.push(quesObj);
@@ -1132,8 +1133,8 @@ function loadXml(xml) {
         quesObj.options = [];
         quesObj.ques = $(this).find('word').text();
         var transcript = $(this).find('transcription').html();
-        transcript = transcript.replace(/<show/g, " <span class='highlightTranscript'");
-        transcript = transcript.replace(/<\/show/g, " </span");
+        transcript = transcript.replace(/<show/g, "<span class='highlightTranscript'");
+        transcript = transcript.replace(/<\/show/g, "</span");
         quesObj.transcription = transcript;
         $(this).find('audio').each(function () {
           var correct = $(this).attr('correct');
@@ -1144,6 +1145,7 @@ function loadXml(xml) {
             audioObj.correct = false;
           }
           audioObj.audio = $(this).html();
+          audioObj.audio = audioObj.audio.replace(/#/g, "");
           quesObj.options.push(audioObj);
         })
         practiceObj.questions.push(quesObj);

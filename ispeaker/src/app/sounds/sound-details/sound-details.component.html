@@ -1,6 +1,6 @@
 <div class='sound-details-wrapper'>
     <a [routerLink]="['/home']" class='back-btn'>
-        <i class="pi pi-angle-left"></i>Back to text types</a>
+        <i class="pi pi-angle-left"></i>Back to main menu</a>
     <div class='tab-header'>Sounds {{soundsService.selectedSoundDetails.name}}</div>
     <div class="sub-tab-header">
         {{ispeakerService.selectedLanguage==='BrE'?'British Language':'American Language'}}
@@ -27,4 +27,19 @@
             <div class='hide-bottom-border'></div>
         </div>
     </div>
+    <ng-container [ngSwitch]="activeTab">
+        <ng-container *ngSwitchCase="TabEnum.WATCH">
+            <app-watch></app-watch>
+        </ng-container>
+        <ng-container *ngSwitchCase="TabEnum.LISTEN_AND_RECORD">
+            <app-listen-and-record></app-listen-and-record>
+        </ng-container>
+        <ng-container *ngSwitchCase="TabEnum.PRACTISE">
+            <app-practise></app-practise>
+        </ng-container>
+        <ng-container *ngSwitchCase="TabEnum.REVIEW">
+            <app-review></app-review>
+        </ng-container>
+    </ng-container>
+    <p-button label="Try another sound" styleClass="try-another-btn" (onClick)="router.navigate(['/sounds/'])" ></p-button>
 </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { TabEnum } from 'src/app/app.model';
 import { ISpeakerService } from 'src/app/ispeaker.service';
 import { SoundsService } from '../sounds.service';
@@ -10,10 +11,13 @@ import { SoundsService } from '../sounds.service';
 })
 export class SoundDetailsComponent implements OnInit {
   TabEnum = TabEnum;
-  activeTab: TabEnum;
-  constructor(public soundsService: SoundsService, public ispeakerService: ISpeakerService) { }
+  activeTab = TabEnum.WATCH;
+  constructor(public soundsService: SoundsService, public ispeakerService: ISpeakerService, public router: Router) { }
 
   ngOnInit() {
+    if (!this.soundsService.selectedSoundDetails) {
+      this.router.navigate(['/sounds/']);
+    }
   }
 
 }
