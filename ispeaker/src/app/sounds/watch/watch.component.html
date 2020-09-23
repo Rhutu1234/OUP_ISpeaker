@@ -1,0 +1,4 @@
+<div *ngIf="videoLink" class="video-container">
+    <div class='header'>Watch</div>
+    <div #videoWrapper (window:resize)="onResize($event)" [innerHtml]="videoLink"></div>
+</div>

@@ -1,0 +1,64 @@
+.listen-record-wrapper {
+    padding: 25px;
+    padding-top: 10px;
+    margin-top: 30px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(204, 204, 204, 1);
+    border-radius: 4px;
+    -moz-box-shadow: 0px 5px 5px rgba(204, 204, 204, 0.349019607843137);
+    -webkit-box-shadow: 0px 5px 5px rgba(204, 204, 204, 0.349019607843137);
+    box-shadow: 0px 5px 5px rgba(204, 204, 204, 0.349019607843137);
+
+    .header {
+        font-family: "SourceSansProBold";
+        font-size: 24px;
+        text-align: left;
+        font-weight: 650;
+        font-style: normal;
+        margin-bottom: 30px;
+    }
+    .rubric {
+        font-weight: 400;
+        font-style: normal;
+        font-size: 18px;
+        color: #666666;
+        margin-bottom: 30px;
+    }
+    .sound-row {
+        margin-bottom: 30px;
+        .pract-word {
+            width: 35%;
+            float: left;
+            font-size: 17px;
+            color: #666666;
+        }
+        .icons {
+            width: 30px;
+            height: 30px;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: inline-block;
+            margin-right: 30px;
+            background-size: 100% auto;
+            cursor: pointer;
+            &.disable {
+                cursor: default;
+                opacity: 0.5;
+                pointer-events: none;
+            }
+            &.play-sound {
+                background-image: url("../../../assets/img/audio_british.png");
+            }
+            &.record {
+                background-image: url("../../../assets/img/record_start.png");
+            }
+            &.play {
+                background-image: url("../../../assets/img/play_recording.png");
+            }
+            &.record-stop {
+                background-image: url("../../../assets/img/stop.png");
+            }
+        }
+    }
+}

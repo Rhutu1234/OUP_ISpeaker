@@ -1,0 +1,17 @@
+<div class="listen-record-wrapper">
+    <div class='header'>
+        Listen and record</div>
+    <div class='rubric'>{{listenRecordData.rubric}}</div>
+    <ng-container *ngFor="let sound of listenRecordData.questions">
+        <div class='sound-row'>
+            <div class="pract-word">{{sound.word}}</div>
+            <div class="icons play-sound" (click)="playSound(sound)"></div>
+            <div class="icons" (click)="startStopRecording(sound)"
+                [ngClass]="{'record':!sound.isRecording,'record-stop':sound.isRecording}"></div>
+            <div class="icons play" (click)="playStopRecordedAudio(sound)"
+                [ngClass]="{'disable': !sound.recordedAudio, 'play': !sound.isPlaying,'record-stop':sound.isPlaying}">
+            </div>
+        </div>
+    </ng-container>
+
+</div>
