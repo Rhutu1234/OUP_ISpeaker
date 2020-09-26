@@ -9,12 +9,15 @@ import { ListenAndRecordComponent } from './listen-and-record/listen-and-record.
 import { PractiseComponent } from './practise/practise.component';
 import { ReviewComponent } from './review/review.component';
 import { ButtonModule } from 'primeng/button';
-
+import { CheckboxModule } from 'primeng/checkbox';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [SoundListComponent, SoundDetailsComponent, WatchComponent, ListenAndRecordComponent, PractiseComponent, ReviewComponent],
   imports: [
     CommonModule,
+    FormsModule,
     ButtonModule,
+    CheckboxModule,
     SoundsRoutingModule
   ]
 })

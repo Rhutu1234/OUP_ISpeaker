@@ -37,6 +37,33 @@
             border: 1px solid transparent;
             border-top-left-radius: 0.25rem;
             border-top-right-radius: 0.25rem;
+            .txt-wrapper {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                
+                .icon {
+                    display: inline-block;
+                    min-width: 26px;
+                    height: 26px;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: 100% auto;
+                    margin-right: 5px;
+                    &.watch-icon {
+                        background-image: url("../../../assets/img/watch_icon.png");
+                    }
+                    &.listen-icon {
+                        background-image: url("../../../assets/img/listen_icon.png");
+                    }
+                    &.practice-icon {
+                        background-image: url("../../../assets/img/practise_icon.png");
+                    }
+                    &.review-icon {
+                        background-image: url("../../../assets/img/review_icon.png");
+                    }
+                }
+            }
             .hide-bottom-border {
                 display: none;
             }
@@ -71,5 +98,10 @@
                 text-align: center;
             }
         }
+    }
+}
+@media screen and (max-width: 480px) {
+    .title-txt{
+        display: none;
     }
 }
