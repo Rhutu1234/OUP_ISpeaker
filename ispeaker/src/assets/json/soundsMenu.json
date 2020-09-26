@@ -1,1 +1,390 @@
-{"BrE":{"consonants":[{"phoneme":"p","word":"pen"},{"phoneme":"b","word":"bad"},{"phoneme":"t","word":"tea"},{"phoneme":"d","word":"did"},{"phoneme":"k","word":"cat"},{"phoneme":"ɡ","word":"get"},{"phoneme":"m","word":"man"},{"phoneme":"n","word":"now"},{"phoneme":"ŋ","word":"sing"},{"phoneme":"f","word":"fall"},{"phoneme":"v","word":"van"},{"phoneme":"θ","word":"thin"},{"phoneme":"ð","word":"this"},{"phoneme":"s","word":"see"},{"phoneme":"z","word":"zoo"},{"phoneme":"ʃ","word":"shoe"},{"phoneme":"ʒ","word":"vision"},{"phoneme":"tʃ","word":"chain"},{"phoneme":"dʒ","word":"jam"},{"phoneme":"l","word":"leg"},{"phoneme":"r","word":"red"},{"phoneme":"h","word":"hat"},{"phoneme":"x","word":"loch"},{"phoneme":"j","word":"yes"},{"phoneme":"w","word":"wet"}],"vowels":[{"phoneme":"iː","word":"see"},{"phoneme":"i","word":"happy"},{"phoneme":"ɪ","word":"sit"},{"phoneme":"e","word":"bed"},{"phoneme":"æ","word":"cat"},{"phoneme":"ə","word":"about"},{"phoneme":"ɜː","word":"fur"},{"phoneme":"ʌ","word":"cup"},{"phoneme":"uː","word":"too"},{"phoneme":"u","word":"actual"},{"phoneme":"ʊ","word":"put"},{"phoneme":"ɔː","word":"saw"},{"phoneme":"ɒ","word":"got"},{"phoneme":"ɑː","word":"father"}],"diphthongs":[{"phoneme":"eɪ","word":"say"},{"phoneme":"əʊ","word":"go"},{"phoneme":"aɪ","word":"my"},{"phoneme":"aʊ","word":"now"},{"phoneme":"ɔɪ","word":"boy"},{"phoneme":"ɪə","word":"near"},{"phoneme":"eə","word":"hair"},{"phoneme":"ʊə","word":"pure"}]},"AmE":{"consonants":[{"phoneme":"p","word":"pen"},{"phoneme":"b","word":"bad"},{"phoneme":"t","word":"tea"},{"phoneme":"d","word":"did"},{"phoneme":"k","word":"cat"},{"phoneme":"ɡ","word":"get"},{"phoneme":"m","word":"man"},{"phoneme":"n","word":"now"},{"phoneme":"ŋ","word":"sing"},{"phoneme":"f","word":"fall"},{"phoneme":"v","word":"van"},{"phoneme":"θ","word":"thin"},{"phoneme":"ð","word":"this"},{"phoneme":"s","word":"see"},{"phoneme":"z","word":"zoo"},{"phoneme":"ʃ","word":"shoe"},{"phoneme":"ʒ","word":"vision"},{"phoneme":"tʃ","word":"chain"},{"phoneme":"dʒ","word":"jam"},{"phoneme":"l","word":"leg"},{"phoneme":"r","word":"red"},{"phoneme":"h","word":"hat"},{"phoneme":"x","word":"loch"},{"phoneme":"j","word":"yes"},{"phoneme":"w","word":"wet"}],"vowels":[{"phoneme":"iː","word":"see"},{"phoneme":"i","word":"happy"},{"phoneme":"ɪ","word":"sit"},{"phoneme":"e","word":"bed"},{"phoneme":"æ","word":"cat"},{"phoneme":"ə","word":"about"},{"phoneme":"ɜː","word":"fur"},{"phoneme":"ʌ","word":"cup"},{"phoneme":"uː","word":"too"},{"phoneme":"u","word":"actual"},{"phoneme":"ʊ","word":"put"},{"phoneme":"ɔː","word":"saw"},{"phoneme":"ɑː","word":"father"}],"diphthongs":[{"phoneme":"eɪ","word":"say"},{"phoneme":"əʊ","word":"go"},{"phoneme":"aɪ","word":"my"},{"phoneme":"aʊ","word":"now"},{"phoneme":"ɔɪ","word":"boy"},{"phoneme":"ɪr","word":"near"},{"phoneme":"er","word":"hair"},{"phoneme":"ʊr","word":"pure"}]}}
+{
+    "BrE": {
+        "consonants": [
+            {
+                "phoneme": "p",
+                "word": "<span class='bold'>p</span>en"
+            },
+            {
+                "phoneme": "b",
+                "word": "<span class='bold'>b</span>ad"
+            },
+            {
+                "phoneme": "t",
+                "word": "<span class='bold'>t</span>ea"
+            },
+            {
+                "phoneme": "d",
+                "word": "<span class='bold'>d</span>id"
+            },
+            {
+                "phoneme": "k",
+                "word": "<span class='bold'>c</span>at"
+            },
+            {
+                "phoneme": "ɡ",
+                "word": "<span class='bold'>g</span>et"
+            },
+            {
+                "phoneme": "m",
+                "word": "<span class='bold'>m</span>an"
+            },
+            {
+                "phoneme": "n",
+                "word": "<span class='bold'>n</span>ow"
+            },
+            {
+                "phoneme": "ŋ",
+                "word": "si<span class='bold'>ng</span>"
+            },
+            {
+                "phoneme": "f",
+                "word": "<span class='bold'>f</span>all"
+            },
+            {
+                "phoneme": "v",
+                "word": "<span class='bold'>v</span>an"
+            },
+            {
+                "phoneme": "θ",
+                "word": "<span class='bold'>th</span>in"
+            },
+            {
+                "phoneme": "ð",
+                "word": "<span class='bold'>th</span>is"
+            },
+            {
+                "phoneme": "s",
+                "word": "<span class='bold'>s</span>ee"
+            },
+            {
+                "phoneme": "z",
+                "word": "<span class='bold'>z</span>oo"
+            },
+            {
+                "phoneme": "ʃ",
+                "word": "<span class='bold'>sh</span>oe"
+            },
+            {
+                "phoneme": "ʒ",
+                "word": "vi<span class='bold'>s</span>ion"
+            },
+            {
+                "phoneme": "tʃ",
+                "word": "<span class='bold'>ch</span>ain"
+            },
+            {
+                "phoneme": "dʒ",
+                "word": "<span class='bold'>j</span>am"
+            },
+            {
+                "phoneme": "l",
+                "word": "<span class='bold'>l</span>eg"
+            },
+            {
+                "phoneme": "r",
+                "word": "<span class='bold'>r</span>ed"
+            },
+            {
+                "phoneme": "h",
+                "word": "<span class='bold'>h</span>at"
+            },
+            {
+                "phoneme": "x",
+                "word": "lo<span class='bold'>ch</span>"
+            },
+            {
+                "phoneme": "j",
+                "word": "<span class='bold'>y</span>es"
+            },
+            {
+                "phoneme": "w",
+                "word": "<span class='bold'>w</span>et"
+            }
+        ],
+        "vowels": [
+            {
+                "phoneme": "iː",
+                "word": "s<span class='bold'>ee</span>"
+            },
+            {
+                "phoneme": "i",
+                "word": "happ<span class='bold'>y</span>"
+            },
+            {
+                "phoneme": "ɪ",
+                "word": "s<span class='bold'>i</span>t"
+            },
+            {
+                "phoneme": "e",
+                "word": "b<span class='bold'>e</span>d"
+            },
+            {
+                "phoneme": "æ",
+                "word": "c<span class='bold'>a</span>t"
+            },
+            {
+                "phoneme": "ə",
+                "word": "<span class='bold'>a</span>bout"
+            },
+            {
+                "phoneme": "ɜː",
+                "word": "f<span class='bold'>ur</span>"
+            },
+            {
+                "phoneme": "ʌ",
+                "word": "c<span class='bold'>u</span>p"
+            },
+            {
+                "phoneme": "uː",
+                "word": "t<span class='bold'>oo</span>"
+            },
+            {
+                "phoneme": "u",
+                "word": "act<span class='bold'>u</span>al"
+            },
+            {
+                "phoneme": "ʊ",
+                "word": "p<span class='bold'>u</span>t"
+            },
+            {
+                "phoneme": "ɔː",
+                "word": "s<span class='bold'>aw</span>"
+            },
+            {
+                "phoneme": "ɒ",
+                "word": "g<span class='bold'>o</span>t"
+            },
+            {
+                "phoneme": "ɑː",
+                "word": "f<span class='bold'>a</span>ther"
+            }
+        ],
+        "diphthongs": [
+            {
+                "phoneme": "eɪ",
+                "word": "s<span class='bold'>ay</span>"
+            },
+            {
+                "phoneme": "əʊ",
+                "word": "g<span class='bold'>o</span>"
+            },
+            {
+                "phoneme": "aɪ",
+                "word": "m<span class='bold'>y</span>"
+            },
+            {
+                "phoneme": "aʊ",
+                "word": "n<span class='bold'>ow</span>"
+            },
+            {
+                "phoneme": "ɔɪ",
+                "word": "b<span class='bold'>oy</span>"
+            },
+            {
+                "phoneme": "ɪə",
+                "word": "n<span class='bold'>ear</span>"
+            },
+            {
+                "phoneme": "eə",
+                "word": "h<span class='bold'>air</span>"
+            },
+            {
+                "phoneme": "ʊə",
+                "word": "p<span class='bold'>ure</span>"
+            }
+        ]
+    },
+    "AmE": {
+        "consonants": [
+            {
+                "phoneme": "p",
+                "word": "<span class='bold'>p</span>en"
+            },
+            {
+                "phoneme": "b",
+                "word": "<span class='bold'>b</span>ad"
+            },
+            {
+                "phoneme": "t",
+                "word": "<span class='bold'>t</span>ea"
+            },
+            {
+                "phoneme": "d",
+                "word": "<span class='bold'>d</span>id"
+            },
+            {
+                "phoneme": "k",
+                "word": "<span class='bold'>c</span>at"
+            },
+            {
+                "phoneme": "ɡ",
+                "word": "<span class='bold'>g</span>et"
+            },
+            {
+                "phoneme": "m",
+                "word": "<span class='bold'>m</span>an"
+            },
+            {
+                "phoneme": "n",
+                "word": "<span class='bold'>n</span>ow"
+            },
+            {
+                "phoneme": "ŋ",
+                "word": "si<span class='bold'>ng</span>"
+            },
+            {
+                "phoneme": "f",
+                "word": "<span class='bold'>f</span>all"
+            },
+            {
+                "phoneme": "v",
+                "word": "<span class='bold'>v</span>an"
+            },
+            {
+                "phoneme": "θ",
+                "word": "<span class='bold'>th</span>in"
+            },
+            {
+                "phoneme": "ð",
+                "word": "<span class='bold'>th</span>is"
+            },
+            {
+                "phoneme": "s",
+                "word": "<span class='bold'>s</span>ee"
+            },
+            {
+                "phoneme": "z",
+                "word": "<span class='bold'>z</span>oo"
+            },
+            {
+                "phoneme": "ʃ",
+                "word": "<span class='bold'>sh</span>oe"
+            },
+            {
+                "phoneme": "ʒ",
+                "word": "vi<span class='bold'>s</span>ion"
+            },
+            {
+                "phoneme": "tʃ",
+                "word": "<span class='bold'>ch</span>ain"
+            },
+            {
+                "phoneme": "dʒ",
+                "word": "<span class='bold'>j</span>am"
+            },
+            {
+                "phoneme": "l",
+                "word": "<span class='bold'>l</span>eg"
+            },
+            {
+                "phoneme": "r",
+                "word": "<span class='bold'>r</span>ed"
+            },
+            {
+                "phoneme": "h",
+                "word": "<span class='bold'>h</span>at"
+            },
+            {
+                "phoneme": "x",
+                "word": "lo<span class='bold'>ch</span>"
+            },
+            {
+                "phoneme": "j",
+                "word": "<span class='bold'>y</span>es"
+            },
+            {
+                "phoneme": "w",
+                "word": "<span class='bold'>w</span>et"
+            }
+        ],
+        "vowels": [
+            {
+                "phoneme": "iː",
+                "word": "s<span class='bold'>ee</span>"
+            },
+            {
+                "phoneme": "i",
+                "word": "happ<span class='bold'>y</span>"
+            },
+            {
+                "phoneme": "ɪ",
+                "word": "s<span class='bold'>i</span>t"
+            },
+            {
+                "phoneme": "e",
+                "word": "b<span class='bold'>e</span>d"
+            },
+            {
+                "phoneme": "æ",
+                "word": "c<span class='bold'>a</span>t"
+            },
+            {
+                "phoneme": "ə",
+                "word": "<span class='bold'>a</span>bout"
+            },
+            {
+                "phoneme": "ɜː",
+                "word": "f<span class='bold'>ur</span>"
+            },
+            {
+                "phoneme": "ʌ",
+                "word": "c<span class='bold'>u</span>p"
+            },
+            {
+                "phoneme": "uː",
+                "word": "t<span class='bold'>oo</span>"
+            },
+            {
+                "phoneme": "u",
+                "word": "act<span class='bold'>u</span>al"
+            },
+            {
+                "phoneme": "ʊ",
+                "word": "p<span class='bold'>u</span>t"
+            },
+            {
+                "phoneme": "ɔː",
+                "word": "s<span class='bold'>aw</span>"
+            },
+            {
+                "phoneme": "ɑː",
+                "word": "f<span class='bold'>a</span>ther"
+            }
+        ],
+        "diphthongs": [
+            {
+                "phoneme": "eɪ",
+                "word": "s<span class='bold'>ay</span>"
+            },
+            {
+                "phoneme": "əʊ",
+                "word": "g<span class='bold'>o</span>"
+            },
+            {
+                "phoneme": "aɪ",
+                "word": "m<span class='bold'>y</span>"
+            },
+            {
+                "phoneme": "aʊ",
+                "word": "n<span class='bold'>ow</span>"
+            },
+            {
+                "phoneme": "ɔɪ",
+                "word": "b<span class='bold'>oy</span>"
+            },
+            {
+                "phoneme": "ɪr",
+                "word": "n<span class='bold'>ear</span>"
+            },
+            {
+                "phoneme": "er",
+                "word": "h<span class='bold'>air</span>"
+            },
+            {
+                "phoneme": "ʊr",
+                "word": "p<span class='bold'>ure</span>"
+            }
+        ]
+    }
+}

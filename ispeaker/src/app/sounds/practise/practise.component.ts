@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SoundsService } from '../sounds.service';
-
+import * as _ from 'lodash';
+import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-practise',
   templateUrl: './practise.component.html',
@@ -19,11 +20,21 @@ export class PractiseComponent implements OnInit {
 
   ngOnInit() {
     this.practiseSet = this.soundsService.selectedSoundDetails[this.soundsService.selectedLanguage].practice;
-    this.practiseData = this.practiseSet[this.currentSet];
+    if (this.soundsService.selectedSoundDetails[this.soundsService.selectedLanguage].currentSet) {
+      this.currentSet = this.soundsService.selectedSoundDetails[this.soundsService.selectedLanguage].currentSet;
+    } else {
+      this.currentSet = 0;
+    }
+
+    this.practiseData = _.cloneDeep(this.practiseSet[this.currentSet]);
+    if (this.practiseData.score) {
+      this.score = this.practiseData.score;
+      this.currentIndex = this.practiseData.questions.length;
+    }
   }
 
   playSound(option) {
-    this.audio.src = '../../../assets/audio/' + option.audio + '.mp3';
+    this.audio.src = environment.baseHref + 'assets/audio/' + option.audio + '.mp3';
     this.audio.load();
     this.audio.play();
 
@@ -31,6 +42,11 @@ export class PractiseComponent implements OnInit {
   onNextClick() {
     this.isAnswered = false;
     this.currentIndex++;
+    if (this.currentIndex >= this.practiseData.questions.length) {
+      this.practiseSet[this.currentSet] = this.practiseData;
+      this.practiseData.score = this.score;
+      this.soundsService.saveSoundData();
+    }
   }
   checkAnswer(option) {
     option.userAnswer = true;
@@ -42,9 +58,9 @@ export class PractiseComponent implements OnInit {
   loadSet() {
     this.currentIndex = 0;
     this.currentSet++;
-    this.practiseData.score = this.score;
+    this.soundsService.selectedSoundDetails[this.soundsService.selectedLanguage].currentSet = this.currentSet;
     this.score = 0;
-    this.practiseData = this.practiseSet[this.currentSet];
+    this.practiseData = _.cloneDeep(this.practiseSet[this.currentSet]);
   }
 
 }

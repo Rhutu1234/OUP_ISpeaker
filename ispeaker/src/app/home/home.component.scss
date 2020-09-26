@@ -3,12 +3,16 @@
         span {
             font-size: 36px;
         }
+        margin-bottom: 40px;
     }
     .tab-wrapper {
+        float: left;
+        width: 100%;
         .i-text {
             padding-left: 0px;
             font-size: 18px;
             color: #333333;
+            margin: 10px 0px;
         }
         .tile-wrapper {
             padding: 8px;
@@ -66,56 +70,78 @@
         }
     }
     .flex-container {
-        display: flex;
-        align-items: baseline;
-        .btn-wrapper {
-            display: inline-flex;
+        display: block;
+        float: left;
+        width: 100%;
+        position: relative;
+        .accord-wrapper {
+            display: block;
+            float: left;
+            width: 100%;
+            position: relative;
+        }
+    }
+    .btn-wrapper {
+        display: inline-flex;
+        align-items: center;
+        position: absolute;
+        right: 0;
+        top: 5px;
+        .btn-lbl {
+            margin: 0px 10px 0px 0px;
+            font-family: "SourceSansProSemiBold";
+            font-weight: 650;
+            font-style: normal;
+            font-size: 18px;
+            color: #666666;
+        }
+        .btn {
+            display: -webkit-box;
+            display: flex;
+            position: relative;
+            width: 167px;
+            height: 30px;
+            -webkit-box-align: center;
             align-items: center;
-            .btn-lbl {
-                margin: 0px 10px 0px 0px;
-                font-family: "SourceSansProSemiBold";
-                font-weight: 650;
-                font-style: normal;
-                font-size: 18px;
-                color: #666666;
+            -webkit-box-pack: center;
+            justify-content: center;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 17px;
+            margin-right: 10px;
+            cursor: pointer;
+            color: #333;
+            border-radius: 20px;
+            border: 1px solid rgba(102, 102, 102, 1);
+            .tick-img {
+                position: absolute;
+                top: 8px;
+                left: 5px;
+                width: 18px;
+                height: 14px;
+                background-image: url("../../assets/img/tick.png");
+                background-size: 100% auto;
+                background-repeat: no-repeat;
+                background-position: center;
+                display: none;
             }
-            .btn {
-                display: -webkit-box;
-                display: flex;
-                position: relative;
-                width: 167px;
-                height: 34px;
-                -webkit-box-align: center;
-                align-items: center;
-                -webkit-box-pack: center;
-                justify-content: center;
-                font-weight: 400;
-                font-style: normal;
-                font-size: 17px;
-                margin-right: 10px;
-                cursor: pointer;
-                color: #333;
-                border-radius: 20px;
-                border: 1px solid rgba(102, 102, 102, 1);
+            &.selected {
+                background-color: rgba(153, 204, 255, 0.298039215686275);
                 .tick-img {
-                    position: absolute;
-                    top: 8px;
-                    left: 5px;
-                    width: 18px;
-                    height: 14px;
-                    background-image: url("../../assets/img/tick.png");
-                    background-size: 100% auto;
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    display: none;
-                }
-                &.selected {
-                    background-color: rgba(153, 204, 255, 0.298039215686275);
-                    .tick-img {
-                        display: inline-block;
-                    }
+                    display: inline-block;
                 }
             }
+        }
+    }
+}
+@media screen and (max-width: 680px) {
+    .home-wrapper {
+        .btn-wrapper {
+            display: flex;
+            position: relative;
+            float: left;
+            margin-bottom: 20px;
+            margin-top: 10px;
         }
     }
 }

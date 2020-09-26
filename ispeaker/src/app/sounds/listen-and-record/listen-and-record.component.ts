@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { AudioRecordingService } from 'src/app/audio-recording.service';
+import { environment } from 'src/environments/environment';
 import { SoundsService } from '../sounds.service';
 
 @Component({
@@ -22,7 +23,15 @@ export class ListenAndRecordComponent implements OnInit, OnDestroy {
       this.currentSound.recordedTime = time;
     });
     this.audioRecordingService.getRecordedBlob().subscribe((data) => {
-      this.currentSound.recordedAudio = URL.createObjectURL(data.blob);
+      // this.currentSound.recordedAudio = URL.createObjectURL(data.blob);
+      const reader = new FileReader();
+      reader.readAsDataURL(data.blob);
+      reader.onloadend = () => {
+        const base64data = reader.result;
+        this.currentSound.recordedAudio = base64data;
+        this.soundsService.saveSoundData();
+      };
+
     });
   }
 
@@ -31,12 +40,13 @@ export class ListenAndRecordComponent implements OnInit, OnDestroy {
   }
   playSound(sound) {
 
-    this.audio.src = '../../../assets/audio/' + sound.audio + '.mp3';
+    this.audio.src = environment.baseHref + 'assets/audio/' + sound.audio + '.mp3';
     this.audio.load();
     this.audio.play();
   }
   startStopRecording(sound) {
     this.audio.pause();
+    sound.isPlaying = false;
     if (sound !== this.currentSound) {
       this.resetRecording(sound);
     }
@@ -52,9 +62,9 @@ export class ListenAndRecordComponent implements OnInit, OnDestroy {
   }
   resetRecording(currSound) {
     for (const sound of this.listenRecordData.questions) {
-      sound.isPlaying = false;
       this.audio.pause();
       if (currSound !== sound) {
+        sound.isPlaying = false;
         sound.isRecording = false;
         this.audioRecordingService.abortRecording();
       }
@@ -63,6 +73,8 @@ export class ListenAndRecordComponent implements OnInit, OnDestroy {
   }
   playStopRecordedAudio(sound) {
     this.resetRecording(sound);
+    sound.isRecording = false;
+    this.audioRecordingService.abortRecording();
     this.currentSound = sound;
     if (sound.isPlaying) {
       sound.isPlaying = false;

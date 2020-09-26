@@ -16,8 +16,9 @@ export class SoundDetailsComponent implements OnInit {
 
   ngOnInit() {
     if (!this.soundsService.selectedSoundDetails) {
-      this.router.navigate(['/sounds/']);
+      this.router.navigate(['/sounds/'], { skipLocationChange: true });
     }
+    this.ispeakerService.scrollIntoView(document.getElementsByClassName('ispeaker-wrapper')[0]);
   }
 
 }

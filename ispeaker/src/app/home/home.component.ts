@@ -10,11 +10,12 @@ import { ISpeakerService } from '../ispeaker.service';
 export class HomeComponent implements OnInit {
   dataLoading = false;
   selectedLanguage;
-  constructor(private router: Router, private ispeakerService: ISpeakerService) { }
+  constructor(private router: Router, private route: ActivatedRoute, private ispeakerService: ISpeakerService) { }
 
   ngOnInit() {
     this.selectedLanguage = this.ispeakerService.selectedLanguage;
     this.dataLoading = false;
+    this.ispeakerService.scrollIntoView(document.getElementsByClassName('ispeaker-wrapper')[0]);
   }
   onLanguageSelection(type) {
     this.selectedLanguage = type;
@@ -26,10 +27,10 @@ export class HomeComponent implements OnInit {
         this.router.navigate(['/sounds']);
         break;
       case 'conversations':
-        this.router.navigate(['/conversations']);
+        this.router.navigate(['/conversations'], { skipLocationChange: true });
         break;
       case 'exam speaking':
-        this.router.navigate(['/examSpeaking']);
+        this.router.navigate(['/examSpeaking'], { skipLocationChange: true });
         break;
     }
 

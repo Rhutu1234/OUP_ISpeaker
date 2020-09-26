@@ -2,6 +2,8 @@
     color: #333333;
     font-family: "SourceSansProRegular";
     min-width: 300px;
+    float: left;
+    width: 100%;
     a {
         text-decoration: none;
     }
@@ -46,5 +48,10 @@
     .highlightTranscript {
         color: #FF0000;
     }
-  
+    .bold {
+        font-family: "SourceSansProSemiBold";
+        font-weight: 650;
+        font-style: normal;
+    }
 }
+

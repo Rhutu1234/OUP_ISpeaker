@@ -10,9 +10,10 @@ import { SoundsService } from './sounds.service';
 })
 export class SoundListComponent implements OnInit {
   soundsMenu: any;
-  constructor(private router: Router, private soundsService: SoundsService, private ispeakerService: ISpeakerService) { }
+  constructor(private router: Router, private soundsService: SoundsService, public ispeakerService: ISpeakerService) { }
 
   ngOnInit() {
+    this.ispeakerService.scrollIntoView(document.getElementsByClassName('ispeaker-wrapper')[0]);
     this.soundsService.fetchSoundMenu().subscribe((data) => {
       console.log(data);
       this.soundsMenu = data[0];
@@ -23,7 +24,7 @@ export class SoundListComponent implements OnInit {
   loadSounds(sound) {
     this.soundsService.selectedSound = sound;
     this.soundsService.getSoundDetails();
-    this.router.navigate(['/sounds/soundDetails']);
+    this.router.navigate(['/sounds/soundDetails'], { skipLocationChange: true });
     console.log(this.soundsService.selectedSoundDetails);
   }
 
