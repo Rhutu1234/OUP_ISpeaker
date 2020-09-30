@@ -11,14 +11,17 @@ import { ReviewComponent } from './review/review.component';
 import { ButtonModule } from 'primeng/button';
 import { CheckboxModule } from 'primeng/checkbox';
 import { FormsModule } from '@angular/forms';
+import { SharedModule } from '../shared/shared/shared.module';
 @NgModule({
-  declarations: [SoundListComponent, SoundDetailsComponent, WatchComponent, ListenAndRecordComponent, PractiseComponent, ReviewComponent],
+  declarations: [SoundListComponent,
+    SoundDetailsComponent, WatchComponent, ListenAndRecordComponent, PractiseComponent, ReviewComponent],
   imports: [
     CommonModule,
     FormsModule,
     ButtonModule,
     CheckboxModule,
-    SoundsRoutingModule
+    SharedModule,
+    SoundsRoutingModule,
   ]
 })
 export class SoundsModule { }

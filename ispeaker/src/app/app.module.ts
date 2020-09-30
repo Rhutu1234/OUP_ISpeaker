@@ -6,16 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AccordionModule } from 'primeng/accordion';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { SessionExpirationComponent } from './shared/session-expiration/session-expiration.component';
-import { SpinnerComponent } from './shared/spinner/spinner.component';
+
 import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
+import { SharedModule } from './shared/shared/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    SessionExpirationComponent,
-    SpinnerComponent
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +21,8 @@ import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
     AccordionModule,
     AppRoutingModule,
     HttpClientModule,
-    HttpClientJsonpModule
+    HttpClientJsonpModule,
+    SharedModule
 
   ],
   providers: [],

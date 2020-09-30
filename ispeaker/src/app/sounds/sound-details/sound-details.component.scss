@@ -42,7 +42,7 @@
                 align-items: center;
                 justify-content: center;
                 
-                .icon {
+                .tab-icon {
                     display: inline-block;
                     min-width: 26px;
                     height: 26px;
@@ -100,7 +100,7 @@
         }
     }
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 505px) {
     .title-txt{
         display: none;
     }

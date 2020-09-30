@@ -28,10 +28,8 @@ export class SoundsService {
     }
 
     fetchSoundMenu(): Observable<any> {
-        if (this.userId) {
-            this.fetchExistingSoundData();
-            this.fetchExistingSoundMenu();
-        }
+        this.selectedLanguage = this.ispeakerService.selectedLanguage;
+
         if (!this.soundMenu && !this.soundsData) {
             return forkJoin(
                 this.http.get(environment.baseHref + 'assets/json/soundsMenu.json').pipe(map((data) => {
@@ -39,7 +37,6 @@ export class SoundsService {
                     return data[this.ispeakerService.selectedLanguage];
                 })),
                 this.http.get(environment.baseHref + 'assets/json/sound_data.json').pipe(map((data) => {
-                    this.selectedLanguage = this.ispeakerService.selectedLanguage;
                     this.soundsData = data;
                     return data;
                 }))
@@ -53,9 +50,6 @@ export class SoundsService {
         for (const sound of this.soundsData.sounds) {
             if (sound.phoneme === this.selectedSound.phoneme) {
                 this.selectedSoundDetails = sound;
-                if (this.selectedSound.attempted) {
-                    this.fetchSoundDataFile().then(() => { }, () => { });
-                }
                 return false;
             }
         }
@@ -96,7 +90,7 @@ export class SoundsService {
     uploadSoundDataFile(soundData) {
         console.log('uploading sound file');
         if (this.userId) {
-            const destUrl = this.baseUrl + 'file/' + this.userId + '/sound_' + soundData.phoneme + '.json';
+            const destUrl = this.baseUrl + 'file/' + this.userId + '/sound_' + soundData.phoneme + '_' + this.selectedLanguage + '.json';
             const jsonStr = 'jsonpCallbackFunction(' + JSON.stringify(soundData) + ');';
             const formData: FormData = new FormData();
             formData.append('file', jsonStr);
@@ -121,7 +115,8 @@ export class SoundsService {
         }
     }
     fetchSoundDataFile() {
-        const soundDataUrl = this.baseUrl + 'file/' + this.userId + '/sound_' + this.selectedSound.phoneme + '.json';
+        const soundDataUrl =
+            this.baseUrl + 'file/' + this.userId + '/sound_' + this.selectedSound.phoneme + '_' + this.selectedLanguage + '.json';;
         return new Promise((resolve, reject) => {
 
             this.fetchJson(soundDataUrl, (data) => {
@@ -151,14 +146,10 @@ export class SoundsService {
         }
         soundData[this.selectedLanguage].review = selectedSoundDetails.review;
         this.updateSoundMenu();
-        // const index = _.findIndex(this.savedSoundData.sounds, { phoneme: this.selectedSound });
-        // if (index >= 0) {
-        //     this.savedSoundData.sounds.splice(index, 1);
-        // }
-        // this.savedSoundData.sounds.push(soundData);
         this.uploadSoundDataFile(soundData);
 
     }
+
     updateSoundMenu() {
         const selectedSoundDetails = this.selectedSoundDetails[this.selectedLanguage];
 
@@ -174,10 +165,9 @@ export class SoundsService {
             }
 
         }
-
-
-
+        this.uploadSoundMenu();
     }
+
     uploadSoundMenu() {
         console.log('uploading sound menu file');
         if (this.userId) {
@@ -228,6 +218,7 @@ export class SoundsService {
             console.log(data);
         }, (error) => {
             console.log(error);
+            cb(false);
         });
 
     }

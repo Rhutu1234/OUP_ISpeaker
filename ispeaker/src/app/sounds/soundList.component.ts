@@ -10,13 +10,32 @@ import { SoundsService } from './sounds.service';
 })
 export class SoundListComponent implements OnInit {
   soundsMenu: any;
+  dataLoading = false;
   constructor(private router: Router, private soundsService: SoundsService, public ispeakerService: ISpeakerService) { }
 
   ngOnInit() {
+    this.dataLoading = true;
     this.ispeakerService.scrollIntoView(document.getElementsByClassName('ispeaker-wrapper')[0]);
     this.soundsService.fetchSoundMenu().subscribe((data) => {
-      console.log(data);
-      this.soundsMenu = data[0];
+
+      console.log('fetch sound menu');
+      if (this.soundsService.userId) {
+        this.soundsService.fetchExistingSoundMenu().then((success) => {
+          console.log(success);
+          this.dataLoading = false;
+          this.soundsMenu = this.soundsService.soundMenu[this.soundsService.selectedLanguage];
+        }, (error) => {
+          this.dataLoading = false;
+          this.soundsMenu = this.soundsService.soundMenu[this.soundsService.selectedLanguage];
+          console.log(error);
+        });
+      } else {
+        this.dataLoading = false;
+        this.soundsMenu = this.soundsService.soundMenu[this.soundsService.selectedLanguage];
+      }
+
+
+
     }, (error) => {
 
     });
@@ -24,8 +43,19 @@ export class SoundListComponent implements OnInit {
   loadSounds(sound) {
     this.soundsService.selectedSound = sound;
     this.soundsService.getSoundDetails();
-    this.router.navigate(['/sounds/soundDetails'], { skipLocationChange: true });
-    console.log(this.soundsService.selectedSoundDetails);
+    if (this.soundsService.selectedSound.attempted) {
+      this.dataLoading = true;
+      this.soundsService.fetchSoundDataFile().then((success) => {
+        console.log(success);
+        this.router.navigate(['/sounds/soundDetails'], { skipLocationChange: true });
+      }, (error) => {
+        console.log(error);
+        this.router.navigate(['/sounds/soundDetails'], { skipLocationChange: true });
+      });
+    } else {
+      this.router.navigate(['/sounds/soundDetails'], { skipLocationChange: true });
+    }
+
   }
 
 }
