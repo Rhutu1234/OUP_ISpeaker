@@ -1,0 +1,59 @@
+<div class='conversations-details-wrapper'>
+    <a [routerLink]="['/home']" class='back-btn'>
+        <i class="pi pi-angle-left"></i>Back to main menu</a>
+    <div class='tab-header'>{{conversationType}}</div>
+    <div class="sub-tab-header">
+        {{ispeakerService.selectedLanguage==='BrE'?'British Language':'American Language'}}
+    </div>
+    <div class='p-grid btn-wrapper'>
+        <div class='p-col details-btn selected' [ngClass]="{'selected':(activeTab === TabEnum.WATCH)}"
+            (click)='activeTab=TabEnum.WATCH;'>
+            <div class="txt-wrapper">
+                <span class="tab-icon watch-icon" title="Watch"></span>
+                <span class="title-txt"> Watch & Study</span>
+            </div>
+            <div class='hide-bottom-border'></div>
+        </div>
+        <div class='p-col details-btn' [ngClass]="{'selected':(activeTab === TabEnum.LISTEN_AND_RECORD)}"
+            (click)='activeTab=TabEnum.LISTEN_AND_RECORD;'>
+            <div class="txt-wrapper">
+                <span class="tab-icon listen-icon" title="Listen"></span>
+                <span class="title-txt">Listen</span>
+            </div>
+            <div class='hide-bottom-border'></div>
+        </div>
+        <div class='p-col details-btn' [ngClass]="{'selected':(activeTab === TabEnum.PRACTISE)}"
+            (click)='activeTab=TabEnum.PRACTISE;'>
+            <div class="txt-wrapper">
+                <span class="tab-icon practice-icon" title="Practise"></span>
+                <span class="title-txt"> Practise</span>
+            </div>
+            <div class='hide-bottom-border'></div>
+        </div>
+        <div class='p-col details-btn' [ngClass]="{'selected':(activeTab === TabEnum.REVIEW)}"
+            (click)='activeTab=TabEnum.REVIEW;'>
+            <div class="txt-wrapper">
+                <span class="tab-icon review-icon" title="Review"></span>
+                <span class="title-txt"> Review</span>
+            </div>
+            <div class='hide-bottom-border'></div>
+        </div>
+    </div>
+    <ng-container [ngSwitch]="activeTab">
+        <ng-container *ngSwitchCase="TabEnum.WATCH">
+            <app-watch-and-study></app-watch-and-study>
+        </ng-container>
+        <ng-container *ngSwitchCase="TabEnum.LISTEN_AND_RECORD">
+            <app-listen></app-listen>
+        </ng-container>
+        <ng-container *ngSwitchCase="TabEnum.PRACTISE">
+            <app-conversations-practice></app-conversations-practice>
+        </ng-container>
+        <ng-container *ngSwitchCase="TabEnum.REVIEW">
+            <app-review></app-review>
+        </ng-container>
+    </ng-container>
+    <p-button label="Try another conversation" styleClass="try-another-btn"
+        (onClick)="router.navigate(['/conversations'],{ skipLocationChange: true })"></p-button>
+</div>
+<app-spinner [isRunning]='dataLoading'></app-spinner>

@@ -27,10 +27,10 @@ export class HomeComponent implements OnInit {
         this.router.navigate(['/sounds']);
         break;
       case 'conversations':
-        this.router.navigate(['/conversations'], { skipLocationChange: true });
+        this.router.navigate(['/conversations']);
         break;
       case 'exam speaking':
-        this.router.navigate(['/examSpeaking'], { skipLocationChange: true });
+        this.router.navigate(['/examSpeaking']);
         break;
     }
 

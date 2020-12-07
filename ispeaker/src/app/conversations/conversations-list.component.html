@@ -1,1 +1,26 @@
-<p>conversations works!</p>
+<div class='conversation-list-wrapper' *ngIf="conversationsMenu">
+    <a [routerLink]="['/home']" class='back-btn'>
+        <i class="pi pi-angle-left"></i>Back to main menu</a>
+    <div class='tab-header'> Conversations</div>
+    <div class="sub-tab-header">
+        {{ispeakerService.selectedLanguage==='BrE'?'British Language':'American Language'}}
+    </div>
+    <div class="i-text">Choose a conversation to practise</div>
+    <div class="conversation-wrapper">
+        <div class='p-grid'>
+            <ng-container *ngFor='let tab of conversationsMenu'>
+                <div class='p-col-12 p-sm-6 p-md-4 tile'>
+                    <div class='tab-title'>{{tab.title}}</div>
+                    <div class='subHeading-wrapper'>
+                        <ng-container *ngFor='let subHeading of tab.subHeading'>
+                            <div class='link-wrapper'><a  [routerLink]="['/conversations/conversationsDetails',subHeading.title]" routerLinkActive="active"
+                                    skipLocationChange="true">{{subHeading.title}}</a>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>
+<app-spinner [isRunning]='dataLoading'></app-spinner>

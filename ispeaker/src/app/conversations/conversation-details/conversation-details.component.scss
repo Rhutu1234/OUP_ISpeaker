@@ -1,0 +1,107 @@
+.conversations-details-wrapper {
+    font-family: "SourceSansProRegular";
+
+    .tab-header {
+        font-family: "SourceSansProSemiBold";
+        font-weight: 650;
+        font-style: normal;
+        font-size: 40px;
+    }
+    .sub-tab-header {
+        font-family: "SourceSansProRegular";
+        font-weight: 400;
+        font-style: normal;
+        font-size: 20px;
+        color: #666666;
+        margin-top: 5px;
+    }
+    .btn-wrapper {
+        margin: 26px 0px 0px 0px;
+        // border-bottom: 1px solid #cccccc;
+        display: flex;
+        .details-btn {
+            display: flex;
+            position: relative;
+            width: 129px;
+            height: 50px;
+            background-color: #ebf0f5;
+            color: #333333;
+            align-items: center;
+            justify-content: center;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 17px;
+            margin-right: 10px;
+            cursor: pointer;
+            padding: 5px;
+            border: 1px solid transparent;
+            border-top-left-radius: 0.25rem;
+            border-top-right-radius: 0.25rem;
+            .txt-wrapper {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                
+                .tab-icon {
+                    display: inline-block;
+                    min-width: 26px;
+                    height: 26px;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: 100% auto;
+                    margin-right: 5px;
+                    &.watch-icon {
+                        background-image: url("../../../assets/img/watch_icon.png");
+                    }
+                    &.listen-icon {
+                        background-image: url("../../../assets/img/listen_icon.png");
+                    }
+                    &.practice-icon {
+                        background-image: url("../../../assets/img/practise_icon.png");
+                    }
+                    &.review-icon {
+                        background-image: url("../../../assets/img/review_icon.png");
+                    }
+                }
+            }
+            .hide-bottom-border {
+                display: none;
+            }
+            &.selected {
+                background-color: white;
+                border: 1px solid #dee2e6;
+                border-bottom: 0px;
+                border-top-left-radius: 0.25rem;
+                border-top-right-radius: 0.25rem;
+                border-bottom-right-radius: 0px;
+                border-bottom-left-radius: 0px;
+                font-weight: 650;
+                .hide-bottom-border {
+                    display: block;
+                    position: absolute;
+                    bottom: -1px;
+                    height: 1px;
+                    background-color: white;
+                    width: 100%;
+                }
+            }
+            &:last-of-type {
+                margin-right: 0px;
+            }
+            &:not(.selected) {
+                &:hover {
+                    background-color: #b1becb;
+                    border-color: #e9ecef #e9ecef #dee2e6;
+                }
+            }
+            span {
+                text-align: center;
+            }
+        }
+    }
+}
+@media screen and (max-width: 505px) {
+    .title-txt{
+        display: none;
+    }
+}

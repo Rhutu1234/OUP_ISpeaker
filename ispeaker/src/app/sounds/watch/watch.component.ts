@@ -20,6 +20,7 @@ export class WatchComponent implements OnInit {
   ngOnInit() {
 
   }
+  
   ngAfterViewInit() {
     this.onResize('event');
   }
@@ -30,9 +31,6 @@ export class WatchComponent implements OnInit {
     const iframe = document.getElementsByTagName('iframe')[0];
     iframe.setAttribute('width', width);
     iframe.setAttribute('height', height);
-
-    //   $('.video_container').attr('width', $('.video_container').parent().width()).attr('height', );
-
 
   }
 

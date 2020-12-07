@@ -1,0 +1,42 @@
+<div class="wrapper">
+    <div class="inner-wrapper left">
+        <div class='header-text'>Watch</div>
+        <div *ngIf="videoLink" class="video-container">
+            <div #videoWrapper (window:resize)="onResize($event)" [innerHtml]="videoLink"></div>
+        </div>
+    </div>
+    <div class="inner-wrapper right study">
+        <div class='header-text'>Study</div>
+        <p-accordion expandIcon='pi pi-plus' collapseIcon='pi pi-minus' (onClose)="onTabClose($event)"
+            (onOpen)="onTabOpen($event)" styleClass='step-by-step-accordian study-accordian'>
+
+            <p-accordionTab>
+                <p-header>
+                    <span class='oup-header'>
+                        {{ isAccordOpen? "Collapse to hide the video dialogue":"Expand to read the video dialogue" }}
+                    </span>
+                </p-header>
+                <div class="dialouge-wrapper"
+                    [ngClass]="{'highlight-dialogue-1': studyData.skills[0].check, 'highlight-dialogue-2': (studyData.skills.length>1 &&studyData.skills[1].check)}"
+                    *ngFor="let dialouge of studyData.dialogue">
+                    <span class="speaker-wrapper">{{dialouge.speaker}}: </span>
+                    <span class="speech-wrapper" [innerHtml]="dialouge.speech"></span>
+                </div>
+                <div class='skills-wrapper'>
+                    <div class="p-field-checkbox" *ngFor="let skill of studyData.skills;let i =index;">
+                        <p-checkbox name="group{{i}}" value="New York" binary="true" [(ngModel)]="skill.check"
+                            inputId="ny">
+                        </p-checkbox>
+                        <label for="ny">{{skill.label}}</label>
+                    </div>
+                </div>
+                <div class='record-wrapper'>
+                    <div>Now try to record yourself speaking the lines and listen to how you sound</div>
+                </div>
+
+            </p-accordionTab>
+
+        </p-accordion>
+
+    </div>
+</div>
