@@ -1,0 +1,74 @@
+.wrapper {
+    margin-top: 30px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(204, 204, 204, 1);
+    border-radius: 4px;
+    box-shadow: 0px 5px 5px rgba(204, 204, 204, 0.349019607843137);
+    float: left;
+    .icons {
+        width: 30px;
+        height: 30px;
+        background-repeat: no-repeat;
+        background-position: center;
+        display: inline-block;
+        margin-right: 10px;
+        background-size: 100% auto;
+        cursor: pointer;
+        &.disable {
+            cursor: default;
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        &.play-sound {
+            background-image: url("../../../assets/img/audio_british.png");
+        }
+        &.record {
+            background-image: url("../../../assets/img/record_start.png");
+        }
+        &.play {
+            background-image: url("../../../assets/img/play_recording.png");
+        }
+        &.record-stop {
+            background-image: url("../../../assets/img/stop.png");
+        }
+    }
+    .record-wrapper {
+        background-color: rgba(238, 248, 255, 1);
+        padding: 10px 18px;
+        float: left;
+        width: 100%;
+        .icon-wrapper {
+            padding: 14px 0px;
+        }
+    }
+    .inner-wrapper {
+        padding: 15px;
+        position: relative;
+        width: 100%;
+        float: left;
+
+        .header-text {
+            font-family: "SourceSansProSemiBold";
+            font-weight: 650;
+            font-style: normal;
+            font-size: 24px;
+            text-align: left;
+            margin-bottom: 10px;
+        }
+        .subtopic-wrapper {
+            width: 50%;
+            display: inline-block;
+            vertical-align: top;
+            &.full-width {
+                width: 100%;
+            }
+        }
+
+        .sentence-wrapper.ng-star-inserted {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+    }
+}

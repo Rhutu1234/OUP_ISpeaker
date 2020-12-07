@@ -24,7 +24,14 @@ $('document').ready(function () {
     $('.alert').hide();
     $('.alert-info').show();
     xml_file_path = $('#srcPath').val();
-    loadFrameworkXml();
+    var checked = $('input[name="optradio"]:checked').val();
+    if (checked === "sounds") {
+      createSoundMenu();
+      loadFrameworkXml();
+    } else if (checked === "conversations") {
+      createConversationsMenu();
+    }
+
 
   })
 });
@@ -980,7 +987,7 @@ var soundsMenu = {
 
   }
 }
-createSoundMenu();
+
 function createSoundMenu() {
 
   soundMenu.forEach(function (sound) {
@@ -1159,6 +1166,216 @@ function loadXml(xml) {
   var json = JSON.stringify(sound_data);
 
   fs.writeFile('E:/projects/OUP_ISpeaker/ispeaker/src/assets/json/sound_data.json', json, 'utf8');
+  $('.alert').hide();
+  $('.alert-success').show();
+}
+
+function createConversationsMenu() {
+  $.ajax({// to get project list
+    type: "GET",
+    url: xml_file_path,
+    dataType: "xml",
+    success: function (xml) {
+      console.log(xml);
+
+    },
+    error: function (err) {
+      var xml = $.parseXML(err.responseText);
+
+      console.log(project_xml_data);
+      loadConversationsMenu(xml)
+    }
+  });
+}
+
+function loadConversationsMenu(xml) {
+  var conversations = {
+    conversationMenu: []
+  }
+  var conversation_data = {}
+  var conversationMenu = [];
+
+  $(xml).find('topic').each(function (topic) {
+    var tile = {};
+    tile.title = $(this).attr("title");
+    tile.subHeading = [];
+    $(this).find('subtopic').each(function (subtopic) {
+      var subTopicObj = {};
+      subTopicObj.title = $(this).attr('title');
+      tile.subHeading.push(subTopicObj);
+      var conversationType = {
+        "BrE": {
+          "watch_and_study": {
+            "videoLink": "",
+            "study": {
+              "expressingAgreement": false,
+            }
+          },
+          "listen": {},
+          "reviews": []
+
+        },
+        "AmE": {
+          "watch_and_study": {
+            "videoLink": "",
+            "study": {
+              "expressingAgreement": false,
+            }
+          },
+          "listen": {},
+          "reviews": []
+        }
+      }
+      $(this).find('BrE').each(function () {
+        $(this).find('Watch_and_Study').each(function () {
+          var videoSrc = $(this).find('video').attr('src');
+          var videoLink = "<iframe src=\"https://player.vimeo.com/video/" + videoSrc + "\" width=\"640\" height=\"360\" frameborder=\"0\" allow=\"autoplay; fullscreen\" allowfullscreen></iframe>"
+          var watch_and_study = conversationType['BrE']['watch_and_study'];
+          watch_and_study.videoLink = videoLink;
+          watch_and_study.study.dialogue = [];
+          $(this).find('study').find('transcript').find('text').each(function () {
+            var dialogue = {};
+            dialogue.speaker = $(this).find('speaker').text();
+            $(this).find('speech').find('highlight').each(function () {
+              var ref = $(this).attr('ref');
+              var attributes = $.map(this.attributes, function (item) {
+                return item.name;
+              });
+
+              // now use jQuery to remove the attributes
+              var img = $(this);
+              $.each(attributes, function (i, item) {
+                img.removeAttr(item);
+              });
+              $(this).attr('ref', ref);
+            });
+            var speech = $(this).find('speech').html().trim();
+            speech = speech.replace(/<highlight xmlns="urn:ISPEAKER_PLUS" ref="1"/g, "<span class='highlight-dialouge-1'");
+            speech = speech.replace(/<highlight xmlns="urn:ISPEAKER_PLUS" ref="2"/g, "<span class='highlight-dialouge-2'");
+            speech = speech.replace(/<\/highlight/g, "</span");
+            dialogue.speech = speech;
+            watch_and_study.study.dialogue.push(dialogue);
+          })
+          watch_and_study.study.skills = [];
+          $(this).find('study').find('skills').find('skill').each(function () {
+            var skill = {}
+            skill.label = $(this).text();
+            skill.check = false;
+            watch_and_study.study.skills.push(skill);
+          });
+        })
+        $(this).find('Listen').find('sentence').each(function () {
+          var subtopic = $(this).attr('subtopic');
+          var listen = conversationType['BrE']['listen'];
+          if (!listen[subtopic]) {
+            listen[subtopic] = {};
+            listen[subtopic].title = subtopic;
+            listen[subtopic].sentences = [];
+          }
+          var sentence = $(this).find('display').html().trim();
+          sentence = sentence.replace(/<target /g, "<span class='bold'");
+          sentence = sentence.replace(/<\/target/g, "</span");
+          var sound = $(this).find('sound').html();
+          listen[subtopic].sentences.push({
+            sentence: sentence,
+            audioSrc: sound
+          });
+        });
+        var _temp = [];
+        for (var i in conversationType['BrE']['listen']) {
+          _temp.push(conversationType['BrE']['listen'][i]);
+        }
+        conversationType['BrE']['listen'] = {}
+        conversationType['BrE']['listen'].subtopics = [];
+        conversationType['BrE']['listen'].subtopics = _temp;
+        $(this).find('Reviews').find('review').find('outcome').each(function () {
+          var text = $(this).text();
+          conversationType['BrE']['reviews'].push({
+            text: text,
+            checked: false
+          })
+        });
+      });
+      $(this).find('AmE').each(function () {
+        $(this).find('Watch_and_Study').each(function () {
+          var videoSrc = $(this).find('video').attr('src');
+          var videoLink = "<iframe src=\"https://player.vimeo.com/video/" + videoSrc + "\" width=\"640\" height=\"360\" frameborder=\"0\" allow=\"autoplay; fullscreen\" allowfullscreen></iframe>"
+          var watch_and_study = conversationType['AmE']['watch_and_study'];
+          watch_and_study.videoLink = videoLink;
+          watch_and_study.study.dialogue = [];
+          $(this).find('study').find('transcript').find('text').each(function () {
+            var dialogue = {};
+            dialogue.speaker = $(this).find('speaker').text();
+            $(this).find('speech').find('highlight').each(function () {
+              var ref = $(this).attr('ref');
+              var attributes = $.map(this.attributes, function (item) {
+                return item.name;
+              });
+
+              // now use jQuery to remove the attributes
+              var img = $(this);
+              $.each(attributes, function (i, item) {
+                img.removeAttr(item);
+              });
+              $(this).attr('ref', ref);
+            });
+            var speech = $(this).find('speech').html().trim();
+            speech = speech.replace(/<highlight xmlns="urn:ISPEAKER_PLUS" ref="1"/g, "<span class='highlight-dialouge-1'");
+            speech = speech.replace(/<highlight xmlns="urn:ISPEAKER_PLUS" ref="2"/g, "<span class='highlight-dialouge-2'");
+            speech = speech.replace(/<\/highlight/g, "</span");
+            dialogue.speech = speech;
+            watch_and_study.study.dialogue.push(dialogue);
+          });
+          watch_and_study.study.skills = [];
+          $(this).find('study').find('skills').find('skill').each(function () {
+            var skill = {}
+            skill.label = $(this).text();
+            skill.check = false;
+            watch_and_study.study.skills.push(skill);
+          });
+        });
+        $(this).find('Listen').find('sentence').each(function () {
+          var subtopic = $(this).attr('subtopic');
+          var listen = conversationType['AmE']['listen'];
+          if (!listen[subtopic]) {
+            listen[subtopic] = {};
+            listen[subtopic].title = subtopic;
+            listen[subtopic].sentences = [];
+          }
+          var sentence = $(this).find('display').html().trim();
+          sentence = sentence.replace(/<target /g, "<span class='bold'");
+          sentence = sentence.replace(/<\/target/g, "</span");
+          var sound = $(this).find('sound').html();
+          listen[subtopic].sentences.push({
+            sentence: sentence,
+            audioSrc: sound
+          });
+        });
+        var _temp = [];
+        for (var i in conversationType['AmE']['listen']) {
+          _temp.push(conversationType['AmE']['listen'][i]);
+        }
+        conversationType['AmE']['listen'] = {}
+        conversationType['AmE']['listen'].subtopics = [];
+        conversationType['AmE']['listen'].subtopics = _temp;
+        $(this).find('Reviews').find('review').find('outcome').each(function () {
+          var text = $(this).text();
+          conversationType['AmE']['reviews'].push({
+            text: text,
+            checked: false
+          })
+        });
+      });
+      conversation_data[subTopicObj.title] = conversationType;
+    });
+    conversationMenu.push(tile);
+  });
+  console.log(conversationMenu);
+  conversations.conversationMenu = conversationMenu;
+  var json = JSON.stringify(conversations);
+  var cdata = JSON.stringify(conversation_data);
+  fs.writeFile('E:/projects/OUP_ISpeaker/ispeaker/src/assets/json/conversation_menu.json', json, 'utf8');
+  fs.writeFile('E:/projects/OUP_ISpeaker/ispeaker/src/assets/json/conversation_data.json', cdata, 'utf8');
   $('.alert').hide();
   $('.alert-success').show();
 }

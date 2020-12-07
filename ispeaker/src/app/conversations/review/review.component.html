@@ -1,1 +1,7 @@
-<p>review works!</p>
+<div class="review-wrapper">
+    <div class='header'>Review</div>
+    <div class="review-inner-wrapper" *ngFor="let review of reviewData">
+        {{review.text}} &nbsp;&nbsp;&nbsp; <p-checkbox [(ngModel)]="review.checked" [binary]="true">
+        </p-checkbox>
+    </div>
+</div>

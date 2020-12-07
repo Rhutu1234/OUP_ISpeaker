@@ -32,6 +32,13 @@
                 </div>
                 <div class='record-wrapper'>
                     <div>Now try to record yourself speaking the lines and listen to how you sound</div>
+                    <div class='icon-wrapper'>
+                        <div class="icons" (click)="startStopRecording(studyData)"
+                            [ngClass]="{'record':!studyData.isRecording,'record-stop':studyData.isRecording}"></div>
+                        <div class="icons play" (click)="playStopRecordedAudio(studyData)"
+                            [ngClass]="{'disable': !studyData.recordedAudio, 'play': !studyData.isPlaying,'record-stop':studyData.isPlaying}">
+                        </div>
+                    </div>
                 </div>
 
             </p-accordionTab>
