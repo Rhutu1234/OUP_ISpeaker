@@ -18,10 +18,10 @@ export class ListenComponent implements OnInit {
     private audioRecordingService: AudioRecordingService) {
     if (this.conversationsService.selectedConversationType) {
       this.listenData = this.conversationsService.selectedConversationType.listen;
+      this.listenData.isPlaying = false;
+      this.listenData.isRecording = false;
       if (!this.listenData.recordedAudio) {
-        this.listenData.isPlaying = false;
         this.listenData.recordedAudio = null;
-        this.listenData.isRecording = false;
       }
     }
     this.audioRecordingService.recordingFailed().subscribe(() => {
@@ -37,7 +37,7 @@ export class ListenComponent implements OnInit {
       reader.onloadend = () => {
         const base64data = reader.result;
         this.listenData.recordedAudio = base64data;
-        // this.soundsService.saveSoundData();
+        // this.soundsService.saveConversationUserData();
       };
 
     });

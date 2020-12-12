@@ -26,10 +26,10 @@ export class WatchAndStudyComponent implements OnInit, AfterViewInit {
       this.videoLink = this.conversationsService.selectedConversationType.watch_and_study.videoLink;
       this.videoLink = this.sanitizer.bypassSecurityTrustHtml(this.videoLink);
       this.studyData = this.conversationsService.selectedConversationType.watch_and_study.study;
+      this.studyData.isPlaying = false;
+      this.studyData.isRecording = false;
       if (!this.studyData.recordedAudio) {
-        this.studyData.isPlaying = false;
         this.studyData.recordedAudio = null;
-        this.studyData.isRecording = false;
       }
     }
     this.audioRecordingService.recordingFailed().subscribe(() => {
@@ -46,7 +46,7 @@ export class WatchAndStudyComponent implements OnInit, AfterViewInit {
       reader.onloadend = () => {
         const base64data = reader.result;
         this.studyData.recordedAudio = base64data;
-        // this.soundsService.saveSoundData();
+        // this.soundsService.saveConversationUserData();
       };
 
     });
