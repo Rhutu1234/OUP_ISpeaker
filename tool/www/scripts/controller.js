@@ -1194,7 +1194,7 @@ function loadConversationsMenu(xml) {
   }
   var conversation_data = {}
   var conversationMenu = [];
-
+  var activityType = [];
   $(xml).find('topic').each(function (topic) {
     var tile = {};
     tile.title = $(this).attr("title");
@@ -1212,6 +1212,9 @@ function loadConversationsMenu(xml) {
             }
           },
           "listen": {},
+          "practise": {
+            "userDialogueData": false
+          },
           "reviews": []
 
         },
@@ -1223,6 +1226,9 @@ function loadConversationsMenu(xml) {
             }
           },
           "listen": {},
+          "practise": {
+            "userDialogueData": false
+          },
           "reviews": []
         }
       }
@@ -1293,8 +1299,11 @@ function loadConversationsMenu(xml) {
           conversationType['BrE']['reviews'].push({
             text: text,
             checked: false
-          })
+          });
         });
+        conversationType['BrE']['practise'].questions = [];
+
+        createPracticeData(conversationType, $(this), 'BrE');
       });
       $(this).find('AmE').each(function () {
         $(this).find('Watch_and_Study').each(function () {
@@ -1365,11 +1374,14 @@ function loadConversationsMenu(xml) {
             checked: false
           })
         });
+        conversationType['AmE']['practise'].questions = [];
+        createPracticeData(conversationType, $(this), 'AmE');
       });
       conversation_data[subTopicObj.title] = conversationType;
     });
     conversationMenu.push(tile);
   });
+  console.log(activityType);
   console.log(conversationMenu);
   conversations.conversationMenu = conversationMenu;
   var json = JSON.stringify(conversations);
@@ -1378,5 +1390,67 @@ function loadConversationsMenu(xml) {
   fs.writeFile('E:/projects/OUP_ISpeaker/ispeaker/src/assets/json/conversation_data.json', cdata, 'utf8');
   $('.alert').hide();
   $('.alert-success').show();
+
+  function createPracticeData(conversationType, xmlData, _type) {
+    xmlData.find('Practise').find('activity').each(function () {
+      var quesObj = {};
+      var type = $(this).attr('print-interaction').toLowerCase();
+      quesObj.type = type;
+      if (activityType.indexOf(type) === -1) {
+        activityType.push(type);
+      }
+      if (type === 'text-entry-dictation') {
+        quesObj.ques = $(this).find('activity-content').find('instruction').find('paragraph').text();
+        quesObj.audioSrc = $(this).find('activity-content').find('embedded-input').find('input-content').find('audio').attr('xlink:href');
+        quesObj.responseText = $(this).find('activity-content').find('interaction').find('paragraph').find('response-point').find('response').text();
+      }
+      // if (type === "unique-selection-expanded") {
+      //   quesObj.ques = $(this).find('activity-content').find('instruction').find('paragraph').text();
+      //   quesObj.options = [];
+      //   $(this).find('activity-content').find('interaction').find('response-point').find('response').each(function () {
+      //     var optObj = {};
+      //     optObj.text = $(this).text();
+      //     if ($(this).attr('type') === "correct") {
+      //       optObj.correct = true;
+      //     } else {
+      //       optObj.correct = false;
+      //     }
+      //     quesObj.options.push(optObj);
+      //   })
+      // }
+      if (type === "text-entry-closed") {
+        quesObj.ques = $(this).find('activity-content').find('instruction').find('paragraph').text();
+        quesObj.ans = $(this).find('activity-content').find('interaction').find('paragraph').find('response-point').find('response').text();
+
+        var transcript = $(this).find('activity-content').find('interaction').find('paragraph').html().trim();
+        var regex = /<response-point .*?<\/response-point>/g;
+        quesObj.sentences = transcript.split(regex);
+      }
+      if (type === "unique-selection-inline" || type === "unique-selection-expanded") {
+        quesObj.ques = $(this).find('activity-content').find('instruction').find('paragraph').text();
+        quesObj.interaction = [];
+        $(this).find('activity-content').find('interaction').each(function () {
+          var interactObj = {};
+          interactObj.ques = $(this).find('paragraph').text();
+          interactObj.options = [];
+          $(this).find('response-point').find('response').each(function () {
+            var optObj = {};
+            optObj.text = $(this).text();
+            if ($(this).attr('type') === "correct") {
+              optObj.correct = true;
+            } else {
+              optObj.correct = false;
+            }
+            interactObj.options.push(optObj);
+          });
+          quesObj.interaction.push(interactObj);
+        })
+
+      }
+      conversationType[_type]['practise'].questions.push(quesObj);
+    });
+  }
 }
+
+
 
