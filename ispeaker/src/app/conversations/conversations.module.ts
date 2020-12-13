@@ -13,8 +13,9 @@ import { ReviewComponent } from './review/review.component';
 import { FormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { CheckboxModule } from 'primeng/checkbox';
-
-import {AccordionModule} from 'primeng/accordion';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { AccordionModule } from 'primeng/accordion';
+import {RadioButtonModule} from 'primeng/radiobutton';
 @NgModule({
   declarations: [ConversationsListComponent,
     ConversationDetailsComponent,
@@ -30,7 +31,9 @@ import {AccordionModule} from 'primeng/accordion';
     ButtonModule,
     CheckboxModule,
     ConversationsRoutingModule,
-    AccordionModule
+    AccordionModule,
+    InputTextareaModule,
+    RadioButtonModule
   ]
 })
 export class ConversationsModule { }

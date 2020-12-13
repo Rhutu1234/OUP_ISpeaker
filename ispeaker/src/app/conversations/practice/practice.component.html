@@ -1,1 +1,96 @@
-<p>practice works!</p>
+<div class="wrapper">
+    <div class="inner-wrapper left">
+        <div class='header-text'>Practise 1</div>
+        <div class="step-main-wrapper">
+            <ng-container *ngFor="let step of practiseData.questions;let i=index">
+                <div class="step-wrapper">
+                    <div class="step" [ngClass]="{'active':(currentIndex>=i)}">
+
+                    </div>
+                    <div class="step-line" [ngClass]="{'active':(currentIndex>i)}"
+                        *ngIf="i<practiseData.questions.length-1">
+                    </div>
+                </div>
+            </ng-container>
+            <ng-container *ngIf="currentIndex<practiseData.questions.length">
+                <ng-container *ngIf="practiseData.questions[currentIndex].type === 'text-entry-dictation'">
+                    <div class="question" [innerHtml]="practiseData.questions[currentIndex].ques"></div>
+                    <div class="icons play-sound" (click)="playSound(practiseData.questions[currentIndex])"></div>
+                    <div class='text-wrap'>
+                        <textarea [rows]="5" [cols]="30" [(ngModel)]="practiseData.questions[currentIndex].userAns"
+                            pInputTextarea autoResize="autoResize"></textarea>
+                    </div>
+                </ng-container>
+                <ng-container
+                    *ngIf="practiseData.questions[currentIndex].type === 'unique-selection-expanded' || practiseData.questions[currentIndex].type === 'unique-selection-inline'">
+                    <div class="question" [innerHtml]="practiseData.questions[currentIndex].ques"></div>
+                    <div class='interaction-wrapper'>
+                        <ng-container
+                            *ngFor="let interaction of practiseData.questions[currentIndex].interaction;let i=index">
+                            <div *ngIf="interaction.ques" class="question" [innerHtml]="interaction.ques"></div>
+                            <div class="option-wrapper">
+                                <ng-container *ngFor="let option of interaction.options;let j=index">
+                                    <div class="p-field-radiobutton">
+                                        <p-radioButton name="radio-{{i}}-{{j}}" [value]="option.text"
+                                            [(ngModel)]="interaction.userAns"></p-radioButton>
+                                        <label>{{option.text}}</label>
+                                    </div>
+                                </ng-container>
+                            </div>
+                        </ng-container>
+                    </div>
+
+                </ng-container>
+                <ng-container *ngIf="practiseData.questions[currentIndex].type === 'text-entry-closed'">
+                    <div class="question" [innerHtml]="practiseData.questions[currentIndex].ques"></div>
+                    <div class='sentence-wrapper'>
+                        <ng-container
+                            *ngFor="let sentence of practiseData.questions[currentIndex].sentences;let i=index">
+                            <span>{{sentence}}
+                            </span>
+                            <span *ngIf="i !== (practiseData.questions[currentIndex].sentences.length-1)"><input
+                                    type="text" name="text-box"
+                                    [(ngModel)]="practiseData.questions[currentIndex].userAns" /></span>
+                        </ng-container>
+                    </div>
+                </ng-container>
+
+            </ng-container>
+            <ng-container *ngIf="currentIndex>=practiseData.questions.length">
+                <div class='score-title'>Your Score</div>
+                <div class='user-score'>{{score}} / {{practiseData.questions.length}}</div>
+            </ng-container>
+            <div class='btn-container'>
+                <p-button label="Check" [disabled]='isAnswered' class='nxt-btn'
+                    *ngIf="currentIndex<practiseData.questions.length"
+                    (onClick)="onCheckClick(practiseData.questions[currentIndex])">
+                </p-button>
+                <p-button [label]="isAnswered?'Next':'Skip'" *ngIf="currentIndex<practiseData.questions.length"
+                    (onClick)="onSkipClick()">
+                </p-button>
+            </div>
+        </div>
+    </div>
+    <div class="inner-wrapper right pract-2">
+        <div class='header-text'>Practise 2</div>
+        <div class='dialogue-wrapper'>
+            <div class='quest'>
+                Write your own mini-dialogue, using any of the language on this page.
+            </div>
+            <div class='text-wrap'>
+                <textarea [rows]="5" [cols]="30" [(ngModel)]="practiseData.userDialogueData" pInputTextarea
+                    autoResize="autoResize"></textarea>
+            </div>
+        </div>
+        <div class='record-wrapper'>
+            <div>Now try to record yourself speaking the lines and listen to how you sound</div>
+            <div class='icon-wrapper'>
+                <div class="icons" (click)="startStopRecording(practiseData)"
+                    [ngClass]="{'record':!practiseData.isRecording,'record-stop':practiseData.isRecording}"></div>
+                <div class="icons play" (click)="playStopRecordedAudio(practiseData)"
+                    [ngClass]="{'disable': !practiseData.recordedAudio, 'play': !practiseData.isPlaying,'record-stop':practiseData.isPlaying}">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

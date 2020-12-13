@@ -21,9 +21,17 @@ export class ConversationDetailsComponent implements OnInit {
     this.conversationType = this.route.snapshot.params.type;
     this.dataLoading = true;
     this.conversationService.fetchConversationType(this.conversationType).subscribe((data) => {
-      this.dataLoading = false;
       this.conversationService.selectedConversationType = data;
-      this.activeTab = TabEnum.WATCH;
+      this.conversationService.fetchUserConversationDataFile().then((success) => {
+        this.dataLoading = false;
+
+        this.activeTab = TabEnum.WATCH;
+      }, (error) => {
+        this.dataLoading = false;
+
+        this.activeTab = TabEnum.WATCH;
+      });
+
     });
   }
 
