@@ -4,12 +4,12 @@
         <div class="subtopic-wrapper" [ngClass]="{'full-width': listenData.subtopics.length === 1}"
             *ngFor="let grp of listenData.subtopics">
             <p-accordion expandIcon='pi pi-plus' collapseIcon='pi pi-minus' styleClass='step-by-step-accordian'>
-                <p-accordionTab [selected]="true">
-                    <p-header>
+                <p-accordionTab [selected]="true" [header]="grp.title">
+                    <!-- <p-header>
                         <span class='oup-header'>
                             {{grp.title}}
                         </span>
-                    </p-header>
+                    </p-header> -->
                     <div class='sentence-wrapper' *ngFor="let sentence of grp.sentences">
                         <div class="icons play-sound" (click)="playSound(sentence)"></div>
                         <div class="sentence-cls" [innerHtml]="sentence.sentence"></div>

@@ -22,5 +22,7 @@ export class ReviewComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  onModelChange() {
+    // this.conversationsService.uploadConversationMenu();
+  }
 }

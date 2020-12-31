@@ -176,3 +176,15 @@
         }
     }
 }
+@media screen and (max-width: 770px) {
+    .inner-wrapper {
+        width: 100% !important;
+        margin-bottom: 20px;
+    }
+    .step-wrapper {
+        margin-right: 40px !important;
+        .step-line {
+            width: 60px !important;
+        }
+    }
+}

@@ -37,7 +37,7 @@ export class ListenComponent implements OnInit {
       reader.onloadend = () => {
         const base64data = reader.result;
         this.listenData.recordedAudio = base64data;
-        // this.soundsService.saveConversationUserData();
+        this.conversationsService.saveConversationUserData();
       };
 
     });

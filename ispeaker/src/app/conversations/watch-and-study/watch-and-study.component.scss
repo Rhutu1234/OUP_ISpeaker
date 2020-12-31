@@ -97,3 +97,9 @@
         }
     }
 }
+@media screen and (max-width: 650px) {
+    .inner-wrapper {
+        width: 100% !important;
+        margin-bottom: 20px;
+    }
+}

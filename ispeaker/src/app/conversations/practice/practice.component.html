@@ -79,7 +79,7 @@
             </div>
             <div class='text-wrap'>
                 <textarea [rows]="5" [cols]="30" [(ngModel)]="practiseData.userDialogueData" pInputTextarea
-                    autoResize="autoResize"></textarea>
+                    autoResize="autoResize" (ngModelChange)="conversationsService.saveConversationUserData()"></textarea>
             </div>
         </div>
         <div class='record-wrapper'>

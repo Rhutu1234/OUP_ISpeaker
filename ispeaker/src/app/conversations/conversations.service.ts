@@ -24,10 +24,14 @@ export class ConversationsService {
     }
 
     fetchConversationMenu(): Observable<any> {
-        return this.http.get(environment.baseHref + 'assets/json/conversation_menu.json').pipe(map((data: any) => {
-            this.conversationMenuList = data.conversationMenu;
-            return this.conversationMenuList;
-        }));
+        if (this.conversationMenuList) {
+            return this.http.get(environment.baseHref + 'assets/json/conversation_menu.json').pipe(map((data: any) => {
+                this.conversationMenuList = data.conversationMenu;
+                return this.conversationMenuList;
+            }));
+        } else {
+            return of(this.conversationMenuList);
+        }
     }
     fetchConversationType(type): Observable<any> {
         this.currentType = type;
@@ -48,7 +52,7 @@ export class ConversationsService {
 
             this.fetchJson(soundDataUrl, (data) => {
                 if (data) {
-                    this.conversationMenuList = data.conversationMenu;
+                    this.conversationMenuList = data;
                     resolve(true);
                 } else {
                     reject(false);
@@ -103,8 +107,19 @@ export class ConversationsService {
     saveConversationUserData() {
         const conversationUserData = new ConversationUserData();
         const studyData = this.selectedConversationType.watch_and_study.study;
+        conversationUserData.watchAndStudy = {
+            study: {}
+
+        };
+        conversationUserData.listen = {
+            isRecording: false,
+            recordedAudio: '',
+            isPlaying: false
+
+        };
         conversationUserData.watchAndStudy.study.recordedAudio = studyData.recordedAudio;
         conversationUserData.listen.recordedAudio = this.selectedConversationType.listen.recordedAudio;
+        conversationUserData.practise = this.selectedConversationType.practise;
         conversationUserData.reviews = this.selectedConversationType.reviews;
         this.uploadConversationMenu();
         this.uploadConversationDataFile(conversationUserData);
@@ -118,8 +133,9 @@ export class ConversationsService {
             this.fetchJson(destUrl, (data) => {
                 if (data) {
                     // this.savedSoundData = data;
-                    this.selectedConversationType.watch_and_study.study = data.watch_and_study.study;
+                    this.selectedConversationType.watch_and_study.study = data.watchAndStudy.study;
                     this.selectedConversationType.listen.recordedAudio = data.listen.recordedAudio;
+                    this.selectedConversationType.practise = data.practise;
                     this.selectedConversationType.reviews = data.reviews;
                     resolve(true);
                 } else {

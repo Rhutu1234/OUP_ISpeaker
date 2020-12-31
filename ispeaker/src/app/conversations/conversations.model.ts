@@ -12,5 +12,6 @@ export class ConversationUserData {
         recordedAudio: any;
         isRecording: boolean;
     };
+    practise: any;
     reviews: Array<{ checked: boolean; text: string; }>;
 }

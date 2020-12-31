@@ -20,7 +20,9 @@ export class PracticeComponent implements OnInit {
     private audioRecordingService: AudioRecordingService) {
     if (this.conversationsService.selectedConversationType) {
       this.practiseData = this.conversationsService.selectedConversationType.practise;
-      this.practiseData.userDialogueData = '';
+      if (!this.practiseData.userDialogueData) {
+        this.practiseData.userDialogueData = '';
+      }
       this.practiseData.isPlaying = false;
       this.practiseData.isRecording = false;
       if (!this.practiseData.recordedAudio) {
@@ -40,7 +42,7 @@ export class PracticeComponent implements OnInit {
       reader.onloadend = () => {
         const base64data = reader.result;
         this.practiseData.recordedAudio = base64data;
-        // this.soundsService.saveConversationUserData();
+        this.conversationsService.saveConversationUserData();
       };
 
     });
@@ -49,6 +51,7 @@ export class PracticeComponent implements OnInit {
   ngOnInit() {
     if (this.practiseData.score) {
       this.score = this.practiseData.score;
+      this.currentIndex = this.practiseData.questions.length;
     }
   }
   playSound(currQues) {
@@ -121,6 +124,10 @@ export class PracticeComponent implements OnInit {
     this.practiseData.isRecording = false;
     this.audioRecordingService.abortRecording();
     this.currentIndex++;
+    if (this.currentIndex >= this.practiseData.questions.length) {
+      this.practiseData.score = this.score;
+      this.conversationsService.saveConversationUserData();
+    }
   }
 
   ngOnDestroy() {

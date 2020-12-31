@@ -13,8 +13,10 @@
                     <div class='tab-title'>{{tab.title}}</div>
                     <div class='subHeading-wrapper'>
                         <ng-container *ngFor='let subHeading of tab.subHeading'>
-                            <div class='link-wrapper'><a  [routerLink]="['/conversations/conversationsDetails',subHeading.title]" routerLinkActive="active"
-                                    skipLocationChange="true">{{subHeading.title}}</a>
+                            <div class='link-wrapper'><a
+                                    [routerLink]="['/conversations/conversationsDetails',subHeading.title]"
+                                    routerLinkActive="active" skipLocationChange="true">{{subHeading.title}}</a>
+                                <div *ngIf="subHeading.completed" class="tick_completed"></div>
                             </div>
                         </ng-container>
                     </div>

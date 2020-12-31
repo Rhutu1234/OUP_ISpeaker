@@ -46,7 +46,7 @@ export class WatchAndStudyComponent implements OnInit, AfterViewInit {
       reader.onloadend = () => {
         const base64data = reader.result;
         this.studyData.recordedAudio = base64data;
-        // this.soundsService.saveConversationUserData();
+        this.conversationsService.saveConversationUserData();
       };
 
     });
@@ -65,10 +65,10 @@ export class WatchAndStudyComponent implements OnInit, AfterViewInit {
     iframe.setAttribute('width', width);
     iframe.setAttribute('height', height);
   }
-  onTabClose() {
+  onTabClose(event) {
     this.isAccordOpen = false;
   }
-  onTabOpen() {
+  onTabOpen(event) {
     this.isAccordOpen = true;
   }
 
