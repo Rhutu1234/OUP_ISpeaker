@@ -1,0 +1,81 @@
+.exam-speaking-list-wrapper {
+    font-family: "SourceSansProRegular";
+
+    .tab-header {
+        font-family: "SourceSansProSemiBold";
+        font-weight: 650;
+        font-style: normal;
+        font-size: 40px;
+    }
+
+    .sub-tab-header {
+        font-family: "SourceSansProRegular";
+        font-weight: 400;
+        font-style: normal;
+        font-size: 20px;
+        color: #666666;
+        margin-top: 5px;
+    }
+    .i-text {
+        font-family: "SourceSansProRegular";
+        font-weight: 400;
+        font-style: normal;
+        font-size: 18px;
+        color: #666666;
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+    .exam-speaking-wrapper {
+        margin-bottom: 40px;
+        float: left;
+        width: 100%;
+        text-align: center;
+        .tile {
+            text-align: left;
+            .tab-title {
+                padding: 10px 20px;
+                background-color: rgba(214, 234, 255, 1);
+                min-height: 45px;
+                display: flex;
+                justify-content: left;
+                align-items: center;
+                font-family: "SourceSansProSemiBold";
+                font-weight: 650;
+                font-style: normal;
+                font-size: 20px;
+                text-align: left;
+            }
+            .subHeading-wrapper {
+                padding: 10px 20px;
+                min-height: 263px;
+                background-color: #f4f9fe;
+                .link-wrapper {
+                    a {
+                        color: #0066cc;
+                        font-size: 17px;
+                        font-weight: 400;
+                        cursor: pointer;
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                    &:not(:first-of-type) {
+                        margin-top: 10px;
+                    }
+                    .tick_completed {
+                        top: 5px;
+                        width: 20px;
+                        height: 20px;
+                        position: relative;
+                        background-position: center;
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        background-image: url("../../assets/img/tick_completed.png");
+                        display: inline-block;
+                        margin-left: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
