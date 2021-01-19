@@ -15,14 +15,15 @@
             <ng-container *ngIf="currentIndex<practiseData.questions.length">
                 <ng-container *ngIf="practiseData.questions[currentIndex].type === 'text-entry-dictation'">
                     <div class="question" [innerHtml]="practiseData.questions[currentIndex].ques"></div>
-                    <div class="icons play-sound" (click)="playSound(practiseData.questions[currentIndex])"></div>
+                    <div class="sound-icon-wrapper">
+                        <div class="icons play-sound" (click)="playSound(practiseData.questions[currentIndex])"></div>
+                    </div>
                     <div class='text-wrap'>
                         <textarea [rows]="5" [cols]="30" [(ngModel)]="practiseData.questions[currentIndex].userAns"
                             pInputTextarea autoResize="autoResize"></textarea>
                     </div>
                 </ng-container>
-                <ng-container
-                    *ngIf="practiseData.questions[currentIndex].type === 'unique-selection-expanded' || practiseData.questions[currentIndex].type === 'unique-selection-inline'">
+                <ng-container *ngIf="practiseData.questions[currentIndex].type === 'unique-selection-expanded'">
                     <div class="question" [innerHtml]="practiseData.questions[currentIndex].ques"></div>
                     <div class='interaction-wrapper'>
                         <ng-container
@@ -31,13 +32,59 @@
                             <div class="option-wrapper">
                                 <ng-container *ngFor="let option of interaction.options;let j=index">
                                     <div class="p-field-radiobutton">
-                                        <p-radioButton name="radio-{{i}}-{{j}}" [value]="option.text"
-                                            [(ngModel)]="interaction.userAns"></p-radioButton>
+                                        <div *ngIf="isAnswered" class='response-icon'
+                                            [ngClass]="{'correct':(option.correct),'incorrect':(interaction.userAns === option.text && !option.correct)}">
+                                        </div>
+                                        <p-radioButton name="radio-{{i}}-{{j}}" [disabled]='isAnswered'
+                                            [value]="option.text" [(ngModel)]="interaction.userAns"></p-radioButton>
                                         <label>{{option.text}}</label>
                                     </div>
                                 </ng-container>
                             </div>
                         </ng-container>
+                    </div>
+
+                </ng-container>
+                <ng-container *ngIf="practiseData.questions[currentIndex].type === 'unique-selection-inline'">
+                    <div class="question" [innerHtml]="practiseData.questions[currentIndex].ques"></div>
+                    <div class='interaction-wrapper'>
+
+                        <table class='unique-selection-table'>
+                            <thead>
+                                <th></th>
+                                <th>
+                                    <div>Correct</div>
+                                </th>
+                                <th>
+                                    <div>Incorrect</div>
+                                </th>
+                            </thead>
+                            <tbody>
+                                <tr
+                                    *ngFor="let interaction of practiseData.questions[currentIndex].interaction;let i=index">
+                                    <td>
+                                        <div *ngIf="interaction.ques" class="question" [innerHtml]="interaction.ques">
+                                        </div>
+                                    </td>
+                                    <td *ngFor="let option of interaction.options;let j=index">
+                                        <div class="p-field-radiobutton">
+                                            <div *ngIf="isAnswered" class='response-icon'
+                                                [ngClass]="{'correct':(option.correct),'incorrect':(interaction.userAns === option.text && !option.correct)}">
+                                            </div>
+                                            <p-radioButton name="radio-{{i}}-{{j}}" [disabled]='isAnswered'
+                                                [value]="option.text" [(ngModel)]="interaction.userAns">
+                                            </p-radioButton>
+
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!-- <div class="option-wrapper">
+
+                            </div> -->
+
                     </div>
 
                 </ng-container>
@@ -49,9 +96,13 @@
                             <span>{{sentence}}
                             </span>
                             <span *ngIf="i !== (practiseData.questions[currentIndex].sentences.length-1)"><input
-                                    type="text" name="text-box"
+                                    type="text" name="text-box" [disabled]='isAnswered'
                                     [(ngModel)]="practiseData.questions[currentIndex].userAns" /></span>
                         </ng-container>
+                        <div *ngIf="isAnswered" class='response-icon'
+                            [ngClass]="{'correct':(practiseData.questions[currentIndex].userAns === practiseData.questions[currentIndex].ans),'incorrect':(practiseData.questions[currentIndex].userAns !== practiseData.questions[currentIndex].ans)}">
+                        </div>
+
                     </div>
                 </ng-container>
 
@@ -79,7 +130,8 @@
             </div>
             <div class='text-wrap'>
                 <textarea [rows]="5" [cols]="30" [(ngModel)]="practiseData.userDialogueData" pInputTextarea
-                    autoResize="autoResize" (ngModelChange)="conversationsService.saveConversationUserData()"></textarea>
+                    autoResize="autoResize"
+                    (ngModelChange)="conversationsService.saveConversationUserData()"></textarea>
             </div>
         </div>
         <div class='record-wrapper'>
