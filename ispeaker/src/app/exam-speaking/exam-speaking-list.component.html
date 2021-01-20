@@ -18,14 +18,9 @@
                                     routerLinkActive="active" skipLocationChange="true">{{subHeading.title}}</a>
                                 <div *ngIf="subHeading.completed" class="tick_completed"></div>
                             </div>
-                            <p-accordion expandIcon='pi pi-plus' collapseIcon='pi pi-minus'
-                                styleClass='exam-accordian'>
+                            <p-accordion expandIcon='pi pi-plus' collapseIcon='pi pi-minus' styleClass='exam-accordian'>
                                 <p-accordionTab [header]="subHeading.accordianHeader">
-                                    <!-- <p-header>
-                                        <span class='oup-header'>
-                                            {{grp.title}}
-                                        </span>
-                                    </p-header> -->
+
                                     <div class='sentence-wrapper' *ngFor="let sentence of subHeading.accordianData">
                                         <div class="sentence-cls" [innerHtml]="sentence"></div>
                                     </div>

@@ -1,1 +1,33 @@
-<p>listen works!</p>
+<div class="wrapper">
+    <div class="inner-wrapper">
+        <div class='header-text'>Listen</div>
+        <div class="subtopic-wrapper" [ngClass]="{'full-width': listenData.subtopics.length === 1}"
+            *ngFor="let grp of listenData.subtopics">
+            <p-accordion expandIcon='pi pi-plus' collapseIcon='pi pi-minus' styleClass='step-by-step-accordian'>
+                <p-accordionTab [selected]="true" [header]="grp.title">
+                    <!-- <p-header>
+                        <span class='oup-header'>
+                            {{grp.title}}
+                        </span>
+                    </p-header> -->
+                    <div class='sentence-wrapper' *ngFor="let sentence of grp.sentences">
+                        <div class="icons play-sound" (click)="playSound(sentence)"></div>
+                        <div class="sentence-cls" [innerHtml]="sentence.sentence"></div>
+                    </div>
+                </p-accordionTab>
+            </p-accordion>
+
+        </div>
+
+    </div>
+    <div class='record-wrapper'>
+        <div>Now try to record yourself speaking the lines and listen to how you sound</div>
+        <div class='icon-wrapper'>
+            <div class="icons" (click)="startStopRecording(listenData)"
+                [ngClass]="{'record':!listenData.isRecording,'record-stop':listenData.isRecording}"></div>
+            <div class="icons play" (click)="playStopRecordedAudio(listenData)"
+                [ngClass]="{'disable': !listenData.recordedAudio, 'play': !listenData.isPlaying,'record-stop':listenData.isPlaying}">
+            </div>
+        </div>
+    </div>
+</div>

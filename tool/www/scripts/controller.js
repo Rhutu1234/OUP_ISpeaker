@@ -1429,6 +1429,13 @@ function loadConversationsMenu(xml) {
       }
       if (type === "unique-selection-inline" || type === "unique-selection-expanded") {
         quesObj.ques = $(this).find('activity-content').find('instruction').find('paragraph').text();
+        if (type === "unique-selection-inline") {
+          quesObj.ques = [];
+          $(this).find('activity-content').find('instruction').find('paragraph').each(function () {
+            quesObj.ques.push($(this).text());
+
+          });
+        }
         quesObj.interaction = [];
         $(this).find('activity-content').find('interaction').each(function () {
           var interactObj = {};
@@ -1516,9 +1523,12 @@ function createExamSpeakingMenu(xml) {
       $(this).find('Watch_and_Study').each(function () {
         var watch_and_study = speakingType.watch_and_study;
         $(this).find('task').each(function () {
-          watch_and_study.taskData.para = $(this).find('para').text();
+          watch_and_study.taskData.para = [];
           watch_and_study.taskData.listItems = [];
           watch_and_study.taskData.images = [];
+          $(this).find('para').each(function () {
+            watch_and_study.taskData.para.push($(this).text());
+          });
           $(this).find('list').find('listItem').each(function () {
             watch_and_study.taskData.listItems.push($(this).text());
           });
@@ -1546,17 +1556,25 @@ function createExamSpeakingMenu(xml) {
             });
             $(this).attr('ref', ref);
           });
-          var speech = $(this).find('speech').html().trim();
-          speech = speech.replace(/<highlight xmlns="urn:ISPEAKER_PLUS" ref="1"/g, "<span class='highlight-dialouge-1'");
-          speech = speech.replace(/<highlight xmlns="urn:ISPEAKER_PLUS" ref="2"/g, "<span class='highlight-dialouge-2'");
-          speech = speech.replace(/<highlight xmlns="urn:ISPEAKER_PLUS" ref="3"/g, "<span class='highlight-dialouge-3'");
-          speech = speech.replace(/<highlight xmlns="urn:ISPEAKER_PLUS" ref="4"/g, "<span class='highlight-dialouge-4'");
-          speech = speech.replace(/<highlight xmlns="urn:ISPEAKER_PLUS" ref="5"/g, "<span class='highlight-dialouge-5'");
-          speech = speech.replace(/<highlight xmlns="urn:ISPEAKER_PLUS" ref="6"/g, "<span class='highlight-dialouge-6'");
-          speech = speech.replace(/<highlight xmlns="urn:ISPEAKER_PLUS" ref="7"/g, "<span class='highlight-dialouge-7'");
+          var speechAll = "";
+          $(this).find('speech').each(function () {
+           speechAll += "<p>";
 
-          speech = speech.replace(/<\/highlight/g, "</span");
-          dialogue.speech = speech;
+            var speech = $(this).html().trim();
+            speech = speech.replace(/<highlight xmlns="urn:ISPEAKER_PLUS" ref="1"/g, "<span class='highlight-dialouge-1'");
+            speech = speech.replace(/<highlight xmlns="urn:ISPEAKER_PLUS" ref="2"/g, "<span class='highlight-dialouge-2'");
+            speech = speech.replace(/<highlight xmlns="urn:ISPEAKER_PLUS" ref="3"/g, "<span class='highlight-dialouge-3'");
+            speech = speech.replace(/<highlight xmlns="urn:ISPEAKER_PLUS" ref="4"/g, "<span class='highlight-dialouge-4'");
+            speech = speech.replace(/<highlight xmlns="urn:ISPEAKER_PLUS" ref="5"/g, "<span class='highlight-dialouge-5'");
+            speech = speech.replace(/<highlight xmlns="urn:ISPEAKER_PLUS" ref="6"/g, "<span class='highlight-dialouge-6'");
+            speech = speech.replace(/<highlight xmlns="urn:ISPEAKER_PLUS" ref="7"/g, "<span class='highlight-dialouge-7'");
+
+            speech = speech.replace(/<\/highlight/g, "</span");
+            speechAll +=speech;
+            speechAll +="</p>";
+          });
+
+          dialogue.speech = speechAll;
           watch_and_study.study.dialogue.push(dialogue);
         })
         watch_and_study.study.skills = [];
@@ -1626,12 +1644,15 @@ function createExamSpeakingMenu(xml) {
       });
       $(this).find('Practise').each(function () {
         var practice = speakingType.practise;
-       
+
         $(this).find('task').each(function () {
           var task = {};
-          task.para = $(this).find('para').text();
+          task.para = [];
           task.listItems = [];
           task.images = [];
+          $(this).find('para').each(function () {
+            task.para.push($(this).text());
+          });
           $(this).find('list').find('listItem').each(function () {
             task.listItems.push($(this).text());
           });

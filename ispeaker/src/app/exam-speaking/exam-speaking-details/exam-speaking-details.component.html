@@ -7,7 +7,7 @@
     </div>
     <div class='p-grid btn-wrapper'>
         <div class='p-col details-btn selected' [ngClass]="{'selected':(activeTab === TabEnum.WATCH)}"
-            (click)='activeTab=TabEnum.WATCH;'>
+            (click)='activeTab=TabEnum.WATCH; examSpeakingService.saveExamSpeakingTypeUserData()'>
             <div class="txt-wrapper">
                 <span class="tab-icon watch-icon" title="Watch"></span>
                 <span class="title-txt"> Watch & Study</span>
@@ -15,7 +15,7 @@
             <div class='hide-bottom-border'></div>
         </div>
         <div class='p-col details-btn' [ngClass]="{'selected':(activeTab === TabEnum.LISTEN_AND_RECORD)}"
-            (click)='activeTab=TabEnum.LISTEN_AND_RECORD;'>
+            (click)='activeTab=TabEnum.LISTEN_AND_RECORD; examSpeakingService.saveExamSpeakingTypeUserData()'>
             <div class="txt-wrapper">
                 <span class="tab-icon listen-icon" title="Listen"></span>
                 <span class="title-txt">Listen</span>
@@ -23,7 +23,7 @@
             <div class='hide-bottom-border'></div>
         </div>
         <div class='p-col details-btn' [ngClass]="{'selected':(activeTab === TabEnum.PRACTISE)}"
-            (click)='activeTab=TabEnum.PRACTISE;'>
+            (click)='activeTab=TabEnum.PRACTISE; examSpeakingService.saveExamSpeakingTypeUserData()'>
             <div class="txt-wrapper">
                 <span class="tab-icon practice-icon" title="Practise"></span>
                 <span class="title-txt"> Practise</span>
@@ -31,7 +31,7 @@
             <div class='hide-bottom-border'></div>
         </div>
         <div class='p-col details-btn' [ngClass]="{'selected':(activeTab === TabEnum.REVIEW)}"
-            (click)='activeTab=TabEnum.REVIEW;'>
+            (click)='activeTab=TabEnum.REVIEW; examSpeakingService.saveExamSpeakingTypeUserData()'>
             <div class="txt-wrapper">
                 <span class="tab-icon review-icon" title="Review"></span>
                 <span class="title-txt"> Review</span>

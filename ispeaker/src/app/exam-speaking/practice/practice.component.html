@@ -1,1 +1,58 @@
-<p>practice works!</p>
+<div class="wrapper">
+    <div class="pratice-header-wrapper">
+        <div class='header-text'>
+            Practise</div>
+        <div class='i-text-wrapper'>
+            <div class='i-text'>You can record yourself doing these practice tasks with a partner. Look at the Useful
+                Language and the Tips.</div>
+            <div class='i-text'>Make notes before you start if you want to.</div>
+        </div>
+    </div>
+    <div class="inner-wrapper left">
+        <div class="task-wrapper" *ngFor="let task of practiceData.task;let i = index;">
+            <div class='header-text'>
+                Task {{i+1}}</div>
+            <div class="img-wrapper" *ngIf="task.images.length">
+                <img *ngFor="let image of task.images" src="../../../assets/img/{{image}}" />
+            </div>
+            <div class="para-wrapper" *ngIf="task.para.length">
+                <div class="para-text" *ngFor="let para of task.para">{{para}}</div>
+            </div>
+            <div class="list-wrapper" *ngIf="task.listItems.length">
+                <div class="list" *ngFor="let list of task.listItems">{{list}}</div>
+            </div>
+            <div style="    font-weight: 400;
+            font-style: normal;
+            font-size: 17px;margin-bottom: 10px;margin-top: 20px;">Your Notes:</div>
+            <textarea style="width:100%" [rows]="5" [cols]="30" [(ngModel)]="task.userAns" pInputTextarea
+                autoResize="autoResize"></textarea>
+            <div class='icon-wrapper'>
+                <div class="icons" (click)="startStopRecording(i)"
+                    [ngClass]="{'record':!task.isRecording,'record-stop':task.isRecording}"></div>
+                <div class="icons play" (click)="playStopRecordedAudio(i)"
+                    [ngClass]="{'disable': !task.recordedAudio, 'play': !task.isPlaying,'record-stop':task.isPlaying}">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="inner-wrapper right">
+        <div class='header-text'>
+            Tips</div>
+        <p-accordion expandIcon='pi pi-plus' collapseIcon='pi pi-minus' styleClass='step-by-step-accordian'>
+            <p-accordionTab [selected]="true" [header]="'Do...'">
+
+                <div class='sentence-wrapper' *ngFor="let tips of practiceData.tips.dos">
+                    <p>{{tips}}</p>
+                </div>
+            </p-accordionTab>
+        </p-accordion>
+        <p-accordion expandIcon='pi pi-plus' collapseIcon='pi pi-minus' styleClass='step-by-step-accordian'>
+            <p-accordionTab [selected]="true" header="Don't...">
+
+                <div class='sentence-wrapper' *ngFor="let tips of practiceData.tips.donts">
+                    <p>{{tips}}</p>
+                </div>
+            </p-accordionTab>
+        </p-accordion>
+    </div>
+</div>

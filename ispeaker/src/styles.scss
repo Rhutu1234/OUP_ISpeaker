@@ -64,5 +64,35 @@
                 color: #c5dbf4;
             }
         }
+        &.highlight-dialogue-3 {
+            .highlight-dialouge-3 {
+                color: #fff7b4;
+            }
+        }
+        &.highlight-dialogue-4 {
+            .highlight-dialouge-4 {
+                color: #b6cd72;
+            }
+        }
+        &.highlight-dialogue-5 {
+            .highlight-dialouge-5 {
+                color: #f2d4a6;
+            }
+        }
+        &.highlight-dialogue-6 {
+            .highlight-dialouge-6 {
+                color: #dbded8;
+            }
+        }
+        &.highlight-dialogue-7 {
+            .highlight-dialouge-7 {
+                color: #c5dbf4;
+            }
+        }
+    }
+    .speech-wrapper {
+        p {
+            margin-top: 0px;
+        }
     }
 }

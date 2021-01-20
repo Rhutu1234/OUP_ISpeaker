@@ -1,0 +1,132 @@
+.wrapper {
+    position: relative;
+    width: 100%;
+    float: left;
+    padding-top: 30px;
+    color: #333333;
+    .pratice-header-wrapper {
+        padding: 15px;
+        position: relative;
+        width: 100%;
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgba(204, 204, 204, 1);
+        border-radius: 4px;
+        box-shadow: 0px 5px 5px rgba(204, 204, 204, 0.349019607843137);
+        margin-bottom: 20px;
+        padding-top: 6px;
+        .i-text-wrapper {
+            margin-top: 30px;
+            margin-bottom: 20px;
+            .i-text {
+                margin-bottom: 5px;
+                font-weight: 400;
+                font-style: normal;
+                font-size: 17px;
+            }
+        }
+    }
+    .inner-wrapper {
+        &.study {
+            padding: 0px;
+            .header-text {
+                padding: 6px 15px 0px 15px;
+            }
+        }
+        .task-wrapper {
+            padding: 15px;
+            position: relative;
+
+            min-height: 100px;
+            padding-top: 6px;
+            border-width: 1px;
+            border-style: solid;
+            border-color: rgba(204, 204, 204, 1);
+            border-radius: 4px;
+            box-shadow: 0px 5px 5px rgba(204, 204, 204, 0.349019607843137);
+            margin-bottom: 20px;
+            .img-wrapper {
+                img {
+                    float: inline-block;
+                    margin-right: 10px;
+                    height: 167px;
+                }
+            }
+            .para-wrapper {
+                margin-top: 20px;
+            }
+            .para-text,
+            .list {
+                font-weight: 400;
+                font-style: normal;
+                font-size: 17px;
+            }
+            .para-text {
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    .left {
+        float: left;
+        width: calc(70% - 10px);
+    }
+    .right {
+        padding: 15px;
+        position: relative;
+
+        min-height: 100px;
+        padding-top: 6px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgba(204, 204, 204, 1);
+        border-radius: 4px;
+        box-shadow: 0px 5px 5px rgba(204, 204, 204, 0.349019607843137);
+        float: right;
+        width: calc(30%);
+    }
+    .header-text {
+        font-family: "SourceSansProSemiBold";
+        font-weight: 650;
+        font-style: normal;
+        font-size: 24px;
+        text-align: left;
+        margin-bottom: 10px;
+    }
+    .icon-wrapper {
+        margin-top: 20px;
+    }
+    .icons {
+        min-width: 30px;
+        min-height: 30px;
+        background-repeat: no-repeat;
+        background-position: center;
+        display: inline-block;
+        margin-right: 10px;
+        background-size: 100% auto;
+        cursor: pointer;
+        &.disable {
+            cursor: default;
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        &.play-sound {
+            background-image: url("../../../assets/img/audio_british.png");
+        }
+        &.record {
+            background-image: url("../../../assets/img/record_start.png");
+        }
+        &.play {
+            background-image: url("../../../assets/img/play_recording.png");
+        }
+        &.record-stop {
+            background-image: url("../../../assets/img/stop.png");
+        }
+    }
+}
+@media screen and (max-width: 650px) {
+    .inner-wrapper {
+        width: 100% !important;
+        margin-bottom: 20px;
+    }
+}

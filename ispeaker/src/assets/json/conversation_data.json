@@ -1346,7 +1346,9 @@
                     },
                     {
                         "type": "unique-selection-inline",
-                        "ques": "Are the following phrases correct or incorrect?",
+                        "ques": [
+                            "Are the following phrases correct or incorrect?"
+                        ],
                         "interaction": [
                             {
                                 "ques": "I understand where you're coming from, but I don't think your idea will work.",
@@ -1511,7 +1513,9 @@
                     },
                     {
                         "type": "unique-selection-inline",
-                        "ques": "Are the following phrases correct or incorrect?",
+                        "ques": [
+                            "Are the following phrases correct or incorrect?"
+                        ],
                         "interaction": [
                             {
                                 "ques": "I understand where you're coming from, but I don't think your idea will work.",
@@ -3367,7 +3371,10 @@
                     },
                     {
                         "type": "unique-selection-inline",
-                        "ques": "Are the answers to the question below correct or incorrect?Has anyone arrived yet?",
+                        "ques": [
+                            "Are the answers to the question below correct or incorrect?",
+                            "Has anyone arrived yet?"
+                        ],
                         "interaction": [
                             {
                                 "ques": "No, not to my knowledge.",
@@ -3525,7 +3532,10 @@
                     },
                     {
                         "type": "unique-selection-inline",
-                        "ques": "Are the answers to the question below correct or incorrect?Has anyone arrived yet?",
+                        "ques": [
+                            "Are the answers to the question below correct or incorrect?",
+                            "Has anyone arrived yet?"
+                        ],
                         "interaction": [
                             {
                                 "ques": "No, not to my knowledge.",
@@ -3666,7 +3676,9 @@
                     },
                     {
                         "type": "unique-selection-inline",
-                        "ques": "Are the following phrases correct or incorrect?",
+                        "ques": [
+                            "Are the following phrases correct or incorrect?"
+                        ],
                         "interaction": [
                             {
                                 "ques": "There's bound be a delay.",
@@ -3832,7 +3844,9 @@
                     },
                     {
                         "type": "unique-selection-inline",
-                        "ques": "Are the following phrases correct or incorrect?",
+                        "ques": [
+                            "Are the following phrases correct or incorrect?"
+                        ],
                         "interaction": [
                             {
                                 "ques": "There's bound be a delay.",
@@ -4356,7 +4370,9 @@
                     },
                     {
                         "type": "unique-selection-inline",
-                        "ques": "Are the responses to the apology below correct or incorrect?",
+                        "ques": [
+                            "Are the responses to the apology below correct or incorrect?"
+                        ],
                         "interaction": [
                             {
                                 "ques": "Don't worry about it.",
@@ -4536,7 +4552,9 @@
                     },
                     {
                         "type": "unique-selection-inline",
-                        "ques": "Are the responses to the apology below correct or incorrect?",
+                        "ques": [
+                            "Are the responses to the apology below correct or incorrect?"
+                        ],
                         "interaction": [
                             {
                                 "ques": "Don't worry about it.",
@@ -4998,7 +5016,9 @@
                     },
                     {
                         "type": "unique-selection-inline",
-                        "ques": "Are the following phrases correct or incorrect?",
+                        "ques": [
+                            "Are the following phrases correct or incorrect?"
+                        ],
                         "interaction": [
                             {
                                 "ques": "I'm sorry of your loss.",
@@ -5131,7 +5151,9 @@
                     },
                     {
                         "type": "unique-selection-inline",
-                        "ques": "Are the following phrases correct or incorrect?",
+                        "ques": [
+                            "Are the following phrases correct or incorrect?"
+                        ],
                         "interaction": [
                             {
                                 "ques": "I'm sorry of your loss.",
@@ -5270,7 +5292,9 @@
                     },
                     {
                         "type": "unique-selection-inline",
-                        "ques": "Are the following phrases correct or incorrect?",
+                        "ques": [
+                            "Are the following phrases correct or incorrect?"
+                        ],
                         "interaction": [
                             {
                                 "ques": "I'd like to make a complaint.",
@@ -5407,7 +5431,9 @@
                     },
                     {
                         "type": "unique-selection-inline",
-                        "ques": "Are the following phrases correct or incorrect?",
+                        "ques": [
+                            "Are the following phrases correct or incorrect?"
+                        ],
                         "interaction": [
                             {
                                 "ques": "I'd like to make a complaint.",
@@ -5554,7 +5580,9 @@
                     },
                     {
                         "type": "unique-selection-inline",
-                        "ques": "Are the following phrases correct or incorrect?",
+                        "ques": [
+                            "Are the following phrases correct or incorrect?"
+                        ],
                         "interaction": [
                             {
                                 "ques": "Thank you very much.",
@@ -5739,7 +5767,9 @@
                     },
                     {
                         "type": "unique-selection-inline",
-                        "ques": "Are the following phrases correct or incorrect?",
+                        "ques": [
+                            "Are the following phrases correct or incorrect?"
+                        ],
                         "interaction": [
                             {
                                 "ques": "Thank you very much.",
@@ -6147,7 +6177,9 @@
                     },
                     {
                         "type": "unique-selection-inline",
-                        "ques": "Are the following phrases correct or incorrect?",
+                        "ques": [
+                            "Are the following phrases correct or incorrect?"
+                        ],
                         "interaction": [
                             {
                                 "ques": "I'm sorry, I have to rush on.",
@@ -6270,7 +6302,9 @@
                     },
                     {
                         "type": "unique-selection-inline",
-                        "ques": "Are the following phrases correct or incorrect?",
+                        "ques": [
+                            "Are the following phrases correct or incorrect?"
+                        ],
                         "interaction": [
                             {
                                 "ques": "I'm sorry, I have to rush on.",
@@ -6416,7 +6450,9 @@
                     },
                     {
                         "type": "unique-selection-inline",
-                        "ques": "Are the following phrases correct or incorrect?",
+                        "ques": [
+                            "Are the following phrases correct or incorrect?"
+                        ],
                         "interaction": [
                             {
                                 "ques": "I don't know if you've met?",
@@ -6577,7 +6613,9 @@
                     },
                     {
                         "type": "unique-selection-inline",
-                        "ques": "Are the following phrases correct or incorrect?",
+                        "ques": [
+                            "Are the following phrases correct or incorrect?"
+                        ],
                         "interaction": [
                             {
                                 "ques": "I don't know if you've met?",
@@ -7052,7 +7090,9 @@
                     },
                     {
                         "type": "unique-selection-inline",
-                        "ques": "Are the following questions correct or incorrect?",
+                        "ques": [
+                            "Are the following questions correct or incorrect?"
+                        ],
                         "interaction": [
                             {
                                 "ques": "Can you ask her to call back me?",
@@ -7197,7 +7237,9 @@
                     },
                     {
                         "type": "unique-selection-inline",
-                        "ques": "Are the following questions correct or incorrect?",
+                        "ques": [
+                            "Are the following questions correct or incorrect?"
+                        ],
                         "interaction": [
                             {
                                 "ques": "Can you ask her to call back me?",
@@ -7356,7 +7398,9 @@
                     },
                     {
                         "type": "unique-selection-inline",
-                        "ques": "Are the following questions correct or incorrect?",
+                        "ques": [
+                            "Are the following questions correct or incorrect?"
+                        ],
                         "interaction": [
                             {
                                 "ques": "May I join you?",
@@ -7513,7 +7557,9 @@
                     },
                     {
                         "type": "unique-selection-inline",
-                        "ques": "Are the following questions correct or incorrect?",
+                        "ques": [
+                            "Are the following questions correct or incorrect?"
+                        ],
                         "interaction": [
                             {
                                 "ques": "May I join you?",
@@ -7629,7 +7675,9 @@
                     },
                     {
                         "type": "unique-selection-inline",
-                        "ques": "Are the following phrases correct or incorrect?",
+                        "ques": [
+                            "Are the following phrases correct or incorrect?"
+                        ],
                         "interaction": [
                             {
                                 "ques": "I'm afraid time is running out.",
@@ -7779,7 +7827,9 @@
                     },
                     {
                         "type": "unique-selection-inline",
-                        "ques": "Are the following phrases correct or incorrect?",
+                        "ques": [
+                            "Are the following phrases correct or incorrect?"
+                        ],
                         "interaction": [
                             {
                                 "ques": "I'm afraid time is running out.",
@@ -7923,7 +7973,9 @@
                     },
                     {
                         "type": "unique-selection-inline",
-                        "ques": "Are the following phrases correct or incorrect?",
+                        "ques": [
+                            "Are the following phrases correct or incorrect?"
+                        ],
                         "interaction": [
                             {
                                 "ques": "Am I supposed to show my ticket?",
@@ -8038,7 +8090,9 @@
                     },
                     {
                         "type": "unique-selection-inline",
-                        "ques": "Are the following phrases correct or incorrect?",
+                        "ques": [
+                            "Are the following phrases correct or incorrect?"
+                        ],
                         "interaction": [
                             {
                                 "ques": "Am I supposed to show my ticket?",
@@ -8211,7 +8265,10 @@
                     },
                     {
                         "type": "unique-selection-inline",
-                        "ques": "Are the answers to the question below correct or incorrect?Would it be all right if I came with you?",
+                        "ques": [
+                            "Are the answers to the question below correct or incorrect?",
+                            "Would it be all right if I came with you?"
+                        ],
                         "interaction": [
                             {
                                 "ques": "I'd prefer you didn't, if you don't mind.",
@@ -8400,7 +8457,10 @@
                     },
                     {
                         "type": "unique-selection-inline",
-                        "ques": "Are the answers to the question below correct or incorrect?Would it be all right if I came with you?",
+                        "ques": [
+                            "Are the answers to the question below correct or incorrect?",
+                            "Would it be all right if I came with you?"
+                        ],
                         "interaction": [
                             {
                                 "ques": "I'd prefer you didn't, if you don't mind.",
@@ -9082,7 +9142,9 @@
                     },
                     {
                         "type": "unique-selection-inline",
-                        "ques": "Are the following phrases correct or incorrect?",
+                        "ques": [
+                            "Are the following phrases correct or incorrect?"
+                        ],
                         "interaction": [
                             {
                                 "ques": "I'd want a coffee, please.",
@@ -9246,7 +9308,9 @@
                     },
                     {
                         "type": "unique-selection-inline",
-                        "ques": "Are the following phrases correct or incorrect?",
+                        "ques": [
+                            "Are the following phrases correct or incorrect?"
+                        ],
                         "interaction": [
                             {
                                 "ques": "I'd want a coffee, please.",
@@ -9406,7 +9470,9 @@
                     },
                     {
                         "type": "unique-selection-inline",
-                        "ques": "Are the following phrases correct or incorrect when asking for help?",
+                        "ques": [
+                            "Are the following phrases correct or incorrect when asking for help?"
+                        ],
                         "interaction": [
                             {
                                 "ques": "Could I ask you to carry this box for me?",
@@ -9550,7 +9616,9 @@
                     },
                     {
                         "type": "unique-selection-inline",
-                        "ques": "Are the following phrases correct or incorrect when asking for help?",
+                        "ques": [
+                            "Are the following phrases correct or incorrect when asking for help?"
+                        ],
                         "interaction": [
                             {
                                 "ques": "Could I ask you to carry this box for me?",
@@ -9690,7 +9758,9 @@
                     },
                     {
                         "type": "unique-selection-inline",
-                        "ques": "Are the following phrases correct or incorrect?",
+                        "ques": [
+                            "Are the following phrases correct or incorrect?"
+                        ],
                         "interaction": [
                             {
                                 "ques": "I'm trying to find out when the next flight to Rome is.",
@@ -9815,7 +9885,9 @@
                     },
                     {
                         "type": "unique-selection-inline",
-                        "ques": "Are the following phrases correct or incorrect?",
+                        "ques": [
+                            "Are the following phrases correct or incorrect?"
+                        ],
                         "interaction": [
                             {
                                 "ques": "I'm trying to find out when the next flight to Rome is.",
@@ -9976,7 +10048,9 @@
                     },
                     {
                         "type": "unique-selection-inline",
-                        "ques": "Are the following phrases correct or incorrect?",
+                        "ques": [
+                            "Are the following phrases correct or incorrect?"
+                        ],
                         "interaction": [
                             {
                                 "ques": "I'd advice you to sell it now.",
@@ -10162,7 +10236,9 @@
                     },
                     {
                         "type": "unique-selection-inline",
-                        "ques": "Are the following phrases correct or incorrect?",
+                        "ques": [
+                            "Are the following phrases correct or incorrect?"
+                        ],
                         "interaction": [
                             {
                                 "ques": "I'd advice you to sell it now.",
@@ -10869,7 +10945,10 @@
                     },
                     {
                         "type": "unique-selection-inline",
-                        "ques": "Are the answers to the question below correct or incorrect?Can I help you with that?",
+                        "ques": [
+                            "Are the answers to the question below correct or incorrect?",
+                            "Can I help you with that?"
+                        ],
                         "interaction": [
                             {
                                 "ques": "That's very kind of you, thank you.",
@@ -11075,7 +11154,10 @@
                     },
                     {
                         "type": "unique-selection-inline",
-                        "ques": "Are the answers to the question below correct or incorrect?Can I help you with that?",
+                        "ques": [
+                            "Are the answers to the question below correct or incorrect?",
+                            "Can I help you with that?"
+                        ],
                         "interaction": [
                             {
                                 "ques": "That's very kind of you, thank you.",

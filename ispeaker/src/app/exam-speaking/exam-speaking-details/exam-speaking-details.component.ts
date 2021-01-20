@@ -15,10 +15,24 @@ export class ExamSpeakingDetailsComponent implements OnInit {
   examSpeakingType: string;
   dataLoading = false;
   constructor(public ispeakerService: ISpeakerService, private route: ActivatedRoute, public router: Router,
-    private examSpeakingService: ExamSpeakingService) { }
+    public examSpeakingService: ExamSpeakingService) { }
 
   ngOnInit() {
     this.examSpeakingType = this.route.snapshot.params.type;
+    this.dataLoading = true;
+    this.examSpeakingService.fetchExamSpeakingType(this.examSpeakingType).subscribe((data) => {
+      this.examSpeakingService.selectedExamSpeakingType = data;
+      this.examSpeakingService.fetchUserExamSpeakingDataFile().then((success) => {
+        this.dataLoading = false;
+
+        this.activeTab = TabEnum.WATCH;
+      }, (error) => {
+        this.dataLoading = false;
+
+        this.activeTab = TabEnum.WATCH;
+      });
+
+    });
   }
 
 

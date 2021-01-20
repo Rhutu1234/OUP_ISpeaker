@@ -46,7 +46,7 @@
 
                 </ng-container>
                 <ng-container *ngIf="practiseData.questions[currentIndex].type === 'unique-selection-inline'">
-                    <div class="question" [innerHtml]="practiseData.questions[currentIndex].ques"></div>
+                    <div class="question" *ngFor="let ques of practiseData.questions[currentIndex].ques">{{ques}}</div>
                     <div class='interaction-wrapper'>
 
                         <table class='unique-selection-table'>
