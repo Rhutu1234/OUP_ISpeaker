@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+import { Subscription } from 'rxjs';
 import { AudioRecordingService } from 'src/app/audio-recording.service';
 import { ISpeakerService } from 'src/app/ispeaker.service';
 import { ConversationsService } from '../conversations.service';
@@ -16,6 +17,9 @@ export class WatchAndStudyComponent implements OnInit, AfterViewInit {
   isAccordOpen = false;
   audio = new Audio();
   currentSound: any;
+  recordingFailedSubscription: Subscription;
+  getRecordedTimeSubscription: Subscription;
+  getRecordedBlobSubscription: Subscription;
   @ViewChild('videoWrapper', { static: false }) videoWrapper: ElementRef;
   constructor(public conversationsService: ConversationsService, private sanitizer: DomSanitizer, public ispeakerService: ISpeakerService,
     // tslint:disable-next-line:align
@@ -32,14 +36,14 @@ export class WatchAndStudyComponent implements OnInit, AfterViewInit {
         this.studyData.recordedAudio = null;
       }
     }
-    this.audioRecordingService.recordingFailed().subscribe(() => {
+    this.recordingFailedSubscription = this.audioRecordingService.recordingFailed().subscribe(() => {
       this.studyData.isRecording = false;
     });
 
-    this.audioRecordingService.getRecordedTime().subscribe((time) => {
+    this.getRecordedTimeSubscription = this.audioRecordingService.getRecordedTime().subscribe((time) => {
       this.studyData.recordedTime = time;
     });
-    this.audioRecordingService.getRecordedBlob().subscribe((data) => {
+    this.getRecordedBlobSubscription = this.audioRecordingService.getRecordedBlob().subscribe((data) => {
       // this.currentSound.recordedAudio = URL.createObjectURL(data.blob);
       const reader = new FileReader();
       reader.readAsDataURL(data.blob);
@@ -104,5 +108,8 @@ export class WatchAndStudyComponent implements OnInit, AfterViewInit {
   ngOnDestroy() {
     this.audio.pause();
     this.audio = null;
+    this.recordingFailedSubscription.unsubscribe();
+    this.getRecordedTimeSubscription.unsubscribe();
+    this.getRecordedBlobSubscription.unsubscribe();
   }
 }

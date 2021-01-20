@@ -96,3 +96,11 @@
         }
     }
 }
+@media screen and (max-width: 450px) {
+    .step-wrapper {
+        margin-right: 40px !important;
+        .step-line {
+            width: 50px !important;
+        }
+    }
+}

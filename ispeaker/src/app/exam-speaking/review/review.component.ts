@@ -10,9 +10,7 @@ import { ExamSpeakingService } from '../exam-speaking.service';
 })
 export class ReviewComponent implements OnInit {
   reviewData: any;
-  constructor(public examSpeakingService: ExamSpeakingService, public ispeakerService: ISpeakerService,
-    // tslint:disable-next-line:align
-    private audioRecordingService: AudioRecordingService
+  constructor(public examSpeakingService: ExamSpeakingService, public ispeakerService: ISpeakerService
   ) {
     if (this.examSpeakingService.selectedExamSpeakingType) {
       this.reviewData = this.examSpeakingService.selectedExamSpeakingType.reviews;
@@ -23,7 +21,7 @@ export class ReviewComponent implements OnInit {
   ngOnInit() {
   }
   onModelChange() {
-     this.examSpeakingService.saveExamSpeakingTypeUserData();
+    this.examSpeakingService.saveExamSpeakingTypeUserData();
   }
 
 }

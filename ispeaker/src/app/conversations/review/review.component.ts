@@ -10,10 +10,7 @@ import { ConversationsService } from '../conversations.service';
 })
 export class ReviewComponent implements OnInit {
   reviewData: any;
-  constructor(public conversationsService: ConversationsService, public ispeakerService: ISpeakerService,
-    // tslint:disable-next-line:align
-    private audioRecordingService: AudioRecordingService
-  ) {
+  constructor(public conversationsService: ConversationsService, public ispeakerService: ISpeakerService) {
     if (this.conversationsService.selectedConversationType) {
       this.reviewData = this.conversationsService.selectedConversationType.reviews;
 

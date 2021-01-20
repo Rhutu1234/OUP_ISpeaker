@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+import { Subscription } from 'rxjs';
 import { AudioRecordingService } from 'src/app/audio-recording.service';
 import { environment } from 'src/environments/environment';
 import { SoundsService } from '../sounds.service';
@@ -13,16 +14,19 @@ export class ListenAndRecordComponent implements OnInit, OnDestroy {
   listenRecordData: any;
   audio = new Audio();
   currentSound: any;
+  recordingFailedSubscription: Subscription;
+  getRecordedTimeSubscription: Subscription;
+  getRecordedBlobSubscription: Subscription;
   constructor(public soundsService: SoundsService, private audioRecordingService: AudioRecordingService, private sanitizer: DomSanitizer) {
 
-    this.audioRecordingService.recordingFailed().subscribe(() => {
+    this.recordingFailedSubscription = this.audioRecordingService.recordingFailed().subscribe(() => {
       this.currentSound.isRecording = false;
     });
 
-    this.audioRecordingService.getRecordedTime().subscribe((time) => {
+    this.getRecordedTimeSubscription = this.audioRecordingService.getRecordedTime().subscribe((time) => {
       this.currentSound.recordedTime = time;
     });
-    this.audioRecordingService.getRecordedBlob().subscribe((data) => {
+    this.getRecordedBlobSubscription = this.audioRecordingService.getRecordedBlob().subscribe((data) => {
       // this.currentSound.recordedAudio = URL.createObjectURL(data.blob);
       const reader = new FileReader();
       reader.readAsDataURL(data.blob);
@@ -91,7 +95,12 @@ export class ListenAndRecordComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
+    this.resetRecording('');
     this.audio.pause();
     this.audio = null;
+    this.recordingFailedSubscription.unsubscribe();
+    this.getRecordedTimeSubscription.unsubscribe();
+    this.getRecordedBlobSubscription.unsubscribe();
+
   }
 }

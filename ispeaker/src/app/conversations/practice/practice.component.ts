@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { AudioRecordingService } from 'src/app/audio-recording.service';
 import { ISpeakerService } from 'src/app/ispeaker.service';
 import { environment } from 'src/environments/environment';
@@ -15,6 +16,9 @@ export class PracticeComponent implements OnInit {
   score = 0;
   audio = new Audio();
   isAnswered = false;
+  recordingFailedSubscription: Subscription;
+  getRecordedTimeSubscription: Subscription;
+  getRecordedBlobSubscription: Subscription;
   constructor(public conversationsService: ConversationsService, public ispeakerService: ISpeakerService,
     // tslint:disable-next-line:align
     private audioRecordingService: AudioRecordingService) {
@@ -29,14 +33,14 @@ export class PracticeComponent implements OnInit {
         this.practiseData.recordedAudio = null;
       }
     }
-    this.audioRecordingService.recordingFailed().subscribe(() => {
+    this.recordingFailedSubscription = this.audioRecordingService.recordingFailed().subscribe(() => {
       this.practiseData.isRecording = false;
     });
 
-    this.audioRecordingService.getRecordedTime().subscribe((time) => {
+    this.getRecordedTimeSubscription = this.audioRecordingService.getRecordedTime().subscribe((time) => {
       this.practiseData.recordedTime = time;
     });
-    this.audioRecordingService.getRecordedBlob().subscribe((data) => {
+    this.getRecordedBlobSubscription = this.audioRecordingService.getRecordedBlob().subscribe((data) => {
       const reader = new FileReader();
       reader.readAsDataURL(data.blob);
       reader.onloadend = () => {
@@ -133,5 +137,8 @@ export class PracticeComponent implements OnInit {
   ngOnDestroy() {
     this.audio.pause();
     this.audio = null;
+    this.recordingFailedSubscription.unsubscribe();
+    this.getRecordedTimeSubscription.unsubscribe();
+    this.getRecordedBlobSubscription.unsubscribe();
   }
 }

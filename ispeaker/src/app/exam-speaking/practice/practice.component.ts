@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+import { Subscription } from 'rxjs';
 import { AudioRecordingService } from 'src/app/audio-recording.service';
 import { ISpeakerService } from 'src/app/ispeaker.service';
 import { environment } from 'src/environments/environment';
@@ -15,6 +16,9 @@ export class PracticeComponent implements OnInit {
   currentIndex;
   audio = new Audio();
   currentTask;
+  recordingFailedSubscription: Subscription;
+  getRecordedTimeSubscription: Subscription;
+  getRecordedBlobSubscription: Subscription;
   constructor(public examSpeakingService: ExamSpeakingService, private sanitizer: DomSanitizer, public ispeakerService: ISpeakerService,
     // tslint:disable-next-line:align
     private audioRecordingService: AudioRecordingService) {
@@ -25,14 +29,14 @@ export class PracticeComponent implements OnInit {
 
 
     }
-    this.audioRecordingService.recordingFailed().subscribe(() => {
+    this.recordingFailedSubscription = this.audioRecordingService.recordingFailed().subscribe(() => {
       this.currentTask.isRecording = false;
     });
 
-    this.audioRecordingService.getRecordedTime().subscribe((time) => {
+    this.getRecordedTimeSubscription = this.audioRecordingService.getRecordedTime().subscribe((time) => {
       this.currentTask.recordedTime = time;
     });
-    this.audioRecordingService.getRecordedBlob().subscribe((data) => {
+    this.getRecordedBlobSubscription = this.audioRecordingService.getRecordedBlob().subscribe((data) => {
       const reader = new FileReader();
       reader.readAsDataURL(data.blob);
       reader.onloadend = () => {
@@ -97,5 +101,12 @@ export class PracticeComponent implements OnInit {
         this.currentTask.isPlaying = false;
       };
     }
+  }
+  ngOnDestroy() {
+    this.audio.pause();
+    this.audio = null;
+    this.recordingFailedSubscription.unsubscribe();
+    this.getRecordedTimeSubscription.unsubscribe();
+    this.getRecordedBlobSubscription.unsubscribe();
   }
 }

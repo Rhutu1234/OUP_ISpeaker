@@ -17,7 +17,8 @@ export class HomeComponent implements OnInit {
     this.dataLoading = false;
     this.ispeakerService.scrollIntoView(document.getElementsByClassName('ispeaker-wrapper')[0]);
   }
-  onLanguageSelection(type) {
+  onLanguageSelection(event, type) {
+    event.stopPropagation();
     this.selectedLanguage = type;
     this.ispeakerService.selectedLanguage = type;
   }

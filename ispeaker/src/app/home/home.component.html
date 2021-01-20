@@ -39,11 +39,13 @@
             <div class="p-grid p-justify-center p-align-center btn-lbl">
                 <span>Showing:</span>
             </div>
-            <div class="btn" [ngClass]="{'selected':selectedLanguage ==='BrE'}" (click)="onLanguageSelection('BrE')">
+            <div class="btn" [ngClass]="{'selected':selectedLanguage ==='BrE'}"
+                (click)="onLanguageSelection($event,'BrE')">
                 <span class="tick-img"></span>
                 <span class="btn-label">British English</span>
             </div>
-            <div class="btn" [ngClass]="{'selected':selectedLanguage ==='AmE'}" (click)="onLanguageSelection('AmE')">
+            <div class="btn" [ngClass]="{'selected':selectedLanguage ==='AmE'}"
+                (click)="onLanguageSelection($event,'AmE')">
                 <span class="tick-img"></span>
                 <span class="btn-label">American English</span>
             </div>
