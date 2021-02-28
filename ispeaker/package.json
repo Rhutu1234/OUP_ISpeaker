@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --port=8080 --open --watch",
+    "start": "ng serve --port=8080 --open --live-reload=false",
     "build": "ng build --baseHref=/ftp/ispeaker/For_QA/v2/ --prod=true",
-    "prod": "ng build --baseHref=/external/ispeaker/new/ --prod=true",
+    "prod": "ng build --deploy-url=/external/ispeaker/new/  --prod=true",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

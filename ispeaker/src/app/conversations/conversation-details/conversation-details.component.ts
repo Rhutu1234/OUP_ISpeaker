@@ -19,20 +19,38 @@ export class ConversationDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.conversationType = this.route.snapshot.params.type;
+    const attempt = this.route.snapshot.params.attempted;
+    console.log(attempt);
     this.dataLoading = true;
     this.conversationService.fetchConversationType(this.conversationType).subscribe((data) => {
       this.conversationService.selectedConversationType = data;
-      this.conversationService.fetchUserConversationDataFile().then((success) => {
+      if (attempt == 'true') {
+        this.conversationService.fetchUserConversationDataFile().then((success) => {
+          this.dataLoading = false;
+
+          this.activeTab = TabEnum.WATCH;
+        }, (error) => {
+          this.dataLoading = false;
+
+          this.activeTab = TabEnum.WATCH;
+        });
+      } else {
         this.dataLoading = false;
-
         this.activeTab = TabEnum.WATCH;
-      }, (error) => {
-        this.dataLoading = false;
-
-        this.activeTab = TabEnum.WATCH;
-      });
-
+      }
     });
+
+  }
+  onBtnClick(type) {
+    this.conversationService.saveConversationUserData();
+    switch (type) {
+      case 'mainMenu':
+        this.router.navigate(['/home']);
+        break;
+      case 'conversationMenu':
+        this.router.navigate(['/conversations'], { skipLocationChange: true });
+        break;
+    }
   }
 
 }

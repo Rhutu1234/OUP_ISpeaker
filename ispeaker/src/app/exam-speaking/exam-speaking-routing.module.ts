@@ -5,7 +5,7 @@ import { ExamSpeakingDetailsComponent } from './exam-speaking-details/exam-speak
 import { ExamSpeakingListComponent } from './exam-speaking-list.component';
 
 const routes: Routes = [
-  { path: 'examSpeakingDetails/:type', component: ExamSpeakingDetailsComponent },
+  { path: 'examSpeakingDetails/:type/:attempted', component: ExamSpeakingDetailsComponent },
   { path: '', component: ExamSpeakingListComponent }
 ];
 

@@ -161,7 +161,7 @@
     .sentence-wrapper {
         font-size: 17px;
         color: #333333;
-        margin-top: 15px;
+        margin-top: 35px;
         margin-bottom: 15px;
         input[type="text"] {
             font-size: 17px;
@@ -216,6 +216,32 @@
                 justify-content: center;
             }
         }
+    }
+    .user-input-wrapper {
+        display: inline-block;
+        position: relative;
+        input[type="text"] {
+            padding-right: 20px;
+            &.correct {
+                border-bottom: 1px solid green;
+            }
+            &.incorrect {
+                border-bottom: 1px solid red;
+            }
+        }
+        .response-icon {
+            width: 15px;
+            height: 15px;
+            right: 3px;
+            top: 4px;
+        }
+    }
+    .correct-ans {
+        display: inline-block;
+        position: absolute;
+        color: #0066cc;
+        left: 0;
+        top: -25px;
     }
 }
 @media screen and (max-width: 770px) {

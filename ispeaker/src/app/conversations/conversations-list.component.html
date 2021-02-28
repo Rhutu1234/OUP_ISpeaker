@@ -14,7 +14,7 @@
                     <div class='subHeading-wrapper'>
                         <ng-container *ngFor='let subHeading of tab.subHeading'>
                             <div class='link-wrapper'><a
-                                    [routerLink]="['/conversations/conversationsDetails',subHeading.title]"
+                                    [routerLink]="['/conversations/conversationsDetails',subHeading.title,subHeading.attempted]"
                                     routerLinkActive="active" skipLocationChange="true">{{subHeading.title}}</a>
                                 <div *ngIf="subHeading.completed" class="tick_completed"></div>
                             </div>

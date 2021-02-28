@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 
 import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared/shared.module';
+import { ButtonModule } from 'primeng/button';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { SharedModule } from './shared/shared/shared.module';
     AppRoutingModule,
     HttpClientModule,
     HttpClientJsonpModule,
+    ButtonModule,
     SharedModule
 
   ],

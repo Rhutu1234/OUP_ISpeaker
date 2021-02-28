@@ -19,8 +19,9 @@
                         <div class="icons play-sound" (click)="playSound(practiseData.questions[currentIndex])"></div>
                     </div>
                     <div class='text-wrap'>
-                        <textarea [rows]="5" [cols]="30" [(ngModel)]="practiseData.questions[currentIndex].userAns"
-                            pInputTextarea autoResize="autoResize"></textarea>
+                        <textarea [rows]="5" autocomplete="false" [cols]="30"
+                            [(ngModel)]="practiseData.questions[currentIndex].userAns" pInputTextarea
+                            autoResize="autoResize"></textarea>
                     </div>
                 </ng-container>
                 <ng-container *ngIf="practiseData.questions[currentIndex].type === 'unique-selection-expanded'">
@@ -95,13 +96,21 @@
                             *ngFor="let sentence of practiseData.questions[currentIndex].sentences;let i=index">
                             <span>{{sentence}}
                             </span>
-                            <span *ngIf="i !== (practiseData.questions[currentIndex].sentences.length-1)"><input
-                                    type="text" name="text-box" [disabled]='isAnswered'
-                                    [(ngModel)]="practiseData.questions[currentIndex].userAns" /></span>
+                            <span class="user-input-wrapper"
+                                *ngIf="i !== (practiseData.questions[currentIndex].sentences.length-1)"><input
+                                [ngClass]="{'correct':(practiseData.questions[currentIndex].userAns === practiseData.questions[currentIndex].ans && isAnswered),'incorrect':(practiseData.questions[currentIndex].userAns !== practiseData.questions[currentIndex].ans && isAnswered)}"
+                                    type="text" name="text-box" [disabled]='isAnswered' autocomplete="false"
+                                    [(ngModel)]="practiseData.questions[currentIndex].userAns" />
+                                <div *ngIf="isAnswered" class='response-icon'
+                                    [ngClass]="{'correct':(practiseData.questions[currentIndex].userAns === practiseData.questions[currentIndex].ans),'incorrect':(practiseData.questions[currentIndex].userAns !== practiseData.questions[currentIndex].ans && isAnswered)}">
+                                </div>
+                                <span class="correct-ans"
+                                    *ngIf="(practiseData.questions[currentIndex].userAns !== practiseData.questions[currentIndex].ans) && isAnswered">
+                                    {{practiseData.questions[currentIndex].ans}}
+                                </span>
+                            </span>
                         </ng-container>
-                        <div *ngIf="isAnswered" class='response-icon'
-                            [ngClass]="{'correct':(practiseData.questions[currentIndex].userAns === practiseData.questions[currentIndex].ans),'incorrect':(practiseData.questions[currentIndex].userAns !== practiseData.questions[currentIndex].ans)}">
-                        </div>
+
 
                     </div>
                 </ng-container>
@@ -130,8 +139,7 @@
             </div>
             <div class='text-wrap'>
                 <textarea [rows]="5" [cols]="30" [(ngModel)]="practiseData.userDialogueData" pInputTextarea
-                    autoResize="autoResize"
-                    (ngModelChange)="conversationsService.saveConversationUserData()"></textarea>
+                    autoResize="autoResize"></textarea>
             </div>
         </div>
         <div class='record-wrapper'>

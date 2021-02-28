@@ -19,21 +19,35 @@ export class ExamSpeakingDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.examSpeakingType = this.route.snapshot.params.type;
+    const attempt = this.route.snapshot.params.attempted;
     this.dataLoading = true;
     this.examSpeakingService.fetchExamSpeakingType(this.examSpeakingType).subscribe((data) => {
       this.examSpeakingService.selectedExamSpeakingType = data;
-      this.examSpeakingService.fetchUserExamSpeakingDataFile().then((success) => {
+      if (attempt == 'true') {
+        this.examSpeakingService.fetchUserExamSpeakingDataFile().then((success) => {
+          this.dataLoading = false;
+
+          this.activeTab = TabEnum.WATCH;
+        }, (error) => {
+          this.dataLoading = false;
+          this.activeTab = TabEnum.WATCH;
+        });
+      } else {
         this.dataLoading = false;
-
         this.activeTab = TabEnum.WATCH;
-      }, (error) => {
-        this.dataLoading = false;
-
-        this.activeTab = TabEnum.WATCH;
-      });
-
+      }
     });
   }
-
+  onBtnClick(type) {
+    this.examSpeakingService.saveExamSpeakingTypeUserData();
+    switch (type) {
+      case 'mainMenu':
+        this.router.navigate(['/home']);
+        break;
+      case 'examSpeaking':
+        this.router.navigate(['/examSpeaking'], { skipLocationChange: true });
+        break;
+    }
+  }
 
 }

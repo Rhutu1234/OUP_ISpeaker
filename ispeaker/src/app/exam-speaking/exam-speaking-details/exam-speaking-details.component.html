@@ -1,5 +1,5 @@
 <div class='exam-speaking-details-wrapper'>
-    <a [routerLink]="['/home']" class='back-btn'>
+    <a (click)="onBtnClick('mainMenu')" class='back-btn'>
         <i class="pi pi-angle-left"></i>Back to main menu</a>
     <div class='tab-header'>{{examSpeakingType}}</div>
     <div class="sub-tab-header">
@@ -7,7 +7,7 @@
     </div>
     <div class='p-grid btn-wrapper'>
         <div class='p-col details-btn selected' [ngClass]="{'selected':(activeTab === TabEnum.WATCH)}"
-            (click)='activeTab=TabEnum.WATCH; examSpeakingService.saveExamSpeakingTypeUserData()'>
+            (click)='activeTab=TabEnum.WATCH'>
             <div class="txt-wrapper">
                 <span class="tab-icon watch-icon" title="Watch"></span>
                 <span class="title-txt"> Watch & Study</span>
@@ -15,7 +15,7 @@
             <div class='hide-bottom-border'></div>
         </div>
         <div class='p-col details-btn' [ngClass]="{'selected':(activeTab === TabEnum.LISTEN_AND_RECORD)}"
-            (click)='activeTab=TabEnum.LISTEN_AND_RECORD; examSpeakingService.saveExamSpeakingTypeUserData()'>
+            (click)='activeTab=TabEnum.LISTEN_AND_RECORD'>
             <div class="txt-wrapper">
                 <span class="tab-icon listen-icon" title="Listen"></span>
                 <span class="title-txt">Listen</span>
@@ -23,7 +23,7 @@
             <div class='hide-bottom-border'></div>
         </div>
         <div class='p-col details-btn' [ngClass]="{'selected':(activeTab === TabEnum.PRACTISE)}"
-            (click)='activeTab=TabEnum.PRACTISE; examSpeakingService.saveExamSpeakingTypeUserData()'>
+            (click)='activeTab=TabEnum.PRACTISE'>
             <div class="txt-wrapper">
                 <span class="tab-icon practice-icon" title="Practise"></span>
                 <span class="title-txt"> Practise</span>
@@ -31,7 +31,7 @@
             <div class='hide-bottom-border'></div>
         </div>
         <div class='p-col details-btn' [ngClass]="{'selected':(activeTab === TabEnum.REVIEW)}"
-            (click)='activeTab=TabEnum.REVIEW; examSpeakingService.saveExamSpeakingTypeUserData()'>
+            (click)='activeTab=TabEnum.REVIEW'>
             <div class="txt-wrapper">
                 <span class="tab-icon review-icon" title="Review"></span>
                 <span class="title-txt"> Review</span>
@@ -53,7 +53,7 @@
             <app-exam-speaking-review></app-exam-speaking-review>
         </ng-container>
     </ng-container>
-    <p-button label="Try another speaking" styleClass="try-another-btn"
-        (onClick)="router.navigate(['/examSpeaking'],{ skipLocationChange: true })"></p-button>
+    <p-button label="Try another speaking" styleClass="try-another-btn" (onClick)="onBtnClick('examSpeaking')">
+    </p-button>
 </div>
 <app-spinner [isRunning]='dataLoading'></app-spinner>

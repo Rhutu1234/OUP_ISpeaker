@@ -2,8 +2,7 @@
     <div class='header'>Review</div>
     <div>
         I can pronounce the sound {{soundsService.selectedSoundDetails.name}} &nbsp;&nbsp;&nbsp; <p-checkbox
-            [(ngModel)]="soundsService.selectedSoundDetails[soundsService.selectedLanguage].review"
-            (onChange)="soundsService.saveSoundData();" [binary]="true">
+            [(ngModel)]="soundsService.selectedSoundDetails[soundsService.selectedLanguage].review" [binary]="true">
         </p-checkbox>
     </div>
 </div>

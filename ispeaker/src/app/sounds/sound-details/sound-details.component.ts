@@ -20,5 +20,16 @@ export class SoundDetailsComponent implements OnInit {
     }
     this.ispeakerService.scrollIntoView(document.getElementsByClassName('ispeaker-wrapper')[0]);
   }
+  onBtnClick(type) {
+    this.soundsService.saveSoundData();
+    switch (type) {
+      case 'mainMenu':
+        this.router.navigate(['/home']);
+        break;
+      case 'sounds':
+        this.router.navigate(['/sounds/'], { skipLocationChange: true });
+        break;
+    }
+  }
 
 }

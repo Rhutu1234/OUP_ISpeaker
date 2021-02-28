@@ -2,7 +2,11 @@
     <div class="task-wrapper">
         <div class='header-text'>Task</div>
         <div class="img-wrapper">
-            <img *ngFor="let image of taskData.images" src="../../../assets/img/{{image}}" />
+            <ng-container *ngFor="let image of taskData.images">
+                <img *ngIf="!examSpeakingService.userId" src="./assets/img/{{image}}" />
+                <img *ngIf="examSpeakingService.userId" src="/external/ispeaker/new/assets/img/{{image}}" />
+            </ng-container>
+
         </div>
         <div class="para-wrapper">
             <div class="para-text" *ngFor="let para of taskData.para">{{para}}</div>

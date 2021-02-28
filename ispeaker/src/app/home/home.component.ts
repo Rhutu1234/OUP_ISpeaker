@@ -10,7 +10,7 @@ import { ISpeakerService } from '../ispeaker.service';
 export class HomeComponent implements OnInit {
   dataLoading = false;
   selectedLanguage;
-  constructor(private router: Router, private route: ActivatedRoute, private ispeakerService: ISpeakerService) { }
+  constructor(private router: Router, private route: ActivatedRoute, public ispeakerService: ISpeakerService) { }
 
   ngOnInit() {
     this.selectedLanguage = this.ispeakerService.selectedLanguage;

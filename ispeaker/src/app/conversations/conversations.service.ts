@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { ISpeakerService } from '../ispeaker.service';
 import { ConversationMenu, ConversationUserData } from './conversations.model';
-
+import * as _ from 'lodash';
 @Injectable({ providedIn: 'root' })
 export class ConversationsService {
     conversationMenuList: Array<ConversationMenu> = [];
@@ -38,10 +38,10 @@ export class ConversationsService {
         if (!this.conversationData) {
             return this.http.get(environment.baseHref + 'assets/json/conversation_data.json').pipe(map((data: any) => {
                 this.conversationData = data;
-                return this.conversationData[type][this.ispeakerService.selectedLanguage];
+                return _.cloneDeep(this.conversationData[type][this.ispeakerService.selectedLanguage]);
             }));
         } else {
-            return of(this.conversationData[type][this.ispeakerService.selectedLanguage]);
+            return of(_.cloneDeep(this.conversationData[type][this.ispeakerService.selectedLanguage]));
         }
 
     }
@@ -62,12 +62,15 @@ export class ConversationsService {
     }
 
     uploadConversationMenu() {
-        console.log('uploading conversation menu file');
+
         if (this.userId) {
+            let upload = false;
+            let currentSubtopic;
             const selectedLanguage = this.ispeakerService.selectedLanguage;
             for (const menu of this.conversationMenuList) {
                 for (const subtopic of menu.subHeading) {
                     if (subtopic.title === this.currentType) {
+                        currentSubtopic = subtopic;
                         subtopic.attempted = true;
                         let isComplete = true;
                         for (const review of this.selectedConversationType.reviews) {
@@ -75,10 +78,13 @@ export class ConversationsService {
                                 isComplete = false;
                             }
                         }
+                        upload = isComplete;
                         subtopic.completed = isComplete;
                     }
                 }
             }
+            // if (upload || (currentSubtopic && !currentSubtopic.attempted)) {
+            console.log('uploading conversation menu file');
             const destUrl = this.baseUrl + 'file/' + this.userId + '/conversation_menu_' + selectedLanguage + '.json';
             const jsonStr = 'jsonpCallbackFunction(' + JSON.stringify(this.conversationMenuList) + ');';
             const formData: FormData = new FormData();
@@ -93,7 +99,7 @@ export class ConversationsService {
                     } else {
                         // console.log(JSON.parse(xhr.response));
                     }
-                    console.log('uploading sound file successfull');
+                    console.log('uploading conversation menu file successfull');
                 }
             };
             xhr.open('PUT', destUrl, true);
@@ -101,6 +107,7 @@ export class ConversationsService {
             const csrfHeader = this.meta.getTag('name=_csrf_header').content;
             xhr.setRequestHeader(csrfHeader, token);
             xhr.send(formData);
+            // }
         }
     }
 
@@ -163,7 +170,7 @@ export class ConversationsService {
                     } else {
                         // console.log(JSON.parse(xhr.response));
                     }
-                    console.log('uploading sound file successfull');
+                    console.log('uploading conversation user data file successfull');
                 }
             };
             xhr.open('PUT', destUrl, true);

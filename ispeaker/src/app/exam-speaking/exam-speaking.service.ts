@@ -18,6 +18,7 @@ export class ExamSpeakingService {
     currentType;
     examSpeakingData: any;
     selectedExamSpeakingType: any;
+    timeOut: any;
     constructor(private http: HttpClient, private ispeakerService: ISpeakerService, private meta: Meta) {
         if (this.userId) {
             // tslint:disable-next-line:no-string-literal
@@ -40,10 +41,10 @@ export class ExamSpeakingService {
         if (!this.examSpeakingData) {
             return this.http.get(environment.baseHref + 'assets/json/speaking_data.json').pipe(map((data: any) => {
                 this.examSpeakingData = data;
-                return this.examSpeakingData[type];
+                return _.cloneDeep(this.examSpeakingData[type]);
             }));
         } else {
-            return of(this.examSpeakingData[type]);
+            return of(_.cloneDeep(this.examSpeakingData[type]));
         }
 
     }
@@ -62,18 +63,24 @@ export class ExamSpeakingService {
             });
         });
     }
+
     saveExamSpeakingTypeUserData() {
         const userData = _.cloneDeep(this.selectedExamSpeakingType);
         this.uploadExamSpeakingMenu();
         this.uploadExamSpeakingDataFile(userData);
     }
+
     uploadExamSpeakingMenu() {
-        console.log('uploading exam speaking menu file');
+
         if (this.userId) {
+            let upload = false;
             const selectedLanguage = this.ispeakerService.selectedLanguage;
-            for (const menu of this.examSpeakingMenuList) {
+            const examSpeakingMenuList = _.cloneDeep(this.examSpeakingMenuList);
+            let currentSubtopic;
+            for (const menu of examSpeakingMenuList) {
                 for (const subtopic of menu.subHeading) {
                     if (subtopic.title === this.currentType) {
+                        currentSubtopic = subtopic;
                         subtopic.attempted = true;
                         let isComplete = true;
                         for (const review of this.selectedExamSpeakingType.reviews) {
@@ -81,12 +88,15 @@ export class ExamSpeakingService {
                                 isComplete = false;
                             }
                         }
+                        upload = isComplete;
                         subtopic.completed = isComplete;
                     }
                 }
             }
+            // if (upload || (currentSubtopic && !currentSubtopic.attempted)) {
+            console.log('uploading exam speaking menu file');
             const destUrl = this.baseUrl + 'file/' + this.userId + '/exam_menu_' + selectedLanguage + '.json';
-            const jsonStr = 'jsonpCallbackFunction(' + JSON.stringify(this.examSpeakingMenuList) + ');';
+            const jsonStr = 'jsonpCallbackFunction(' + JSON.stringify(examSpeakingMenuList) + ');';
             const formData: FormData = new FormData();
             formData.append('file', jsonStr);
             formData.append('redirect', 'true');
@@ -99,7 +109,7 @@ export class ExamSpeakingService {
                     } else {
                         // console.log(JSON.parse(xhr.response));
                     }
-                    console.log('uploading sound file successfull');
+                    console.log('uploading exam speaking menu successfull');
                 }
             };
             xhr.open('PUT', destUrl, true);
@@ -107,6 +117,7 @@ export class ExamSpeakingService {
             const csrfHeader = this.meta.getTag('name=_csrf_header').content;
             xhr.setRequestHeader(csrfHeader, token);
             xhr.send(formData);
+            // }
         }
     }
     uploadExamSpeakingDataFile(userData) {
@@ -127,7 +138,7 @@ export class ExamSpeakingService {
                     } else {
                         // console.log(JSON.parse(xhr.response));
                     }
-                    console.log('uploading sound file successfull');
+                    console.log('uploading exam speaking user data file successfull');
                 }
             };
             xhr.open('PUT', destUrl, true);
@@ -145,7 +156,7 @@ export class ExamSpeakingService {
 
             this.fetchJson(destUrl, (data) => {
                 if (data) {
-                    this.selectedExamSpeakingType.watch_and_study.study = data.watchAndStudy.study;
+                    this.selectedExamSpeakingType.watch_and_study.study = data.watch_and_study.study;
                     this.selectedExamSpeakingType.listen.recordedAudio = data.listen.recordedAudio;
                     this.selectedExamSpeakingType.practise = data.practise;
                     this.selectedExamSpeakingType.reviews = data.reviews;

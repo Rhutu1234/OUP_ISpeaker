@@ -100,7 +100,7 @@ export class PracticeComponent implements OnInit {
       }
     }
     if (currQues.type === 'text-entry-closed') {
-      if (currQues.userAns.toLowerCase() === currQues.ans) {
+      if (currQues.userAns && currQues.userAns.toLowerCase() === currQues.ans) {
         this.score++;
       }
     }

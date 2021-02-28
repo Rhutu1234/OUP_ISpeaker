@@ -152,20 +152,24 @@ export class SoundsService {
 
     updateSoundMenu() {
         const selectedSoundDetails = this.selectedSoundDetails[this.selectedLanguage];
-
+        let upload = false;
+        let currentSound;
         for (const i in this.soundMenu[this.selectedLanguage]) {
             if (this.soundMenu[this.selectedLanguage][i]) {
-                const sound = _.find(this.soundMenu[this.selectedLanguage][i], { phoneme: this.selectedSound.phoneme });
-                console.log(sound);
-                if (sound) {
-                    sound.attempted = true;
-                    sound.completed = selectedSoundDetails.review;
+                currentSound = _.find(this.soundMenu[this.selectedLanguage][i], { phoneme: this.selectedSound.phoneme });
+                console.log(currentSound);
+                if (currentSound) {
+                    currentSound.attempted = true;
+                    currentSound.completed = selectedSoundDetails.review;
+                    upload = selectedSoundDetails.review;
                     break;
                 }
             }
 
         }
+        // if (upload || (currentSound && !currentSound.attempted)) {
         this.uploadSoundMenu();
+        // }
     }
 
     uploadSoundMenu() {

@@ -21,7 +21,7 @@ export class ReviewComponent implements OnInit {
   ngOnInit() {
   }
   onModelChange() {
-    this.examSpeakingService.saveExamSpeakingTypeUserData();
+     // this.examSpeakingService.saveExamSpeakingTypeUserData();
   }
 
 }

@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
   baseUrl: 'https://old.proofing.idm.fr/fileapi/v1/',
-  baseHref: './',
+  baseHref: '/external/ispeaker/new/',
   urlCheck: '/ispeaker/new.html'
 };

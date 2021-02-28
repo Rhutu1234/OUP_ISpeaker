@@ -1,5 +1,5 @@
 <div class='sound-details-wrapper'>
-    <a [routerLink]="['/home']" class='back-btn'>
+    <a (click)="onBtnClick('mainMenu')" class='back-btn'>
         <i class="pi pi-angle-left"></i>Back to main menu</a>
     <div class='tab-header'>Sounds {{soundsService.selectedSoundDetails.name}}</div>
     <div class="sub-tab-header">
@@ -54,5 +54,5 @@
         </ng-container>
     </ng-container>
     <p-button label="Try another sound" styleClass="try-another-btn"
-        (onClick)="router.navigate(['/sounds/'],{ skipLocationChange: true })"></p-button>
+        (onClick)="onBtnClick('sounds')"></p-button>
 </div>

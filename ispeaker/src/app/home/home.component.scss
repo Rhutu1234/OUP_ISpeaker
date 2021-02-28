@@ -134,6 +134,12 @@
             }
         }
     }
+    .reset-btn {
+        float: right;
+    }
+    .btn-inline {
+        display: none;
+    }
 }
 @media screen and (max-width: 730px) {
     .home-wrapper {
@@ -143,6 +149,22 @@
             float: left;
             margin-bottom: 20px;
             margin-top: 10px;
+        }
+    }
+}
+@media screen and (max-width: 495px) {
+    .home-wrapper {
+        .btn-wrapper {
+            align-items: flex-start;
+            .btn {
+                margin-bottom: 15px;
+            }
+        }
+        .btn-inline {
+            display: block;
+        }
+        .hide-btn {
+            display: none !important;
         }
     }
 }

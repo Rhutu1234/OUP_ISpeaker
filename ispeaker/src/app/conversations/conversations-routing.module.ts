@@ -5,7 +5,7 @@ import { ConversationsListComponent } from './conversations-list.component';
 import { ConversationDetailsComponent } from './conversation-details/conversation-details.component';
 
 const routes: Routes = [
-  { path: 'conversationsDetails/:type', component: ConversationDetailsComponent },
+  { path: 'conversationsDetails/:type/:attempted', component: ConversationDetailsComponent },
   { path: '', component: ConversationsListComponent, pathMatch: 'full' }
 ];
 

@@ -1,6 +1,9 @@
 <div class='home-wrapper'>
     <div class='header'><span style='font-family:MinionProRegular;'>Oxford</span> <span
-            style='font-family:SourceSansProBold;'> iSpeaker</span></div>
+            style='font-family:SourceSansProBold;'> iSpeaker</span>
+
+
+    </div>
     <div class="flex-container">
         <div class='accord-wrapper'>
             <p-accordion expandIcon='pi pi-plus' collapseIcon='pi pi-minus' styleClass='step-by-step-accordian'>
@@ -39,16 +42,31 @@
             <div class="p-grid p-justify-center p-align-center btn-lbl">
                 <span>Showing:</span>
             </div>
-            <div class="btn" [ngClass]="{'selected':selectedLanguage ==='BrE'}"
+            <div class='btn-inline'>
+                <div class="btn" [ngClass]="{'selected':selectedLanguage ==='BrE'}"
+                    (click)="onLanguageSelection($event,'BrE')">
+                    <span class="tick-img"></span>
+                    <span class="btn-label">British English</span>
+                </div>
+                <div class="btn" [ngClass]="{'selected':selectedLanguage ==='AmE'}"
+                    (click)="onLanguageSelection($event,'AmE')">
+                    <span class="tick-img"></span>
+                    <span class="btn-label">American English</span>
+                </div>
+            </div>
+            <div class="btn hide-btn" [ngClass]="{'selected':selectedLanguage ==='BrE'}"
                 (click)="onLanguageSelection($event,'BrE')">
                 <span class="tick-img"></span>
                 <span class="btn-label">British English</span>
             </div>
-            <div class="btn" [ngClass]="{'selected':selectedLanguage ==='AmE'}"
+            <div class="btn hide-btn" [ngClass]="{'selected':selectedLanguage ==='AmE'}"
                 (click)="onLanguageSelection($event,'AmE')">
                 <span class="tick-img"></span>
                 <span class="btn-label">American English</span>
             </div>
+
+
+
         </div>
 
     </div>
@@ -81,7 +99,7 @@
     </div>
 </div>
 
-
+<p-button label="Reset Ispeaker Data" styleClass="reset-btn" (onClick)="ispeakerService.resetAll()"></p-button>
 
 
 <app-spinner [isRunning]='dataLoading'></app-spinner>

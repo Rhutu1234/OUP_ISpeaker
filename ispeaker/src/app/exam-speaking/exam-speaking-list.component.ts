@@ -18,15 +18,15 @@ export class ExamSpeakingListComponent implements OnInit {
     this.examSpeakingService.fetchExamSpeakingMenu().subscribe((data) => {
       console.log('fetch conversation menu');
       if (this.examSpeakingService.userId) {
-        // this.examSpeakingService.fetchExistingExamSpeakingMenu().then((success) => {
-        //   console.log(success);
-        //   this.dataLoading = false;
-        //   this.examSpeakingMenu = this.examSpeakingService.examSpeakingMenuList;
-        // }, (error) => {
-        //   this.dataLoading = false;
-        //   this.examSpeakingMenu = this.examSpeakingService.examSpeakingMenuList;
-        //   console.log(error);
-        // });
+        this.examSpeakingService.fetchExistingExamSpeakingMenu().then((success) => {
+          console.log(success);
+          this.dataLoading = false;
+          this.examSpeakingMenu = this.examSpeakingService.examSpeakingMenuList;
+        }, (error) => {
+          this.dataLoading = false;
+          this.examSpeakingMenu = this.examSpeakingService.examSpeakingMenuList;
+          console.log(error);
+        });
       } else {
         this.examSpeakingMenu = data;
         this.dataLoading = false;
