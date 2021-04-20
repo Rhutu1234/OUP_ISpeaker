@@ -87,7 +87,7 @@
         position: absolute;
         right: 0;
         top: 5px;
-        z-index: 99999;
+        z-index: 9;
         .btn-lbl {
             margin: 0px 10px 0px 0px;
             font-family: "SourceSansProSemiBold";
@@ -130,6 +130,9 @@
                 background-color: rgba(153, 204, 255, 0.298039215686275);
                 .tick-img {
                     display: inline-block;
+                }
+                .ame-lbl {
+                    padding-left: 15px;
                 }
             }
         }

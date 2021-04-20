@@ -13,14 +13,22 @@ export class HomeComponent implements OnInit {
   constructor(private router: Router, private route: ActivatedRoute, public ispeakerService: ISpeakerService) { }
 
   ngOnInit() {
-    this.selectedLanguage = this.ispeakerService.selectedLanguage;
-    this.dataLoading = false;
+    this.dataLoading = true;
+    this.ispeakerService.getSelectedLanguage().then((selectedLang) => {
+      this.dataLoading = false;
+      this.selectedLanguage = this.ispeakerService.selectedLanguage;
+    }, (error) => {
+      this.dataLoading = false;
+      this.selectedLanguage = this.ispeakerService.selectedLanguage;
+
+    })
     this.ispeakerService.scrollIntoView(document.getElementsByClassName('ispeaker-wrapper')[0]);
   }
   onLanguageSelection(event, type) {
     event.stopPropagation();
     this.selectedLanguage = type;
     this.ispeakerService.selectedLanguage = type;
+    this.ispeakerService.saveSelectedLanguage();
   }
   onTileClick(type) {
     switch (type) {

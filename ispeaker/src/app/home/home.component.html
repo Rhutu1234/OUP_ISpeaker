@@ -28,12 +28,10 @@
             <p-accordion expandIcon='pi pi-plus' collapseIcon='pi pi-minus' styleClass='step-by-step-accordian'>
 
                 <p-accordionTab>
-                    <p-header><span class='oup-header'>Where are my projects?</span></p-header>
-                    Any content that you saved in the previous version of the iSpeaker (i.e. before October 2020)
-                    can be
+                    <p-header><span class='oup-header'>Where is my saved work?</span></p-header>
+                    Any content that you saved in the previous version of the iSpeaker (i.e. before April 2021) can be
                     temporarily accessed <a href="/ispeaker-oald9/" target="_blank">here</a>. The previous version
-                    of the
-                    iSpeaker will be available until 31 December 2020.
+                    of the iSpeaker will be available until 31 December 2021.
                 </p-accordionTab>
 
             </p-accordion>
@@ -51,7 +49,7 @@
                 <div class="btn" [ngClass]="{'selected':selectedLanguage ==='AmE'}"
                     (click)="onLanguageSelection($event,'AmE')">
                     <span class="tick-img"></span>
-                    <span class="btn-label">American English</span>
+                    <span class="btn-label ame-lbl">American English</span>
                 </div>
             </div>
             <div class="btn hide-btn" [ngClass]="{'selected':selectedLanguage ==='BrE'}"
@@ -62,7 +60,7 @@
             <div class="btn hide-btn" [ngClass]="{'selected':selectedLanguage ==='AmE'}"
                 (click)="onLanguageSelection($event,'AmE')">
                 <span class="tick-img"></span>
-                <span class="btn-label">American English</span>
+                <span class="btn-label ame-lbl">American English</span>
             </div>
 
 
@@ -76,7 +74,7 @@
             <div class='p-col-12 p-sm-6 p-md-4 tile-wrapper'>
                 <div class="tile" (click)="onTileClick('sounds')">
                     <div class='title'>Sounds</div>
-                    <div class='desc'>Practice your pronunciation of all English sounds</div>
+                    <div class='desc'>Practise your pronunciation of all English sounds</div>
                     <div class='icon sound-icon'></div>
                 </div>
             </div>

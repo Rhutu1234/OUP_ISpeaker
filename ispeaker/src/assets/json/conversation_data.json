@@ -5263,7 +5263,7 @@
                 "questions": [
                     {
                         "type": "text-entry-dictation",
-                        "ques": "Listen to the sentences and write what you hear.",
+                        "ques": "Listen to the sentence and write what you hear.",
                         "audioSrc": "_ispeaker_everyday_making_complaints_2_gb.mp3",
                         "responseText": "I'm sorry, this isn't acceptable. We've been waiting half an hour."
                     },
@@ -5402,7 +5402,7 @@
                 "questions": [
                     {
                         "type": "text-entry-dictation",
-                        "ques": "Listen to the sentences and write what you hear.",
+                        "ques": "Listen to the sentence and write what you hear.",
                         "audioSrc": "_ispeaker_everyday_making_complaints_2_us.mp3",
                         "responseText": "I'm sorry, this isn't acceptable. We've been waiting half an hour."
                     },
@@ -9136,7 +9136,7 @@
                     },
                     {
                         "type": "text-entry-dictation",
-                        "ques": "Listen to the sentences and write what you hear.",
+                        "ques": "Listen to the sentence and write what you hear.",
                         "audioSrc": "_ispeaker_everyday_making_requests_8_gb.mp3",
                         "responseText": "Yes, of course. Here you are."
                     },
@@ -9302,7 +9302,7 @@
                     },
                     {
                         "type": "text-entry-dictation",
-                        "ques": "Listen to the sentences and write what you hear.",
+                        "ques": "Listen to the sentence and write what you hear.",
                         "audioSrc": "_ispeaker_everyday_making_requests_8_us.mp3",
                         "responseText": "Yes, of course. Here you are."
                     },

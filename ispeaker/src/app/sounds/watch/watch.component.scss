@@ -18,4 +18,14 @@
         font-style: normal;
         margin-bottom: 15px;
     }
+    .iframe-wrapper {
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgba(204, 204, 204, 1);
+        border-radius: 4px;
+        -moz-box-shadow: 0px 5px 5px rgba(204, 204, 204, 0.349019607843137);
+        -webkit-box-shadow: 0px 5px 5px rgba(204, 204, 204, 0.349019607843137);
+        box-shadow: 0px 5px 5px rgba(204, 204, 204, 0.349019607843137);
+        overflow: hidden;
+    }
 }

@@ -95,31 +95,37 @@ export class PracticeComponent implements OnInit {
   onCheckClick(currQues) {
     this.isAnswered = true;
     if (currQues.type === 'text-entry-dictation') {
-      if (currQues.userAns) {
+      if (currQues.userAns && currQues.userAns.toLowerCase() === currQues.responseText.toLowerCase()) {
         this.score++;
       }
     }
     if (currQues.type === 'text-entry-closed') {
-      if (currQues.userAns && currQues.userAns.toLowerCase() === currQues.ans) {
+      if (currQues.userAns && currQues.userAns.toLowerCase() === currQues.ans.toLowerCase()) {
         this.score++;
       }
     }
     if (currQues.type === 'unique-selection-expanded' || currQues.type === 'unique-selection-inline') {
       console.log(currQues);
-      let correct = true;
+      let correct = [];
       for (const ques of currQues.interaction) {
         for (const option of ques.options) {
           if (ques.userAns === option.text && option.correct) {
-            // this.score++;
-          } else {
-            correct = false;
+            correct.push(true);
           }
         }
       }
-      if (correct) {
+      if (correct.length === currQues.interaction.length) {
         this.score++;
       }
     }
+  }
+
+  checkDictationAns(currQues) {
+    return (currQues.userAns && currQues.userAns.toLowerCase() === currQues.responseText.toLowerCase())
+  }
+
+  checkTextEntryClosedAns(currQues) {
+    return (currQues.userAns && currQues.userAns.toLowerCase() === currQues.ans.toLowerCase())
   }
 
   onSkipClick() {
@@ -132,6 +138,22 @@ export class PracticeComponent implements OnInit {
       this.practiseData.score = this.score;
       this.conversationsService.saveConversationUserData();
     }
+  }
+
+  restartTest() {
+    this.practiseData.questions.forEach(ques => {
+      ques.userAns = null;
+      if (ques.type === 'unique-selection-expanded' || ques.type === 'unique-selection-inline') {
+        for (const interact of ques.interaction) {
+          interact.userAns = null;
+        }
+      }
+    });
+    this.score = 0;
+    this.practiseData.score = 0;
+    this.currentIndex = 0;
+
+    this.conversationsService.saveConversationUserData();
   }
 
   ngOnDestroy() {

@@ -72,6 +72,11 @@
             margin-bottom: 15px;
         }
     }
+    .sentence-cls {
+        label {
+            font-style: italic;
+        }
+    }
 }
 @media screen and (max-width: 650px) {
     .subtopic-wrapper {

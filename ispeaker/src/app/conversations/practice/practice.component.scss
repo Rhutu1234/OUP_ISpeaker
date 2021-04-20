@@ -142,6 +142,9 @@
         .nxt-btn {
             margin-right: 15px;
         }
+        &.p-align-center {
+            text-align: center;
+        }
     }
     .score-title {
         text-align: center;
@@ -166,11 +169,9 @@
         input[type="text"] {
             font-size: 17px;
             color: #333333;
-            border: none;
-            border-bottom: 1px solid #a6a6a6;
+            border: 1px solid #a6a6a6;
             &:focus {
-                border: none;
-                border-bottom: 2px solid #007ad9;
+                border: 2px solid #007ad9;
                 outline: none;
             }
         }
@@ -223,10 +224,10 @@
         input[type="text"] {
             padding-right: 20px;
             &.correct {
-                border-bottom: 1px solid green;
+                border: 1px solid green;
             }
             &.incorrect {
-                border-bottom: 1px solid red;
+                border: 1px solid red;
             }
         }
         .response-icon {
@@ -242,6 +243,25 @@
         color: #0066cc;
         left: 0;
         top: -25px;
+    }
+    .text-entry-dictation {
+        position: relative;
+        .response-icon {
+            right: 5px;
+            top: 24px;
+        }
+        textarea {
+            padding-right: 20px;
+            &.correct {
+                border: 1px solid green;
+            }
+            &.incorrect {
+                border: 1px solid red;
+            }
+            &:disabled {
+                opacity: 1;
+            }
+        }
     }
 }
 @media screen and (max-width: 770px) {

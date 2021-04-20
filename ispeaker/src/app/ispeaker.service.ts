@@ -42,26 +42,72 @@ export class ISpeakerService {
       return curtop;
     }
   }
+  getSelectedLanguage() {
+    const selectedLanguageUrl = this.baseUrl + 'file/' + this.userId + '/selectedLanguage.json';
+    return new Promise((resolve, reject) => {
+      if (this.userId) {
+        this.fetchJson(selectedLanguageUrl, (data) => {
+          if (data) {
+            this.selectedLanguage = data.lang;
+            resolve(true);
+          } else {
+            reject(false);
+          }
+        });
+      } else {
+        reject(false);
+      }
+    });
+  }
+  saveSelectedLanguage() {
+    if (this.userId) {
+      const data = {
+        lang: this.selectedLanguage
+      }
+      const destUrl = this.baseUrl + 'file/' + this.userId + '/selectedLanguage.json';
+      const jsonStr = 'jsonpCallbackFunction(' + JSON.stringify(data) + ');';
+      const formData: FormData = new FormData();
+      formData.append('file', jsonStr);
+      formData.append('redirect', 'true');
+
+      const xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = () => {
+        if (xhr.readyState === 4) {
+          if (xhr.status === 200 || xhr.status === 207) {
+            // console.log(JSON.parse(xhr.response));
+          } else {
+            // console.log(JSON.parse(xhr.response));
+          }
+          console.log('uploading sound file successfull');
+        }
+      };
+      xhr.open('PUT', destUrl, true);
+      const token = this.meta.getTag('name=_csrf').content;
+      const csrfHeader = this.meta.getTag('name=_csrf_header').content;
+      xhr.setRequestHeader(csrfHeader, token);
+      xhr.send(formData);
+    }
+  }
+
+  fetchJson(url, cb) {
+    // tslint:disable-next-line:no-string-literal
+    window['jsonpCallbackFunction'] = (data) => {
+      cb(data);
+    };
+    this.http.jsonp(url, 'jsonpCallbackFunction').subscribe((data) => {
+      console.log(data);
+    }, (error) => {
+      console.log(error);
+      cb(false);
+    });
+
+  }
 
   resetAll() {
-    // const url = this.baseUrl + 'info/' + this.userId + '/';
-    // this.http.get(url).subscribe((data: any) => {
-    //   console.log(data);
-    //   if (data.length) {
-    //     for (const fileDetail of data) {
-    //       this.deleteFile(fileDetail[0]);
-    //     }
-    //   }
-
-    // });
     this.deleteFile();
   }
   deleteFile() {
-    // const destUrl = this.baseUrl + 'file/' + fileName;
-    // this.http.delete(destUrl).subscribe((data) => {
-    //   console.log(data);
 
-    // });
     if (this.userId) {
       this.uploadSoundsMenu();
       this.uploadConversationMenu();

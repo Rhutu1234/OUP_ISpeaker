@@ -20,15 +20,18 @@ export class WatchComponent implements OnInit {
   ngOnInit() {
 
   }
-  
+
   ngAfterViewInit() {
     this.onResize('event');
   }
   onResize(event) {
 
-    const width = this.videoWrapper.nativeElement.offsetWidth;
+    let width = this.videoWrapper.nativeElement.offsetWidth;
     const height: any = Math.round((width / 16) * 9);
     const iframe = document.getElementsByTagName('iframe')[0];
+    if (width > 600) {
+      width = 600;
+    }
     iframe.setAttribute('width', width);
     iframe.setAttribute('height', height);
 

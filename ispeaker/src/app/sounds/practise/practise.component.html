@@ -26,14 +26,14 @@
         </div>
     </ng-container>
     <ng-container *ngIf="currentIndex>=practiseData.questions.length">
-        <div class='score-title'>Your Score</div>
+        <div class='score-title'>Your score</div>
         <div class='user-score'>{{score}} / {{practiseData.questions.length}}</div>
     </ng-container>
     <div class='btn-container'>
         <p-button label="Next" *ngIf="currentIndex<practiseData.questions.length"
             (onClick)="onNextClick()">
         </p-button>
-        <p-button label="Do another?"
+        <p-button label="Start again?"
             *ngIf="currentIndex>=practiseData.questions.length && currentSet<practiseSet.length-1"
             (onClick)="loadSet()">
         </p-button>

@@ -21,6 +21,7 @@ export class ConversationDetailsComponent implements OnInit {
     this.conversationType = this.route.snapshot.params.type;
     const attempt = this.route.snapshot.params.attempted;
     console.log(attempt);
+    this.ispeakerService.scrollIntoView(document.getElementsByClassName('ispeaker-wrapper')[0]);
     this.dataLoading = true;
     this.conversationService.fetchConversationType(this.conversationType).subscribe((data) => {
       this.conversationService.selectedConversationType = data;

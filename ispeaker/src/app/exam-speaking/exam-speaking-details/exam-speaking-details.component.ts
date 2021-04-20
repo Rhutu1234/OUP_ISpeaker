@@ -21,6 +21,7 @@ export class ExamSpeakingDetailsComponent implements OnInit {
     this.examSpeakingType = this.route.snapshot.params.type;
     const attempt = this.route.snapshot.params.attempted;
     this.dataLoading = true;
+    this.ispeakerService.scrollIntoView(document.getElementsByClassName('ispeaker-wrapper')[0]);
     this.examSpeakingService.fetchExamSpeakingType(this.examSpeakingType).subscribe((data) => {
       this.examSpeakingService.selectedExamSpeakingType = data;
       if (attempt == 'true') {
