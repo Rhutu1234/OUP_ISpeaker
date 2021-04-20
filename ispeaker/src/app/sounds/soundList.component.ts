@@ -17,13 +17,14 @@ export class SoundListComponent implements OnInit {
     this.dataLoading = true;
     this.ispeakerService.scrollIntoView(document.getElementsByClassName('ispeaker-wrapper')[0]);
     this.soundsService.fetchSoundMenu().subscribe((data) => {
-
+      this.soundsService.updateSoundDataCustom(this.soundsService.soundsData);
       console.log('fetch sound menu');
       if (this.soundsService.userId) {
         this.soundsService.fetchExistingSoundMenu().then((success) => {
           console.log(success);
           this.dataLoading = false;
           this.soundsMenu = this.soundsService.soundMenu[this.soundsService.selectedLanguage];
+          
         }, (error) => {
           this.dataLoading = false;
           this.soundsMenu = this.soundsService.soundMenu[this.soundsService.selectedLanguage];

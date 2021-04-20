@@ -100,9 +100,16 @@ export class PracticeComponent implements OnInit {
       }
     }
     if (currQues.type === 'text-entry-closed') {
-      if (currQues.userAns && currQues.userAns.toLowerCase() === currQues.ans.toLowerCase()) {
-        this.score++;
+      if (currQues.multiple) {
+        if (currQues.userAns && currQues.ans.indexOf(currQues.userAns.toLowerCase()) !== -1) {
+          this.score++;
+        }
+      } else {
+        if (currQues.userAns && currQues.userAns.toLowerCase() === currQues.ans.toLowerCase()) {
+          this.score++;
+        }
       }
+
     }
     if (currQues.type === 'unique-selection-expanded' || currQues.type === 'unique-selection-inline') {
       console.log(currQues);
@@ -125,7 +132,12 @@ export class PracticeComponent implements OnInit {
   }
 
   checkTextEntryClosedAns(currQues) {
-    return (currQues.userAns && currQues.userAns.toLowerCase() === currQues.ans.toLowerCase())
+    if (currQues.multiple) {
+      return (currQues.userAns && currQues.ans.indexOf(currQues.userAns.toLowerCase()) !== -1)
+    } else {
+      return (currQues.userAns && currQues.userAns.toLowerCase() === currQues.ans.toLowerCase())
+    }
+
   }
 
   onSkipClick() {

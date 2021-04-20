@@ -45,6 +45,29 @@ export class SoundsService {
             return of([this.soundMenu[this.ispeakerService.selectedLanguage], this.soundsData]);
         }
 
+
+    }
+    updateSoundDataCustom(data) {
+        // for (let sound of data.sounds) {
+        //     let britishQues = sound.BrE.listen_and_record.questions;
+        //     let americanQues = sound.AmE.listen_and_record.questions;
+        //     for (let i = 1; i < britishQues.length; i++) {
+        //         let word = britishQues[0].word;
+        //         var res = britishQues[i].word.replace(word, "").trim();
+        //         res = res.split(" ");
+        //         res = res.join(" &ndash; ")
+        //         britishQues[i].word = res;
+        //     }
+        //     for (let j = 1; j < americanQues.length; j++) {
+        //         let word = americanQues[0].word;
+        //         var res = americanQues[j].word.replace(word, "").trim();
+        //         res = res.split(" ");
+        //         res = res.join(" &ndash; ")
+        //         americanQues[j].word = res;
+        //     }
+        // }
+        // console.log(JSON.stringify(data));
+
     }
     getSoundDetails() {
         for (const sound of this.soundsData.sounds) {

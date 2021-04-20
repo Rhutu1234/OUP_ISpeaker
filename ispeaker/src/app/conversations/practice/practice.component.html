@@ -22,7 +22,7 @@
                         <div *ngIf="isAnswered" class='response-icon'
                             [ngClass]="{'correct':checkDictationAns(practiseData.questions[currentIndex]),'incorrect':!checkDictationAns(practiseData.questions[currentIndex])}">
                         </div>
-                        <textarea [rows]="1" autocomplete="false" [cols]="30"
+                        <textarea [rows]="1" autocomplete="off" [cols]="30"
                             [(ngModel)]="practiseData.questions[currentIndex].userAns" pInputTextarea
                             autoResize="autoResize" [disabled]='isAnswered'
                             [ngClass]="{'correct':isAnswered && checkDictationAns(practiseData.questions[currentIndex]),'incorrect':isAnswered && !checkDictationAns(practiseData.questions[currentIndex])}"></textarea>
@@ -103,14 +103,20 @@
                             <span class="user-input-wrapper"
                                 *ngIf="i !== (practiseData.questions[currentIndex].sentences.length-1)"><input
                                     [ngClass]="{'correct':(checkTextEntryClosedAns(practiseData.questions[currentIndex]) && isAnswered),'incorrect':(!checkTextEntryClosedAns(practiseData.questions[currentIndex]) && isAnswered)}"
-                                    type="text" name="text-box" [disabled]='isAnswered' autocomplete="false"
+                                    type="text" name="text-box" [disabled]='isAnswered' autocomplete="off"
                                     [(ngModel)]="practiseData.questions[currentIndex].userAns" />
                                 <div *ngIf="isAnswered" class='response-icon'
                                     [ngClass]="{'correct':checkTextEntryClosedAns(practiseData.questions[currentIndex]),'incorrect':!checkTextEntryClosedAns(practiseData.questions[currentIndex])}">
                                 </div>
                                 <span class="correct-ans"
                                     *ngIf="(!checkTextEntryClosedAns(practiseData.questions[currentIndex])) && isAnswered">
-                                    {{practiseData.questions[currentIndex].ans}}
+                                    <ng-container *ngIf="practiseData.questions[currentIndex].multiple">
+                                        {{practiseData.questions[currentIndex].ans.join(" / ")}}
+                                    </ng-container>
+                                    <ng-container *ngIf="!practiseData.questions[currentIndex].multiple">
+
+                                        {{practiseData.questions[currentIndex].ans}}
+                                    </ng-container>
                                 </span>
                             </span>
                         </ng-container>

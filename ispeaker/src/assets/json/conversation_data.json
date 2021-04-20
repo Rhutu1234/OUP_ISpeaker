@@ -1005,7 +1005,7 @@
                     },
                     {
                         "type": "unique-selection-expanded",
-                        "ques": "There will be time for questions at the end.Does the speaker mean:",
+                        "ques": "There will be time for questions at the end.<br><br>Does the speaker mean:",
                         "interaction": [
                             {
                                 "ques": "",
@@ -1165,7 +1165,7 @@
                     },
                     {
                         "type": "unique-selection-expanded",
-                        "ques": "There will be time for questions at the end.Does the speaker mean:",
+                        "ques": "There will be time for questions at the end.<br><br>Does the speaker mean:",
                         "interaction": [
                             {
                                 "ques": "",
@@ -2203,7 +2203,7 @@
                     },
                     {
                         "type": "unique-selection-expanded",
-                        "ques": "I appreciate your enthusiasm on this topic, but I'm afraid we have a couple more people to hear from.Does the speaker mean:",
+                        "ques": "I appreciate your enthusiasm on this topic, but I'm afraid we have a couple more people to hear from.<br><br>Does the speaker mean:",
                         "interaction": [
                             {
                                 "ques": "",
@@ -2333,7 +2333,7 @@
                     },
                     {
                         "type": "unique-selection-expanded",
-                        "ques": "I appreciate your enthusiasm on this topic, but I'm afraid we have a couple more people to hear from.Does the speaker mean:",
+                        "ques": "I appreciate your enthusiasm on this topic, but I'm afraid we have a couple more people to hear from.<br><br>Does the speaker mean:",
                         "interaction": [
                             {
                                 "ques": "",
@@ -2508,7 +2508,7 @@
                     },
                     {
                         "type": "unique-selection-expanded",
-                        "ques": "Sorry, I don't quite follow you.Does the speaker mean:",
+                        "ques": "Sorry, I don't quite follow you.<br><br>Does the speaker mean:",
                         "interaction": [
                             {
                                 "ques": "",
@@ -2685,7 +2685,7 @@
                     },
                     {
                         "type": "unique-selection-expanded",
-                        "ques": "Sorry, I don't quite follow you.Does the speaker mean:",
+                        "ques": "Sorry, I don't quite follow you.<br><br>Does the speaker mean:",
                         "interaction": [
                             {
                                 "ques": "",
@@ -3083,7 +3083,7 @@
                     },
                     {
                         "type": "unique-selection-expanded",
-                        "ques": "I'm not at all sure what time they arrive, to be honest.Does the speaker mean:",
+                        "ques": "I'm not at all sure what time they arrive, to be honest.<br><br>Does the speaker mean:",
                         "interaction": [
                             {
                                 "ques": "",
@@ -3224,7 +3224,7 @@
                     },
                     {
                         "type": "unique-selection-expanded",
-                        "ques": "I'm not at all sure what time they arrive, to be honest.Does the speaker mean:",
+                        "ques": "I'm not at all sure what time they arrive, to be honest.<br><br>Does the speaker mean:",
                         "interaction": [
                             {
                                 "ques": "",
@@ -4029,7 +4029,7 @@
                     },
                     {
                         "type": "unique-selection-expanded",
-                        "ques": "It may be that she's missed the bus.Does the speaker mean:",
+                        "ques": "It may be that she's missed the bus.<br><br>Does the speaker mean:",
                         "interaction": [
                             {
                                 "ques": "",
@@ -4197,7 +4197,7 @@
                     },
                     {
                         "type": "unique-selection-expanded",
-                        "ques": "It may be that she's missed the bus.Does the speaker mean:",
+                        "ques": "It may be that she's missed the bus.<br><br>Does the speaker mean:",
                         "interaction": [
                             {
                                 "ques": "",
@@ -8008,7 +8008,8 @@
                     {
                         "type": "text-entry-closed",
                         "ques": "Fill in the missing word to complete the phrase.",
-                        "ans": "haveneedget",
+                        "multiple": true,
+                        "ans": ["have","need","get"],
                         "sentences": [
                             "Do we ",
                             " to go to the meeting even if we're not involved in the project?"
@@ -8125,7 +8126,8 @@
                     {
                         "type": "text-entry-closed",
                         "ques": "Fill in the missing word to complete the phrase.",
-                        "ans": "haveneedget",
+                        "multiple": true,
+                        "ans": ["have","need","get"],
                         "sentences": [
                             "Do we ",
                             " to go to the meeting even if we're not involved in the project?"
@@ -10650,7 +10652,7 @@
                     },
                     {
                         "type": "unique-selection-expanded",
-                        "ques": "How about going to the beach tomorrow?Does the speaker mean:",
+                        "ques": "How about going to the beach tomorrow?<br><br>Does the speaker mean:",
                         "interaction": [
                             {
                                 "ques": "",
@@ -10790,7 +10792,7 @@
                     },
                     {
                         "type": "unique-selection-expanded",
-                        "ques": "How about going to the beach tomorrow?Does the speaker mean:",
+                        "ques": "How about going to the beach tomorrow?<br><br>Does the speaker mean:",
                         "interaction": [
                             {
                                 "ques": "",

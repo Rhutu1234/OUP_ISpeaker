@@ -4,7 +4,7 @@
     <div class='rubric'>{{listenRecordData.rubric}}</div>
     <ng-container *ngFor="let sound of listenRecordData.questions">
         <div class='sound-row'>
-            <div class="pract-word">{{sound.word}}</div>
+            <div class="pract-word" [innerHtml]="sound.word"></div>
             <div class="icons play-sound" (click)="playSound(sound)"></div>
             <div class="icons" (click)="startStopRecording(sound)"
                 [ngClass]="{'record':!sound.isRecording,'record-stop':sound.isRecording}"></div>
