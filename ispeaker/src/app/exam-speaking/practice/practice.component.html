@@ -50,7 +50,7 @@
             Tips</div>
         <p-accordion expandIcon='pi pi-plus' collapseIcon='pi pi-minus' styleClass='step-by-step-accordian'>
             <p-accordionTab [selected]="true" [header]="'Do...'">
-                <ul style="padding-left: 0px;">
+                <ul style="padding-left: 0px;list-style: initial;">
                     <li *ngFor="let tips of practiceData.tips.dos">
                         <div class='sentence-wrapper'>
                             <p>{{tips}}</p>
@@ -61,7 +61,7 @@
         </p-accordion>
         <p-accordion expandIcon='pi pi-plus' collapseIcon='pi pi-minus' styleClass='step-by-step-accordian'>
             <p-accordionTab [selected]="true" header="Don't...">
-                <ul style="padding-left: 0px;">
+                <ul style="padding-left: 0px;list-style: initial;">
                     <li *ngFor="let tips of practiceData.tips.donts">
                         <div class='sentence-wrapper'>
                             <p>{{tips}}</p>

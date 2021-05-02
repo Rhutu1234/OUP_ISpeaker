@@ -80,17 +80,50 @@
     }
 }
 @media screen and (max-width: 620px) {
-    .tile {
-        width: 70px;
-        height: 70px;
-        padding: 8px 0px;
-        margin-right: 5px;
-        margin-bottom: 10px;
-        .phoneme {
-            font-size: 18px;
+    .sound-list-wrapper {
+        .sounds-wrapper {
+            .tile-row {
+                .tile {
+                    width: 70px;
+                    height: 70px;
+                    padding: 8px 0px;
+                    margin-right: 5px;
+                    margin-bottom: 10px;
+                    .phoneme {
+                        font-size: 18px;
+                    }
+                    .word {
+                        font-size: 14px;
+                    }
+                }
+            }
         }
-        .word {
-            font-size: 14px;
+    }
+}
+@media screen and (max-width: 440px) {
+    .sound-list-wrapper {
+        .sounds-wrapper {
+            .tile-row {
+                .tile {
+                    width: 55px;
+                    height: 55px;
+                    padding: 8px 0px;
+                    margin-right: 5px;
+                    margin-bottom: 10px;
+                    .phoneme {
+                        font-size: 16px;
+                    }
+                    .word {
+                        font-size: 14px;
+                    }
+                    .tick_completed {
+                        top: 4px;
+                        right: 5px;
+                        width: 15px;
+                        height: 15px;
+                    }
+                }
+            }
         }
     }
 }

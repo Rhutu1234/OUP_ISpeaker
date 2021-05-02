@@ -26,6 +26,10 @@
                             [(ngModel)]="practiseData.questions[currentIndex].userAns" pInputTextarea
                             autoResize="autoResize" [disabled]='isAnswered'
                             [ngClass]="{'correct':isAnswered && checkDictationAns(practiseData.questions[currentIndex]),'incorrect':isAnswered && !checkDictationAns(practiseData.questions[currentIndex])}"></textarea>
+                        <div *ngIf="isAnswered && !checkDictationAns(practiseData.questions[currentIndex])"
+                            class="correct-ans-dictation">
+                            {{practiseData.questions[currentIndex].responseText}}
+                        </div>
                     </div>
                 </ng-container>
                 <ng-container *ngIf="practiseData.questions[currentIndex].type === 'unique-selection-expanded'">
@@ -135,8 +139,8 @@
                     *ngIf="currentIndex<practiseData.questions.length"
                     (onClick)="onCheckClick(practiseData.questions[currentIndex])">
                 </p-button>
-                <p-button [label]="isAnswered?'Next':'Skip'" *ngIf="currentIndex<practiseData.questions.length"
-                    (onClick)="onSkipClick()">
+                <p-button [label]="isAnswered?(currentIndex===practiseData.questions.length-1)?'Score':'Next':'Skip'"
+                    *ngIf="currentIndex<practiseData.questions.length" (onClick)="onSkipClick()">
                 </p-button>
                 <p-button label="Start again?" *ngIf="currentIndex>=practiseData.questions.length"
                     (onClick)="restartTest()">

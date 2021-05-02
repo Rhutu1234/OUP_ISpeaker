@@ -8,7 +8,7 @@
                     "dialogue": [
                         {
                             "speaker": "A",
-                            "speech": "Our website looks a bit dated, don’t you think?"
+                            "speech": "Our website looks a little dated, don’t you think?"
                         },
                         {
                             "speaker": "B",
@@ -1399,7 +1399,7 @@
                         },
                         {
                             "speaker": "B",
-                            "speech": "i don't know. If it's cheap, people will think it's poor quality."
+                            "speech": "I don't know. If it's cheap, people will think it's poor quality."
                         },
                         {
                             "speaker": "A",
@@ -1641,7 +1641,7 @@
                                 "audioSrc": "_ispeaker_everyday_preferences_12_gb"
                             },
                             {
-                                "sentence": "<label xmlns=\"urn:ISPEAKER_PLUS\" xmlns:e=\"urn:IDMEE\" e:id=\"u910a2285f341e91d.-2eb90832.1740630736e.1bad\">(British English)</label><span class='bold'xmlns=\"urn:ISPEAKER_PLUS\" xmlns:e=\"urn:IDMEE\" e:id=\"u910a2285f341e91d.-2eb90832.1740630736e.1bae\">I don’t really mind</span> whether we talk now or later.",
+                                "sentence": "<label xmlns=\"urn:ISPEAKER_PLUS\" xmlns:e=\"urn:IDMEE\" e:id=\"u910a2285f341e91d.-2eb90832.1740630736e.1bad\">(British English) </label><span class='bold'xmlns=\"urn:ISPEAKER_PLUS\" xmlns:e=\"urn:IDMEE\" e:id=\"u910a2285f341e91d.-2eb90832.1740630736e.1bae\">I don’t really mind</span> whether we talk now or later.",
                                 "audioSrc": "_ispeaker_everyday_preferences_13_gb"
                             },
                             {
@@ -1797,7 +1797,7 @@
                                 "audioSrc": "_ispeaker_everyday_preferences_12_us"
                             },
                             {
-                                "sentence": "<label xmlns=\"urn:ISPEAKER_PLUS\" xmlns:e=\"urn:IDMEE\" e:id=\"u910a2285f341e91d.-2eb90832.1740630736e.25e9\">(British English)</label><span class='bold'xmlns=\"urn:ISPEAKER_PLUS\" xmlns:e=\"urn:IDMEE\" e:id=\"u910a2285f341e91d.-2eb90832.1740630736e.25ea\">I don’t really mind</span> whether we talk now or later.",
+                                "sentence": "<label xmlns=\"urn:ISPEAKER_PLUS\" xmlns:e=\"urn:IDMEE\" e:id=\"u910a2285f341e91d.-2eb90832.1740630736e.25e9\">(British English) </label><span class='bold'xmlns=\"urn:ISPEAKER_PLUS\" xmlns:e=\"urn:IDMEE\" e:id=\"u910a2285f341e91d.-2eb90832.1740630736e.25ea\">I don’t really mind</span> whether we talk now or later.",
                                 "audioSrc": "_ispeaker_everyday_preferences_13_us"
                             },
                             {
@@ -1882,11 +1882,11 @@
                         },
                         {
                             "speaker": "B",
-                            "speech": "<span class='highlight-dialouge-1'>Well, first</span>, I use the keyboard a lot,<span class='highlight-dialouge-1'>and second</span>, you can't do as much on it."
+                            "speech": "<span class='highlight-dialouge-1'>Well, first</span>, I use the keyboard a lot, <span class='highlight-dialouge-1'>and second</span>, you can't do as much on it."
                         },
                         {
                             "speaker": "A",
-                            "speech": "Hmm, maybe. <span class='highlight-dialouge-1'>But I like it just because</span> 's so much easier to carry around."
+                            "speech": "Hmm, maybe. <span class='highlight-dialouge-1'>But I like it just because</span> it's so much easier to carry around."
                         },
                         {
                             "speaker": "B",
@@ -2002,7 +2002,7 @@
                         },
                         {
                             "speaker": "B",
-                            "speech": "<span class='highlight-dialouge-1'>Well, first</span>, I use the keyboard a lot,<span class='highlight-dialouge-1'>and second</span>, you can't do as much with it."
+                            "speech": "<span class='highlight-dialouge-1'>Well, first</span>, I use the keyboard a lot, <span class='highlight-dialouge-1'>and second</span>, you can't do as much with it."
                         },
                         {
                             "speaker": "A",
@@ -2128,7 +2128,7 @@
                         },
                         {
                             "speaker": "A",
-                            "speech": "Oh, of course… well maybe we should get some extra help in that case?"
+                            "speech": "Oh, of course… well, maybe we should get some extra help in that case?"
                         }
                     ],
                     "skills": [
@@ -2258,7 +2258,7 @@
                         },
                         {
                             "speaker": "A",
-                            "speech": "Oh, of course… well maybe we should get some extra help in that case?"
+                            "speech": "Oh, of course… well, maybe we should get some extra help in that case?"
                         }
                     ],
                     "skills": [
@@ -2390,7 +2390,7 @@
                         },
                         {
                             "speaker": "A",
-                            "speech": "<span class='highlight-dialouge-2'>I mean</span>, is it two in the morning and two in the evening?"
+                            "speech": "<span class='highlight-dialouge-2'>I mean</span>, is it two in the morning and then two in the evening?"
                         },
                         {
                             "speaker": "B",
@@ -2463,7 +2463,7 @@
                                 "audioSrc": "_ispeaker_everyday_clarification_12_gb"
                             },
                             {
-                                "sentence": "<span class='bold'xmlns=\"urn:ISPEAKER_PLUS\" xmlns:e=\"urn:IDMEE\" e:id=\"u910a2285f341e91d.-2eb90832.1740630736e.1950\">So you're saying</span><span class='bold'xmlns=\"urn:ISPEAKER_PLUS\" xmlns:e=\"urn:IDMEE\" e:id=\"u910a2285f341e91d.-2eb90832.1740630736e.1951\">that</span> the meeting's cancelled?",
+                                "sentence": "<span class='bold'xmlns=\"urn:ISPEAKER_PLUS\" xmlns:e=\"urn:IDMEE\" e:id=\"u910a2285f341e91d.-2eb90832.1740630736e.1950\">So you're saying </span><span class='bold'xmlns=\"urn:ISPEAKER_PLUS\" xmlns:e=\"urn:IDMEE\" e:id=\"u910a2285f341e91d.-2eb90832.1740630736e.1951\">that</span> the meeting's cancelled?",
                                 "audioSrc": "_ispeaker_everyday_clarification_13_gb"
                             },
                             {
@@ -2567,7 +2567,7 @@
                         },
                         {
                             "speaker": "A",
-                            "speech": "<span class='highlight-dialouge-2'>I mean</span>, is it two in the morning and two in the evening?"
+                            "speech": "<span class='highlight-dialouge-2'>I mean</span>, is it two in the morning and then two in the evening?"
                         },
                         {
                             "speaker": "B",
@@ -2640,7 +2640,7 @@
                                 "audioSrc": "_ispeaker_everyday_clarification_12_us"
                             },
                             {
-                                "sentence": "<span class='bold'xmlns=\"urn:ISPEAKER_PLUS\" xmlns:e=\"urn:IDMEE\" e:id=\"u910a2285f341e91d.-2eb90832.1740630736e.238c\">So you're saying</span><span class='bold'xmlns=\"urn:ISPEAKER_PLUS\" xmlns:e=\"urn:IDMEE\" e:id=\"u910a2285f341e91d.-2eb90832.1740630736e.238d\">that</span> the meeting's canceled?",
+                                "sentence": "<span class='bold'xmlns=\"urn:ISPEAKER_PLUS\" xmlns:e=\"urn:IDMEE\" e:id=\"u910a2285f341e91d.-2eb90832.1740630736e.238c\">So you're saying </span><span class='bold'xmlns=\"urn:ISPEAKER_PLUS\" xmlns:e=\"urn:IDMEE\" e:id=\"u910a2285f341e91d.-2eb90832.1740630736e.238d\">that</span> the meeting's canceled?",
                                 "audioSrc": "_ispeaker_everyday_clarification_13_us"
                             },
                             {
@@ -2856,7 +2856,7 @@
                     "dialogue": [
                         {
                             "speaker": "A",
-                            "speech": "Excuse me, can you tell me the way to Eighth Street?"
+                            "speech": "Excuse me, can you tell me how to get to Eighth Street?"
                         },
                         {
                             "speaker": "B",
@@ -2864,7 +2864,7 @@
                         },
                         {
                             "speaker": "A",
-                            "speech": "Yeah, I’m the same. So it’s second on the right? Thanks!"
+                            "speech": "Yeah, I’m the same. So it's the second street on the right? Thanks!"
                         }
                     ],
                     "skills": [
@@ -2893,7 +2893,7 @@
                                 "audioSrc": "_ispeaker_everyday_correcting_3_us"
                             },
                             {
-                                "sentence": "We can meet in the conference centre – <span class='bold'xmlns=\"urn:ISPEAKER_PLUS\" xmlns:e=\"urn:IDMEE\" e:id=\"u910a2285f341e91d.-2eb90832.1740630736e.24a0\">or rather</span> in front of the centre.",
+                                "sentence": "We can meet in the conference center – <span class='bold'xmlns=\"urn:ISPEAKER_PLUS\" xmlns:e=\"urn:IDMEE\" e:id=\"u910a2285f341e91d.-2eb90832.1740630736e.24a0\">or rather</span> in front of the center.",
                                 "audioSrc": "_ispeaker_everyday_correcting_4_us"
                             },
                             {
@@ -3764,7 +3764,7 @@
                         },
                         {
                             "speaker": "B",
-                            "speech": "<span class='highlight-dialouge-2'>I wouldn't bet on it</span>- <span class='highlight-dialouge-1'>there'll probably be</span> a lot of traffic on the way home."
+                            "speech": "<span class='highlight-dialouge-2'>I wouldn't bet on it </span>- <span class='highlight-dialouge-1'>there'll probably be</span> a lot of traffic on the way home."
                         }
                     ],
                     "skills": [
@@ -4102,7 +4102,7 @@
                         },
                         {
                             "speaker": "B",
-                            "speech": "I don't know.<span class='highlight-dialouge-1'>I guess</span> they'll put something on the website."
+                            "speech": "I don't know. <span class='highlight-dialouge-1'>I guess</span> they'll put something on the website."
                         }
                     ],
                     "skills": [
@@ -4309,7 +4309,7 @@
                                 "audioSrc": "_ispeaker_everyday_apologizing_4_gb"
                             },
                             {
-                                "sentence": "<label xmlns=\"urn:ISPEAKER_PLUS\" xmlns:e=\"urn:IDMEE\" e:id=\"u910a2285f341e91d.-2eb90832.1740630736e.18eb\">(British English)</label><span class='bold'xmlns=\"urn:ISPEAKER_PLUS\" xmlns:e=\"urn:IDMEE\" e:id=\"u910a2285f341e91d.-2eb90832.1740630736e.18ec\">I must apologize</span> for keeping you waiting.",
+                                "sentence": "<label xmlns=\"urn:ISPEAKER_PLUS\" xmlns:e=\"urn:IDMEE\" e:id=\"u910a2285f341e91d.-2eb90832.1740630736e.18eb\">(British English) </label><span class='bold'xmlns=\"urn:ISPEAKER_PLUS\" xmlns:e=\"urn:IDMEE\" e:id=\"u910a2285f341e91d.-2eb90832.1740630736e.18ec\">I must apologize</span> for keeping you waiting.",
                                 "audioSrc": "_ispeaker_everyday_apologizing_5_gb"
                             },
                             {
@@ -4491,7 +4491,7 @@
                                 "audioSrc": "_ispeaker_everyday_apologizing_4_us"
                             },
                             {
-                                "sentence": "<label xmlns=\"urn:ISPEAKER_PLUS\" xmlns:e=\"urn:IDMEE\" e:id=\"u910a2285f341e91d.-2eb90832.1740630736e.2327\">(British English)</label><span class='bold'xmlns=\"urn:ISPEAKER_PLUS\" xmlns:e=\"urn:IDMEE\" e:id=\"u910a2285f341e91d.-2eb90832.1740630736e.2328\">I must apologize</span> for keeping you waiting.",
+                                "sentence": "<label xmlns=\"urn:ISPEAKER_PLUS\" xmlns:e=\"urn:IDMEE\" e:id=\"u910a2285f341e91d.-2eb90832.1740630736e.2327\">(British English) </label><span class='bold'xmlns=\"urn:ISPEAKER_PLUS\" xmlns:e=\"urn:IDMEE\" e:id=\"u910a2285f341e91d.-2eb90832.1740630736e.2328\">I must apologize</span> for keeping you waiting.",
                                 "audioSrc": "_ispeaker_everyday_apologizing_5_us"
                             },
                             {
@@ -4667,7 +4667,7 @@
                                 "audioSrc": "_ispeaker_everyday_congratulating_1_gb"
                             },
                             {
-                                "sentence": "<label xmlns=\"urn:ISPEAKER_PLUS\" xmlns:e=\"urn:IDMEE\" e:id=\"u910a2285f341e91d.-2eb90832.1740630736e.1a3e\">(British English)</label><span class='bold'xmlns=\"urn:ISPEAKER_PLUS\" xmlns:e=\"urn:IDMEE\" e:id=\"u910a2285f341e91d.-2eb90832.1740630736e.1a3f\">Well done for</span> passing your driving test.",
+                                "sentence": "<label xmlns=\"urn:ISPEAKER_PLUS\" xmlns:e=\"urn:IDMEE\" e:id=\"u910a2285f341e91d.-2eb90832.1740630736e.1a3e\">(British English) </label><span class='bold'xmlns=\"urn:ISPEAKER_PLUS\" xmlns:e=\"urn:IDMEE\" e:id=\"u910a2285f341e91d.-2eb90832.1740630736e.1a3f\">Well done for</span> passing your driving test.",
                                 "audioSrc": "_ispeaker_everyday_congratulating_2_gb"
                             },
                             {
@@ -4820,7 +4820,7 @@
                                 "audioSrc": "_ispeaker_everyday_congratulating_1_us"
                             },
                             {
-                                "sentence": "<label xmlns=\"urn:ISPEAKER_PLUS\" xmlns:e=\"urn:IDMEE\" e:id=\"u910a2285f341e91d.-2eb90832.1740630736e.247a\">(British English)</label><span class='bold'xmlns=\"urn:ISPEAKER_PLUS\" xmlns:e=\"urn:IDMEE\" e:id=\"u910a2285f341e91d.-2eb90832.1740630736e.247b\">Well done for</span> passing your driving test.",
+                                "sentence": "<label xmlns=\"urn:ISPEAKER_PLUS\" xmlns:e=\"urn:IDMEE\" e:id=\"u910a2285f341e91d.-2eb90832.1740630736e.247a\">(British English) </label><span class='bold'xmlns=\"urn:ISPEAKER_PLUS\" xmlns:e=\"urn:IDMEE\" e:id=\"u910a2285f341e91d.-2eb90832.1740630736e.247b\">Well done for</span> passing your driving test.",
                                 "audioSrc": "_ispeaker_everyday_congratulating_2_us"
                             },
                             {
@@ -5490,7 +5490,7 @@
                         },
                         {
                             "speaker": "A",
-                            "speech": "<span class='highlight-dialouge-2'>That's alright.</span><span class='highlight-dialouge-2'>No problem.</span> If you need anything else, just let me know."
+                            "speech": "<span class='highlight-dialouge-2'>That's alright. </span><span class='highlight-dialouge-2'>No problem.</span> If you need anything else, just let me know."
                         }
                     ],
                     "skills": [
@@ -6122,7 +6122,7 @@
                         },
                         {
                             "speaker": "B",
-                            "speech": "<span class='highlight-dialouge-1'>Yes, it was nice to meet you</span>. Maybe see you later!"
+                            "speech": "<span class='highlight-dialouge-1'>Yes, it was nice to meet you</span>. Maybe see you later?"
                         }
                     ],
                     "skills": [
@@ -6366,7 +6366,7 @@
                         },
                         {
                             "speaker": "B",
-                            "speech": "Oh, hi, Sarah! <span class='highlight-dialouge-1'>This is Simon – I don’t know if you’ve met?</span><span class='highlight-dialouge-1'>Simon - this is Sarah</span>."
+                            "speech": "Oh, hi, Sarah! <span class='highlight-dialouge-1'>This is Simon – I don’t know if you’ve met? </span><span class='highlight-dialouge-1'>Simon &mdash; this is Sarah</span>."
                         },
                         {
                             "speaker": "A",
@@ -6529,7 +6529,7 @@
                         },
                         {
                             "speaker": "B",
-                            "speech": "Hi, Carol! <span class='highlight-dialouge-1'>This is Simon – I don’t think you two have met?</span><span class='highlight-dialouge-1'>Simon - this is Carol</span>."
+                            "speech": "Hi, Carol! <span class='highlight-dialouge-1'>This is Simon – I don’t think you two have met? </span><span class='highlight-dialouge-1'>Simon, this is Carol</span>."
                         },
                         {
                             "speaker": "A",
@@ -7037,7 +7037,7 @@
                                 "audioSrc": "_ispeaker_everyday_leaving_messages_3_gb"
                             },
                             {
-                                "sentence": "<span class='bold'xmlns=\"urn:ISPEAKER_PLUS\" xmlns:e=\"urn:IDMEE\" e:id=\"u910a2285f341e91d.-2eb90832.1740630736e.1ce0\">Is there a time </span>that might be good for me <span class='bold'xmlns=\"urn:ISPEAKER_PLUS\" xmlns:e=\"urn:IDMEE\" e:id=\"u910a2285f341e91d.-2eb90832.1740630736e.1ce1\">to try him again</span>?",
+                                "sentence": "<span class='bold'xmlns=\"urn:ISPEAKER_PLUS\" xmlns:e=\"urn:IDMEE\" e:id=\"u910a2285f341e91d.-2eb90832.1740630736e.1ce0\">Is there a time </span>that might be good for me <span class='bold'xmlns=\"urn:ISPEAKER_PLUS\" xmlns:e=\"urn:IDMEE\" e:id=\"u910a2285f341e91d.-2eb90832.1740630736e.1ce1\">to try again</span>?",
                                 "audioSrc": "_ispeaker_everyday_leaving_messages_4_gb"
                             },
                             {
@@ -7143,7 +7143,7 @@
                         },
                         {
                             "speaker": "B",
-                            "speech": "Hi, <span class='highlight-dialouge-1'>can I speak to</span> Adam Talbot?"
+                            "speech": "Hi, <span class='highlight-dialouge-1'>can I please speak to</span> Adam Talbot?"
                         },
                         {
                             "speaker": "A",
@@ -7608,7 +7608,7 @@
                     "dialogue": [
                         {
                             "speaker": "A",
-                            "speech": "Well, <span class='highlight-dialouge-1'>'m afraid time is running out</span>,unless anyone has anything to add... Sorry, did you want to say something, Jo?"
+                            "speech": "Well, <span class='highlight-dialouge-1'>I'm afraid time is running out</span>, so unless anyone has anything else to add... Sorry, did you want to say something, Jo?"
                         },
                         {
                             "speaker": "B",
@@ -7760,7 +7760,7 @@
                     "dialogue": [
                         {
                             "speaker": "A",
-                            "speech": "Well, <span class='highlight-dialouge-1'>'m afraid time is running out</span>, so unless anyone has anything else to add... Sorry, Jo, did you want to say something?"
+                            "speech": "Well, <span class='highlight-dialouge-1'>I'm afraid time is running out</span>, so unless anyone else has anything to add... Sorry, Jo, did you want to say something?"
                         },
                         {
                             "speaker": "B",
@@ -7914,7 +7914,7 @@
                     "dialogue": [
                         {
                             "speaker": "A",
-                            "speech": "<span class='highlight-dialouge-1'>Do I have to</span>wear this visitor badge even here in the canteen?"
+                            "speech": "<span class='highlight-dialouge-1'>Do I have to</span> wear this visitor badge even here in the canteen?"
                         },
                         {
                             "speaker": "B",
@@ -8032,7 +8032,7 @@
                     "dialogue": [
                         {
                             "speaker": "A",
-                            "speech": "<span class='highlight-dialouge-1'>Do I have to</span>wear this visitor badge even here in the cafeteria?"
+                            "speech": "<span class='highlight-dialouge-1'>Do I have to </span>wear this visitor badge even here in the cafeteria?"
                         },
                         {
                             "speaker": "B",
@@ -8193,7 +8193,7 @@
                                 "audioSrc": "_ispeaker_everyday_permission_2_gb"
                             },
                             {
-                                "sentence": "<label xmlns=\"urn:ISPEAKER_PLUS\" xmlns:e=\"urn:IDMEE\" e:id=\"u910a2285f341e91d.-2eb90832.1740630736e.19cc\">(American English)</label><span class='bold'xmlns=\"urn:ISPEAKER_PLUS\" xmlns:e=\"urn:IDMEE\" e:id=\"u910a2285f341e91d.-2eb90832.1740630736e.19cd\">I hate to ask, but could I please</span> borrow your phone?",
+                                "sentence": "<label xmlns=\"urn:ISPEAKER_PLUS\" xmlns:e=\"urn:IDMEE\" e:id=\"u910a2285f341e91d.-2eb90832.1740630736e.19cc\">(American English) </label><span class='bold'xmlns=\"urn:ISPEAKER_PLUS\" xmlns:e=\"urn:IDMEE\" e:id=\"u910a2285f341e91d.-2eb90832.1740630736e.19cd\">I hate to ask, but could I please</span> borrow your phone?",
                                 "audioSrc": "_ispeaker_everyday_permission_3_gb"
                             },
                             {
@@ -8344,7 +8344,7 @@
                     "dialogue": [
                         {
                             "speaker": "A",
-                            "speech": "<span class='highlight-dialouge-1'>Would it be alright</span> if I used your computer to check my email?"
+                            "speech": "<span class='highlight-dialouge-1'>Would it be alright</span> if I used your computer to check email?"
                         },
                         {
                             "speaker": "B",
@@ -10138,7 +10138,7 @@
                         },
                         {
                             "speaker": "B",
-                            "speech": "<span class='highlight-dialouge-1'>I think you should</span> make an appointment to see him as soon as possible."
+                            "speech": "<span class='highlight-dialouge-1'>I think you should</span> make an appointment to see him  about it as soon as possible."
                         },
                         {
                             "speaker": "A",
@@ -10550,7 +10550,7 @@
                     "dialogue": [
                         {
                             "speaker": "A",
-                            "speech": "<span class='highlight-dialouge-1'>How about</span> meeting up around about eight in front of the restaurant?"
+                            "speech": "<span class='highlight-dialouge-1'>How about</span> meeting up around eight in front of the restaurant?"
                         },
                         {
                             "speaker": "B",
@@ -10690,7 +10690,7 @@
                     "dialogue": [
                         {
                             "speaker": "A",
-                            "speech": "<span class='highlight-dialouge-1'>How about</span> meeting up around about eight in front of the restaurant?"
+                            "speech": "<span class='highlight-dialouge-1'>How about</span> meeting up around eight in front of the restaurant?"
                         },
                         {
                             "speaker": "B",
@@ -10702,7 +10702,7 @@
                         },
                         {
                             "speaker": "B",
-                            "speech": "OK, see you there."
+                            "speech": "Yeah, see you there."
                         }
                     ],
                     "skills": [
@@ -11435,7 +11435,7 @@
                         },
                         {
                             "speaker": "B",
-                            "speech": "Er no, <span class='highlight-dialouge-2'>not for me thanks</span>."
+                            "speech": "Er no, <span class='highlight-dialouge-2'>not for me, thanks</span>."
                         }
                     ],
                     "skills": [

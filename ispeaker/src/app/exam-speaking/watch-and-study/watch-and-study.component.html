@@ -40,7 +40,7 @@
                     'highlight-dialogue-6': (studyData.skills.length>5 &&studyData.skills[5].check),
                      'highlight-dialogue-7': (studyData.skills.length>6 &&studyData.skills[6].check)}"
                     *ngFor="let dialouge of studyData.dialogue">
-                    <span class="speaker-wrapper">{{dialouge.speaker}}: </span>
+                    <span class="speaker-wrapper" *ngIf="dialouge.speaker">{{dialouge.speaker}}: </span>
                     <span class="speech-wrapper" [innerHtml]="dialouge.speech"></span>
                 </div>
                 <div class='skills-wrapper'>

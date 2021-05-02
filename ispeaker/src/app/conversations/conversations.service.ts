@@ -140,7 +140,7 @@ export class ConversationsService {
             this.fetchJson(destUrl, (data) => {
                 if (data) {
                     // this.savedSoundData = data;
-                    this.selectedConversationType.watch_and_study.study = data.watchAndStudy.study;
+                    this.selectedConversationType.watch_and_study.study.recordedAudio = data.watchAndStudy.study.recordedAudio;
                     this.selectedConversationType.listen.recordedAudio = data.listen.recordedAudio;
                     this.selectedConversationType.practise = data.practise;
                     this.selectedConversationType.reviews = data.reviews;

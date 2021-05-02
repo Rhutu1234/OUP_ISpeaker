@@ -246,6 +246,10 @@
     }
     .text-entry-dictation {
         position: relative;
+        .correct-ans-dictation {
+            color: #0066cc;
+            font-size: 18px;
+        }
         .response-icon {
             right: 5px;
             top: 24px;
