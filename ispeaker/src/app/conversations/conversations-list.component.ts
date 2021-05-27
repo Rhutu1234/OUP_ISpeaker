@@ -15,6 +15,7 @@ export class ConversationsListComponent implements OnInit {
 
   ngOnInit() {
     this.dataLoading = true;
+    this.ispeakerService.scrollIntoView(document.getElementsByClassName('ispeaker-wrapper')[0]);
     this.conversationsService.fetchConversationMenu().subscribe((data) => {
       console.log('fetch conversation menu');
       if (this.conversationsService.userId) {

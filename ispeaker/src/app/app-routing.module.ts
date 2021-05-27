@@ -18,10 +18,11 @@ const routes: Routes = [
     component: SessionExpirationComponent
   }, {
     path: 'home',
-    component: HomeComponent
+    redirectTo: '',
+    pathMatch: 'full'
   }, {
     path: '',
-    redirectTo: '/home',
+    component: HomeComponent,
     pathMatch: 'full'
   },
   {

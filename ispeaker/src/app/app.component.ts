@@ -12,6 +12,7 @@ export class AppComponent {
   constructor(private router: Router) {
     this.router.events.subscribe(routerEvent => {
       if (routerEvent instanceof NavigationStart) {
+        console.log(routerEvent);
         if (routerEvent.url === environment.urlCheck) {
           this.router.navigate(['home'], { skipLocationChange: true });
         }
