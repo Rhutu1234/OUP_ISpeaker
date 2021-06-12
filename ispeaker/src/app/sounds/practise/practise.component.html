@@ -34,7 +34,13 @@
         {{currentIndex===practiseData.questions.length-1?'Score':'Next'}}"
             *ngIf="currentIndex<practiseData.questions.length" (onClick)="onNextClick()">
         </p-button>
-        <p-button label="Start again?" *ngIf="currentIndex>=practiseData.questions.length" (onClick)="loadSet()">
+        <p-button label="Do another?"
+            *ngIf="currentIndex>=practiseData.questions.length && currentSet<practiseSet.length-1"
+            (onClick)="loadSet()">
+        </p-button>
+        <p-button label="Start again?"
+            *ngIf="currentIndex>=practiseData.questions.length && currentSet>=practiseSet.length-1"
+            (onClick)="startAgain()">
         </p-button>
     </div>
 

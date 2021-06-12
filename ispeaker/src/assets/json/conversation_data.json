@@ -8,7 +8,7 @@
                     "dialogue": [
                         {
                             "speaker": "A",
-                            "speech": "Our website looks a little dated, don’t you think?"
+                            "speech": "Our website looks a bit dated, don’t you think?"
                         },
                         {
                             "speaker": "B",
@@ -146,7 +146,7 @@
                     "dialogue": [
                         {
                             "speaker": "A",
-                            "speech": "Our website looks a bit dated, don’t you think?"
+                            "speech": "Our website looks a little dated, don’t you think?"
                         },
                         {
                             "speaker": "B",
@@ -1983,10 +1983,6 @@
                 {
                     "text": "I can give reasons and justify choices in a variety of ways.",
                     "checked": false
-                },
-                {
-                    "text": "",
-                    "checked": false
                 }
             ]
         },
@@ -2102,10 +2098,6 @@
             "reviews": [
                 {
                     "text": "I can give reasons and justify choices in a variety of ways.",
-                    "checked": false
-                },
-                {
-                    "text": "",
                     "checked": false
                 }
             ]
@@ -5078,6 +5070,10 @@
                         {
                             "speaker": "B",
                             "speech": "No, I completely understand. Family comes first."
+                        },
+                        {
+                            "speaker": "A",
+                            "speech": "Thanks."
                         }
                     ],
                     "skills": [
@@ -8009,7 +8005,11 @@
                         "type": "text-entry-closed",
                         "ques": "Fill in the missing word to complete the phrase.",
                         "multiple": true,
-                        "ans": ["have","need","get"],
+                        "ans": [
+                            "have",
+                            "need",
+                            "get"
+                        ],
                         "sentences": [
                             "Do we ",
                             " to go to the meeting even if we're not involved in the project?"
@@ -8127,7 +8127,11 @@
                         "type": "text-entry-closed",
                         "ques": "Fill in the missing word to complete the phrase.",
                         "multiple": true,
-                        "ans": ["have","need","get"],
+                        "ans": [
+                            "have",
+                            "need",
+                            "get"
+                        ],
                         "sentences": [
                             "Do we ",
                             " to go to the meeting even if we're not involved in the project?"
@@ -8357,6 +8361,10 @@
                         {
                             "speaker": "B",
                             "speech": "<span class='highlight-dialouge-2'>Yes, that's fine</span>. It's only black and white though - I hope that's alright!"
+                        },
+                        {
+                            "speaker": "A",
+                            "speech": "Thanks."
                         }
                     ],
                     "skills": [
@@ -10841,6 +10849,10 @@
                         {
                             "speaker": "A",
                             "speech": "<span class='highlight-dialouge-2'>That's alright, thank you</span>. I need to put everything in the right order. <span class='highlight-dialouge-2'>Thanks anyway</span>."
+                        },
+                        {
+                            "speaker": "B",
+                            "speech": "It's OK."
                         }
                     ],
                     "skills": [

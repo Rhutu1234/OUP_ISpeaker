@@ -2345,7 +2345,7 @@
                 "dialogue": [
                     {
                         "speaker": "",
-                        "speech": "<p>So <span class='highlight-dialouge-1'>I’m here today to present</span> you with the results of that survey. Now to do this, <span class='highlight-dialouge-2'>I've divided my presentation into three parts</span>. <span class='highlight-dialouge-2'>Firstly I'll talk about</span> the background to the research, <span class='highlight-dialouge-2'>then we'll look at</span> how we approached the research <span class='highlight-dialouge-2'>and thirdly I'll summarize</span> the key findings of the research. <span class='highlight-dialouge-3'>So let's start with</span> a brief description of the background.</p><p>[Pause]</p><p>So once we'd selected the 90,000 customers across your company's three regions, we then emailed them the survey. We allowed four weeks for them to respond to the surveys and after that period we receied a 4% response rate. Now this is quite good for this type of survey. We then analysed those responses and compiled them in a report for you. <span class='highlight-dialouge-3'>Let’s look at those responses in a bit more detail</span>. Now of that 4%, this blue section shows that 57% of those responses came from the region with the difficulties. That’s significant as you are more likely to receive responses from customers who are either very satisfied or very unsatisfied. Anyway, <span class='highlight-dialouge-4'>this leads me on to the third and main part of my presentation</span>: the actual results of the survey. Now in front of you, there’s a copy of the survey’s findings.</p><p>[Pause]</p><p><span class='highlight-dialouge-5'> I'm going to summarize</span> the key findings for each of these questions. So <span class='highlight-dialouge-3'>let's begin with</span> question one, which asks your customers how likely they are to recommend your company to a friend. <span class='highlight-dialouge-6'>As you can see</span>, we have used a scale, with zero being not at all likely and ten being extremely likely. <span class='highlight-dialouge-6'>According to this chart</span>, the overall response indicates that customers are fairly likely to recommend your company. However, <span class='highlight-dialouge-6'>this chart represents</span> an average response across the three regions. If we break these responses down into the three regions like this, <span class='highlight-dialouge-6'>it illustrates</span> the difference in customer satisfaction region by region. Now remember, red and yellow are the regions with increasing numbers of customers. Consequently, the responses are quite high, even as high as ten, but the lower scores in the previous chart were caused by the decline in these blue responses here. They go down to the zero level in some cases.</p>"
+                        "speech": "<p>So <span class='highlight-dialouge-1'>I’m here today to present</span> you with the results of that survey. Now to do this, <span class='highlight-dialouge-2'>I've divided my presentation into three parts</span>. <span class='highlight-dialouge-2'>Firstly I'll talk about</span> the background to the research, <span class='highlight-dialouge-2'>then we'll look at</span> how we approached the research <span class='highlight-dialouge-2'>and thirdly I'll summarize</span> the key findings of the research. <span class='highlight-dialouge-3'>So let's start with</span> a brief description of the background.</p><p>[Pause]</p><p>So once we'd selected the 90,000 customers across your company's three regions, we then emailed them the survey. We allowed four weeks for them to respond to the surveys and after that period we received a 4% response rate. Now this is quite good for this type of survey. We then analysed those responses and compiled them in a report for you. <span class='highlight-dialouge-3'>Let’s look at those responses in a bit more detail</span>. Now of that 4%, this blue section shows that 57% of those responses came from the region with the difficulties. That’s significant as you are more likely to receive responses from customers who are either very satisfied or very unsatisfied. Anyway, <span class='highlight-dialouge-4'>this leads me on to the third and main part of my presentation</span>: the actual results of the survey. Now in front of you, there’s a copy of the survey’s findings.</p><p>[Pause]</p><p><span class='highlight-dialouge-5'> I'm going to summarize</span> the key findings for each of these questions. So <span class='highlight-dialouge-3'>let's begin with</span> question one, which asks your customers how likely they are to recommend your company to a friend. <span class='highlight-dialouge-6'>As you can see</span>, we have used a scale, with zero being not at all likely and ten being extremely likely. <span class='highlight-dialouge-6'>According to this chart</span>, the overall response indicates that customers are fairly likely to recommend your company. However, <span class='highlight-dialouge-6'>this chart represents</span> an average response across the three regions. If we break these responses down into the three regions like this, <span class='highlight-dialouge-6'>it illustrates</span> the difference in customer satisfaction region by region. Now remember, red and yellow are the regions with increasing numbers of customers. Consequently, the responses are quite high, even as high as ten, but the lower scores in the previous chart were caused by the decline in these blue responses here. They go down to the zero level in some cases.</p>"
                     }
                 ],
                 "skills": [
@@ -2828,7 +2828,7 @@
                 ],
                 "listItems": [],
                 "images": [
-                    "Job interview_main task_1.docx"
+                    "Job interview_main task_1.jpg"
                 ]
             },
             "study": {
@@ -2840,7 +2840,7 @@
                     },
                     {
                         "speaker": "Interviewee",
-                        "speech": "<p>Thanks.</p>"
+                        "speech": "<p>Thank you.</p>"
                     },
                     {
                         "speaker": "Interviewer",
@@ -2896,7 +2896,7 @@
                     },
                     {
                         "speaker": "Interviewee",
-                        "speech": "<p>OK, Thank you.</p>"
+                        "speech": "<p>OK, thanks.</p>"
                     }
                 ],
                 "skills": [

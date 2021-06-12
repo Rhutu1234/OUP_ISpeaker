@@ -180,7 +180,7 @@ export class SoundsService {
         for (const i in this.soundMenu[this.selectedLanguage]) {
             if (this.soundMenu[this.selectedLanguage][i]) {
                 currentSound = _.find(this.soundMenu[this.selectedLanguage][i], { phoneme: this.selectedSound.phoneme });
-                console.log(currentSound);
+                // console.log(currentSound);
                 if (currentSound) {
                     currentSound.attempted = true;
                     currentSound.completed = selectedSoundDetails.review;

@@ -56,16 +56,34 @@ export class PractiseComponent implements OnInit {
     }
   }
   loadSet() {
+    // this.isAnswered = false;
+    this.currentIndex = 0;
+    this.currentSet++;
+    this.soundsService.selectedSoundDetails[this.soundsService.selectedLanguage].currentSet = this.currentSet;
+    this.score = 0;
+    // for (let ques of this.practiseSet[this.currentSet].questions) {
+    //   for (let option of ques.options) {
+    //     option.userAnswer = undefined;
+    //   }
+
+    // }
+    this.practiseData.score = this.score;
+    this.soundsService.saveSoundData();
+    this.practiseData = _.cloneDeep(this.practiseSet[this.currentSet]);
+  }
+
+  startAgain() {
     this.isAnswered = false;
     this.currentIndex = 0;
     this.currentSet = 0;
     this.soundsService.selectedSoundDetails[this.soundsService.selectedLanguage].currentSet = this.currentSet;
     this.score = 0;
-    for (let ques of this.practiseSet[this.currentSet].questions) {
-      for (let option of ques.options) {
-        option.userAnswer = undefined;
+    for (let set of this.practiseSet) {
+      for (let ques of set.questions) {
+        for (let option of ques.options) {
+          option.userAnswer = undefined;
+        }
       }
-
     }
     this.practiseData.score = this.score;
     this.soundsService.saveSoundData();

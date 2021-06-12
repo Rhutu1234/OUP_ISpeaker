@@ -166,6 +166,9 @@
         color: #333333;
         margin-top: 35px;
         margin-bottom: 15px;
+        span {
+            vertical-align: top;
+        }
         input[type="text"] {
             font-size: 17px;
             color: #333333;
@@ -221,7 +224,9 @@
     .user-input-wrapper {
         display: inline-block;
         position: relative;
+        width: 120px;
         input[type="text"] {
+            width: 100%;
             padding-right: 20px;
             &.correct {
                 border: 1px solid green;
@@ -239,10 +244,10 @@
     }
     .correct-ans {
         display: inline-block;
-        position: absolute;
+        position: relative;
         color: #0066cc;
         left: 0;
-        top: -25px;
+        // top: -25px;
     }
     .text-entry-dictation {
         position: relative;
