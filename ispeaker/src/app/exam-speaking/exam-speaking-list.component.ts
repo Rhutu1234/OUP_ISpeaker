@@ -15,8 +15,9 @@ export class ExamSpeakingListComponent implements OnInit {
 
   ngOnInit() {
     this.dataLoading = true;
+   this.examSpeakingService.fetchExamSpeakingMenu().subscribe((data) => {
     this.ispeakerService.scrollIntoView(document.getElementsByClassName('ispeaker-wrapper')[0]);
-    this.examSpeakingService.fetchExamSpeakingMenu().subscribe((data) => {
+    
       console.log('fetch conversation menu');
       if (this.examSpeakingService.userId) {
         this.examSpeakingService.fetchExistingExamSpeakingMenu().then((success) => {

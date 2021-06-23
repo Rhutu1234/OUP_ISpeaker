@@ -1168,7 +1168,7 @@ function loadXml(xml) {
   console.log(sound_data);
   var json = JSON.stringify(sound_data);
 
-  fs.writeFile('E:/projects/OUP_ISpeaker/ispeaker/src/assets/json/sound_data.json', json, 'utf8');
+  fs.writeFile('D:/projects/OUP_ISpeaker/ispeaker/src/assets/json/sound_data.json', json, 'utf8');
   $('.alert').hide();
   $('.alert-success').show();
 }
@@ -1387,8 +1387,8 @@ function loadConversationsMenu(xml) {
   conversations.conversationMenu = conversationMenu;
   var json = JSON.stringify(conversations);
   var cdata = JSON.stringify(conversation_data);
-  fs.writeFile('E:/projects/OUP_ISpeaker/ispeaker/src/assets/json/conversation_menu.json', json, 'utf8');
-  fs.writeFile('E:/projects/OUP_ISpeaker/ispeaker/src/assets/json/conversation_data.json', cdata, 'utf8');
+  fs.writeFile('D:/projects/OUP_ISpeaker/ispeaker/src/assets/json/conversation_menu.json', json, 'utf8');
+  fs.writeFile('D:/projects/OUP_ISpeaker/ispeaker/src/assets/json/conversation_data.json', cdata, 'utf8');
   $('.alert').hide();
   $('.alert-success').show();
 
@@ -1403,7 +1403,13 @@ function loadConversationsMenu(xml) {
       if (type === 'text-entry-dictation') {
         quesObj.ques = $(this).find('activity-content').find('instruction').find('paragraph').text();
         quesObj.audioSrc = $(this).find('activity-content').find('embedded-input').find('input-content').find('audio').attr('xlink:href');
-        quesObj.responseText = $(this).find('activity-content').find('interaction').find('paragraph').find('response-point').find('response').text();
+        quesObj.responseText = [];
+        $(this).find('activity-content').find('interaction').find('paragraph').find('response-point').find('response').each(function (text) {
+          var text = $(this).text();
+          quesObj.responseText.push(text);
+        });
+        console.log(quesObj);
+
       }
       // if (type === "unique-selection-expanded") {
       //   quesObj.ques = $(this).find('activity-content').find('instruction').find('paragraph').text();
@@ -1558,7 +1564,7 @@ function createExamSpeakingMenu(xml) {
           });
           var speechAll = "";
           $(this).find('speech').each(function () {
-           speechAll += "<p>";
+            speechAll += "<p>";
 
             var speech = $(this).html().trim();
             speech = speech.replace(/<highlight xmlns="urn:ISPEAKER_PLUS" ref="1"/g, "<span class='highlight-dialouge-1'");
@@ -1570,8 +1576,8 @@ function createExamSpeakingMenu(xml) {
             speech = speech.replace(/<highlight xmlns="urn:ISPEAKER_PLUS" ref="7"/g, "<span class='highlight-dialouge-7'");
 
             speech = speech.replace(/<\/highlight/g, "</span");
-            speechAll +=speech;
-            speechAll +="</p>";
+            speechAll += speech;
+            speechAll += "</p>";
           });
 
           dialogue.speech = speechAll;
@@ -1683,9 +1689,9 @@ function createExamSpeakingMenu(xml) {
   console.log(examSpeakingMenu);
   examSpeaking.examSpeakingMenu = examSpeakingMenu;
   var json = JSON.stringify(examSpeaking);
-  fs.writeFile('E:/projects/OUP_ISpeaker/ispeaker/src/assets/json/examSpeakingMenu.json', json, 'utf8');
+  fs.writeFile('D:/projects/OUP_ISpeaker/ispeaker/src/assets/json/examSpeakingMenu.json', json, 'utf8');
   var cdata = JSON.stringify(speaking_data);
-  fs.writeFile('E:/projects/OUP_ISpeaker/ispeaker/src/assets/json/speaking_data.json', cdata, 'utf8');
+  fs.writeFile('D:/projects/OUP_ISpeaker/ispeaker/src/assets/json/speaking_data.json', cdata, 'utf8');
   $('.alert').hide();
   $('.alert-success').show();
 }

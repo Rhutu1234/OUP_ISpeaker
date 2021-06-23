@@ -15,8 +15,9 @@ export class SoundListComponent implements OnInit {
 
   ngOnInit() {
     this.dataLoading = true;
-    this.ispeakerService.scrollIntoView(document.getElementsByClassName('ispeaker-wrapper')[0]);
     this.soundsService.fetchSoundMenu().subscribe((data) => {
+      this.ispeakerService.scrollIntoView(document.getElementsByClassName('ispeaker-wrapper')[0]);
+   
       this.soundsService.updateSoundDataCustom(this.soundsService.soundsData);
       console.log('fetch sound menu');
       if (this.soundsService.userId) {

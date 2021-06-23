@@ -95,19 +95,13 @@ export class PracticeComponent implements OnInit {
   onCheckClick(currQues) {
     this.isAnswered = true;
     if (currQues.type === 'text-entry-dictation') {
-      if (currQues.userAns && currQues.userAns.toLowerCase() === currQues.responseText.toLowerCase()) {
+      if (currQues.userAns && this.checkDictationAns(currQues)) {
         this.score++;
       }
     }
     if (currQues.type === 'text-entry-closed') {
-      if (currQues.multiple) {
-        if (currQues.userAns && currQues.ans.indexOf(currQues.userAns.toLowerCase()) !== -1) {
-          this.score++;
-        }
-      } else {
-        if (currQues.userAns && currQues.userAns.toLowerCase() === currQues.ans.toLowerCase()) {
-          this.score++;
-        }
+      if (currQues.userAns && this.checkTextEntryClosedAns(currQues)) {
+        this.score++;
       }
 
     }
@@ -128,12 +122,29 @@ export class PracticeComponent implements OnInit {
   }
 
   checkDictationAns(currQues) {
-    return (currQues.userAns && currQues.userAns.toLowerCase() === currQues.responseText.toLowerCase())
+    let correct = false;
+    if (currQues.userAns) {
+      currQues.responseText.forEach(ans => {
+        if (ans.toLowerCase() === currQues.userAns.toLowerCase()) {
+          correct = true;
+        }
+      });
+    }
+    return correct;
   }
 
   checkTextEntryClosedAns(currQues) {
     if (currQues.multiple) {
-      return (currQues.userAns && currQues.ans.indexOf(currQues.userAns.toLowerCase()) !== -1)
+      let correct = false;
+      if (currQues.userAns) {
+        currQues.ans.forEach(ans => {
+          if (ans.toLowerCase() === currQues.userAns.toLowerCase()) {
+            correct = true;
+          }
+        });
+      }
+      return correct;
+      // return (currQues.userAns && currQues.ans.indexOf(currQues.userAns.toLowerCase()) !== -1)
     } else {
       return (currQues.userAns && currQues.userAns.toLowerCase() === currQues.ans.toLowerCase())
     }

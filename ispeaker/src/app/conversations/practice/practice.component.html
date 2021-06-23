@@ -28,7 +28,7 @@
                             [ngClass]="{'correct':isAnswered && checkDictationAns(practiseData.questions[currentIndex]),'incorrect':isAnswered && !checkDictationAns(practiseData.questions[currentIndex])}"></textarea>
                         <div *ngIf="isAnswered && !checkDictationAns(practiseData.questions[currentIndex])"
                             class="correct-ans-dictation">
-                            {{practiseData.questions[currentIndex].responseText}}
+                            {{practiseData.questions[currentIndex].responseText.join(" / ")}}
                         </div>
                     </div>
                 </ng-container>
