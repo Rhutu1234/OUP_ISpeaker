@@ -59,7 +59,7 @@ export class PracticeComponent implements OnInit {
     }
   }
   playSound(currQues) {
-    this.audio.src = environment.baseHref + 'assets/audio/' + currQues.audioSrc;
+    this.audio.src = '/media/ispeaker/assets/new/' + currQues.audioSrc;
     this.audio.load();
     this.audio.play();
   }

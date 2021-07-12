@@ -44,7 +44,7 @@ export class ListenAndRecordComponent implements OnInit, OnDestroy {
   }
   playSound(sound) {
 
-    this.audio.src = environment.baseHref + 'assets/audio/' + sound.audio + '.mp3';
+    this.audio.src = '/media/ispeaker/assets/new/' + sound.audio + '.mp3';
     this.audio.load();
     this.audio.play();
   }

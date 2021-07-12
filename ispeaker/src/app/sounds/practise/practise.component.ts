@@ -34,7 +34,7 @@ export class PractiseComponent implements OnInit {
   }
 
   playSound(option) {
-    this.audio.src = environment.baseHref + 'assets/audio/' + option.audio + '.mp3';
+    this.audio.src = '/media/ispeaker/assets/new/' + option.audio + '.mp3';
     this.audio.load();
     this.audio.play();
 

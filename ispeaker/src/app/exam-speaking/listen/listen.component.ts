@@ -53,7 +53,7 @@ export class ListenComponent implements OnInit {
     this.audioRecordingService.abortRecording();
     this.listenData.isRecording = false;
     this.listenData.isPlaying = false;
-    this.audio.src = environment.baseHref + 'assets/audio/' + sentence.audioSrc + '.mp3';
+    this.audio.src = '/media/ispeaker/assets/new/' + sentence.audioSrc + '.mp3';
     this.audio.load();
     this.audio.play();
   }
