@@ -2829,7 +2829,8 @@
                 "listItems": [],
                 "images": [
                     "Job interview_main task_1.jpg"
-                ]
+                ],
+                "imageScroll":true
             },
             "study": {
                 "expressingAgreement": false,
