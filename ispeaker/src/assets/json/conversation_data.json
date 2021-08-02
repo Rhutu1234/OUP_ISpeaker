@@ -1021,10 +1021,10 @@
                     },
                     {
                         "type": "unique-selection-expanded",
-                        "ques": "\n\t\t\t\t\t\t\t\t\tThere will be time for questions at the end.\n\t\t\t\t\t\t\t\tDoes the speaker mean:",
+                        "ques": "\n\t\t\t\t\t\t\t\t\tThere will be time for questions at the end.",
                         "interaction": [
                             {
-                                "ques": "",
+                                "ques": "Does the speaker mean:",
                                 "options": [
                                     {
                                         "text": "Don't ask me any questions.",
@@ -1183,10 +1183,10 @@
                     },
                     {
                         "type": "unique-selection-expanded",
-                        "ques": "\n\t\t\t\t\t\t\t\t\tThere will be time for questions at the end.\n\t\t\t\t\t\t\t\tDoes the speaker mean:",
+                        "ques": "\n\t\t\t\t\t\t\t\t\tThere will be time for questions at the end.",
                         "interaction": [
                             {
-                                "ques": "",
+                                "ques": "Does the speaker mean:",
                                 "options": [
                                     {
                                         "text": "Don't ask me any questions.",
@@ -2230,10 +2230,10 @@
                     },
                     {
                         "type": "unique-selection-expanded",
-                        "ques": "\n\t\t\t\t\t\t\t\t\tI appreciate your enthusiasm on this topic, but I'm afraid we have a couple more people to hear from.\n\t\t\t\t\t\t\t\tDoes the speaker mean:",
+                        "ques": "\n\t\t\t\t\t\t\t\t\tI appreciate your enthusiasm on this topic, but I'm afraid we have a couple more people to hear from.",
                         "interaction": [
                             {
-                                "ques": "",
+                                "ques": "Does the speaker mean:",
                                 "options": [
                                     {
                                         "text": "It's nice that you're interested in this topic, please keep talking.",
@@ -2363,10 +2363,10 @@
                     },
                     {
                         "type": "unique-selection-expanded",
-                        "ques": "\n\t\t\t\t\t\t\t\t\tI appreciate your enthusiasm on this topic, but I'm afraid we have a couple more people to hear from.\n\t\t\t\t\t\t\t\tDoes the speaker mean:",
+                        "ques": "\n\t\t\t\t\t\t\t\t\tI appreciate your enthusiasm on this topic, but I'm afraid we have a couple more people to hear from.",
                         "interaction": [
                             {
-                                "ques": "",
+                                "ques": "Does the speaker mean:",
                                 "options": [
                                     {
                                         "text": "It's nice that you're interested in this topic, please keep talking.",
@@ -2542,10 +2542,10 @@
                     },
                     {
                         "type": "unique-selection-expanded",
-                        "ques": "\n\t\t\t\t\t\t\t\t\tSorry, I don't quite follow you.\n\t\t\t\t\t\t\t\tDoes the speaker mean:",
+                        "ques": "\n\t\t\t\t\t\t\t\t\tSorry, I don't quite follow you.",
                         "interaction": [
                             {
-                                "ques": "",
+                                "ques": "Does the speaker mean:",
                                 "options": [
                                     {
                                         "text": "I don't understand.",
@@ -2723,10 +2723,10 @@
                     },
                     {
                         "type": "unique-selection-expanded",
-                        "ques": "\n\t\t\t\t\t\t\t\t\tSorry, I don't quite follow you.\n\t\t\t\t\t\t\t\tDoes the speaker mean:",
+                        "ques": "\n\t\t\t\t\t\t\t\t\tSorry, I don't quite follow you.",
                         "interaction": [
                             {
-                                "ques": "",
+                                "ques": "Does the speaker mean:",
                                 "options": [
                                     {
                                         "text": "I don't understand.",
@@ -2905,7 +2905,7 @@
                         },
                         {
                             "speaker": "A",
-                            "speech": "Yeah, I’m the same. So it’s second street on the right? Thanks!"
+                            "speech": "Yeah, I’m the same. So it’s the second street on the right? Thanks!"
                         }
                     ],
                     "skills": [
@@ -3129,10 +3129,10 @@
                     },
                     {
                         "type": "unique-selection-expanded",
-                        "ques": "\n\t\t\t\t\t\t\t\t\tI'm not at all sure what time they'll arrive, to be honest.\n\t\t\t\t\t\t\t\tDoes the speaker mean:",
+                        "ques": "\n\t\t\t\t\t\t\t\t\tI'm not at all sure what time they'll arrive, to be honest.",
                         "interaction": [
                             {
-                                "ques": "",
+                                "ques": "Does the speaker mean:",
                                 "options": [
                                     {
                                         "text": "I know when they will arrive.",
@@ -3150,6 +3150,10 @@
             },
             "reviews": [
                 {
+                    "text": "I can express certainty in a variety of ways.",
+                    "checked": false
+                },
+				{
                     "text": "I can express uncertainty in a variety of ways.",
                     "checked": false
                 }
@@ -3272,10 +3276,10 @@
                     },
                     {
                         "type": "unique-selection-expanded",
-                        "ques": "\n\t\t\t\t\t\t\t\t\tI'm not at all sure what time they'll arrive, to be honest.\n\t\t\t\t\t\t\t\tDoes the speaker mean:",
+                        "ques": "\n\t\t\t\t\t\t\t\t\tI'm not at all sure what time they'll arrive, to be honest.",
                         "interaction": [
                             {
-                                "ques": "",
+                                "ques": "Does the speaker mean:",
                                 "options": [
                                     {
                                         "text": "I know when they will arrive.",
@@ -3293,6 +3297,10 @@
             },
             "reviews": [
                 {
+                    "text": "I can express certainty in a variety of ways.",
+                    "checked": false
+                },
+				{
                     "text": "I can express uncertainty in a variety of ways.",
                     "checked": false
                 }
@@ -4087,10 +4095,10 @@
                     },
                     {
                         "type": "unique-selection-expanded",
-                        "ques": "\n\t\t\t\t\t\t\t\t\tIt may be that she's missed the bus.\n\t\t\t\t\t\t\t\tDoes the speaker mean:",
+                        "ques": "\n\t\t\t\t\t\t\t\t\tIt may be that she's missed the bus.",
                         "interaction": [
                             {
-                                "ques": "",
+                                "ques": "Does the speaker mean:",
                                 "options": [
                                     {
                                         "text": "It's possible that she's missed the bus.",
@@ -4257,10 +4265,10 @@
                     },
                     {
                         "type": "unique-selection-expanded",
-                        "ques": "\n\t\t\t\t\t\t\t\t\tIt may be that she's missed the bus.\n\t\t\t\t\t\t\t\tDoes the speaker mean:",
+                        "ques": "\n\t\t\t\t\t\t\t\t\tIt may be that she's missed the bus.",
                         "interaction": [
                             {
-                                "ques": "",
+                                "ques": "Does the speaker mean:",
                                 "options": [
                                     {
                                         "text": "It's possible that she's missed the bus.",
@@ -10641,10 +10649,10 @@
                     },
                     {
                         "type": "unique-selection-expanded",
-                        "ques": "\n\t\t\t\t\t\t\t\t\tWhy don't you go to the cinema this weekend?\n\t\t\t\t\t\t\t\tDoes the speaker mean:",
+                        "ques": "\n\t\t\t\t\t\t\t\t\tWhy don't you go to the cinema this weekend?",
                         "interaction": [
                             {
-                                "ques": "",
+                                "ques": "Does the speaker mean:",
                                 "options": [
                                     {
                                         "text": "I don't recommend going to the cinema this weekend.",
@@ -10821,21 +10829,21 @@
                     },
                     {
                         "type": "unique-selection-expanded",
-                        "ques": "\n\t\t\t\t\t\t\t\t\tWhy don't you go to the cinema this weekend?\n\t\t\t\t\t\t\t\tDoes the speaker mean:",
+                        "ques": "\n\t\t\t\t\t\t\t\t\tWhy don't you go to the beach this weekend?",
                         "interaction": [
                             {
-                                "ques": "",
+                                "ques": "Does the speaker mean:",
                                 "options": [
                                     {
-                                        "text": "I don't recommend going to the cinema this weekend.",
+                                        "text": "I don't recommend going to the beach this weekend.",
                                         "correct": false
                                     },
                                     {
-                                        "text": "I recommend going to the cinema this weekend.",
+                                        "text": "I recommend going to the beach this weekend.",
                                         "correct": true
                                     },
                                     {
-                                        "text": "Why aren't you going to the cinema this weekend?",
+                                        "text": "Why aren't you going to the beach this weekend?",
                                         "correct": false
                                     }
                                 ]
@@ -10850,7 +10858,7 @@
                                 "ques": "Which of the options do you...?",
                                 "options": [
                                     {
-                                        "text": "favour",
+                                        "text": "favor",
                                         "correct": false
                                     },
                                     {
@@ -10992,10 +11000,10 @@
                     },
                     {
                         "type": "unique-selection-expanded",
-                        "ques": "\n\t\t\t\t\t\t\t\t\tHow about going to the beach tomorrow?\n\t\t\t\t\t\t\t\tDoes the speaker mean:",
+                        "ques": "\n\t\t\t\t\t\t\t\t\tHow about going to the beach tomorrow?",
                         "interaction": [
                             {
-                                "ques": "",
+                                "ques": "Does the speaker mean:",
                                 "options": [
                                     {
                                         "text": "I suggest we go to the beach tomorrow.",
@@ -11134,10 +11142,10 @@
                     },
                     {
                         "type": "unique-selection-expanded",
-                        "ques": "\n\t\t\t\t\t\t\t\t\tHow about going to the beach tomorrow?\n\t\t\t\t\t\t\t\tDoes the speaker mean:",
+                        "ques": "\n\t\t\t\t\t\t\t\t\tHow about going to the beach tomorrow?",
                         "interaction": [
                             {
-                                "ques": "",
+                                "ques": "Does the speaker mean:",
                                 "options": [
                                     {
                                         "text": "I suggest we go to the beach tomorrow.",
