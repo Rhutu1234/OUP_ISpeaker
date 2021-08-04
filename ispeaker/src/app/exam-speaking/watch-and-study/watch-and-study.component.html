@@ -4,7 +4,7 @@
         <div class="img-wrapper" [ngClass]="{'image-scroll-wrapper':!!taskData.imageScroll}">
             <ng-container *ngFor="let image of taskData.images">
                 <img *ngIf="!examSpeakingService.userId" src="./assets/img/{{image}}" [ngClass]="{'image-scroll':!!taskData.imageScroll}"/>
-                <img *ngIf="examSpeakingService.userId" src="/external/ispeaker/new/assets/img/{{image}}" />
+                <img *ngIf="examSpeakingService.userId" src="/external/ispeaker/new/assets/img/{{image}}" [ngClass]="{'image-scroll':!!taskData.imageScroll}"/>
             </ng-container>
 
         </div>
