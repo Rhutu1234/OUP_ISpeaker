@@ -9,6 +9,7 @@ import { environment } from "src/environments/environment";
 })
 export class ISpeakerService {
   selectedLanguage = 'BrE';
+  selectedPageLanguage = 'Eng';
   userId = window['userId'];
   baseUrl = '';
 
@@ -59,6 +60,23 @@ export class ISpeakerService {
       }
     });
   }
+  getSelectedPageLanguage() {
+    const selectedPageLanguageUrl = this.baseUrl + 'file/' + this.userId + '/selectedPageLanguage.json';
+    return new Promise((resolve, reject) => {
+      if (this.userId) {
+        this.fetchJson(selectedPageLanguageUrl, (dataPage) => {
+          if (dataPage) {
+            this.selectedPageLanguage = dataPage.lang;
+            resolve(true);
+          } else {
+            reject(false);
+          }
+        });
+      } else {
+        reject(false);
+      }
+    });
+  }
   saveSelectedLanguage() {
     if (this.userId) {
       const data = {
@@ -78,7 +96,36 @@ export class ISpeakerService {
           } else {
             // console.log(JSON.parse(xhr.response));
           }
-          console.log('uploading sound file successfull');
+          // console.log('uploading sound file successfull');
+        }
+      };
+      xhr.open('PUT', destUrl, true);
+      const token = this.meta.getTag('name=_csrf').content;
+      const csrfHeader = this.meta.getTag('name=_csrf_header').content;
+      xhr.setRequestHeader(csrfHeader, token);
+      xhr.send(formData);
+    }
+  }
+  saveSelectedPageLanguage() {
+    if (this.userId) {
+      const dataPage = {
+        lang: this.selectedPageLanguage
+      }
+      const destUrl = this.baseUrl + 'file/' + this.userId + '/selectedLanguage.json';
+      const jsonStr = 'jsonpCallbackFunction(' + JSON.stringify(dataPage) + ');';
+      const formData: FormData = new FormData();
+      formData.append('file', jsonStr);
+      formData.append('redirect', 'true');
+
+      const xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = () => {
+        if (xhr.readyState === 4) {
+          if (xhr.status === 200 || xhr.status === 207) {
+            // console.log(JSON.parse(xhr.response));
+          } else {
+            // console.log(JSON.parse(xhr.response));
+          }
+          // console.log('uploading sound file successfull');
         }
       };
       xhr.open('PUT', destUrl, true);
@@ -95,7 +142,7 @@ export class ISpeakerService {
       cb(data);
     };
     this.http.jsonp(url, 'jsonpCallbackFunction').subscribe((data) => {
-      console.log(data);
+      // console.log(data);
     }, (error) => {
       console.log(error);
       cb(false);
@@ -136,7 +183,7 @@ export class ISpeakerService {
           } else {
             // console.log(JSON.parse(xhr.response));
           }
-          console.log('uploading sound file successfull');
+          // console.log('uploading sound file successfull');
         }
       };
       xhr.open('PUT', destUrl, true);
@@ -168,7 +215,7 @@ export class ISpeakerService {
           } else {
             // console.log(JSON.parse(xhr.response));
           }
-          console.log('uploading Conversation file successfull');
+          // console.log('uploading Conversation file successfull');
         }
       };
       xhr.open('PUT', destUrl, true);
@@ -200,7 +247,7 @@ export class ISpeakerService {
           } else {
             // console.log(JSON.parse(xhr.response));
           }
-          console.log('uploading exam speanking file successfull');
+          // console.log('uploading exam speanking file successfull');
         }
       };
       xhr.open('PUT', destUrl, true);
