@@ -1,4 +1,4 @@
-<div class="wrapper">
+<div class="wrapper" *ngIf="ispeakerService.selectedPageLanguage == 'Eng' else elseBlock">
     <div class="inner-wrapper left">
         <div class='header-text'>Practise 1</div>
         <div class="step-main-wrapper">
@@ -171,3 +171,182 @@
         </div>
     </div>
 </div>
+<ng-template #elseBlock>
+    <div class="wrapper">
+        <div class="inner-wrapper left">
+            <div class='header-text'>练习一</div>
+            <div class="step-main-wrapper">
+                <ng-container *ngFor="let step of practiseData.questions;let i=index">
+                    <div class="step-wrapper">
+                        <div class="step" [ngClass]="{'active':(currentIndex>=i)}">
+
+                        </div>
+                        <div class="step-line" [ngClass]="{'active':(currentIndex>i)}"
+                            *ngIf="i<practiseData.questions.length-1">
+                        </div>
+                    </div>
+                </ng-container>
+                <ng-container *ngIf="currentIndex<practiseData.questions.length">
+                    <ng-container *ngIf="practiseData.questions[currentIndex].type === 'text-entry-dictation'">
+                        <div class="question" [innerHtml]="practiseData.questions[currentIndex].ques"></div>
+                        <div class="sound-icon-wrapper">
+                            <div class="icons play-sound" (click)="playSound(practiseData.questions[currentIndex])">
+                            </div>
+                        </div>
+                        <div class='text-wrap text-entry-dictation'>
+                            <div *ngIf="isAnswered" class='response-icon'
+                                [ngClass]="{'correct':checkDictationAns(practiseData.questions[currentIndex]),'incorrect':!checkDictationAns(practiseData.questions[currentIndex])}">
+                            </div>
+                            <textarea [rows]="1" autocomplete="off" [cols]="30"
+                                [(ngModel)]="practiseData.questions[currentIndex].userAns" pInputTextarea
+                                autoResize="autoResize" [disabled]='isAnswered'
+                                [ngClass]="{'correct':isAnswered && checkDictationAns(practiseData.questions[currentIndex]),'incorrect':isAnswered && !checkDictationAns(practiseData.questions[currentIndex])}"></textarea>
+                            <div *ngIf="isAnswered && !checkDictationAns(practiseData.questions[currentIndex])"
+                                class="correct-ans-dictation">
+                                {{practiseData.questions[currentIndex].responseText.join(" / ")}}
+                            </div>
+                        </div>
+                    </ng-container>
+                    <ng-container *ngIf="practiseData.questions[currentIndex].type === 'unique-selection-expanded'">
+                        <div class="question" [innerHtml]="practiseData.questions[currentIndex].ques"></div>
+                        <div class='interaction-wrapper'>
+                            <ng-container
+                                *ngFor="let interaction of practiseData.questions[currentIndex].interaction;let i=index">
+                                <div *ngIf="interaction.ques" class="question" [innerHtml]="interaction.ques"></div>
+                                <div class="option-wrapper">
+                                    <ng-container *ngFor="let option of interaction.options;let j=index">
+                                        <div class="p-field-radiobutton">
+                                            <div *ngIf="isAnswered" class='response-icon'
+                                                [ngClass]="{'correct':(option.correct),'incorrect':(interaction.userAns === option.text && !option.correct)}">
+                                            </div>
+                                            <p-radioButton name="radio-{{i}}-{{j}}" [disabled]='isAnswered'
+                                                [value]="option.text" [(ngModel)]="interaction.userAns"></p-radioButton>
+                                            <label>{{option.text}}</label>
+                                        </div>
+                                    </ng-container>
+                                </div>
+                            </ng-container>
+                        </div>
+
+                    </ng-container>
+                    <ng-container *ngIf="practiseData.questions[currentIndex].type === 'unique-selection-inline'">
+                        <div class="question" *ngFor="let ques of practiseData.questions[currentIndex].ques">{{ques}}
+                        </div>
+                        <div class='interaction-wrapper'>
+
+                            <table class='unique-selection-table'>
+                                <thead>
+                                    <th></th>
+                                    <th>
+                                        <div>正确</div>
+                                    </th>
+                                    <th>
+                                        <div>错误</div>
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr
+                                        *ngFor="let interaction of practiseData.questions[currentIndex].interaction;let i=index">
+                                        <td>
+                                            <div *ngIf="interaction.ques" class="question"
+                                                [innerHtml]="interaction.ques">
+                                            </div>
+                                        </td>
+                                        <td *ngFor="let option of interaction.options;let j=index">
+                                            <div class="p-field-radiobutton">
+                                                <div *ngIf="isAnswered" class='response-icon'
+                                                    [ngClass]="{'correct':(option.correct),'incorrect':(interaction.userAns === option.text && !option.correct)}">
+                                                </div>
+                                                <p-radioButton name="radio-{{i}}-{{j}}" [disabled]='isAnswered'
+                                                    [value]="option.text" [(ngModel)]="interaction.userAns">
+                                                </p-radioButton>
+
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <!-- <div class="option-wrapper">
+    
+                                </div> -->
+
+                        </div>
+
+                    </ng-container>
+                    <ng-container *ngIf="practiseData.questions[currentIndex].type === 'text-entry-closed'">
+                        <div class="question" [innerHtml]="practiseData.questions[currentIndex].ques"></div>
+                        <div class='sentence-wrapper'>
+                            <ng-container
+                                *ngFor="let sentence of practiseData.questions[currentIndex].sentences;let i=index">
+                                <span>{{sentence}}
+                                </span>
+                                <span class="user-input-wrapper"
+                                    *ngIf="i !== (practiseData.questions[currentIndex].sentences.length-1)"><input
+                                        [ngClass]="{'correct':(checkTextEntryClosedAns(practiseData.questions[currentIndex]) && isAnswered),'incorrect':(!checkTextEntryClosedAns(practiseData.questions[currentIndex]) && isAnswered)}"
+                                        type="text" name="text-box" [disabled]='isAnswered' autocomplete="off"
+                                        [(ngModel)]="practiseData.questions[currentIndex].userAns" />
+                                    <div *ngIf="isAnswered" class='response-icon'
+                                        [ngClass]="{'correct':checkTextEntryClosedAns(practiseData.questions[currentIndex]),'incorrect':!checkTextEntryClosedAns(practiseData.questions[currentIndex])}">
+                                    </div>
+                                    <span class="correct-ans"
+                                        *ngIf="(!checkTextEntryClosedAns(practiseData.questions[currentIndex])) && isAnswered">
+                                        <ng-container *ngIf="practiseData.questions[currentIndex].multiple">
+                                            {{practiseData.questions[currentIndex].ans.join(" / ")}}
+                                        </ng-container>
+                                        <ng-container *ngIf="!practiseData.questions[currentIndex].multiple">
+
+                                            {{practiseData.questions[currentIndex].ans}}
+                                        </ng-container>
+                                    </span>
+                                </span>
+                            </ng-container>
+
+
+                        </div>
+                    </ng-container>
+
+                </ng-container>
+                <ng-container *ngIf="currentIndex>=practiseData.questions.length">
+                    <div class='score-title'>得分</div>
+                    <div class='user-score'>{{score}} / {{practiseData.questions.length}}</div>
+                </ng-container>
+                <div class='btn-container' [ngClass]="{'p-align-center': currentIndex>=practiseData.questions.length}">
+                    <p-button label="检查" [disabled]='isAnswered' class='nxt-btn'
+                        *ngIf="currentIndex<practiseData.questions.length"
+                        (onClick)="onCheckClick(practiseData.questions[currentIndex])">
+                    </p-button>
+                    <p-button
+                        [label]="isAnswered?(currentIndex===practiseData.questions.length-1)?'得分':'下一个':'跳过'"
+                        *ngIf="currentIndex<practiseData.questions.length" (onClick)="onSkipClick()">
+                    </p-button>
+                    <p-button label="再做一次？" *ngIf="currentIndex>=practiseData.questions.length"
+                        (onClick)="restartTest()">
+                    </p-button>
+                </div>
+            </div>
+        </div>
+        <div class="inner-wrapper right pract-2">
+            <div class='header-text'>练习二</div>
+            <div class='dialogue-wrapper'>
+                <div class='quest'>
+                    使用本主题中的一些用语创作对话。
+                </div>
+                <div class='text-wrap'>
+                    <textarea [rows]="5" [cols]="30" [(ngModel)]="practiseData.userDialogueData" pInputTextarea
+                        autoResize="autoResize"></textarea>
+                </div>
+            </div>
+            <div class='record-wrapper'>
+                <div>朗读对话并录音，听自己的发音。</div>
+                <div class='icon-wrapper'>
+                    <div class="icons" (click)="startStopRecording(practiseData)"
+                        [ngClass]="{'record':!practiseData.isRecording,'record-stop':practiseData.isRecording}"></div>
+                    <div class="icons play" (click)="playStopRecordedAudio(practiseData)"
+                        [ngClass]="{'disable': !practiseData.recordedAudio, 'play': !practiseData.isPlaying,'record-stop':practiseData.isPlaying}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>

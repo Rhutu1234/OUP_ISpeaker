@@ -28,22 +28,59 @@ export class ExamSpeakingService {
 
     fetchExamSpeakingMenu(): Observable<any> {
         if (this.examSpeakingMenuList) {
-            return this.http.get(environment.baseHref + 'assets/json/examSpeakingMenu.json').pipe(map((data: any) => {
-                this.examSpeakingMenuList = data.examSpeakingMenu;
-                return this.examSpeakingMenuList;
-            }));
+            if(this.ispeakerService.selectedPageLanguage == 'Eng'){
+                return this.http.get(environment.baseHref + 'assets/json/examSpeakingMenu.json').pipe(map((data: any) => {
+                    this.examSpeakingMenuList = data.examSpeakingMenu;
+                    return this.examSpeakingMenuList;
+                }));
+            }else{
+                return this.http.get(environment.baseHref + 'assets/json/examSpeakingMenu_Chi.json').pipe(map((data: any) => {
+                    this.examSpeakingMenuList = data.examSpeakingMenu;
+                    return this.examSpeakingMenuList;
+                }));
+            }
+         
         } else {
+            if(this.ispeakerService.selectedPageLanguage == 'Eng'){
+                return this.http.get(environment.baseHref + 'assets/json/examSpeakingMenu.json').pipe(map((data: any) => {
+                    this.examSpeakingMenuList = data.examSpeakingMenu;
+                    return this.examSpeakingMenuList;
+                }));
+            }else{
+                return this.http.get(environment.baseHref + 'assets/json/examSpeakingMenu_Chi.json').pipe(map((data: any) => {
+                    this.examSpeakingMenuList = data.examSpeakingMenu;
+                    return this.examSpeakingMenuList;
+                }));
+            }
             return of(this.examSpeakingMenuList);
         }
     }
     fetchExamSpeakingType(type): Observable<any> {
         this.currentType = type;
         if (!this.examSpeakingData) {
+            if(this.ispeakerService.selectedPageLanguage == 'Eng'){
             return this.http.get(environment.baseHref + 'assets/json/speaking_data.json').pipe(map((data: any) => {
                 this.examSpeakingData = data;
                 return _.cloneDeep(this.examSpeakingData[type]);
             }));
+            }else{
+                return this.http.get(environment.baseHref + 'assets/json/speaking_data_Chi.json').pipe(map((data: any) => {
+                    this.examSpeakingData = data;
+                    return _.cloneDeep(this.examSpeakingData[type]);
+                }));
+            }
         } else {
+            if(this.ispeakerService.selectedPageLanguage == 'Eng'){
+                return this.http.get(environment.baseHref + 'assets/json/speaking_data.json').pipe(map((data: any) => {
+                    this.examSpeakingData = data;
+                    return _.cloneDeep(this.examSpeakingData[type]);
+                }));
+                }else{
+                    return this.http.get(environment.baseHref + 'assets/json/speaking_data_Chi.json').pipe(map((data: any) => {
+                        this.examSpeakingData = data;
+                        return _.cloneDeep(this.examSpeakingData[type]);
+                    }));
+                }
             return of(_.cloneDeep(this.examSpeakingData[type]));
         }
 

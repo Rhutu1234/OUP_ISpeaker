@@ -36,12 +36,31 @@ export class SoundsService {
                     this.soundMenu = data;
                     return data[this.ispeakerService.selectedLanguage];
                 })),
+                this.ispeakerService.selectedPageLanguage == 'Eng' ?
                 this.http.get(environment.baseHref + 'assets/json/sound_data.json').pipe(map((data) => {
+                    this.soundsData = data;
+                    return data;
+                })): this.http.get(environment.baseHref + 'assets/json/sound_data_Chi.json').pipe(map((data) => {
                     this.soundsData = data;
                     return data;
                 }))
             );
         } else {
+            return forkJoin(
+                this.http.get(environment.baseHref + 'assets/json/soundsMenu.json').pipe(map((data) => {
+                    this.soundMenu = data;
+                    return data[this.ispeakerService.selectedLanguage];
+                })),
+                this.ispeakerService.selectedPageLanguage == 'Eng' ?
+                this.http.get(environment.baseHref + 'assets/json/sound_data.json').pipe(map((data) => {
+                    this.soundsData = data;
+                    return data;
+                })): this.http.get(environment.baseHref + 'assets/json/sound_data_Chi.json').pipe(map((data) => {
+                    this.soundsData = data;
+                    return data;
+                }))
+            );
+            
             return of([this.soundMenu[this.ispeakerService.selectedLanguage], this.soundsData]);
         }
 

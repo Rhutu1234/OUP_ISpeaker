@@ -10,16 +10,24 @@ import { ISpeakerService } from '../ispeaker.service';
 export class HomeComponent implements OnInit {
   dataLoading = false;
   selectedLanguage;
+  selectedPageLanguage;
   constructor(private router: Router, private route: ActivatedRoute, public ispeakerService: ISpeakerService) { }
 
   ngOnInit() {
     this.dataLoading = true;
     this.ispeakerService.getSelectedLanguage().then((selectedLang) => {
       this.dataLoading = false;
-      this.selectedLanguage = this.ispeakerService.selectedLanguage;
+      this.selectedLanguage = this.ispeakerService.selectedLanguage;  
     }, (error) => {
       this.dataLoading = false;
       this.selectedLanguage = this.ispeakerService.selectedLanguage;
+    });
+    this.ispeakerService.getSelectedPageLanguage().then((selectedLang) => {
+      this.dataLoading = false;
+      this.selectedPageLanguage = this.ispeakerService.selectedPageLanguage; 
+    }, (error) => {
+      this.dataLoading = false;
+      this.selectedPageLanguage = this.ispeakerService.selectedPageLanguage; 
     });
     this.ispeakerService.scrollIntoView(document.getElementsByClassName('ispeaker-wrapper')[0]);
 
@@ -31,6 +39,14 @@ export class HomeComponent implements OnInit {
     this.ispeakerService.selectedLanguage = type;
     this.ispeakerService.saveSelectedLanguage();
   }
+
+  onPageLanguageSelection(event, type) {
+    event.stopPropagation();
+    this.selectedPageLanguage = type;
+    this.ispeakerService.selectedPageLanguage = type;
+    this.ispeakerService.saveSelectedPageLanguage();
+  }
+
   onTileClick(type) {
     switch (type) {
       case 'sounds':

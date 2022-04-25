@@ -1,4 +1,4 @@
-<div class="wrapper">
+<div class="wrapper" *ngIf="ispeakerService.selectedPageLanguage == 'Eng' else elseBlock">
     <div class="inner-wrapper left">
         <div class='header-text'>Watch</div>
         <div *ngIf="videoLink" class="video-container">
@@ -47,3 +47,54 @@
 
     </div>
 </div>
+<ng-template #elseBlock>
+    <div class="wrapper">
+        <div class="inner-wrapper left">
+            <div class='header-text'>观看</div>
+            <div *ngIf="videoLink" class="video-container">
+                <div #videoWrapper (window:resize)="onResize($event)" [innerHtml]="videoLink"></div>
+            </div>
+        </div>
+        <div class="inner-wrapper right study">
+            <div class='header-text'>学习</div>
+            <p-accordion expandIcon='pi pi-plus' collapseIcon='pi pi-minus' (onClose)="onTabClose($event)"
+                (onOpen)="onTabOpen($event)" styleClass='step-by-step-accordian study-accordian'>
+    
+                <p-accordionTab>
+                    <p-header>
+                        <span class='oup-header'>
+                            {{ isAccordOpen? "隐藏视频对话":"展开视频对话" }}
+                        </span>
+                    </p-header>
+                    <div class="dialouge-wrapper"
+                        [ngClass]="{'highlight-dialogue-1': studyData.skills[0].check, 'highlight-dialogue-2': (studyData.skills.length>1 &&studyData.skills[1].check)}"
+                        *ngFor="let dialouge of studyData.dialogue">
+                        <span class="speaker-wrapper">{{dialouge.speaker}}: </span>
+                        <span class="speech-wrapper" [innerHtml]="dialouge.speech"></span>
+                    </div>
+                    <div class='skills-wrapper'>
+                        <div class="p-field-checkbox" *ngFor="let skill of studyData.skills;let i =index;">
+                            <p-checkbox name="group{{i}}" value="New York" binary="true" [(ngModel)]="skill.check"
+                                inputId="ny">
+                            </p-checkbox>
+                            <label for="ny">{{skill.label}}</label>
+                        </div>
+                    </div>
+                    <div class='record-wrapper'>
+                        <div>朗读对话并录音，听自己的发音。</div>
+                        <div class='icon-wrapper'>
+                            <div class="icons" (click)="startStopRecording(studyData)"
+                                [ngClass]="{'record':!studyData.isRecording,'record-stop':studyData.isRecording}"></div>
+                            <div class="icons play" (click)="playStopRecordedAudio(studyData)"
+                                [ngClass]="{'disable': !studyData.recordedAudio, 'play': !studyData.isPlaying,'record-stop':studyData.isPlaying}">
+                            </div>
+                        </div>
+                    </div>
+    
+                </p-accordionTab>
+    
+            </p-accordion>
+    
+        </div>
+    </div>
+</ng-template>

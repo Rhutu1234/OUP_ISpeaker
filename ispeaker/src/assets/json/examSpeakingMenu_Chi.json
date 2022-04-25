@@ -1,0 +1,78 @@
+{
+    "examSpeakingMenu": [
+        {
+            "title": "小组任务",
+            "subHeading": [
+                {
+                    "title": "讨论看法",
+                    "accordianHeader": "对应哪些考试？",
+                    "accordianData": [
+                        "剑桥英语考评：B2 First 级，C1 Advanced 级，C2 Proficiency 级；商务英语证书考试 (BEC) ",
+                        "伦敦圣三一学院英语综合能力考试 (ISE)；英语口语等级考试 (GESE)"
+                    ]
+                },
+                {
+                    "title": "协商",
+                    "accordianHeader": "对应哪些考试？",
+                    "accordianData": [
+                        "剑桥英语考评：B2 First 级，C1 Advanced 级，C2 Proficiency 级；商务英语证书考试 (BEC)"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "个人任务",
+            "subHeading": [
+                {
+                    "title": "描述图片",
+                    "accordianHeader": "对应哪些考试？",
+                    "accordianData": [
+                        "托业 (TOEIC) ",
+                        "剑桥英语考评：B2 First 级，C1 Advanced 级，C2 Proficiency 级"
+                    ]
+                },
+                {
+                    "title": "提供个人信息",
+                    "accordianHeader": "对应哪些考试？",
+                    "accordianData": [
+                        "雅思 ( IELTS) ",
+                        "托业 (TOEIC)",
+                        "剑桥英语考评：B2 First 级，C1 Advanced 级，C2 Proficiency 级",
+                        "伦敦圣三一学院英语综合能力考试 (ISE)；英语口语等级考试 (GESE)"
+                    ]
+                },
+                {
+                    "title": "谈论一个主题",
+                    "accordianHeader": "对应哪些考试？",
+                    "accordianData": [
+                        "雅思 ( IELTS)",
+                        "托业 (TOEIC)",
+                        "托福 (TOEFL)",
+                        "剑桥英语考评：C1 Advanced 级，C2 Proficiency 级；商务英语证书考试 (BEC)",
+                        "伦敦圣三一学院英语口语等级考试 (GESE)"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "生活任务",
+            "subHeading": [
+                {
+                    "title": "做演示报告",
+                    "accordianHeader": "对应哪些考试？",
+                    "accordianData": [
+                        "剑桥英语考评：商务英语证书考试 (BEC)",
+                        "伦敦圣三一学院英语综合能力考试 (ISE)；英语口语等级考试 (GESE)"
+                    ]
+                },
+                {
+                    "title": "求职面试",
+                    "accordianHeader": "对应哪些考试？",
+                    "accordianData": [
+                        "剑桥英语考评：C1 Advanced 级；商务英语证书考试 (BEC)"
+                    ]
+                }
+            ]
+        }
+    ]
+}

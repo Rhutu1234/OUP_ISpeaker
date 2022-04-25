@@ -1,28 +1,59 @@
-<div class='conversation-list-wrapper' *ngIf="conversationsMenu">
-    <a [routerLink]="['/home']" class='back-btn'>
-        <i class="pi pi-angle-left"></i>Back to main menu</a>
-    <div class='tab-header'> Conversations</div>
-    <div class="sub-tab-header">
-        {{ispeakerService.selectedLanguage==='BrE'?'British English':'American English'}}
-    </div>
-    <div class="i-text">Choose a conversation to practise</div>
-    <div class="conversation-wrapper">
-        <div class='p-grid'>
-            <ng-container *ngFor='let tab of conversationsMenu'>
-                <div class='p-col-12 p-sm-6 p-md-4 tile'>
-                    <div class='tab-title'>{{tab.title}}</div>
-                    <div class='subHeading-wrapper'>
-                        <ng-container *ngFor='let subHeading of tab.subHeading'>
-                            <div class='link-wrapper'><a
-                                    [routerLink]="['/conversations/conversationsDetails',subHeading.title,subHeading.attempted]"
-                                    routerLinkActive="active" skipLocationChange="true">{{subHeading.title}}</a>
-                                <div *ngIf="subHeading.completed" class="tick_completed"></div>
-                            </div>
-                        </ng-container>
+<div *ngIf="ispeakerService.selectedPageLanguage == 'Eng' else elseBlock">
+    <div class='conversation-list-wrapper' *ngIf="conversationsMenu">
+        <a [routerLink]="['/home']" class='back-btn'>
+            <i class="pi pi-angle-left"></i>Back to main menu</a>
+        <div class='tab-header'> Conversations</div>
+        <div class="sub-tab-header">
+            {{ispeakerService.selectedLanguage==='BrE'?'British English':'American English'}}
+        </div>
+        <div class="i-text">Choose a conversation to practise</div>
+        <div class="conversation-wrapper">
+            <div class='p-grid'>
+                <ng-container *ngFor='let tab of conversationsMenu'>
+                    <div class='p-col-12 p-sm-6 p-md-4 tile'>
+                        <div class='tab-title'>{{tab.title}}</div>
+                        <div class='subHeading-wrapper'>
+                            <ng-container *ngFor='let subHeading of tab.subHeading'>
+                                <div class='link-wrapper'><a
+                                        [routerLink]="['/conversations/conversationsDetails',subHeading.title,subHeading.attempted]"
+                                        routerLinkActive="active" skipLocationChange="true">{{subHeading.title}}</a>
+                                    <div *ngIf="subHeading.completed" class="tick_completed"></div>
+                                </div>
+                            </ng-container>
+                        </div>
                     </div>
-                </div>
-            </ng-container>
+                </ng-container>
+            </div>
         </div>
     </div>
 </div>
+<ng-template #elseBlock>
+    <div class='conversation-list-wrapper' *ngIf="conversationsMenu">
+        <a [routerLink]="['/home']" class='back-btn'>
+            <i class="pi pi-angle-left"></i>返回主页</a>
+        <div class='tab-header'> 会话</div>
+        <div class="sub-tab-header">
+            {{ispeakerService.selectedLanguage==='BrE'?'英式英语':'美式英语'}}
+        </div>
+        <div class="i-text">选取会话做练习</div>
+        <div class="conversation-wrapper">
+            <div class='p-grid'>
+                <ng-container *ngFor='let tab of conversationsMenu'>
+                    <div class='p-col-12 p-sm-6 p-md-4 tile'>
+                        <div class='tab-title'>{{tab.title}}</div>
+                        <div class='subHeading-wrapper'>
+                            <ng-container *ngFor='let subHeading of tab.subHeading'>
+                                <div class='link-wrapper'><a
+                                        [routerLink]="['/conversations/conversationsDetails',subHeading.title,subHeading.attempted]"
+                                        routerLinkActive="active" skipLocationChange="true">{{subHeading.title}}</a>
+                                    <div *ngIf="subHeading.completed" class="tick_completed"></div>
+                                </div>
+                            </ng-container>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</ng-template>
 <app-spinner [isRunning]='dataLoading'></app-spinner>

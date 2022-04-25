@@ -1,36 +1,76 @@
-<div class='exam-speaking-list-wrapper' *ngIf="examSpeakingMenu">
-    <a [routerLink]="['/home']" class='back-btn' >
-        <i class="pi pi-angle-left"></i>Back to main menu</a>
-    <div class='tab-header'> Exam Speaking</div>
-    <div class="sub-tab-header">
-        {{ispeakerService.selectedLanguage==='BrE'?'British English':'American English'}}
-    </div>
-    <div class="i-text">Choose a speaking task</div>
-    <div class="exam-speaking-wrapper">
-        <div class='p-grid'>
-            <ng-container *ngFor='let tab of examSpeakingMenu'>
-                <div class='p-col-12 p-sm-6 p-md-4 tile'>
-                    <div class='tab-title'>{{tab.title}}</div>
-                    <div class='subHeading-wrapper'>
-                        <ng-container *ngFor='let subHeading of tab.subHeading'>
-                            <div class='link-wrapper'><a
-                                    [routerLink]="['/examSpeaking/examSpeakingDetails',subHeading.title,subHeading.attempted]"
-                                    routerLinkActive="active" skipLocationChange="true">{{subHeading.title}}</a>
-                                <div *ngIf="subHeading.completed" class="tick_completed"></div>
-                            </div>
-                            <p-accordion expandIcon='pi pi-plus' collapseIcon='pi pi-minus' styleClass='exam-accordian'>
-                                <p-accordionTab [header]="subHeading.accordianHeader">
+<div *ngIf="ispeakerService.selectedPageLanguage == 'Eng' else elseBlock">
+    <div class='exam-speaking-list-wrapper' *ngIf="examSpeakingMenu">
+        <a [routerLink]="['/home']" class='back-btn' >
+            <i class="pi pi-angle-left"></i>Back to main menu</a>
+        <div class='tab-header'> Exam Speaking</div>
+        <div class="sub-tab-header">
+            {{ispeakerService.selectedLanguage==='BrE'?'British English':'American English'}}
+        </div>
+        <div class="i-text">Choose a speaking task</div>
+        <div class="exam-speaking-wrapper">
+            <div class='p-grid'>
+                <ng-container *ngFor='let tab of examSpeakingMenu'>
+                    <div class='p-col-12 p-sm-6 p-md-4 tile'>
+                        <div class='tab-title'>{{tab.title}}</div>
+                        <div class='subHeading-wrapper'>
+                            <ng-container *ngFor='let subHeading of tab.subHeading'>
+                                <div class='link-wrapper'><a
+                                        [routerLink]="['/examSpeaking/examSpeakingDetails',subHeading.title,subHeading.attempted]"
+                                        routerLinkActive="active" skipLocationChange="true">{{subHeading.title}}</a>
+                                    <div *ngIf="subHeading.completed" class="tick_completed"></div>
+                                </div>
+                                <p-accordion expandIcon='pi pi-plus' collapseIcon='pi pi-minus' styleClass='exam-accordian'>
+                                    <p-accordionTab [header]="subHeading.accordianHeader">
 
-                                    <div class='sentence-wrapper' *ngFor="let sentence of subHeading.accordianData">
-                                        <div class="sentence-cls" [innerHtml]="sentence"></div>
-                                    </div>
-                                </p-accordionTab>
-                            </p-accordion>
-                        </ng-container>
+                                        <div class='sentence-wrapper' *ngFor="let sentence of subHeading.accordianData">
+                                            <div class="sentence-cls" [innerHtml]="sentence"></div>
+                                        </div>
+                                    </p-accordionTab>
+                                </p-accordion>
+                            </ng-container>
+                        </div>
                     </div>
-                </div>
-            </ng-container>
+                </ng-container>
+            </div>
         </div>
     </div>
 </div>
+<ng-template #elseBlock>
+    <div class='exam-speaking-list-wrapper' *ngIf="examSpeakingMenu">
+        <a [routerLink]="['/home']" class='back-btn'>
+            <i class="pi pi-angle-left"></i>返回主页</a>
+        <div class='tab-header'> 口语考试</div>
+        <div class="sub-tab-header">
+            {{ispeakerService.selectedLanguage==='BrE'?'英式英语':'美式英语'}}
+        </div>
+        <div class="i-text">选择口语练习</div>
+        <div class="exam-speaking-wrapper">
+            <div class='p-grid'>
+                <ng-container *ngFor='let tab of examSpeakingMenu'>
+                    <div class='p-col-12 p-sm-6 p-md-4 tile'>
+                        <div class='tab-title'>{{tab.title}}</div>
+                        <div class='subHeading-wrapper'>
+                            <ng-container *ngFor='let subHeading of tab.subHeading'>
+                                <div class='link-wrapper'><a
+                                        [routerLink]="['/examSpeaking/examSpeakingDetails',subHeading.title,subHeading.attempted]"
+                                        routerLinkActive="active" skipLocationChange="true">{{subHeading.title}}</a>
+                                    <div *ngIf="subHeading.completed" class="tick_completed"></div>
+                                </div>
+                                <p-accordion expandIcon='pi pi-plus' collapseIcon='pi pi-minus'
+                                    styleClass='exam-accordian'>
+                                    <p-accordionTab [header]="subHeading.accordianHeader">
+
+                                        <div class='sentence-wrapper' *ngFor="let sentence of subHeading.accordianData">
+                                            <div class="sentence-cls" [innerHtml]="sentence"></div>
+                                        </div>
+                                    </p-accordionTab>
+                                </p-accordion>
+                            </ng-container>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</ng-template>
 <app-spinner [isRunning]='dataLoading'></app-spinner>

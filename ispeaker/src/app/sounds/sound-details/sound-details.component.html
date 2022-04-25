@@ -1,4 +1,4 @@
-<div class='sound-details-wrapper'>
+<div class='sound-details-wrapper' *ngIf="ispeakerService.selectedPageLanguage == 'Eng' else elseBlock">
     <a (click)="onBtnClick('mainMenu')" class='back-btn'>
         <i class="pi pi-angle-left"></i>Back to main menu</a>
     <div class='tab-header'>Sounds {{soundsService.selectedSoundDetails.name}}</div>
@@ -53,6 +53,65 @@
             <app-review></app-review>
         </ng-container>
     </ng-container>
-    <p-button label="Try another sound" styleClass="try-another-btn"
-        (onClick)="onBtnClick('sounds')"></p-button>
+    <p-button label="Try another sound" styleClass="try-another-btn" 
+    (onClick)="onBtnClick('sounds')"></p-button>
 </div>
+<ng-template #elseBlock>
+    <div class='sound-details-wrapper'>
+        <a (click)="onBtnClick('mainMenu')" class='back-btn'>
+            <i class="pi pi-angle-left"></i>返回主页</a>
+        <div class='tab-header'>{{soundsService.selectedSoundDetails.name}} 音</div>
+        <div class="sub-tab-header">
+            {{ispeakerService.selectedLanguage==='BrE'?'英式英语':'美式英语'}}
+        </div>
+        <div class='p-grid btn-wrapper'>
+            <div class='p-col details-btn selected' [ngClass]="{'selected':(activeTab === TabEnum.WATCH)}"
+                (click)='activeTab=TabEnum.WATCH;'>
+                <div class="txt-wrapper">
+                    <span class="tab-icon watch-icon" title="Watch"></span>
+                    <span class="title-txt"> 观看</span>
+                </div>
+                <div class='hide-bottom-border'></div>
+            </div>
+            <div class='p-col details-btn' [ngClass]="{'selected':(activeTab === TabEnum.LISTEN_AND_RECORD)}"
+                (click)='activeTab=TabEnum.LISTEN_AND_RECORD;'>
+                <div class="txt-wrapper">
+                    <span class="tab-icon listen-icon" title="Listen & Record"></span>
+                    <span class="title-txt">听与录</span>
+                </div>
+                <div class='hide-bottom-border'></div>
+            </div>
+            <div class='p-col details-btn' [ngClass]="{'selected':(activeTab === TabEnum.PRACTISE)}"
+                (click)='activeTab=TabEnum.PRACTISE;'>
+                <div class="txt-wrapper">
+                    <span class="tab-icon practice-icon" title="Practise"></span>
+                    <span class="title-txt"> 练习</span>
+                </div>
+                <div class='hide-bottom-border'></div>
+            </div>
+            <div class='p-col details-btn' [ngClass]="{'selected':(activeTab === TabEnum.REVIEW)}"
+                (click)='activeTab=TabEnum.REVIEW;'>
+                <div class="txt-wrapper">
+                    <span class="tab-icon review-icon" title="Review"></span>
+                    <span class="title-txt"> 复习</span>
+                </div>
+                <div class='hide-bottom-border'></div>
+            </div>
+        </div>
+        <ng-container [ngSwitch]="activeTab">
+            <ng-container *ngSwitchCase="TabEnum.WATCH">
+                <app-watch></app-watch>
+            </ng-container>
+            <ng-container *ngSwitchCase="TabEnum.LISTEN_AND_RECORD">
+                <app-listen-and-record></app-listen-and-record>
+            </ng-container>
+            <ng-container *ngSwitchCase="TabEnum.PRACTISE">
+                <app-practise></app-practise>
+            </ng-container>
+            <ng-container *ngSwitchCase="TabEnum.REVIEW">
+                <app-review></app-review>
+            </ng-container>
+        </ng-container>
+        <p-button label="练习另一个音" styleClass="try-another-btn" (onClick)="onBtnClick('sounds')"></p-button>
+    </div>
+</ng-template>

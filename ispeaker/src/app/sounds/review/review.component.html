@@ -1,4 +1,4 @@
-<div class="review-wrapper">
+<div class="review-wrapper"  *ngIf="ispeakerService.selectedPageLanguage == 'Eng' else elseBlock">
     <div class='header'>Review</div>
     <div>
         I can pronounce the sound {{soundsService.selectedSoundDetails.name}} &nbsp;&nbsp;&nbsp; <p-checkbox
@@ -6,3 +6,14 @@
         </p-checkbox>
     </div>
 </div>
+
+<ng-template #elseBlock>
+    <div class="review-wrapper">
+        <div class='header'>复习</div>
+        <div>
+            我会发{{soundsService.selectedSoundDetails.name}}音。 &nbsp;&nbsp;&nbsp; <p-checkbox
+                [(ngModel)]="soundsService.selectedSoundDetails[soundsService.selectedLanguage].review" [binary]="true">
+            </p-checkbox>
+        </div>
+    </div>
+</ng-template>

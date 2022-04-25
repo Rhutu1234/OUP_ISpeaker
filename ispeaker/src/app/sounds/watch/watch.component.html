@@ -1,4 +1,13 @@
-<div *ngIf="videoLink" class="video-container">
+<div  *ngIf="ispeakerService.selectedPageLanguage == 'Eng' else elseBlock">
+<div *ngIf="videoLink" class="video-container" >
     <div class='header'>Watch</div>
     <div class='iframe-wrapper' #videoWrapper (window:resize)="onResize($event)" [innerHtml]="videoLink"></div>
 </div>
+</div>
+
+<ng-template #elseBlock>
+    <div *ngIf="videoLink" class="video-container" >
+        <div class='header'>观看</div>
+        <div class='iframe-wrapper' #videoWrapper (window:resize)="onResize($event)" [innerHtml]="videoLink"></div>
+    </div>
+</ng-template>

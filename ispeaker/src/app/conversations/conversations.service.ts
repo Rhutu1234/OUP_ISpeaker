@@ -25,10 +25,17 @@ export class ConversationsService {
 
     fetchConversationMenu(): Observable<any> {
         if (this.conversationMenuList) {
+            if(this.ispeakerService.selectedPageLanguage == 'Eng'){
             return this.http.get(environment.baseHref + 'assets/json/conversation_menu.json').pipe(map((data: any) => {
                 this.conversationMenuList = data.conversationMenu;
                 return this.conversationMenuList;
             }));
+            }else{
+                return this.http.get(environment.baseHref + 'assets/json/conversation_menu_Chi.json').pipe(map((data: any) => {
+                    this.conversationMenuList = data.conversationMenu;
+                    return this.conversationMenuList;
+                }));
+            }
         } else {
             return of(this.conversationMenuList);
         }
@@ -36,18 +43,40 @@ export class ConversationsService {
     fetchConversationType(type): Observable<any> {
         this.currentType = type;
         if (!this.conversationData) {
+            if(this.ispeakerService.selectedPageLanguage == 'Eng'){
             return this.http.get(environment.baseHref + 'assets/json/conversation_data.json').pipe(map((data: any) => {
                 this.conversationData = data;
                 return _.cloneDeep(this.conversationData[type][this.ispeakerService.selectedLanguage]);
             }));
+            }else{
+                return this.http.get(environment.baseHref + 'assets/json/conversation_data_Chi.json').pipe(map((data: any) => {
+                    this.conversationData = data;
+                    return _.cloneDeep(this.conversationData[type][this.ispeakerService.selectedLanguage]);
+                }));
+            }
         } else {
-            return of(_.cloneDeep(this.conversationData[type][this.ispeakerService.selectedLanguage]));
+            if(this.ispeakerService.selectedPageLanguage == 'Eng'){
+                return this.http.get(environment.baseHref + 'assets/json/conversation_data.json').pipe(map((data: any) => {
+                    this.conversationData = data;
+                    return _.cloneDeep(this.conversationData[type][this.ispeakerService.selectedLanguage]);
+                }));
+                }else{
+                    return this.http.get(environment.baseHref + 'assets/json/conversation_data_Chi.json').pipe(map((data: any) => {
+                        this.conversationData = data;
+                        return _.cloneDeep(this.conversationData[type][this.ispeakerService.selectedLanguage]);
+                    }));
+                }
         }
 
     }
     fetchExistingCoversationMenu() {
         const selectedLanguage = this.ispeakerService.selectedLanguage;
-        const soundDataUrl = this.baseUrl + 'file/' + this.userId + '/conversation_menu_' + selectedLanguage + '.json';
+        let soundDataUrl;
+        if(this.ispeakerService.selectedPageLanguage == 'Eng'){
+        soundDataUrl = this.baseUrl + 'file/' + this.userId + '/conversation_menu_' + selectedLanguage + '.json';
+        }else{
+        soundDataUrl = this.baseUrl + 'file/' + this.userId + '/conversation_menu_Chi' + selectedLanguage + '.json';
+        }
         return new Promise((resolve, reject) => {
 
             this.fetchJson(soundDataUrl, (data) => {
@@ -85,7 +114,12 @@ export class ConversationsService {
             }
             // if (upload || (currentSubtopic && !currentSubtopic.attempted)) {
             console.log('uploading conversation menu file');
-            const destUrl = this.baseUrl + 'file/' + this.userId + '/conversation_menu_' + selectedLanguage + '.json';
+            let destUrl;
+            if(this.ispeakerService.selectedPageLanguage == 'Eng'){
+                destUrl = this.baseUrl + 'file/' + this.userId + '/conversation_menu_' + selectedLanguage + '.json';
+            }else{
+                destUrl = this.baseUrl + 'file/' + this.userId + '/conversation_menu_Chi' + selectedLanguage + '.json';
+            }
             const jsonStr = 'jsonpCallbackFunction(' + JSON.stringify(this.conversationMenuList) + ');';
             const formData: FormData = new FormData();
             formData.append('file', jsonStr);

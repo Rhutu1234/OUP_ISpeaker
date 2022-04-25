@@ -1,4 +1,4 @@
-<div class="wrapper">
+<div class="wrapper"  *ngIf="ispeakerService.selectedPageLanguage == 'Eng' else elseBlock">
     <div class="pratice-header-wrapper">
         <div class='header-text'>
             Practise</div>
@@ -72,3 +72,79 @@
         </p-accordion>
     </div>
 </div>
+<ng-template #elseBlock>
+    <div class="wrapper">
+        <div class="pratice-header-wrapper">
+            <div class='header-text'>
+                练习</div>
+            <div class='i-text-wrapper'>
+                <div class='i-text'>可以在与搭档做练习时录音。注意看提示并使用本主题中的一些用语。</div>
+                <div class='i-text'>练习开始前可以做笔记。</div>
+            </div>
+        </div>
+        <div class="inner-wrapper left">
+            <div class="task-wrapper" *ngFor="let task of practiceData.task;let i = index;">
+                <div class='header-text'>
+                    任务 {{i+1}}</div>
+                <div class="img-wrapper" *ngIf="task.images.length">
+                    <ng-container *ngFor="let image of task.images">
+                        <img *ngIf="!examSpeakingService.userId" src="./assets/img/{{image}}" />
+                        <img *ngIf="examSpeakingService.userId" src="/external/ispeaker/new/assets/img/{{image}}" />
+                    </ng-container>
+    
+                </div>
+                <div class="para-wrapper" *ngIf="task.para.length">
+                    <div class="para-text" *ngFor="let para of task.para">{{para}}</div>
+                </div>
+                <div class="list-wrapper" *ngIf="task.listItems.length">
+                    <div class="list" *ngFor="let list of task.listItems">{{list}}</div>
+                </div>
+                <div style="    font-weight: 400;
+                font-style: normal;
+                font-size: 17px;margin-bottom: 10px;margin-top: 20px;">笔记：</div>
+                <textarea style="width:100%" [rows]="5" [cols]="30" [(ngModel)]="task.userAns" pInputTextarea
+                    autoResize="autoResize"></textarea>
+                <!-- <div class='icon-wrapper'>
+                    <div class="icons" (click)="startStopRecording(i)"></div>
+    
+                </div> -->
+                <div class='record-wrapper'>
+                    <div>朗读对话并录音，听自己的发音。</div>
+                    <div class='icon-wrapper'>
+                        <div class="icons" (click)="startStopRecording(i)"
+                            [ngClass]="{'record':!task.isRecording,'record-stop':task.isRecording}"></div>
+                        <div class="icons play" (click)="playStopRecordedAudio(i)"
+                            [ngClass]="{'disable': !task.recordedAudio, 'play': !task.isPlaying,'record-stop':task.isPlaying}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="inner-wrapper right">
+            <div class='header-text'>
+                提示</div>
+            <p-accordion expandIcon='pi pi-plus' collapseIcon='pi pi-minus' styleClass='step-by-step-accordian'>
+                <p-accordionTab [selected]="true" [header]="'要…'">
+                    <ul style="padding-left: 0px;list-style: initial;">
+                        <li *ngFor="let tips of practiceData.tips.dos">
+                            <div class='sentence-wrapper'>
+                                <p>{{tips}}</p>
+                            </div>
+                        </li>
+                    </ul>
+                </p-accordionTab>
+            </p-accordion>
+            <p-accordion expandIcon='pi pi-plus' collapseIcon='pi pi-minus' styleClass='step-by-step-accordian'>
+                <p-accordionTab [selected]="true" header="不要…">
+                    <ul style="padding-left: 0px;list-style: initial;">
+                        <li *ngFor="let tips of practiceData.tips.donts">
+                            <div class='sentence-wrapper'>
+                                <p>{{tips}}</p>
+                            </div>
+                        </li>
+                    </ul>
+                </p-accordionTab>
+            </p-accordion>
+        </div>
+    </div>
+</ng-template>

@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { AudioRecordingService } from 'src/app/audio-recording.service';
 import { environment } from 'src/environments/environment';
 import { SoundsService } from '../sounds.service';
+import { ISpeakerService } from 'src/app/ispeaker.service';
 
 @Component({
   selector: 'app-listen-and-record',
@@ -17,7 +18,7 @@ export class ListenAndRecordComponent implements OnInit, OnDestroy {
   recordingFailedSubscription: Subscription;
   getRecordedTimeSubscription: Subscription;
   getRecordedBlobSubscription: Subscription;
-  constructor(public soundsService: SoundsService, private audioRecordingService: AudioRecordingService, private sanitizer: DomSanitizer) {
+  constructor(public ispeakerService: ISpeakerService, public soundsService: SoundsService, private audioRecordingService: AudioRecordingService, private sanitizer: DomSanitizer) {
 
     this.recordingFailedSubscription = this.audioRecordingService.recordingFailed().subscribe(() => {
       this.currentSound.isRecording = false;
@@ -43,8 +44,8 @@ export class ListenAndRecordComponent implements OnInit, OnDestroy {
     this.listenRecordData = this.soundsService.selectedSoundDetails[this.soundsService.selectedLanguage].listen_and_record;
   }
   playSound(sound) {
-
-    this.audio.src = '/media/ispeaker/assets/new/' + sound.audio + '.mp3';
+    
+    this.audio.src = '/media/ispeaker/assets/new/' + sound.audio + '.mp3';  
     this.audio.load();
     this.audio.play();
   }

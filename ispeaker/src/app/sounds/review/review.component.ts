@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SoundsService } from '../sounds.service';
+import { ISpeakerService } from 'src/app/ispeaker.service';
 
 @Component({
   selector: 'app-review',
@@ -8,7 +9,7 @@ import { SoundsService } from '../sounds.service';
 })
 export class ReviewComponent implements OnInit {
 
-  constructor(public soundsService: SoundsService) { }
+  constructor(public ispeakerService: ISpeakerService,public soundsService: SoundsService) { }
 
   ngOnInit() {
   }

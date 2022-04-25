@@ -1,3 +1,4 @@
+<div *ngIf="ispeakerService.selectedPageLanguage == 'Eng' else elseBlock">
 <div class='sound-list-wrapper' *ngIf="soundsMenu">
     <a [routerLink]="['/home']" class='back-btn'>
         <i class="pi pi-angle-left"></i>Back to main menu</a>
@@ -196,4 +197,205 @@
         </div>
     </div>
 </div>
+</div>
+<ng-template #elseBlock>
+    <div class='sound-list-wrapper' *ngIf="soundsMenu">
+        <a [routerLink]="['/home']" class='back-btn'>
+            <i class="pi pi-angle-left"></i>返回主页</a>
+        <div class='tab-header'>语音</div>
+        <div class="sub-tab-header">
+            {{ispeakerService.selectedLanguage==='BrE'?'英式英语':'美式英语'}}
+        </div>
+        <div class="i-text">选取语音做练习</div>
+        <div class="sounds-wrapper">
+            <div class='heading'>辅音</div>
+            <div class="tile-row">
+                <ng-container *ngFor="let sound of soundsMenu.consonants| slice:0:2">
+                    <div class="tile" (click)="loadSounds(sound)">
+                        <div *ngIf="sound.completed" class="tick_completed"></div>
+                        <div class="phoneme">{{sound.phoneme}}</div>
+                        <div class="word" [innerHtml]="sound.word"></div>
+                    </div>
+                </ng-container>
+            </div>
+            <div class="tile-row">
+                <ng-container *ngFor="let sound of soundsMenu.consonants| slice:2:4">
+                    <div class="tile" (click)="loadSounds(sound)">
+                        <div *ngIf="sound.completed" class="tick_completed"></div>
+                        <div class="phoneme">{{sound.phoneme}}</div>
+                        <div class="word" [innerHtml]="sound.word"></div>
+                    </div>
+                </ng-container>
+            </div>
+            <div class="tile-row">
+                <ng-container *ngFor="let sound of soundsMenu.consonants| slice:4:6">
+                    <div class="tile" (click)="loadSounds(sound)">
+                        <div *ngIf="sound.completed" class="tick_completed"></div>
+                        <div class="phoneme">{{sound.phoneme}}</div>
+                        <div class="word" [innerHtml]="sound.word"></div>
+                    </div>
+                </ng-container>
+            </div>
+            <div class="tile-row">
+                <ng-container *ngFor="let sound of soundsMenu.consonants| slice:6:9">
+                    <div class="tile" (click)="loadSounds(sound)">
+                        <div *ngIf="sound.completed" class="tick_completed"></div>
+                        <div class="phoneme">{{sound.phoneme}}</div>
+                        <div class="word" [innerHtml]="sound.word"></div>
+                    </div>
+                </ng-container>
+            </div>
+            <div class="tile-row">
+                <ng-container *ngFor="let sound of soundsMenu.consonants| slice:9:11">
+                    <div class="tile" (click)="loadSounds(sound)">
+                        <div *ngIf="sound.completed" class="tick_completed"></div>
+                        <div class="phoneme">{{sound.phoneme}}</div>
+                        <div class="word" [innerHtml]="sound.word"></div>
+                    </div>
+                </ng-container>
+            </div>
+            <div class="tile-row">
+                <ng-container *ngFor="let sound of soundsMenu.consonants| slice:11:13">
+                    <div class="tile" (click)="loadSounds(sound)">
+                        <div *ngIf="sound.completed" class="tick_completed"></div>
+                        <div class="phoneme">{{sound.phoneme}}</div>
+                        <div class="word" [innerHtml]="sound.word"></div>
+                    </div>
+                </ng-container>
+            </div>
+            <div class="tile-row">
+                <ng-container *ngFor="let sound of soundsMenu.consonants| slice:13:15">
+                    <div class="tile" (click)="loadSounds(sound)">
+                        <div *ngIf="sound.completed" class="tick_completed"></div>
+                        <div class="phoneme">{{sound.phoneme}}</div>
+                        <div class="word" [innerHtml]="sound.word"></div>
+                    </div>
+                </ng-container>
+            </div>
+            <div class="tile-row">
+                <ng-container *ngFor="let sound of soundsMenu.consonants| slice:15:17">
+                    <div class="tile" (click)="loadSounds(sound)">
+                        <div *ngIf="sound.completed" class="tick_completed"></div>
+                        <div class="phoneme">{{sound.phoneme}}</div>
+                        <div class="word" [innerHtml]="sound.word"></div>
+                    </div>
+                </ng-container>
+            </div>
+            <div class="tile-row">
+                <ng-container *ngFor="let sound of soundsMenu.consonants| slice:17:19">
+                    <div class="tile" (click)="loadSounds(sound)">
+                        <div *ngIf="sound.completed" class="tick_completed"></div>
+                        <div class="phoneme">{{sound.phoneme}}</div>
+                        <div class="word" [innerHtml]="sound.word"></div>
+                    </div>
+                </ng-container>
+            </div>
+            <div class="tile-row">
+                <ng-container *ngFor="let sound of soundsMenu.consonants| slice:19:21">
+                    <div class="tile" (click)="loadSounds(sound)">
+                        <div *ngIf="sound.completed" class="tick_completed"></div>
+                        <div class="phoneme">{{sound.phoneme}}</div>
+                        <div class="word" [innerHtml]="sound.word"></div>
+                    </div>
+                </ng-container>
+            </div>
+            <div class="tile-row">
+                <ng-container *ngFor="let sound of soundsMenu.consonants| slice:21:23">
+                    <div class="tile" (click)="loadSounds(sound)">
+                        <div *ngIf="sound.completed" class="tick_completed"></div>
+                        <div class="phoneme">{{sound.phoneme}}</div>
+                        <div class="word" [innerHtml]="sound.word"></div>
+                    </div>
+                </ng-container>
+            </div>
+            <div class="tile-row">
+                <ng-container *ngFor="let sound of soundsMenu.consonants| slice:23">
+                    <div class="tile" (click)="loadSounds(sound)">
+                        <div *ngIf="sound.completed" class="tick_completed"></div>
+                        <div class="phoneme">{{sound.phoneme}}</div>
+                        <div class="word" [innerHtml]="sound.word"></div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+        <div class="sounds-wrapper">
+            <div class='heading'>元音</div>
+            <div class="tile-row">
+                <ng-container *ngFor="let sound of soundsMenu.vowels| slice:0:3">
+                    <div class="tile" (click)="loadSounds(sound)">
+                        <div *ngIf="sound.completed" class="tick_completed"></div>
+                        <div class="phoneme">{{sound.phoneme}}</div>
+                        <div class="word" [innerHtml]="sound.word"></div>
+                    </div>
+                </ng-container>
+            </div>
+            <div class="tile-row">
+                <ng-container *ngFor="let sound of soundsMenu.vowels| slice:3:5">
+                    <div class="tile" (click)="loadSounds(sound)">
+                        <div *ngIf="sound.completed" class="tick_completed"></div>
+                        <div class="phoneme">{{sound.phoneme}}</div>
+                        <div class="word" [innerHtml]="sound.word"></div>
+                    </div>
+                </ng-container>
+            </div>
+            <div class="tile-row">
+                <ng-container *ngFor="let sound of soundsMenu.vowels| slice:5:8">
+                    <div class="tile" (click)="loadSounds(sound)">
+                        <div *ngIf="sound.completed" class="tick_completed"></div>
+                        <div class="phoneme">{{sound.phoneme}}</div>
+                        <div class="word" [innerHtml]="sound.word"></div>
+                    </div>
+                </ng-container>
+            </div>
+            <div class="tile-row">
+                <ng-container *ngFor="let sound of soundsMenu.vowels| slice:8:11">
+                    <div class="tile" (click)="loadSounds(sound)">
+                        <div *ngIf="sound.completed" class="tick_completed"></div>
+                        <div class="phoneme">{{sound.phoneme}}</div>
+                        <div class="word" [innerHtml]="sound.word"></div>
+                    </div>
+                </ng-container>
+            </div>
+            <div class="tile-row">
+                <ng-container *ngFor="let sound of soundsMenu.vowels| slice:11:12">
+                    <div class="tile" (click)="loadSounds(sound)">
+                        <div *ngIf="sound.completed" class="tick_completed"></div>
+                        <div class="phoneme">{{sound.phoneme}}</div>
+                        <div class="word" [innerHtml]="sound.word"></div>
+                    </div>
+                </ng-container>
+            </div>
+            <div class="tile-row">
+                <ng-container *ngFor="let sound of soundsMenu.vowels| slice:12:14">
+                    <div class="tile" (click)="loadSounds(sound)">
+                        <div *ngIf="sound.completed" class="tick_completed"></div>
+                        <div class="phoneme">{{sound.phoneme}}</div>
+                        <div class="word" [innerHtml]="sound.word"></div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+        <div class="sounds-wrapper">
+            <div class='heading'>双元音</div>
+            <div class="tile-row">
+                <ng-container *ngFor="let sound of soundsMenu.diphthongs| slice:0:5">
+                    <div class="tile" (click)="loadSounds(sound)">
+                        <div *ngIf="sound.completed" class="tick_completed"></div>
+                        <div class="phoneme">{{sound.phoneme}}</div>
+                        <div class="word" [innerHtml]="sound.word"></div>
+                    </div>
+                </ng-container>
+            </div>
+            <div class="tile-row">
+                <ng-container *ngFor="let sound of soundsMenu.diphthongs| slice:5">
+                    <div class="tile" (click)="loadSounds(sound)">
+                        <div *ngIf="sound.completed" class="tick_completed"></div>
+                        <div class="phoneme">{{sound.phoneme}}</div>
+                        <div class="word" [innerHtml]="sound.word"></div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</ng-template>
 <app-spinner [isRunning]='dataLoading'></app-spinner>

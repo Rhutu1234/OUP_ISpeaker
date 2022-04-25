@@ -1,9 +1,9 @@
-<div class='home-wrapper'>
+<div class='home-wrapper' *ngIf="selectedPageLanguage =='Eng' else elseBlock">
     <div class='header'><span style='font-family:MinionProRegular;'>Oxford</span> <span
             style='font-family:SourceSansProBold;'> iSpeaker</span>
-
-
-    </div>
+    
+    
+        </div>
     <div class="flex-container">
         <div class='accord-wrapper'>
             <p-accordion expandIcon='pi pi-plus' collapseIcon='pi pi-minus' styleClass='step-by-step-accordian'>
@@ -36,6 +36,33 @@
 
             </p-accordion>
         </div>
+            <div class="btn-wrappern">
+                <div class="p-grid p-justify-center p-align-center btn-lbl">
+                    <span>Language:</span>
+                </div>
+                <div class='btn-inline'>
+                    <div class="btn" [ngClass]="{'selected':selectedPageLanguage ==='Eng'}"
+                        (click)="onPageLanguageSelection($event,'Eng')">
+                        <span class="tick-img"></span>
+                        <span class="btn-label">English</span>
+                    </div>
+                    <div class="btn" [ngClass]="{'selected':selectedPageLanguage ==='Chi'}"
+                        (click)="onPageLanguageSelection($event,'Chi')">
+                        <span class="tick-img"></span>
+                        <span class="btn-label ame-lbl">Chinese</span>
+                    </div>
+                </div>
+                <div class="btn hide-btn" [ngClass]="{'selected':selectedPageLanguage ==='Eng'}"
+                    (click)="onPageLanguageSelection($event,'Eng')">
+                    <span class="tick-img"></span>
+                    <span class="btn-label">English</span>
+                </div>
+                <div class="btn hide-btn" [ngClass]="{'selected':selectedPageLanguage ==='Chi'}"
+                    (click)="onPageLanguageSelection($event,'Chi')">
+                    <span class="tick-img"></span>
+                    <span class="btn-label ame-lbl">Chinese</span>
+                </div>
+            </div>
         <div class="btn-wrapper">
             <div class="p-grid p-justify-center p-align-center btn-lbl">
                 <span>Showing:</span>
@@ -64,7 +91,7 @@
             </div>
 
 
-
+            
         </div>
 
     </div>
@@ -97,6 +124,124 @@
     </div>
 </div>
 
+
+<ng-template #elseBlock>
+    <div class='home-wrapper'>
+        <div class='header'><span style='font-family:MinionProRegular;'>Oxford</span> <span
+                style='font-family:SourceSansProBold;'> iSpeaker</span>
+        </div>
+        <div>
+        </div>
+        <div class="flex-container">
+            <div class='accord-wrapper'>
+                <p-accordion expandIcon='pi pi-plus' collapseIcon='pi pi-minus' styleClass='step-by-step-accordian'>
+
+                    <p-accordionTab>
+                        <p-header>
+                            <span class='oup-header'><span class='bold'> iSpeaker</span> 是什么？</span>
+                        </p-header>
+                        <p>Oxford iSpeaker
+                            专为英语学习者设计，旨在帮助您在各种情景中更加准确、流利地使用英语。软件分为三个版块，每个版块针对英语口语的一个方面——从单个语音、单词，到短语，再到更长的口语表达。您可以按引导自主看视频，听音频，分析所用的语言，并练习语音和短语。
+                            您可以在本页面选择英式或美式英语，所有的视频和音频内容将以所选语言播放，也可返回本页面重新选择。</p>
+                    </p-accordionTab>
+
+                </p-accordion>
+            </div>
+
+            <div class='accord-wrapper'>
+                <p-accordion expandIcon='pi pi-plus' collapseIcon='pi pi-minus' styleClass='step-by-step-accordian'>
+
+                    <p-accordionTab>
+                        <p-header><span class='oup-header'>我的口语练习录音保存在哪里？</span></p-header>
+                        您在 iSpeaker 中保存的内容可<a href="/ispeaker-oald9/" target="_blank">在此</a>提取。
+                    </p-accordionTab>
+
+                </p-accordion>
+            </div>
+            <div class="btn-wrappern">
+                <div class="p-grid p-justify-center p-align-center btn-lbl">
+                    <span>Language:</span>
+                </div>
+                <div class='btn-inline'>
+                    <div class="btn" [ngClass]="{'selected':selectedPageLanguage ==='Eng'}"
+                        (click)="onPageLanguageSelection($event,'Eng')">
+                        <span class="tick-img"></span>
+                        <span class="btn-label">English</span>
+                    </div>
+                    <div class="btn" [ngClass]="{'selected':selectedPageLanguage ==='Chi'}"
+                        (click)="onPageLanguageSelection($event,'Chi')">
+                        <span class="tick-img"></span>
+                        <span class="btn-label ame-lbl">Chinese</span>
+                    </div>
+                </div>
+                <div class="btn hide-btn" [ngClass]="{'selected':selectedPageLanguage ==='Eng'}"
+                    (click)="onPageLanguageSelection($event,'Eng')">
+                    <span class="tick-img"></span>
+                    <span class="btn-label">English</span>
+                </div>
+                <div class="btn hide-btn" [ngClass]="{'selected':selectedPageLanguage ==='Chi'}"
+                    (click)="onPageLanguageSelection($event,'Chi')">
+                    <span class="tick-img"></span>
+                    <span class="btn-label ame-lbl">Chinese</span>
+                </div>
+            </div>
+            <div class="btn-wrapper">
+                <div class="p-grid p-justify-center p-align-center btn-lbl">
+                    <span>语言选择:</span>
+                </div>
+                <div class='btn-inline'>
+                    <div class="btn" [ngClass]="{'selected':selectedLanguage ==='BrE'}"
+                        (click)="onLanguageSelection($event,'BrE')">
+                        <span class="tick-img"></span>
+                        <span class="btn-label">英式英语</span>
+                    </div>
+                    <div class="btn" [ngClass]="{'selected':selectedLanguage ==='AmE'}"
+                        (click)="onLanguageSelection($event,'AmE')">
+                        <span class="tick-img"></span>
+                        <span class="btn-label ame-lbl">美式英语h</span>
+                    </div>
+                </div>
+                <div class="btn hide-btn" [ngClass]="{'selected':selectedLanguage ==='BrE'}"
+                    (click)="onLanguageSelection($event,'BrE')">
+                    <span class="tick-img"></span>
+                    <span class="btn-label">英式英语</span>
+                </div>
+                <div class="btn hide-btn" [ngClass]="{'selected':selectedLanguage ==='AmE'}"
+                    (click)="onLanguageSelection($event,'AmE')">
+                    <span class="tick-img"></span>
+                    <span class="btn-label ame-lbl">美式英语</span>
+                </div>
+            </div>
+        </div>
+        <div class='tab-wrapper'>
+            <div class='p-col-12 i-text'>口语练习类型</div>
+            <div class='p-grid'>
+                <div class='p-col-12 p-sm-6 p-md-4 tile-wrapper'>
+                    <div class="tile" (click)="onTileClick('sounds')">
+                        <div class='title'>语音</div>
+                        <div class='desc'>发音练习</div>
+                        <div class='icon sound-icon'></div>
+                    </div>
+                </div>
+                <div class='p-col-12 p-sm-6 p-md-4 tile-wrapper'>
+                    <div class="tile" (click)="onTileClick('conversations')">
+                        <div class='title'>会话</div>
+                        <div class='desc'>日常会话练习</div>
+                        <div class='icon conversations-icon'></div>
+                    </div>
+                </div>
+                <div class='p-col-12 p-sm-6 p-md-4 tile-wrapper'>
+                    <div class="tile" (click)="onTileClick('exam speaking')">
+                        <div class='title'>口语考试</div>
+                        <div class='desc'>备考口语考试</div>
+                        <div class='icon exam-speaking-icon'></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</ng-template>
 <!-- <p-button label="Reset Ispeaker Data" styleClass="reset-btn" (onClick)="ispeakerService.resetAll()"></p-button> -->
 
 

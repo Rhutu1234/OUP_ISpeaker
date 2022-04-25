@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { SoundsService } from '../sounds.service';
 import * as _ from 'lodash';
 import { environment } from 'src/environments/environment';
+import { ISpeakerService } from 'src/app/ispeaker.service';
+
 @Component({
   selector: 'app-practise',
   templateUrl: './practise.component.html',
@@ -16,7 +18,7 @@ export class PractiseComponent implements OnInit {
   currentSet = 0;
   practiseSet = [];
   isAnswered = false;
-  constructor(public soundsService: SoundsService) { }
+  constructor(public ispeakerService: ISpeakerService,public soundsService: SoundsService) { }
 
   ngOnInit() {
     this.practiseSet = this.soundsService.selectedSoundDetails[this.soundsService.selectedLanguage].practice;

@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { SoundsService } from '../sounds.service';
+import { ISpeakerService } from 'src/app/ispeaker.service';
 
 @Component({
   selector: 'app-watch',
@@ -11,7 +12,7 @@ export class WatchComponent implements OnInit {
   videoLink: any;
 
   @ViewChild('videoWrapper', { static: false }) videoWrapper: ElementRef;
-  constructor(public soundsService: SoundsService, private sanitizer: DomSanitizer
+  constructor(public ispeakerService: ISpeakerService,public soundsService: SoundsService, private sanitizer: DomSanitizer
   ) {
     this.videoLink = this.soundsService.selectedSoundDetails[this.soundsService.selectedLanguage].videoLink;
     this.videoLink = this.sanitizer.bypassSecurityTrustHtml(this.videoLink);
